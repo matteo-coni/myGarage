@@ -5,6 +5,7 @@
               directory with the processing instruction <?eclipse.ant.import?>
               as the first entry and export the buildfile again. --><project basedir="." default="build" name="myGarage">
     <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../../../eclipse/jee-2020-09-EE/Eclipse-EE.app/Contents/Eclipse/"/>
     <property name="junit.output.dir" value="junit"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="14"/>
@@ -122,6 +123,22 @@
         <path refid="Web App Libraries.libraryclasspath"/>
         <path refid="EAR Libraries.libraryclasspath"/>
     </path>
+    <path id="run.LoginTest.classpath">
+        <path refid="myGarage.classpath"/>
+        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx-swt.jar"/>
+        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.base.jar"/>
+        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.controls.jar"/>
+        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.fxml.jar"/>
+        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.graphics.jar"/>
+        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.media.jar"/>
+        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.swing.jar"/>
+        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.web.jar"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60"/>
+        <path refid="Apache Tomcat v8.5 [Apache Tomcat v8.5].libraryclasspath"/>
+        <path refid="Web App Libraries.libraryclasspath"/>
+        <path refid="EAR Libraries.libraryclasspath"/>
+    </path>
     <target name="init">
         <mkdir dir="bin"/>
         <copy includeemptydirs="false" todir="bin">
@@ -144,6 +161,19 @@
         </javac>
     </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
     <target name="New_configuration (1)">
         <java classname="logic.model.mechanic.java" failonerror="true" fork="yes">
             <classpath refid="run.New_configuration (1).classpath"/>
@@ -162,6 +192,15 @@
         <java classname="logic.view.desktop.MainDesktop" failonerror="true" fork="yes">
             <classpath refid="run.MainDesktop.classpath"/>
         </java>
+    </target>
+    <target name="LoginTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="test.LoginTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.LoginTest.classpath"/>
+        </junit>
     </target>
     <target name="junitreport">
         <junitreport todir="${junit.output.dir}">
