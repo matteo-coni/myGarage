@@ -1,6 +1,6 @@
 package logic.model;
 
-public class Owner {
+public class Owner extends User{
 	//*****ATTRIBUTI*****
 	
 	//*****METODI*****
