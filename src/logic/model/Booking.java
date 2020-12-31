@@ -1,14 +1,18 @@
 package logic.model;
 
+//import java.text.DateFormat;
+import java.util.*;
+
 public class Booking {
 	//*****ATTRIBUTI*****
 	private String bookID;
-	private Date dateBook;
+	//private Date dateBook;
 	private Mechanic infoMech;
 	private String problems;
 	private Vehicle selVehicle;
 	private Boolean bookingConfirm;
-			
+	Date dateBook = new Date();
+	
 	//*****METODI*****
 	public String getBookID() {
 		return bookID;
