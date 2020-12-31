@@ -15,28 +15,28 @@ public class ControllerBookAppointment {
 	//*****FINE SINGLETON*****
 	
 	//*****METODI*****
-	public saveNewVehicle(){
+	public void saveNewVehicle(){
 		
 	}
-	public editVehicle(){
+	public void editVehicle(){
 		
 	}
-	public DeleteVehicle(){
+	public void DeleteVehicle(){
 		
 	}
-	public findMechanic(String address, String area, String city){
+	public void findMechanic(String address, String area, String city){
 		
 	}
-	public bookApp(Mechanic infoMech, Driver infoDriver, Date dateBook, String problems, Vehicle selVehicle){
+	public void bookApp(Mechanic infoMech, Driver infoDriver, Date dateBook, String problems, Vehicle selVehicle){
 		
 	}
-	public saveFavorite(Mechanic infoMech){
+	public void saveFavorite(Mechanic infoMech){
 		
 	}
-	public contactMechanicBook(Mechanic infoMech, Booking infoBookng){
+	public void contactMechanicBook(Mechanic infoMech, Booking infoBookng){
 		
 	}
-	public confirmBooking(Boolean value){
+	public void confirmBooking(Boolean value){
 		
 	}
 	
