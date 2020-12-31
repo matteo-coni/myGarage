@@ -3,156 +3,77 @@
               Any modifications will be overwritten.
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="build" name="myGarage">
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="trunk">
     <property environment="env"/>
-    <property name="ECLIPSE_HOME" value="../../../../eclipse/jee-2020-09-EE/Eclipse-EE.app/Contents/Eclipse/"/>
-    <property name="junit.output.dir" value="junit"/>
+    <property name="ECLIPSE_HOME" value="../../../../../../../../eclipse/java-2020-09/eclipse/"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="14"/>
     <property name="source" value="14"/>
     <path id="JUnit 5.libraryclasspath">
-        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.api_5.6.0.v20200203-2009.jar"/>
-        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.engine_5.6.0.v20200203-2009.jar"/>
-        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.migrationsupport_5.6.0.v20200203-2009.jar"/>
-        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.params_5.6.0.v20200203-2009.jar"/>
-        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.commons_1.6.0.v20200203-2009.jar"/>
-        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.engine_1.6.0.v20200203-2009.jar"/>
-        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.launcher_1.6.0.v20200203-2009.jar"/>
-        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.runner_1.6.0.v20200203-2009.jar"/>
-        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.suite.api_1.6.0.v20200203-2009.jar"/>
-        <pathelement location="../../../../.p2/pool/plugins/org.junit.vintage.engine_5.6.0.v20200203-2009.jar"/>
-        <pathelement location="../../../../.p2/pool/plugins/org.opentest4j_1.2.0.v20190826-0900.jar"/>
-        <pathelement location="../../../../.p2/pool/plugins/org.apiguardian_1.1.0.v20190826-0900.jar"/>
-        <pathelement location="../../../../.p2/pool/plugins/org.junit_4.13.0.v20200204-1500.jar"/>
-        <pathelement location="../../../../.p2/pool/plugins/org.hamcrest.core_1.3.0.v20180420-1519.jar"/>
-    </path>
-    <path id="Apache Tomcat v8.5 [Apache Tomcat v8.5].libraryclasspath">
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/tomcat-i18n-ko.jar"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/el-api.jar"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/tomcat-i18n-es.jar"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/tomcat-websocket.jar"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/jasper.jar"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/jasper-el.jar"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/tomcat-util.jar"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/tomcat-i18n-de.jar"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/catalina-storeconfig.jar"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/jsp-api.jar"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/catalina-tribes.jar"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/catalina.jar"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/tomcat-jni.jar"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/websocket-api.jar"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/tomcat-coyote.jar"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/catalina-ha.jar"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/tomcat-api.jar"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/annotations-api.jar"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/jaspic-api.jar"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/tomcat-i18n-zh-CN.jar"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/catalina-ant.jar"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/ecj-4.6.3.jar"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/servlet-api.jar"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/tomcat-util-scan.jar"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/tomcat-i18n-ja.jar"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/tomcat-i18n-ru.jar"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/tomcat-jdbc.jar"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/tomcat-i18n-fr.jar"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60/lib/tomcat-dbcp.jar"/>
+        <pathelement location="../../../../../../../../.p2/pool/plugins/org.junit.jupiter.api_5.6.0.v20200203-2009.jar"/>
+        <pathelement location="../../../../../../../../.p2/pool/plugins/org.junit.jupiter.engine_5.6.0.v20200203-2009.jar"/>
+        <pathelement location="../../../../../../../../.p2/pool/plugins/org.junit.jupiter.migrationsupport_5.6.0.v20200203-2009.jar"/>
+        <pathelement location="../../../../../../../../.p2/pool/plugins/org.junit.jupiter.params_5.6.0.v20200203-2009.jar"/>
+        <pathelement location="../../../../../../../../.p2/pool/plugins/org.junit.platform.commons_1.6.0.v20200203-2009.jar"/>
+        <pathelement location="../../../../../../../../.p2/pool/plugins/org.junit.platform.engine_1.6.0.v20200203-2009.jar"/>
+        <pathelement location="../../../../../../../../.p2/pool/plugins/org.junit.platform.launcher_1.6.0.v20200203-2009.jar"/>
+        <pathelement location="../../../../../../../../.p2/pool/plugins/org.junit.platform.runner_1.6.0.v20200203-2009.jar"/>
+        <pathelement location="../../../../../../../../.p2/pool/plugins/org.junit.platform.suite.api_1.6.0.v20200203-2009.jar"/>
+        <pathelement location="../../../../../../../../.p2/pool/plugins/org.junit.vintage.engine_5.6.0.v20200203-2009.jar"/>
+        <pathelement location="../../../../../../../../.p2/pool/plugins/org.opentest4j_1.2.0.v20190826-0900.jar"/>
+        <pathelement location="../../../../../../../../.p2/pool/plugins/org.apiguardian_1.1.0.v20190826-0900.jar"/>
+        <pathelement location="../../../../../../../../.p2/pool/plugins/org.junit_4.13.0.v20200204-1500.jar"/>
+        <pathelement location="../../../../../../../../.p2/pool/plugins/org.hamcrest.core_1.3.0.v20180420-1519.jar"/>
     </path>
     <path id="Web App Libraries.libraryclasspath"/>
+    <path id="Apache Tomcat v9.0 [Apache Tomcat v9.0].libraryclasspath">
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/annotations-api.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/catalina-ant.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/catalina-ha.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/catalina-ssi.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/catalina-storeconfig.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/catalina-tribes.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/catalina.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/ecj-4.17.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/el-api.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/jasper-el.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/jasper.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/jaspic-api.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/jsp-api.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/servlet-api.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/tomcat-api.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/tomcat-coyote.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/tomcat-dbcp.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/tomcat-i18n-cs.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/tomcat-i18n-de.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/tomcat-i18n-es.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/tomcat-i18n-fr.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/tomcat-i18n-ja.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/tomcat-i18n-ko.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/tomcat-i18n-pt-BR.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/tomcat-i18n-ru.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/tomcat-i18n-zh-CN.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/tomcat-jdbc.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/tomcat-jni.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/tomcat-util-scan.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/tomcat-util.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/tomcat-websocket.jar"/>
+        <pathelement location="../../../../../../../../Downloads/apache-tomcat-9.0.40-windows-x64/apache-tomcat-9.0.40/lib/websocket-api.jar"/>
+    </path>
     <path id="EAR Libraries.libraryclasspath"/>
-    <path id="myGarage.classpath">
+    <path id="trunk.classpath">
         <pathelement location="bin"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx-swt.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.base.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.controls.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.fxml.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.graphics.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.media.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.swing.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.web.jar"/>
+        <pathelement location="../../../../../../../../Downloads/javafx-sdk-11.0.2/lib/javafx.base.jar"/>
+        <pathelement location="../../../../../../../../Downloads/javafx-sdk-11.0.2/lib/javafx.controls.jar"/>
+        <pathelement location="../../../../../../../../Downloads/javafx-sdk-11.0.2/lib/javafx.fxml.jar"/>
+        <pathelement location="../../../../../../../../Downloads/javafx-sdk-11.0.2/lib/javafx.graphics.jar"/>
+        <pathelement location="../../../../../../../../Downloads/javafx-sdk-11.0.2/lib/javafx.media.jar"/>
+        <pathelement location="../../../../../../../../Downloads/javafx-sdk-11.0.2/lib/javafx.swing.jar"/>
+        <pathelement location="../../../../../../../../Downloads/javafx-sdk-11.0.2/lib/javafx.web.jar"/>
+        <pathelement location="../../../../../../../../Downloads/javafx-sdk-11.0.2/lib/javafx-swt.jar"/>
         <path refid="JUnit 5.libraryclasspath"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60"/>
-        <path refid="Apache Tomcat v8.5 [Apache Tomcat v8.5].libraryclasspath"/>
         <path refid="Web App Libraries.libraryclasspath"/>
-        <path refid="EAR Libraries.libraryclasspath"/>
-    </path>
-    <path id="run.New_configuration (1).classpath">
-        <path refid="myGarage.classpath"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx-swt.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.base.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.controls.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.fxml.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.graphics.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.media.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.swing.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.web.jar"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60"/>
-        <path refid="Apache Tomcat v8.5 [Apache Tomcat v8.5].libraryclasspath"/>
-        <path refid="Web App Libraries.libraryclasspath"/>
-        <path refid="EAR Libraries.libraryclasspath"/>
-    </path>
-    <path id="run.myGarage.classpath">
-        <path refid="myGarage.classpath"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx-swt.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.base.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.controls.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.fxml.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.graphics.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.media.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.swing.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.web.jar"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60"/>
-        <path refid="Apache Tomcat v8.5 [Apache Tomcat v8.5].libraryclasspath"/>
-        <path refid="Web App Libraries.libraryclasspath"/>
-        <path refid="EAR Libraries.libraryclasspath"/>
-    </path>
-    <path id="run.MainDesktop.classpath">
-        <path refid="myGarage.classpath"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx-swt.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.base.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.controls.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.fxml.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.graphics.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.media.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.swing.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.web.jar"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60"/>
-        <path refid="Apache Tomcat v8.5 [Apache Tomcat v8.5].libraryclasspath"/>
-        <path refid="Web App Libraries.libraryclasspath"/>
-        <path refid="EAR Libraries.libraryclasspath"/>
-    </path>
-    <path id="run.LoginTest.classpath">
-        <path refid="myGarage.classpath"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx-swt.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.base.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.controls.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.fxml.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.graphics.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.media.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.swing.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.web.jar"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60"/>
-        <path refid="Apache Tomcat v8.5 [Apache Tomcat v8.5].libraryclasspath"/>
-        <path refid="Web App Libraries.libraryclasspath"/>
-        <path refid="EAR Libraries.libraryclasspath"/>
-    </path>
-    <path id="run.Bootstrap.classpath">
-        <path refid="myGarage.classpath"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx-swt.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.base.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.controls.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.fxml.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.graphics.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.media.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.swing.jar"/>
-        <pathelement location="../../../../java/javafx-sdk-15.0.1/lib/javafx.web.jar"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-        <pathelement location="../../../../Downloads/apache-tomcat-8.5.60"/>
-        <path refid="Apache Tomcat v8.5 [Apache Tomcat v8.5].libraryclasspath"/>
-        <path refid="Web App Libraries.libraryclasspath"/>
+        <path refid="Apache Tomcat v9.0 [Apache Tomcat v9.0].libraryclasspath"/>
         <path refid="EAR Libraries.libraryclasspath"/>
     </path>
     <target name="init">
@@ -173,7 +94,7 @@
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
-            <classpath refid="myGarage.classpath"/>
+            <classpath refid="trunk.classpath"/>
         </javac>
     </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
@@ -189,45 +110,5 @@
     <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
-    </target>
-    <target name="New_configuration (1)">
-        <java classname="logic.model.mechanic.java" failonerror="true" fork="yes">
-            <classpath refid="run.New_configuration (1).classpath"/>
-        </java>
-    </target>
-    <target name="myGarage">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.myGarage.classpath"/>
-        </junit>
-    </target>
-    <target name="MainDesktop">
-        <java classname="logic.view.desktop.MainDesktop" failonerror="true" fork="yes">
-            <classpath refid="run.MainDesktop.classpath"/>
-        </java>
-    </target>
-    <target name="LoginTest">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="test.LoginTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.LoginTest.classpath"/>
-        </junit>
-    </target>
-    <target name="Bootstrap">
-        <java classname="org.apache.catalina.startup.Bootstrap" failonerror="true" fork="yes">
-            <classpath refid="run.Bootstrap.classpath"/>
-        </java>
-    </target>
-    <target name="junitreport">
-        <junitreport todir="${junit.output.dir}">
-            <fileset dir="${junit.output.dir}">
-                <include name="TEST-*.xml"/>
-            </fileset>
-            <report format="frames" todir="${junit.output.dir}"/>
-        </junitreport>
     </target>
 </project>
