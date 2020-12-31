@@ -1,5 +1,7 @@
 package logic.model;
 
+import java.util.*;
+
 public class Vehicle {
 	//*****ATTRIBUTI*****
 	private String licensePlate;
@@ -8,10 +10,10 @@ public class Vehicle {
 	private int vehicleDisplacement;
 	private int vehiclePowertrains;
 	private String vehicleFuel;
-	private Date vehicleInsurance;
-	private Date vehicleTax;
-	private Date vehicleReview;
-	private Date vehicleService;
+	Date vehicleInsurance = new Date();
+	Date vehicleTax = new Date();
+	Date vehicleReview = new Date();
+	Date vehicleService = new Date();
 	private Image img;
 	
 	//*****METODI*****
