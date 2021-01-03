@@ -6,7 +6,7 @@ import java.util.*;
 import logic.model.Vehicle;
 import logic.model.Mechanic;
 import logic.model.Booking;
-import logic.model.Driver;
+import logic.model.User;
 
 public class ControllerBookAppointment {
 	//*****PROVA SINGLETON*****
@@ -36,7 +36,7 @@ public class ControllerBookAppointment {
 	public void findMechanic(String address, String area, String city){
 		
 	}
-	public void bookApp(Mechanic infoMech, Driver infoDriver, Date dateBook, String problems, Vehicle selVehicle){
+	public void bookApp(Mechanic infoMech, User infoDriver, Date dateBook, String problems, Vehicle selVehicle){
 		
 	}
 	public void saveFavorite(Mechanic infoMech){

@@ -9,10 +9,21 @@ public class Mechanic {
 	private String zone;
 	private String city;
 	
+	//*****COSTRUTTORE*****
+	public Mechanic(String name, String surname, String garage, String address, String zone, String city) {
+		this.name = name;
+		this.surname = surname;
+		this.garage = garage;
+		this.address = address;
+		this.zone = zone;
+		this.city = city;
+	}
+	
 	//*****METODI*****
 	public String getName() {
 		return name;
 	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}

@@ -12,7 +12,7 @@ public class Booking {
 	private Vehicle selVehicle;
 	private Boolean bookingConfirm;
 	
-	//**Costruttore**
+	//*****COSTRUTTORE*****
 	public Booking (String bookID, Date dateBook, Mechanic infoMech, String problems, Vehicle selVehicle, boolean bookingConfirm) {
 		this.bookID = bookID;
 		this.dateBook = dateBook;
