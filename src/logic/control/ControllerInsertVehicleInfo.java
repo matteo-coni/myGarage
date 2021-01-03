@@ -1,14 +1,16 @@
 package logic.control;
 
-import logic.model.Date;
-import logic.model.Image;
+//import logic.model.Date;
+//import logic.model.Image;
+import java.util.*;
+import logic.model.Vehicle;
 
 public class ControllerInsertVehicleInfo {
 	//*****PROVA SINGLETON*****
 	private static ControllerInsertVehicleInfo INSTANCE = null;
 	
 	//*****COSTRUTTORE*****
-	private ControllerInsertVehicleInfo() {} //"private" perché tramite getInstance() potrà essere chiamato solo dall'interno
+	private ControllerInsertVehicleInfo() {} //"private" perchï¿½ tramite getInstance() potrï¿½ essere chiamato solo dall'interno
 	
 	public static ControllerInsertVehicleInfo getInstance() {
 		if(INSTANCE==null)

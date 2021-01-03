@@ -1,11 +1,14 @@
 package logic.control;
 
+import java.util.*;
+import logic.model.Vehicle;
+
 public class ControllerBookAppointment {
 	//*****PROVA SINGLETON*****
 	private static ControllerBookAppointment INSTANCE = null;
 	
 	//*****COSTRUTTORE*****
-	private ControllerBookAppointment() {} //"private" perché tramite getInstance() potrà essere chiamato solo dall'interno
+	private ControllerBookAppointment() {} //"private" perchï¿½ tramite getInstance() potrï¿½ essere chiamato solo dall'interno
 	
 	public static ControllerBookAppointment getInstance() {
 		if(INSTANCE==null)
@@ -13,6 +16,8 @@ public class ControllerBookAppointment {
 		return INSTANCE;
 	}
 	//*****FINE SINGLETON*****
+	
+	Vehicle selVehicle = new Vehicle();
 	
 	//*****METODI*****
 	public void saveNewVehicle(){
