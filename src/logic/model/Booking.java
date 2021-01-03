@@ -1,6 +1,5 @@
 package logic.model;
 
-//import java.text.DateFormat;
 import java.util.*;
 
 public class Booking {
