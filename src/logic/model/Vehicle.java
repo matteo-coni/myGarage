@@ -1,6 +1,7 @@
 package logic.model;
 
 import java.util.*;
+import java.awt.*;
 
 public class Vehicle {
 	//*****ATTRIBUTI*****
@@ -15,6 +16,22 @@ public class Vehicle {
 	Date vehicleReview = new Date();
 	Date vehicleService = new Date();
 	private Image img;
+	
+	
+	//****Costruttore***//
+	public Vehicle(String licensPlate, String vehicleBrand, String vehicleModel, int vehicleDisplacement, int vehiclePowertrains, String vehicleFuel, Date vehicleInsurance, Date vehicleTax, Date vehicleReview, Date vehicleService, Image img) {
+		this.licensePlate = licensPlate;
+		this.vehicleBrand = vehicleBrand;
+		this.vehicleModel = vehicleModel;
+		this.vehicleDisplacement = vehicleDisplacement;
+		this.vehiclePowertrains = vehiclePowertrains;
+		this.vehicleFuel = vehicleFuel;
+		this.vehicleInsurance = vehicleInsurance;
+		this.vehicleTax = vehicleTax;
+		this.vehicleReview = vehicleReview;
+		this.vehicleService = vehicleService;
+		this.img = img;
+	}
 	
 	//*****METODI*****
 	public String getLicensePlate() {
