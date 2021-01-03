@@ -11,10 +11,10 @@ public class Vehicle {
 	private int vehicleDisplacement;
 	private int vehiclePowertrains;
 	private String vehicleFuel;
-	Date vehicleInsurance = new Date();
-	Date vehicleTax = new Date();
-	Date vehicleReview = new Date();
-	Date vehicleService = new Date();
+	private Date vehicleInsurance = new Date();
+	private Date vehicleTax = new Date();
+	private Date vehicleReview = new Date();
+	private Date vehicleService = new Date();
 	private Image img;
 	
 	

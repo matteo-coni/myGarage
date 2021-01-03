@@ -4,6 +4,7 @@ package logic.control;
 //import logic.model.Image;
 import java.util.*;
 import logic.model.Vehicle;
+import java.awt.*;
 
 public class ControllerInsertVehicleInfo {
 	//*****PROVA SINGLETON*****

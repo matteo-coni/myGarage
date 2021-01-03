@@ -1,7 +1,12 @@
 package logic.control;
 
 import java.util.*;
+
+
 import logic.model.Vehicle;
+import logic.model.Mechanic;
+import logic.model.Booking;
+import logic.model.Driver;
 
 public class ControllerBookAppointment {
 	//*****PROVA SINGLETON*****
@@ -17,7 +22,6 @@ public class ControllerBookAppointment {
 	}
 	//*****FINE SINGLETON*****
 	
-	Vehicle selVehicle = new Vehicle();
 	
 	//*****METODI*****
 	public void saveNewVehicle(){

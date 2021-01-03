@@ -6,12 +6,21 @@ import java.util.*;
 public class Booking {
 	//*****ATTRIBUTI*****
 	private String bookID;
-	//private Date dateBook;
+	private Date dateBook = new Date();
 	private Mechanic infoMech;
 	private String problems;
 	private Vehicle selVehicle;
 	private Boolean bookingConfirm;
-	Date dateBook = new Date();
+	
+	//**Costruttore**
+	public Booking (String bookID, Date dateBook, Mechanic infoMech, String problems, Vehicle selVehicle, boolean bookingConfirm) {
+		this.bookID = bookID;
+		this.dateBook = dateBook;
+		this.infoMech = infoMech;
+		this.problems = problems;
+		this.selVehicle = selVehicle;
+		this.bookingConfirm = bookingConfirm;	
+	}
 	
 	//*****METODI*****
 	public String getBookID() {
