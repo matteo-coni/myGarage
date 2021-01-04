@@ -30,7 +30,7 @@ public class ControllerBookAppointment {
 	public void editVehicle(){
 		
 	}
-	public void DeleteVehicle(){
+	public void deleteVehicle(){
 		
 	}
 	public void findMechanic(String address, String area, String city){
