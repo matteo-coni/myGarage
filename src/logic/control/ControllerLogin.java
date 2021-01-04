@@ -2,15 +2,15 @@ package logic.control;
 
 public class ControllerLogin {
 	//*****PROVA SINGLETON*****
-	private static ControllerLogin INSTANCE = null;
+	private static ControllerLogin istance = null;
 	
 	//*****COSTRUTTORE*****
 	private ControllerLogin() {} //"private" perche' tramite getInstance() potr� essere chiamato solo dall'interno
 	
 	public static ControllerLogin getInstance() {
-		if(INSTANCE==null)
-			INSTANCE=new ControllerLogin();
-		return INSTANCE;
+		if(istance == null)
+			istance = new ControllerLogin();
+		return istance;
 	}
 	//*****FINE SINGLETON*****
 	

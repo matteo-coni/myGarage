@@ -10,15 +10,15 @@ import logic.model.User;
 
 public class ControllerBookAppointment {
 	//*****PROVA SINGLETON*****
-	private static ControllerBookAppointment INSTANCE = null;
+	private static ControllerBookAppointment istance = null;
 	
 	//*****COSTRUTTORE*****
 	private ControllerBookAppointment() {} //"private" perch� tramite getInstance() potr� essere chiamato solo dall'interno
 	
 	public static ControllerBookAppointment getInstance() {
-		if(INSTANCE==null)
-			INSTANCE=new ControllerBookAppointment();
-		return INSTANCE;
+		if(istance == null)
+			istance = new ControllerBookAppointment();
+		return istance;
 	}
 	//*****FINE SINGLETON*****
 	

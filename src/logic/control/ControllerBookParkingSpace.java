@@ -2,15 +2,15 @@ package logic.control;
 
 public class ControllerBookParkingSpace {
 	//*****PROVA SINGLETON*****
-	private static ControllerBookParkingSpace INSTANCE = null;
+	private static ControllerBookParkingSpace istance = null;
 	
 	//*****COSTRUTTORE*****
-	private ControllerBookParkingSpace() {} //"private" perché tramite getInstance() potrà essere chiamato solo dall'interno
+	private ControllerBookParkingSpace() {} //"private" perchï¿½ tramite getInstance() potrï¿½ essere chiamato solo dall'interno
 	
 	public static ControllerBookParkingSpace getInstance() {
-		if(INSTANCE==null)
-			INSTANCE=new ControllerBookParkingSpace();
-		return INSTANCE;
+		if(istance == null)
+			istance = new ControllerBookParkingSpace();
+		return istance;
 	}
 	//*****FINE SINGLETON*****
 	
