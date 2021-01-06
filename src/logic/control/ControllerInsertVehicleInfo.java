@@ -1,6 +1,6 @@
 package logic.control;
 
-
+import javafx.fxml.*;
 import java.util.*;
 import logic.model.Vehicle;
 import java.awt.*;
@@ -21,12 +21,11 @@ public class ControllerInsertVehicleInfo {
 	
 	//*****METODI*****
 	public void checkVehicle(String licensePlate) {
-		
+		System.out.println(licensePlate);
 	}
 	
-	//public void saveVehicle(String licensePlate, String vehicleBrand, String vehicleModel, int vehicleDisplacement, int vehiclePowertrains, String vehicleFuel, Date vehicleInsurance, Date vehicleTax, Date vehicleReview, Date vehicleService, Image img){
-	public void saveVehicle(Vehicle vehicle) {
-		
+	public void saveVehicle(String licensePlate, String vehicleBrand, String vehicleModel, int vehicleDisplacement, int vehiclePowertrains, String vehicleFuel, Date vehicleInsurance, Date vehicleTax, Date vehicleReview, Date vehicleService, Image img){
+	
 	}
 	/*
 	public void checkDeadline(Date vehicleInsurance) {
