@@ -13,17 +13,11 @@ import logic.control.ControllerInsertVehicleInfo;
 
 public class Main extends Application {
 	
-	@FXML
-	Button button;
-	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			
-
 			//BorderPane root = new BorderPane();
 			GridPane root = FXMLLoader.load(getClass().getResource("ViewDesktopMain.fxml"));
-			
 			
 			Scene scene = new Scene(root,400,400);
 		
@@ -35,19 +29,6 @@ public class Main extends Application {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-	}
-	
-	@FXML
-	public void calcola() {
-		
-		button.setText("prova");
-		//System.out.println(x);
-		
-		String name = button.getText();
-		ControllerInsertVehicleInfo control = ControllerInsertVehicleInfo.getInstance(); 
-		control.checkVehicle(name);
-		
-	
 	}
 	
 	public static void main(String[] args) {

@@ -21,15 +21,15 @@
 	<div class="container">
 		<form action="Web.jsp" name="myform" method="POST">
 			<div class="row">
-					<label for="username">Username</label>
-					<input type="text" id="username" name="username">
+				<label for="username">Username</label>
+				<input type="text" id="username" name="username">
 			</div>
 			<div class="row">
-					<label for="password">Password</label>
-					<input type="text" id="password" name="password">
+				<label for="password">Password</label>
+				<input type="text" id="password" name="password">
 			</div>
 			<div class="row">
-					<input type="submit" name="login" value="LogIn">
+				<input type="submit" name="login" value="LogIn">
 			</div>
 		</form>
 	</div>
