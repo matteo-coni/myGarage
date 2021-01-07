@@ -15,5 +15,13 @@ public class ControllerLogin {
 	//*****FINE SINGLETON*****
 	
 	//*****METODI*****
+	public boolean isValidate(String username, String password) {
+		boolean valid;
+		
+		//controlla nel database se username e password sono giusti
+			valid = true; //prova
+		
+		return valid;
+	}
 
 }

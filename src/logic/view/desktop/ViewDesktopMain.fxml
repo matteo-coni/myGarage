@@ -6,28 +6,22 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-
-<Pane fx:id="paneWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="914.0" prefWidth="1294.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.model.ControllerApplLogIn">
-   <children>
-      <TitledPane id="title" fx:id="titledPane" animated="false" prefHeight="914.0" prefWidth="1294.0" text="myGarage" textAlignment="CENTER">
-        <content>
-          <AnchorPane fx:id="AnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-               <children>
-                  <TextField fx:id="usernameField" layoutX="572.0" layoutY="352.0" text="username" />
-                  <PasswordField fx:id="passwordField" layoutX="572.0" layoutY="383.0" text="password" />
-                  <Button fx:id="logInButton" layoutX="572.0" layoutY="419.0" mnemonicParsing="false" text="LogIn" textAlignment="CENTER" />
-                  <Text id="text" fx:id="txtUsername" layoutX="512.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
-                  <Text id="text" fx:id="txtPassword" layoutX="514.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
-                  <Text id="text" fx:id="txtMyGarage" layoutX="617.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="myGarage" wrappingWidth="58.099609375" />
-               </children>
-               <padding>
-                  <Insets top="10.0" />
-               </padding>
-            </AnchorPane>
-        </content>
-      </TitledPane>
-   </children>
-</Pane>
+<TitledPane id="title" fx:id="titledPane" animated="false" prefHeight="914.0" prefWidth="1294.0" text="myGarage" textAlignment="CENTER" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.view.desktop.ControllerGrafLogin">
+   <content>
+      <AnchorPane fx:id="AnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+         <children>
+            <TextField fx:id="usernameField" layoutX="572.0" layoutY="352.0" text="" />
+            <PasswordField fx:id="passwordField" layoutX="572.0" layoutY="383.0" text="" />
+            <Button fx:id="loginButton" layoutX="572.0" layoutY="419.0" mnemonicParsing="false" onAction="#login" text="Login" textAlignment="CENTER" />
+            <Text id="text" fx:id="txtUsername" layoutX="512.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+            <Text id="text" fx:id="txtPassword" layoutX="514.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+            <Text id="text" fx:id="txtMyGarage" layoutX="617.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="myGarage" wrappingWidth="58.099609375" />
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </AnchorPane>
+   </content>
+</TitledPane>
