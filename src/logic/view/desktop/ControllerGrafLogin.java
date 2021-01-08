@@ -5,7 +5,7 @@ import javafx.scene.control.*;
 import javafx.stage.*;
 
 import logic.control.ControllerLogin;
-import logic.view.desktop.Main;
+
 
 
 public class ControllerGrafLogin {
@@ -26,13 +26,12 @@ public class ControllerGrafLogin {
 		String password = passwordField.getText();
 		
 		ControllerLogin controlLogin = ControllerLogin.getInstance();
-		ControllerGrafHome controlHome = new ControllerGrafHome();
+		BoundaryOwnerSaveVehicle controlHome = new BoundaryOwnerSaveVehicle();
+		
 		if (controlLogin.isValidate(username, password)){
 			System.out.println(username);
 			
 			Stage secondaryStage = Main.getStage();
-			
-			
 			controlHome.homePage(secondaryStage);
 			
 		}

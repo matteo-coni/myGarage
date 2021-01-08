@@ -5,8 +5,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-
-<GridPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="logic.view.desktop.ControllerGrafHome">
+<GridPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.view.desktop.ControllerGrafHome">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -25,7 +24,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" onAction="#provaHome" text="Button" />
+            <Button id="button" mnemonicParsing="false" onAction="#exit" text="Button" />
          </children>
       </GridPane>
    </children>

@@ -11,24 +11,27 @@ public class Vehicle {
 	private int vehicleDisplacement;
 	private int vehiclePowertrains;
 	private String vehicleFuel;
-	private Date vehicleInsurance = new Date();
+	/*private Date vehicleInsurance = new Date();
 	private Date vehicleTax = new Date();
 	private Date vehicleReview = new Date();
-	private Date vehicleService = new Date();
+	private Date vehicleService = new Date();*/
+	private Deadlines deadlines;
 	private Image img;
 	
 	//*****COSTRUTTORE*****
-	public Vehicle(String licensPlate, String vehicleBrand, String vehicleModel, int vehicleDisplacement, int vehiclePowertrains, String vehicleFuel, Date vehicleInsurance, Date vehicleTax, Date vehicleReview, Date vehicleService, Image img) {
+	public Vehicle(String licensPlate, String vehicleBrand, String vehicleModel, int vehicleDisplacement, int vehiclePowertrains, String vehicleFuel, Deadlines deadlines, /*Date vehicleInsurance, Date vehicleTax, Date vehicleReview, Date vehicleService,*/ Image img) {
+		
 		this.licensePlate = licensPlate;
 		this.vehicleBrand = vehicleBrand;
 		this.vehicleModel = vehicleModel;
 		this.vehicleDisplacement = vehicleDisplacement;
 		this.vehiclePowertrains = vehiclePowertrains;
 		this.vehicleFuel = vehicleFuel;
-		this.vehicleInsurance = vehicleInsurance;
+		this.deadlines = deadlines;
+		/*this.vehicleInsurance = vehicleInsurance;
 		this.vehicleTax = vehicleTax;
 		this.vehicleReview = vehicleReview;
-		this.vehicleService = vehicleService;
+		this.vehicleService = vehicleService;*/
 		this.img = img;
 	}
 		
@@ -74,7 +77,7 @@ public class Vehicle {
 	}
 	
 	public String getVehicleFuel() {
-		return vehicleFuel;
+		return this.vehicleFuel;
 	}
 	
 	public void setVehicleFuel(String vehicleFuel) {
@@ -82,35 +85,35 @@ public class Vehicle {
 	}
 	
 	public Date getVehicleInsurance() {
-		return vehicleInsurance;
+		return deadlines.vehicleInsurance;
 	}
 	
 	public void setVehicleInsurance(Date vehicleInsurance) {
-		this.vehicleInsurance = vehicleInsurance;
+		this.deadlines.vehicleInsurance = vehicleInsurance;
 	}
 	
 	public Date getVehicleTax() {
-		return vehicleTax;
+		return deadlines.vehicleTax;
 	}
 	
 	public void setVehicleTax(Date vehicleTax) {
-		this.vehicleTax = vehicleTax;
+		this.deadlines.vehicleTax = vehicleTax;
 	}
 	
 	public Date getVehicleReview() {
-		return vehicleReview;
+		return deadlines.vehicleReview;
 	}
 	
 	public void setVehicleReview(Date vehicleReview) {
-		this.vehicleReview = vehicleReview;
+		this.deadlines.vehicleReview = vehicleReview;
 	}
 	
 	public Date getVehicleService() {
-		return vehicleService;
+		return deadlines.vehicleService;
 	}
 	
 	public void setVehicleService(Date vehicleService) {
-		this.vehicleService = vehicleService;
+		this.deadlines.vehicleService = vehicleService;
 	}
 	
 	public Image getImg() {
