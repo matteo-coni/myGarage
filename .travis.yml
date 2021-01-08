@@ -6,6 +6,9 @@ addons:
   sonarcloud:
     organization: matteo-coni
     token: c15bbb12f80fc0d6a2250c739eb1f46801d72436
+  apt:
+    packages:
+      - oracle-java8-installer
 
 script: 
   - ant build
