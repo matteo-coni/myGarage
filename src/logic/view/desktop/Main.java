@@ -22,6 +22,7 @@ public class Main extends Application {
 			TitledPane root = FXMLLoader.load(getClass().getResource("ViewDesktopMain.fxml"));
 			
 			Scene scene = new Scene(root,1294,914);
+			
 		
 			//scene.setRoot(root);
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());

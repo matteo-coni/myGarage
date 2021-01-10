@@ -15,6 +15,10 @@ public class ControllerGrafHome /* extends Application*/ {
 	
 	@FXML
 	Button button;
+	Button button1;
+	Button button2;
+	Button button3;
+	Button button4;
 	
 	@FXML
 	public void exit() {
