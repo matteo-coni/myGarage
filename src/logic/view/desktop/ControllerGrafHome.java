@@ -5,6 +5,7 @@ import javafx.scene.control.*;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.*;
+import javafx.scene.image.*;
 import javafx.scene.layout.*;
 import javafx.fxml.FXML;
 
@@ -19,6 +20,7 @@ public class ControllerGrafHome /* extends Application*/ {
 	Button button2;
 	Button button3;
 	Button button4;
+	Image imageVehicle;
 	
 	@FXML
 	public void exit() {

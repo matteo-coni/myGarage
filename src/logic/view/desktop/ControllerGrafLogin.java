@@ -26,7 +26,7 @@ public class ControllerGrafLogin {
 		String password = passwordField.getText();
 		
 		ControllerLogin controlLogin = ControllerLogin.getInstance();
-		BoundaryOwnerSaveVehicle controlHome = new BoundaryOwnerSaveVehicle();
+		ViewOwnerSaveVehicle controlHome = new ViewOwnerSaveVehicle();
 		
 		if (controlLogin.isValidate(username, password)){
 			System.out.println(username);
