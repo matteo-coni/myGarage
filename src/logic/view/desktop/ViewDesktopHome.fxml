@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -8,18 +9,21 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="914.0" prefWidth="1294.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.view.desktop.ControllerGrafHome">
+<AnchorPane fx:id="Anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="914.0" prefWidth="1294.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.view.desktop.ControllerGrafHome">
    <children>
-      <Line endX="219.76271057128906" endY="915.134033203125" startX="219.76271057128906" startY="-1.6907362805795856E-5" />
-      <Line endX="1310.0001220703125" endY="146.0521240234375" layoutX="10.0" layoutY="10.0" startX="-9.999993324279785" startY="146.0521240234375" />
+      <Line endX="206.0" endY="914.0" startX="206.0" />
+      <Line endX="1294.0" endY="156.0" startY="156.0" />
       <GridPane prefHeight="914.0" prefWidth="1294.0" snapToPixel="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
-          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="425.03367614746094" minWidth="10.0" prefWidth="206.7626953125" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="206.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="1135.6269226074219" minWidth="10.0" prefWidth="1087.2373046875" />
         </columnConstraints>
         <rowConstraints>
@@ -30,7 +34,7 @@
           <RowConstraints maxHeight="657.1536560058594" minHeight="10.0" prefHeight="189.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <GridPane alignment="CENTER" prefHeight="156.0" prefWidth="162.0">
+            <GridPane fx:id="grid" alignment="CENTER" prefHeight="156.0" prefWidth="162.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -40,20 +44,32 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="button1" mnemonicParsing="false" prefHeight="20.0" prefWidth="67.0" text="1" />
-                  <Button fx:id="button2" mnemonicParsing="false" prefHeight="32.0" prefWidth="70.0" text="2" GridPane.columnIndex="1" />
                   <Button fx:id="button3" alignment="BOTTOM_CENTER" contentDisplay="RIGHT" layoutX="80.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="60.0" text="3" textAlignment="CENTER" GridPane.rowIndex="1" />
-                  <Button fx:id="button4" alignment="CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="27.0" prefWidth="47.0" text="4" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <Circle fill="WHITE" layoutX="51.0" layoutY="36.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Text layoutX="38.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M">
+                           <font>
+                              <Font size="33.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <ImageView fitHeight="58.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@../../../../../images/help.png" />
+                     </image>
+                  </ImageView>
                </children>
             </GridPane>
             <AnchorPane prefHeight="919.0" prefWidth="1100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.rowSpan="2147483647">
                <children>
-                  <ImageView fitHeight="635.0" fitWidth="1100.0" opacity="0.33" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="124.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <ImageView fitHeight="740.0" fitWidth="1312.0" layoutX="-206.0" layoutY="20.0" opacity="0.33" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../29cb0f221e164b2372a2decc39242575.jpg" />
+                        <Image url="@../../../../../images/BackgroundFerrari.jpg" />
                      </image>
                   </ImageView>
-                  <Text layoutX="238.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Benvenuto su myGarage" wrappingWidth="623.5694885253906">
+                  <Text layoutX="238.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Benvenuto su myGarage" wrappingWidth="623.5694885253906">
                      <font>
                         <Font size="60.0" />
                      </font>
@@ -65,16 +81,21 @@
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                <children>
-                  <ImageView fx:id="imageVehicle" fitHeight="150.0" fitWidth="200.0" layoutX="35.0" layoutY="20.0" onMouseClicked="#exit" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.7626953125" AnchorPane.topAnchor="20.0">
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="159.0" layoutX="25.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" width="160.0" />
+                  <ImageView fx:id="imageVehicle" fitHeight="159.0" fitWidth="157.0" layoutX="26.0" layoutY="19.0" onMouseClicked="#exit" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="19.0">
                      <image>
-                        <Image url="@../../../../../../Storyboard/images-2.png" />
+                        <Image url="@../../../../../images/InsertVehicle.png" />
                      </image>
+                     <cursor>
+                        <Cursor fx:constant="CLOSED_HAND" />
+                     </cursor>
                   </ImageView>
+                  <Rectangle id="RectInsertVehicle" arcHeight="5.0" arcWidth="5.0" fill="#e17618" height="159.0" layoutX="25.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
                </children>
             </AnchorPane>
          </children>
       </GridPane>
-      <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="219.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="156.0" prefWidth="1102.0" snapToPixel="false" text="myGarage" textAlignment="CENTER" textFill="#e17618" AnchorPane.leftAnchor="219.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="206.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="156.0" prefWidth="1089.0" snapToPixel="false" text="myGarage" textAlignment="CENTER" textFill="#e17618" AnchorPane.leftAnchor="206.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
          <font>
             <Font name="System Italic" size="130.0" />
          </font>
