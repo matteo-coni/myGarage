@@ -1,5 +1,7 @@
 package logic.control;
 
+import logic.bean.*;
+
 public class ControllerLogin {
 	//*****PROVA SINGLETON*****
 	private static ControllerLogin istance = null;
@@ -15,7 +17,7 @@ public class ControllerLogin {
 	//*****FINE SINGLETON*****
 	
 	//*****METODI*****
-	public boolean isValidate(String username, String password) {
+	public boolean isValidate(LoginBean loginBean) {
 		boolean valid;
 		
 		//controlla nel database se username e password sono giusti
