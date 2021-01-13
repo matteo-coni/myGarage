@@ -18,14 +18,13 @@ import logic.view.desktop.*;
 
 public class ViewLoginMain extends Application {
 	
-	static Stage primaryStage;
-	
+	static Stage primaryStage; 
 	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
 			//BorderPane root = new BorderPane();
-			TitledPane root = FXMLLoader.load(getClass().getResource("ViewDesktopMain.fxml"));
+			TitledPane root = FXMLLoader.load(getClass().getResource("Login.fxml"));
 			
 			Scene scene = new Scene(root,1294,914);
 			
