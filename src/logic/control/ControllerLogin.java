@@ -4,15 +4,15 @@ import logic.bean.*;
 
 public class ControllerLogin {
 	//*****PROVA SINGLETON*****
-	private static ControllerLogin istance = null;
+	private static ControllerLogin instance = null;
 	
 	//*****COSTRUTTORE*****
 	private ControllerLogin() {} //"private" perche' tramite getInstance() potra essere chiamato solo dall'interno
 	
 	public static ControllerLogin getInstance() {
-		if(istance == null)
-			istance = new ControllerLogin();
-		return istance;
+		if(instance == null)
+			instance = new ControllerLogin();
+		return instance;
 	}
 	//*****FINE SINGLETON*****
 	

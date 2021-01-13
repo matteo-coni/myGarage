@@ -1,0 +1,57 @@
+package logic.view.desktop.controllerview;
+
+import logic.bean.*;
+
+import java.io.IOException;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
+import javafx.stage.*;
+
+import logic.control.ControllerLogin;
+import logic.view.desktop.factory.viewfactory.*;
+import logic.view.desktop.view.ViewLoginMain;
+import logic.view.desktop.view.View;
+import logic.view.desktop.view.ViewHomeVehicle;
+
+
+
+public class ControllerGrafLogin {
+	
+	public ControllerGrafLogin() {}
+	
+	@FXML
+	Button loginButton;
+	@FXML
+	TextField usernameField;
+	@FXML
+	PasswordField passwordField;
+	
+	@FXML
+	public void login() throws IOException {
+		
+		String username = usernameField.getText();
+		String password = passwordField.getText();
+		
+		LoginBean loginBean = new LoginBean(username,password);
+		ControllerLogin controlLogin = ControllerLogin.getInstance();
+		ViewHomeVehicle controlHome = new ViewHomeVehicle();
+		
+		if (controlLogin.isValidate(loginBean)){
+			System.out.println(username);
+			
+			//Stage secondaryStage = ViewLoginMain.getStage();
+			//controlHome.homePage(secondaryStage);
+			//ControllerMain.getInstance().setId(bean.getId());
+			FactoryView factory = FactoryView.getInstance();
+			View view;
+			view = factory.createView(TypeView.GYMPAGE); 
+				
+			ControllerMain.getInstance().replace(ControllerMain.getContainer(), view);
+			
+		}
+		
+		
+	}
+
+}
