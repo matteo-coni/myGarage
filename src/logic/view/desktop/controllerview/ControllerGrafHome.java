@@ -32,7 +32,7 @@ public class ControllerGrafHome /* extends Application*/ {
 	AnchorPane anchor;
 	
 	//ViewHomeVehicle viewVehicle = new ViewHomeVehicle();
-	ViewLoginMain viewLogin = new ViewLoginMain();
+	//ViewLoginMain viewLogin = new ViewLoginMain();
 	
 	@FXML
 	public void exit() {

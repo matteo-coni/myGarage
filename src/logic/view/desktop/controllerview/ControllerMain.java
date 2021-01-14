@@ -1,19 +1,28 @@
 package logic.view.desktop.controllerview;
 
-import javafx.scene.layout.BorderPane;
-import logic.view.desktop.view.View;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class ControllerMain {
+import javafx.scene.layout.BorderPane;
+//import logic.controller.MainController;
+import logic.view.desktop.view.View;
+import javafx.fxml.Initializable;
+import java.lang.reflect.AccessibleObject;
+
+
+
+public class ControllerMain /*implements Initializable*/ {
 	
 	
 	//****Singleton****//
 	private static ControllerMain instance = null;
-	
+	//instance.setAccessible(true);
 	private ControllerMain() {}
 
 	public static synchronized ControllerMain getInstance() {
 		if(instance == null)
 			instance = new ControllerMain();
+			
 		return instance;
 	}
 ///Fine singleton
@@ -42,6 +51,11 @@ public class ControllerMain {
 		container.setCenter(node.getRoot());
 		
 	}
+	
+	/*@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		ControllerMain.setContainer(container);
+	}*/	
 	
 }
 

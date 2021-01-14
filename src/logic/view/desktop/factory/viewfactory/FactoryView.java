@@ -25,12 +25,7 @@ public class FactoryView {
 			return new ViewLogin(view);
 		case 1: // return gymPage
 			return new ViewHome(view);
-		/*case 2: // return userPage
-			return new UserPageView(view);
-		case 3: // return offerTraining
-			return new TrainingFormView(view);
-		case 5:
-			return new TrainingConfView(view);*/
+		
 		default:
 			//throw new IOException("Factory exception: view not found");
 			return new ViewLogin(view);
