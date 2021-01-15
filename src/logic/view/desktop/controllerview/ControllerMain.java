@@ -4,19 +4,19 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.scene.layout.BorderPane;
-//import logic.controller.MainController;
+
 import logic.view.desktop.view.View;
 import javafx.fxml.Initializable;
 import java.lang.reflect.AccessibleObject;
 
 
 
-public class ControllerMain /*implements Initializable*/ {
+public class ControllerMain  {
 	
 	
 	//****Singleton****//
 	private static ControllerMain instance = null;
-	//instance.setAccessible(true);
+	
 	private ControllerMain() {}
 
 	public static synchronized ControllerMain getInstance() {
