@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<TitledPane id="title" fx:id="titledPane" animated="false" prefHeight="914.0" prefWidth="1294.0" text="myGarage" textAlignment="CENTER" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.view.desktop.controllerview.ControllerGrafLogin">
+<TitledPane id="title" fx:id="titledPane" animated="false" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" textAlignment="CENTER" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.view.desktop.controllerview.ControllerGrafLogin">
    <content>
       <AnchorPane fx:id="AnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
          <children>
