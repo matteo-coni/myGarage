@@ -48,7 +48,7 @@ public class ViewLoginMain extends Application {
 		
 			Scene ViewLoginMain = new Scene(root);
 			mainStage.setScene(ViewLoginMain);
-			//mainStage.initStyle(StageStyle.UNDECORATED);
+			
 			/*root.setOnMousePressed(event -> {
 				offsetX = event.getSceneX();
 				offsetY = event.getSceneY();			

@@ -25,7 +25,7 @@ public class ControllerMain  {
 			
 		return instance;
 	}
-///Fine singleton
+	///Fine singleton
 	
 	
 	private static BorderPane container;

@@ -4,7 +4,11 @@ import java.net.URL;
 
 public enum TypeView {
 	LOGIN(0, "/logic/view/desktop/view/ViewDesktopMain.fxml"),
-	GYMPAGE(1, "/logic/view/desktop/view/ViewDesktopHome.fxml");
+	HOMEPAGE(1, "/logic/view/desktop/view/ViewDesktopHome.fxml"),
+	INSERTVEHICLEPAGE(2, ""),
+	PARKINGPAGE(3,""),
+	MECHANICPAGE(4,"");
+	
 
 	private final int type;
 	private final String path;
@@ -14,7 +18,9 @@ public enum TypeView {
 		this.path = p;
 	}
 	public static TypeView getView(int type) {
-		for(TypeView subview : TypeView.values()) if(subview.type == type) return subview;
+		for(TypeView subview : TypeView.values()) 
+			if(subview.type == type) 
+				return subview;
 		throw new IllegalArgumentException("Unable to find the requested view("+type+")");
 	}
 

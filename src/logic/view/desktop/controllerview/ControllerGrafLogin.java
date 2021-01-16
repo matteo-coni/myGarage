@@ -39,7 +39,7 @@ public class ControllerGrafLogin {
 			//ControllerMain.getInstance().setId(bean.getId());
 			FactoryView factory = FactoryView.getInstance();
 			View view;
-			view = factory.createView(TypeView.GYMPAGE); 
+			view = factory.createView(TypeView.HOMEPAGE); 
 				
 			ControllerMain.getInstance().replace(ControllerMain.getContainer(), view);
 			
