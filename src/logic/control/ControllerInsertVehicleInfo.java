@@ -21,7 +21,6 @@ public class ControllerInsertVehicleInfo {
 	
 	//*****METODI*****
 	public void checkVehicle(String licensePlate) {
-		System.out.println(licensePlate);
 		/*
 		 * if(licensePlate== **query su DAO per licensePlate in DB**)
 		 * 	return false;
@@ -33,22 +32,54 @@ public class ControllerInsertVehicleInfo {
 	public void saveVehicle(String licensePlate, String vehicleBrand, String vehicleModel, int vehicleDisplacement, int vehiclePowertrains, String vehicleFuel, Date vehicleInsurance, Date vehicleTax, Date vehicleReview, Date vehicleService, Image img){
 	
 	}
-	/*
-	public void checkDeadline(Date vehicleInsurance) {
-		if(**data odierna**==(vehicleInsurance - 3 settimane))
-			return **banner "ricordati di controllare l'assicurazione"**;
+	
+	public void checkDeadlineInsurance(Date vehicleInsurance) {
+		GregorianCalendar dataAttuale = new GregorianCalendar();
+		int annoAttuale = dataAttuale.get(GregorianCalendar.YEAR);
+		int meseAttuale = dataAttuale.get(GregorianCalendar.MONTH);
+		
+		int annoDeadline = vehicleInsurance.get(GregorianCalendar.YEAR);
+		int meseDeadline = vehicleInsurance.get(GregorianCalendar.MONTH)-1;
+		
+		if(annoAttuale == annoDeadline && meseAttuale == meseDeadline);
+			System.out.println("ricordati di controllare l'assicurazione!");
 	}
-	public void checkDeadline(Date vehicleTax) {
-		if(**data odierna**==(vehicleTax - 3 settimane))
-			return **banner "ricordati di controllare il bollo"**;
+	
+	public void checkDeadlineTax(Date vehicleTax) {
+		GregorianCalendar dataAttuale = new GregorianCalendar();
+		int annoAttuale = dataAttuale.get(GregorianCalendar.YEAR);
+		int meseAttuale = dataAttuale.get(GregorianCalendar.MONTH);
+		
+		int annoDeadline = vehicleTax.get(GregorianCalendar.YEAR);
+		int meseDeadline = vehicleTax.get(GregorianCalendar.MONTH)-1;
+		
+		if(annoAttuale == annoDeadline && meseAttuale == meseDeadline);
+			System.out.println("ricordati di controllare il bollo!");
+
 	}
-	public void checkDeadline(Date vehicleReview) {
-		if(**data odierna**==(vehicleReview - 3 settimane))
-			return **banner "ricordati di controllare la revisione"**;
+	
+	public void checkDeadlineReview(Date vehicleReview) {
+		GregorianCalendar dataAttuale = new GregorianCalendar();
+		int annoAttuale = dataAttuale.get(GregorianCalendar.YEAR);
+		int meseAttuale = dataAttuale.get(GregorianCalendar.MONTH);
+		
+		int annoDeadline = vehicleReview.get(GregorianCalendar.YEAR);
+		int meseDeadline = vehicleReview.get(GregorianCalendar.MONTH)-1;
+		
+		if(annoAttuale == annoDeadline && meseAttuale == meseDeadline);
+			System.out.println("ricordati di controllare la revisione!");
 	}
-	public void checkDeadline(Date vehicleService) {
-		if(**data odierna**==(vehicleService - 3 settimane))
-			return **banner "ricordati di controllare i servizi??"**;
+	
+	public void checkDeadlineService(Date vehicleService) {
+		GregorianCalendar dataAttuale = new GregorianCalendar();
+		int annoAttuale = dataAttuale.get(GregorianCalendar.YEAR);
+		int meseAttuale = dataAttuale.get(GregorianCalendar.MONTH);
+		
+		int annoDeadline = vehicleService.get(GregorianCalendar.YEAR);
+		int meseDeadline = vehicleService.get(GregorianCalendar.MONTH)-1;
+		
+		if(annoAttuale == annoDeadline && meseAttuale == meseDeadline);
+			System.out.println("ricordati di controllare i servizi??!");
 	}
-	*/
+	
 }
