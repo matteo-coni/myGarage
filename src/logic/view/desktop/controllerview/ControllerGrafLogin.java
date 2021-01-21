@@ -43,6 +43,8 @@ public class ControllerGrafLogin {
 				
 			ControllerMain.getInstance().replace(ControllerMain.getContainer(), view);
 			
+		} else {
+			System.out.println("errore nel login"); //debug
 		}
 		
 		
