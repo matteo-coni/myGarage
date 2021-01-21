@@ -16,6 +16,10 @@ public class User {
 		this.vehicle = vehicle;
 	}
 		
+	public User(String username) {
+		this.name = username;
+	}
+	
 	//*****METODI*****
 	public String getName() {
 		return name;
