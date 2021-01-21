@@ -2,6 +2,7 @@ package logic.control;
 
 import logic.bean.*;
 import logic.model.DAO.*;
+import logic.model.User;
 
 public class ControllerLogin {
 	//*****PROVA SINGLETON*****
@@ -22,17 +23,13 @@ public class ControllerLogin {
 		boolean valid;
 		
 		//--query DAO
-		 
-		 	
+		//controlla nel database se username e password sono giusti
 		UserDAO userdao = new UserDAO();
-		
 		valid = userdao.findUser(loginBean.getUsername(),loginBean.getPassword());
 		
-		
-		
-		//controlla nel database se username e password sono giusti
-		valid = true; //prova
-		
+		if (valid==true) {
+			User user = new User(loginBean.getUsername());
+		}
 		return valid;
 	}
 
