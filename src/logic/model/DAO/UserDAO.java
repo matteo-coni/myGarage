@@ -8,17 +8,17 @@ import java.sql.Statement;
 
 public class UserDAO {
 	
-	public static boolean findUser(String username, String password) {
+	public boolean findUser(String username, String password) {
         try {
             // Carichiamo un driver per connetterci a Java DB
             String driver = "com.mysql.jdbc.Driver";
             Class.forName(driver); 
             
             // Creiamo la stringa di connessione
-            String url = "jdbc:derby:Music"; //inserire nome database
+            String url = "jdbc:mysql://localhost:3306/mydb"; //inserire nome database
             
             // Otteniamo una connessione con username e password
-            Connection con = DriverManager.getConnection (url/* , "myUserName", "myPassword" */);
+            Connection con = DriverManager.getConnection (url , "root", "admin");
             
             // Creiamo un oggetto Statement per interrogare il db
             Statement stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
@@ -26,7 +26,7 @@ public class UserDAO {
             
             // Eseguiamo una query e immagazziniamone i risultati
             // in un oggetto ResultSet
-            String qry = "SELECT * FROM User WHERE Username = '" + username + "', Password = '" + password + "';";
+            String qry = "SELECT * FROM User WHERE Username = " + username; //, Password = '" + password + "';";
             
             ResultSet res = stm.executeQuery(qry);
             
@@ -35,7 +35,10 @@ public class UserDAO {
             	res.close();
                 stm.close();
                 con.close();
-            	return true; //trovati ritorno vero
+                System.out.println(username);
+            	return true; //trovati --> ritorno vero
+            	
+            	/****** MANCA LA CREAZIONE DELL'UTENTE USER    ****** */
             }
             res.close();
             stm.close();
