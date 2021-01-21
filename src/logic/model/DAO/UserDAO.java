@@ -26,8 +26,8 @@ public class UserDAO {
             
             // Eseguiamo una query e immagazziniamone i risultati
             // in un oggetto ResultSet
-            String qry = "SELECT * FROM User WHERE Username = " + username; //, Password = '" + password + "';";
-            
+            String qry = "SELECT * FROM User WHERE Username = '" + username + "';";
+            System.out.println(qry); //prova stringa query
             ResultSet res = stm.executeQuery(qry);
             
             if(res.next()) {
