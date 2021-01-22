@@ -20,12 +20,13 @@ public class FactoryView {
 	
 	public View createView(TypeView view) throws IOException{
 		
-		switch(view.getType()) {
+		switch(view.getType()) {    //scelta view con switch -- numero = riferimento TypeView
 		case 0:
 			return new ViewLogin(view);
-		case 1: // return gymPage
+		case 1: 
 			return new ViewHome(view);
-		
+		case 2: 
+			return new ViewInsertVehicle(view);
 		default:
 			//throw new IOException("Factory exception: view not found");
 			return new ViewLogin(view);

@@ -6,7 +6,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitMenuButton?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -96,39 +95,111 @@
                         <Font size="20.0" />
                      </font>
                   </SplitMenuButton>
-                  <ImageView fitHeight="204.0" fitWidth="237.0" layoutX="83.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imageVehicle" fitHeight="230.0" fitWidth="230.0" layoutX="96.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true" />
                   <Text layoutX="441.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Targa">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Text>
-                  <TextField layoutX="384.0" layoutY="211.0" />
-                  <TextField layoutX="589.0" layoutY="213.0" />
-                  <Text layoutX="635.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Marca">
+                  <Text layoutX="652.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Marca">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Text>
-                  <Text layoutX="859.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modello">
+                  <Text layoutX="859.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modello">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Text>
-                  <TextField layoutX="819.0" layoutY="213.0" />
-                  <TextField layoutX="383.0" layoutY="341.0" />
-                  <TextField layoutX="594.0" layoutY="341.0" />
-                  <TextField layoutX="821.0" layoutY="340.0" />
-                  <Text layoutX="149.0" layoutY="438.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assicurazione">
+                  <Text layoutX="148.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assicurazione">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Text>
-                  <TextField layoutX="128.0" layoutY="468.0" />
-                  <TextField layoutX="388.0" layoutY="471.0" />
-                  <TextField layoutX="601.0" layoutY="473.0" />
-                  <TextField layoutX="831.0" layoutY="474.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="41.0" layoutX="336.0" layoutY="404.0" stroke="BLACK" strokeType="INSIDE" width="246.0" />
-                  <Text layoutX="388.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="134.1030595459216" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="26.0" layoutX="371.0" layoutY="218.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Text fx:id="textTarga" layoutX="372.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="198.93380905764036">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Text>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="26.0" layoutX="585.0" layoutY="218.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="26.0" layoutX="800.0" layoutY="218.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Text fx:id="textMarca" layoutX="587.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="198.9337480224841">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="textModello" layoutX="800.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="197.3901689209216">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Text>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="26.0" layoutX="371.0" layoutY="329.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="26.0" layoutX="585.0" layoutY="329.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Text layoutX="425.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cilindrata">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="652.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cavalli">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="textCilindrata" layoutX="372.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="197.3901689209216">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="textCavalli" layoutX="587.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="197.3901689209216">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="textModello12" layoutX="382.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="197.3901689209216">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Text>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="26.0" layoutX="587.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="26.0" layoutX="372.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="26.0" layoutX="800.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="26.0" layoutX="116.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+                  <Text layoutX="435.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bollo">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="638.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Revisione">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="852.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tagliando">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="textAssicurazione" layoutX="114.0" layoutY="481.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="197.3901689209216">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="textBollo" layoutX="374.0" layoutY="481.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="197.3901689209216">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="textRevisione" layoutX="588.0" layoutY="480.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="197.3901689209216">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="textTagliando" layoutX="801.0" layoutY="480.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="197.3901689209216">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Text>
                </children>
                <GridPane.margin>
                   <Insets />
@@ -137,7 +208,7 @@
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="159.0" layoutX="25.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" width="160.0" />
-                  <ImageView fx:id="imageVehicle" fitHeight="152.0" fitWidth="146.0" layoutX="34.0" layoutY="24.0" onMouseClicked="#exit" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="24.0">
+                  <ImageView fx:id="imageVehicle" fitHeight="152.0" fitWidth="146.0" layoutX="34.0" layoutY="24.0" onMouseClicked="#insertVehicle" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="24.0">
                      <image>
                         <Image url="@../../../../../images/InsertVehicle.png" />
                      </image>

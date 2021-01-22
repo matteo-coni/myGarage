@@ -6,6 +6,10 @@ import javafx.scene.image.*;
 import javafx.scene.layout.*;
 import javafx.fxml.FXML;
 import javafx.scene.text.*;
+import logic.view.desktop.factory.viewfactory.FactoryView;
+import logic.view.desktop.factory.viewfactory.TypeView;
+import logic.view.desktop.view.View;
+import java.io.IOException;
 
 
 public class ControllerGrafHome  {
@@ -14,15 +18,24 @@ public class ControllerGrafHome  {
 	Button button;
 	@FXML
 	Button button3;
-	Button button2;
 	
-	Image imageVehicle;
+	Button button2;
+	@FXML
+	ImageView imageVehicle;
+	
 	GridPane grid;
 	@FXML
 	Text label1;
+	@FXML
+	Text textTarga, textModello, textMarca, textCilindrata, textCavalli;
+	@FXML
+	Text textAssicurazione, textBollo, textRevisione, textTagliando;
+	
 	
 	@FXML
 	AnchorPane anchor;
+	
+	//Image imgVeh = new Image("/images/BookMechanic.png");
 	
 	@FXML
 	public void exit() {
@@ -30,9 +43,25 @@ public class ControllerGrafHome  {
 		System.out.println("ciaociao");
 		button3.setText("oh");
 		label1.setText("essu");
-		
-			
+		textTarga.setText("ei");
+		textModello.setText("ei");
+		//imageVehicle.setImage(imgVeh);
+		}
 	
+	@FXML
+	public void insertVehicle() {
+		
+		try {
+		FactoryView factory = FactoryView.getInstance();
+		View view;
+		view = factory.createView(TypeView.INSERTVEHICLEPAGE); 
+			
+		ControllerMain.getInstance().replace(ControllerMain.getContainer(), view);
+		} catch (IOException e) {
+			//dummy
+				
+		}
+		
 	}
 }
 
