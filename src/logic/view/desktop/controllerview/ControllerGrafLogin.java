@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.text.*;
 import logic.control.ControllerLogin;
 import logic.view.desktop.factory.viewfactory.*;
 import logic.view.desktop.view.View;
@@ -22,6 +23,14 @@ public class ControllerGrafLogin {
 	TextField usernameField;
 	@FXML
 	PasswordField passwordField;
+	@FXML
+	Button registrButton;
+	@FXML
+	Button loginButtonFB;
+	@FXML
+	Button loginButtonGoogle;
+	@FXML
+	Text textError;
 	
 	@FXML
 	public void login() throws IOException {
@@ -45,6 +54,9 @@ public class ControllerGrafLogin {
 			
 		} else {
 			System.out.println("errore nel login"); //debug
+			textError.setText("Username o password errati");
+		
+			
 		}
 		
 		

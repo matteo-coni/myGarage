@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -76,9 +77,9 @@
                         <Image url="@../../../../../images/BackgroundFerrari.jpg" />
                      </image>
                   </ImageView>
-                  <Text layoutX="238.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Benvenuto su myGarage" wrappingWidth="623.5694885253906">
+                  <Text layoutX="302.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Benvenuto su myGarage" wrappingWidth="526.7860717773438">
                      <font>
-                        <Font size="60.0" />
+                        <Font size="50.0" />
                      </font>
                   </Text>
                   <Text layoutX="57.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seleziona il veicolo che vuoi visualizzare" wrappingWidth="535.1619262695312">
@@ -95,6 +96,39 @@
                         <Font size="20.0" />
                      </font>
                   </SplitMenuButton>
+                  <ImageView fitHeight="204.0" fitWidth="237.0" layoutX="83.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true" />
+                  <Text layoutX="441.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Targa">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <TextField layoutX="384.0" layoutY="211.0" />
+                  <TextField layoutX="589.0" layoutY="213.0" />
+                  <Text layoutX="635.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Marca">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="859.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modello">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <TextField layoutX="819.0" layoutY="213.0" />
+                  <TextField layoutX="383.0" layoutY="341.0" />
+                  <TextField layoutX="594.0" layoutY="341.0" />
+                  <TextField layoutX="821.0" layoutY="340.0" />
+                  <Text layoutX="149.0" layoutY="438.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assicurazione">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <TextField layoutX="128.0" layoutY="468.0" />
+                  <TextField layoutX="388.0" layoutY="471.0" />
+                  <TextField layoutX="601.0" layoutY="473.0" />
+                  <TextField layoutX="831.0" layoutY="474.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="41.0" layoutX="336.0" layoutY="404.0" stroke="BLACK" strokeType="INSIDE" width="246.0" />
+                  <Text layoutX="388.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="134.1030595459216" />
                </children>
                <GridPane.margin>
                   <Insets />

@@ -14,10 +14,14 @@
          <children>
             <TextField fx:id="usernameField" layoutX="572.0" layoutY="352.0" text="" />
             <PasswordField fx:id="passwordField" layoutX="572.0" layoutY="383.0" text="" />
-            <Button fx:id="loginButton" layoutX="572.0" layoutY="419.0" mnemonicParsing="false" onAction="#login" text="Login" textAlignment="CENTER" />
+            <Button fx:id="loginButton" layoutX="572.0" layoutY="419.0" mnemonicParsing="false" onAction="#login" prefHeight="27.0" prefWidth="69.0" text="Login" textAlignment="CENTER" />
             <Text id="text" fx:id="txtUsername" layoutX="512.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
             <Text id="text" fx:id="txtPassword" layoutX="514.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
             <Text id="text" fx:id="txtMyGarage" layoutX="617.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="myGarage" wrappingWidth="58.099609375" />
+            <Button fx:id="registrButton" layoutX="658.0" layoutY="419.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" text="Registrati" />
+            <Button fx:id="loginButtonFB" layoutX="572.0" layoutY="457.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="160.0" text="Login with Facebook" />
+            <Button fx:id="loginButtonGoogle" layoutX="572.0" layoutY="494.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="160.0" text="Login with Google" />
+            <Text fx:id="textError" fill="RED" layoutX="575.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="161.7447509765625" />
          </children>
          <padding>
             <Insets top="10.0" />
