@@ -5,12 +5,19 @@ import logic.view.desktop.factory.viewfactory.FactoryView;
 import logic.view.desktop.factory.viewfactory.TypeView;
 import logic.view.desktop.view.View;
 import javafx.fxml.*;
+import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
 import java.io.IOException;
+
 
 public class ControllerGrafInsert {
 
 	@FXML
 	Polygon Back;
+	@FXML
+	Button button = new Button("prova");
+	@FXML
+	GridPane grid1;
 	
 	@FXML
 	public void back() throws IOException{
@@ -19,5 +26,11 @@ public class ControllerGrafInsert {
 		view = factory.createView(TypeView.HOMEPAGE); 
 			
 		ControllerMain.getInstance().replace(ControllerMain.getContainer(), view);
+	}
+	
+	@FXML
+	public void setButton() {
+		grid1.add(button,0,0); //*************PROVA INSERIMENTO RUNTIME*************
+		
 	}
 }
