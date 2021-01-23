@@ -32,8 +32,8 @@ public class ControllerGrafHome  {
 	Text textAssicurazione, textBollo, textRevisione, textTagliando;
 	
 	
-	@FXML
-	AnchorPane anchor;
+	//@FXML
+	//AnchorPane anchor;
 	
 	//Image imgVeh = new Image("/images/BookMechanic.png");
 	
@@ -46,6 +46,7 @@ public class ControllerGrafHome  {
 		textTarga.setText("ei");
 		textModello.setText("ei");
 		//imageVehicle.setImage(imgVeh);
+		
 		}
 	
 	@FXML
@@ -57,6 +58,7 @@ public class ControllerGrafHome  {
 		view = factory.createView(TypeView.INSERTVEHICLEPAGE); 
 			
 		ControllerMain.getInstance().replace(ControllerMain.getContainer(), view);
+		
 		} catch (IOException e) {
 			//dummy
 				
