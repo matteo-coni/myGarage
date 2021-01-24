@@ -1,9 +1,12 @@
 package logic.control;
 
 import javafx.fxml.*;
+
 import java.util.*;
 import logic.model.Vehicle;
 import java.awt.*;
+import logic.bean.*;
+import logic.model.DAO.*;
 
 public class ControllerInsertVehicleInfo {
 	//*****PROVA SINGLETON*****
@@ -29,9 +32,21 @@ public class ControllerInsertVehicleInfo {
 		*/
 	}
 	
-	public void saveVehicle(String licensePlate, String vehicleBrand, String vehicleModel, int vehicleDisplacement, int vehiclePowertrains, String vehicleFuel, Date vehicleInsurance, Date vehicleTax, Date vehicleReview, Date vehicleService, Image img){
+	/*public void saveVehicle(String licensePlate, String vehicleBrand, String vehicleModel, int vehicleDisplacement, int vehiclePowertrains, String vehicleFuel, Date vehicleInsurance, Date vehicleTax, Date vehicleReview, Date vehicleService, Image img){
 	
+	}*/
+	
+	public void saveVehicle(VehicleBean vehicleBean) {
+		
+		VehicleDAO vehicledao = new VehicleDAO();
+		vehicledao.saveVehicle(vehicleBean.getTargaVehicle(), vehicleBean.getMarcaVehicle(), vehicleBean.getModelloVehicle(), vehicleBean.getCilindrataVehicle(), vehicleBean.getCavalliVehicle(), vehicleBean.getScadAssicurazione(), vehicleBean.getScadBollo(), vehicleBean.getScadRevisione(), vehicleBean.getScadTagliando());
 	}
+	
+	
+	
+	
+	
+	
 	
 	public void checkDeadlineInsurance(Date vehicleInsurance) {
 		GregorianCalendar dataAttuale = new GregorianCalendar();

@@ -6,9 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class UserDAO {
+public class VehicleDAO {
 	
-	public boolean findUser(String username, String password) {
+	public void saveVehicle(String targa, String marca, String modello, String cilindrata, String cavalli, String assicurazione,
+							String bollo, String revisione, String tagliando) { //AGGIUNGERE ULTERIORI INFO
         try {
             // Carichiamo un driver per connetterci a Java DB
             String driver = "com.mysql.jdbc.Driver";
@@ -24,27 +25,28 @@ public class UserDAO {
             Statement stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_READ_ONLY);
             
-            // Eseguiamo una query e immagazziniamone i risultati
+            // Eseguiamo una query e immagazziniamone i risultati		INSERIRE LA GIUSTA QUERY PER SALVARE NEL DB
             // in un oggetto ResultSet
-            String qry = "SELECT * FROM User WHERE Username = '" + username + "'AND Password = '" + password + "';";
+            String qry = "          ";/*"SELECT * FROM User WHERE Username = '" + username + "'AND Password = '" + password + "';";*/
             System.out.println(qry); //prova stringa query
             ResultSet res = stm.executeQuery(qry);
             
             if(res.next()) {
-               // System.out.printf("%s : %s (%s)\n", res.getString("Artista"), res.getString("Titolo"), res.getInt("Anno"));
+               
             	res.close();
                 stm.close();
                 con.close();
-                System.out.println(username);
-            	return true; //trovati --> ritorno vero
+               
             	
-            	/****** MANCA LA CREAZIONE DELL'UTENTE USER    ****** */
+       
             }
+            
+            
             res.close();
             stm.close();
             con.close();
             
-            return false; //username e password non trovati nel database
+           
             
         } catch (SQLException e) {
             e.printStackTrace();
@@ -53,6 +55,7 @@ public class UserDAO {
             e.printStackTrace();
         }
         
-       return false;
-    }
+       
+  }
+
 }

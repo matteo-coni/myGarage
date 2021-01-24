@@ -1,9 +1,13 @@
 package logic.view.desktop.controllerview;
 
-import javafx.scene.shape.*;
+
+import logic.bean.*;
+import logic.control.*;
 import logic.view.desktop.factory.viewfactory.FactoryView;
 import logic.view.desktop.factory.viewfactory.TypeView;
 import logic.view.desktop.view.View;
+
+import javafx.scene.shape.*;
 import javafx.fxml.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
@@ -22,9 +26,27 @@ public class ControllerGrafInsert {
 	GridPane grid1;
 	
 	@FXML
-	Button imageSelect, buttonConfirm;
+	Button imageSelect; 
 	@FXML
-	TextField insertTarga, insertMarca;
+	Button buttonConfirm;
+	@FXML
+	TextField insertTarga;
+	@FXML
+	TextField insertMarca;
+	@FXML
+	TextField insertModello;
+	@FXML
+	TextField insertCilindrata; 
+	@FXML 
+	TextField insertCavalli; 
+	@FXML
+	TextField insertAssic;
+	@FXML 
+	TextField insertBollo;
+	@FXML
+	TextField insertRevisione;
+	@FXML
+	TextField insertTagliando;
 	
 	@FXML
 	public void back() throws IOException{
@@ -40,6 +62,28 @@ public class ControllerGrafInsert {
 		grid1.add(button,0,0); //*************PROVA INSERIMENTO RUNTIME*************
 		String string = insertTarga.getText();
 		System.out.println(string);
+		
+	}
+	
+	@FXML
+	public void confirmInsert() {
+		
+		String targa = insertTarga.getText();
+		String modello = insertModello.getText();
+		String marca = insertMarca.getText();
+		String cavalli = insertCavalli.getText();
+		String cilindrata = insertCilindrata.getText();
+		
+		String assicurazione = insertAssic.getText();
+		String bollo = insertBollo.getText();
+		String revisione = insertRevisione.getText();
+		String tagliando = insertTagliando.getText();
+		
+		VehicleBean vehicleBean = new VehicleBean(targa); //***** COSTRUTTORE BEAN VEICOLO.....
+		
+		ControllerInsertVehicleInfo controllerInsert =  ControllerInsertVehicleInfo.getInstance();
+		
+		
 		
 	}
 }

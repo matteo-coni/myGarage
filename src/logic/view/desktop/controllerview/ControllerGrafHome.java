@@ -27,9 +27,23 @@ public class ControllerGrafHome  {
 	@FXML
 	Text label1;
 	@FXML
-	Text textTarga, textModello, textMarca, textCilindrata, textCavalli;
+	Text textTarga;
 	@FXML
-	Text textAssicurazione, textBollo, textRevisione, textTagliando;
+	Text textModello;
+	@FXML
+	Text textMarca; 
+	@FXML
+	Text textCilindrata;
+	@FXML
+	Text textCavalli;
+	@FXML
+	Text textAssicurazione;
+	@FXML
+	Text textBollo;
+	@FXML
+	Text textRevisione;
+	@FXML
+	Text textTagliando;
 	
 	
 	//@FXML
