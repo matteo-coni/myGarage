@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -13,6 +15,7 @@
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="486.0" prefWidth="568.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.view.desktop.controllerview.ControllerGrafInsert">
    <children>
@@ -56,6 +59,77 @@
                         <Image url="@../../../../../images/BackgroundFerrari.jpg" />
                      </image>
                   </ImageView>
+                  <Text layoutX="287.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inserisci le informazioni sul veicolo:">
+                     <font>
+                        <Font size="37.0" />
+                     </font>
+                  </Text>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="230.0" layoutX="96.0" layoutY="173.0" stroke="BLACK" strokeType="INSIDE" width="230.0" />
+                  <Text layoutX="441.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Targa">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="652.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Marca">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="859.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modello">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="imageSelect" layoutX="133.0" layoutY="268.0" mnemonicParsing="false" style="-fx-background-color: grey;" text="Seleziona un'immagine..." />
+                  <TextField fx:id="insertTarga" layoutX="390.0" layoutY="226.0" promptText="Inserisci la targa" style="-fx-background-color: white;" />
+                  <TextField fx:id="insertMarca" layoutX="609.0" layoutY="226.0" promptText="Inserisci la marca" style="-fx-background-color: white;" />
+                  <TextField fx:id="insertModello" layoutX="828.0" layoutY="226.0" promptText="Inserisci il modello" style="-fx-background-color: white;" />
+                  <Text layoutX="425.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cilindrata">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="652.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cavalli">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="148.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assicurazione">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="435.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bollo">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="638.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Revisione">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="852.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tagliando">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="insertCilindrata" layoutX="390.0" layoutY="336.0" promptText="Inserisci la cilindrata" style="-fx-background-color: white;" />
+                  <TextField fx:id="insertCavalli" layoutX="609.0" layoutY="336.0" promptText="Inserisci i cavalli" style="-fx-background-color: white;" />
+                  <TextField fx:id="insertAssic" layoutX="142.0" layoutY="467.0" promptText="Inserisci scadenza assicurazione" style="-fx-background-color: white;" />
+                  <TextField fx:id="insertBollo" layoutX="390.0" layoutY="467.0" promptText="Inserisci scadenza bollo" style="-fx-background-color: white;" />
+                  <TextField fx:id="insertRevisione" layoutX="609.0" layoutY="467.0" promptText="Inserisci scadenza revisione" style="-fx-background-color: white;" />
+                  <TextField fx:id="insertTagliando" layoutX="828.0" layoutY="467.0" promptText="Inserisci scadenza tagliando" style="-fx-background-color: white;" />
+                  <Text layoutX="254.0" layoutY="559.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Conferma inserimento:">
+                     <font>
+                        <Font size="37.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="buttonConfirm" defaultButton="true" layoutX="620.0" layoutY="528.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: Green;" text="CONFERMA">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">

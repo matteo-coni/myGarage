@@ -7,7 +7,9 @@ import logic.view.desktop.view.View;
 import javafx.fxml.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
+//import javafx.scene.text.*;
 import java.io.IOException;
+
 
 
 public class ControllerGrafInsert {
@@ -18,6 +20,11 @@ public class ControllerGrafInsert {
 	Button button = new Button("prova");
 	@FXML
 	GridPane grid1;
+	
+	@FXML
+	Button imageSelect, buttonConfirm;
+	@FXML
+	TextField insertTarga, insertMarca;
 	
 	@FXML
 	public void back() throws IOException{
@@ -31,6 +38,8 @@ public class ControllerGrafInsert {
 	@FXML
 	public void setButton() {
 		grid1.add(button,0,0); //*************PROVA INSERIMENTO RUNTIME*************
+		String string = insertTarga.getText();
+		System.out.println(string);
 		
 	}
 }
