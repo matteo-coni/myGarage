@@ -34,6 +34,10 @@ public class Vehicle {
 		this.vehicleService = vehicleService;*/
 		this.img = img;
 	}
+	
+	public Vehicle(String username, String targa, String marca, String modello) {
+		
+	}
 		
 	//*****METODI*****	
 	public String getLicensePlate() {

@@ -39,7 +39,7 @@ public class ControllerInsertVehicleInfo {
 	public void saveVehicle(VehicleBean vehicleBean) {
 		
 		VehicleDAO vehicledao = new VehicleDAO();
-		vehicledao.saveVehicle(vehicleBean.getTargaVehicle(), vehicleBean.getMarcaVehicle(), vehicleBean.getModelloVehicle(), vehicleBean.getCilindrataVehicle(), vehicleBean.getCavalliVehicle(), vehicleBean.getScadAssicurazione(), vehicleBean.getScadBollo(), vehicleBean.getScadRevisione(), vehicleBean.getScadTagliando());
+		vehicledao.saveVehicle(vehicleBean.getUsername(), vehicleBean.getTargaVehicle(), vehicleBean.getMarcaVehicle(), vehicleBean.getModelloVehicle(), vehicleBean.getCilindrataVehicle(), vehicleBean.getCavalliVehicle(), vehicleBean.getScadAssicurazione(), vehicleBean.getScadBollo(), vehicleBean.getScadRevisione(), vehicleBean.getScadTagliando());
 	}
 	
 	
@@ -48,7 +48,7 @@ public class ControllerInsertVehicleInfo {
 	
 	
 	
-	public void checkDeadlineInsurance(Date vehicleInsurance) {
+	/*public void checkDeadlineInsurance(Date vehicleInsurance) {
 		GregorianCalendar dataAttuale = new GregorianCalendar();
 		int annoAttuale = dataAttuale.get(GregorianCalendar.YEAR);
 		int meseAttuale = dataAttuale.get(GregorianCalendar.MONTH);
@@ -95,6 +95,6 @@ public class ControllerInsertVehicleInfo {
 		
 		if(annoAttuale == annoDeadline && meseAttuale == meseDeadline);
 			System.out.println("ricordati di controllare i servizi??!");
-	}
+	}*/
 	
 }

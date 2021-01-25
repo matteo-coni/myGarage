@@ -2,10 +2,12 @@ package logic.bean;
 
 public class VehicleBean {
 	
-	public VehicleBean (String targa) {
+	public VehicleBean (String targa, String username) {
 		targaVehicle = targa;
+		Username = username;
 	}
 	
+	String Username;
 	String targaVehicle;
 	String marcaVehicle;
 	String modelloVehicle;
@@ -16,6 +18,14 @@ public class VehicleBean {
 	String scadRevisione;
 	String scadTagliando;
 	
+	public String getUsername() {
+		return Username;
+	}
+
+	public void setUsername(String username) {
+		Username = username;
+	}
+
 	public String getTargaVehicle() {
 		return targaVehicle;
 	}

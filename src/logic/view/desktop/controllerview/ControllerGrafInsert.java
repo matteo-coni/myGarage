@@ -68,6 +68,7 @@ public class ControllerGrafInsert {
 	@FXML
 	public void confirmInsert() {
 		
+		String username = "admin";					//******TEST****
 		String targa = insertTarga.getText();
 		String modello = insertModello.getText();
 		String marca = insertMarca.getText();
@@ -79,9 +80,19 @@ public class ControllerGrafInsert {
 		String revisione = insertRevisione.getText();
 		String tagliando = insertTagliando.getText();
 		
-		VehicleBean vehicleBean = new VehicleBean(targa); //***** COSTRUTTORE BEAN VEICOLO.....
+		VehicleBean vehicleBean = new VehicleBean(targa, username); //***** COSTRUTTORE BEAN VEICOLO.....
+		vehicleBean.setMarcaVehicle(marca);
+		vehicleBean.setModelloVehicle(modello);
+		vehicleBean.setCilindrataVehicle(cilindrata);
+		vehicleBean.setCavalliVehicle(cavalli);
+		vehicleBean.setScadAssicurazione(assicurazione);
+		vehicleBean.setScadBollo(bollo);
+		vehicleBean.setScadRevisione(revisione);
+		vehicleBean.setScadTagliando(tagliando);
 		
 		ControllerInsertVehicleInfo controllerInsert =  ControllerInsertVehicleInfo.getInstance();
+		controllerInsert.saveVehicle(vehicleBean);
+		
 		
 		
 		
