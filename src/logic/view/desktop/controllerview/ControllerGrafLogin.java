@@ -45,12 +45,14 @@ public class ControllerGrafLogin {
 		if (controlLogin.isValidate(loginBean)){
 			System.out.println(username);
 			
-			//ControllerMain.getInstance().setId(bean.getId());
+			ControllerMain.getInstance().setId(loginBean.getUsername());
 			FactoryView factory = FactoryView.getInstance();
 			View view;
 			view = factory.createView(TypeView.HOMEPAGE); 
 				
 			ControllerMain.getInstance().replace(ControllerMain.getContainer(), view);
+			/*ControllerMain controlMain = new ControllerMain();
+			controlMain.replace(controlMain.getContainer(), view);*/
 			
 		} else {
 			System.out.println("errore nel login"); //debug

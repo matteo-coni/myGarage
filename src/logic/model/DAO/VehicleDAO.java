@@ -10,6 +10,8 @@ import java.util.List;
 
 
 import logic.model.Vehicle; 
+import logic.model.User;
+
 
 public class VehicleDAO {
 	
@@ -30,7 +32,7 @@ public class VehicleDAO {
             Statement stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_READ_ONLY);
             
-            // Eseguiamo una query e immagazziniamone i risultati		INSERIRE LA GIUSTA QUERY PER SALVARE NEL DB
+            // Eseguiamo una query e immagazziniamone i risultati		
             // in un oggetto ResultSet
             String insertStm = String.format("INSERT INTO Vehicle (User_Username, Targa, Marca, Modello, Cilindrata, Cavalli, Assicurazione,"
             								+ " Bollo, Revisione, Tagliando) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')", username,
@@ -52,7 +54,7 @@ public class VehicleDAO {
 		
     }
 	
-	List<Vehicle> listVehicle = new ArrayList<Vehicle>();
+	
 	
 	public List<Vehicle> findVehicle(String username){
 		
@@ -73,7 +75,7 @@ public class VehicleDAO {
             Statement stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_READ_ONLY);
             
-            // Eseguiamo una query e immagazziniamone i risultati		INSERIRE LA GIUSTA QUERY PER SALVARE NEL DB
+            // Eseguiamo una query e immagazziniamone i risultati		INSERIRE LA GIUSTA QUERY PER CERCARE NEL DB
             // in un oggetto ResultSet
             String query = "SELECT * FROM Vehicle WHERE Username_User = '" + username + "';";
             System.out.println(query); //prova stringa query
@@ -90,6 +92,8 @@ public class VehicleDAO {
                 Vehicle vehicle = new Vehicle(username, targa, marca, modello);
                 
                 listVehicle.add(vehicle);
+                                               
+                
 
             }while(rs.next());
             

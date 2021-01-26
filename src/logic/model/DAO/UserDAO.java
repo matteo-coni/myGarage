@@ -31,7 +31,7 @@ public class UserDAO {
             ResultSet res = stm.executeQuery(qry);
             
             if(res.next()) {
-               // System.out.printf("%s : %s (%s)\n", res.getString("Artista"), res.getString("Titolo"), res.getInt("Anno"));
+               
             	res.close();
                 stm.close();
                 con.close();

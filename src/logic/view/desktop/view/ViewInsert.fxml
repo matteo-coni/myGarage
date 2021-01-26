@@ -134,6 +134,11 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
+                  <Text fx:id="confirmText" layoutX="763.0" layoutY="556.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="11.24495624088263">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">

@@ -58,6 +58,7 @@ public class ViewLoginMain extends Application {
 				mainStage.setX(event.getScreenX()-offsetX);
 				mainStage.setY(event.getScreenY()-offsetY);
 			});*/
+			//ControllerMain ctrl = new ControllerMain();
 			ControllerMain ctrl = ControllerMain.getInstance();
 			FactoryView factory = FactoryView.getInstance();
 			View subview = factory.createView(TypeView.LOGIN);

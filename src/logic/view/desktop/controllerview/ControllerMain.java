@@ -27,19 +27,22 @@ public class ControllerMain  {
 	}
 	///Fine singleton
 	
+	/*public ControllerMain() {
+		
+	}*/
 	
 	private static BorderPane container;
-	private int id = 0; 
+	private String id = ""; 
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public static BorderPane getContainer() {
+	public static BorderPane getContainer() { //STATIC
 		return container;
 	}
 
