@@ -77,7 +77,7 @@ public class VehicleDAO {
             
             // Eseguiamo una query e immagazziniamone i risultati		INSERIRE LA GIUSTA QUERY PER CERCARE NEL DB
             // in un oggetto ResultSet
-            String query = "SELECT * FROM Vehicle WHERE Username_User = '" + username + "';";
+            String query = "SELECT * FROM Vehicle WHERE User_Username = '" + username + "';";
             System.out.println(query); //prova stringa query
             ResultSet rs = stm.executeQuery(query);
             
@@ -86,10 +86,14 @@ public class VehicleDAO {
             do{
                 
                 String targa = rs.getString("Targa");
-                String marca = rs.getString("Marca");
-                String modello = rs.getString("Modello");
                 
-                Vehicle vehicle = new Vehicle(username, targa, marca, modello);
+                //String marca = rs.getString("Marca");
+                //String modello = rs.getString("Modello");
+                
+                Vehicle vehicle = new Vehicle(username, targa); //marca, modello);
+                
+                
+                System.out.println(vehicle.getLicensePlate());
                 
                 listVehicle.add(vehicle);
                                                

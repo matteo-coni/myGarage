@@ -5,6 +5,7 @@ import java.awt.*;
 
 public class Vehicle {
 	//*****ATTRIBUTI*****
+	private String username;
 	private String licensePlate;
 	private String vehicleBrand;
 	private String vehicleModel;
@@ -37,6 +38,11 @@ public class Vehicle {
 	
 	public Vehicle(String username, String targa, String marca, String modello) {
 		
+	}
+	
+	public Vehicle(String username, String targa) {
+		this.username = username;
+		this.licensePlate = targa;
 	}
 		
 	//*****METODI*****	

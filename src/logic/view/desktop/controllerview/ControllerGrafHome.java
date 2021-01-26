@@ -10,6 +10,11 @@ import logic.view.desktop.factory.viewfactory.FactoryView;
 import logic.view.desktop.factory.viewfactory.TypeView;
 import logic.view.desktop.view.View;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import logic.model.*;
+import logic.control.ControllerViewVehicle;
 
 
 public class ControllerGrafHome  {
@@ -44,6 +49,8 @@ public class ControllerGrafHome  {
 	Text textRevisione;
 	@FXML
 	Text textTagliando;
+	@FXML
+	ComboBox<String> menuSelectVehicle;
 	
 	
 	//@FXML
@@ -74,11 +81,46 @@ public class ControllerGrafHome  {
 		ControllerMain.getInstance().replace(ControllerMain.getContainer(), view);
 		/*ControllerMain controlMain = new ControllerMain();
 		controlMain.replace(controlMain.getContainer(), view);*/
-		
 		} catch (IOException e) {
 			//dummy
-				
 		}
+		
+	}
+	
+	@FXML
+	public void initialize() {
+		System.out.println("ciao oh");
+		/*menuSelectVehicle.getItems().addAll(
+	            "Highest",
+	            "High",
+	            "Normal",
+	            "Low",
+	            "Lowest" 
+	        );  */
+		String username = ControllerMain.getInstance().getId();
+		
+		List<Vehicle> listVehicle = new ArrayList<Vehicle>();
+		
+		ControllerViewVehicle controlViewVehicle = new ControllerViewVehicle();
+		listVehicle = controlViewVehicle.viewVehicle(username);
+		
+		for(Vehicle vehicle: listVehicle) { //Clico for per aggiungere le targhe al "combobox" (Solo targhe legate all'username)
+			
+			String nameVehicle = "" + vehicle.getLicensePlate() + "";
+			
+			menuSelectVehicle.getItems().addAll(
+					nameVehicle);
+			
+			//System.out.println(nameVehicle); ----TEST----
+						
+		}
+		
+	}
+	
+	@FXML
+	public void viewVehicle() {
+		
+		// settarre i vari Text in base ad una ricerca del dao *********
 		
 	}
 }
