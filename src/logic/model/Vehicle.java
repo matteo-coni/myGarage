@@ -11,10 +11,10 @@ public class Vehicle {
 	private int vehicleDisplacement;
 	private int vehiclePowertrains;
 	private String vehicleFuel;
-	/*private Date vehicleInsurance = new Date();
-	private Date vehicleTax = new Date();
-	private Date vehicleReview = new Date();
-	private Date vehicleService = new Date();*/
+	private GregorianCalendar vehicleInsurance = new GregorianCalendar();
+	private GregorianCalendar vehicleTax = new GregorianCalendar();
+	private GregorianCalendar vehicleReview = new GregorianCalendar();
+	private GregorianCalendar vehicleService = new GregorianCalendar();
 	private Deadlines deadlines;
 	private Image img;
 	
@@ -28,10 +28,10 @@ public class Vehicle {
 		this.vehiclePowertrains = vehiclePowertrains;
 		this.vehicleFuel = vehicleFuel;
 		this.deadlines = deadlines;
-		/*this.vehicleInsurance = vehicleInsurance;
+		this.vehicleInsurance = vehicleInsurance;
 		this.vehicleTax = vehicleTax;
 		this.vehicleReview = vehicleReview;
-		this.vehicleService = vehicleService;*/
+		this.vehicleService = vehicleService;
 		this.img = img;
 	}
 	
@@ -88,38 +88,38 @@ public class Vehicle {
 		this.vehicleFuel = vehicleFuel;
 	}
 	
-	public Date getVehicleInsurance() {
-		return deadlines.vehicleInsurance;
+	public GregorianCalendar getVehicleInsurance() {
+		return vehicleInsurance;
 	}
-	
-	public void setVehicleInsurance(Date vehicleInsurance) {
-		this.deadlines.vehicleInsurance = vehicleInsurance;
+
+	public void setVehicleInsurance(GregorianCalendar vehicleInsurance) {
+		this.vehicleInsurance = vehicleInsurance;
 	}
-	
-	public Date getVehicleTax() {
-		return deadlines.vehicleTax;
+
+	public GregorianCalendar getVehicleTax() {
+		return vehicleTax;
 	}
-	
-	public void setVehicleTax(Date vehicleTax) {
-		this.deadlines.vehicleTax = vehicleTax;
+
+	public void setVehicleTax(GregorianCalendar vehicleTax) {
+		this.vehicleTax = vehicleTax;
 	}
-	
-	public Date getVehicleReview() {
-		return deadlines.vehicleReview;
+
+	public GregorianCalendar getVehicleReview() {
+		return vehicleReview;
 	}
-	
-	public void setVehicleReview(Date vehicleReview) {
-		this.deadlines.vehicleReview = vehicleReview;
+
+	public void setVehicleReview(GregorianCalendar vehicleReview) {
+		this.vehicleReview = vehicleReview;
 	}
-	
-	public Date getVehicleService() {
-		return deadlines.vehicleService;
+
+	public GregorianCalendar getVehicleService() {
+		return vehicleService;
 	}
-	
-	public void setVehicleService(Date vehicleService) {
-		this.deadlines.vehicleService = vehicleService;
+
+	public void setVehicleService(GregorianCalendar vehicleService) {
+		this.vehicleService = vehicleService;
 	}
-	
+
 	public Image getImg() {
 		return img;
 	}
@@ -128,5 +128,16 @@ public class Vehicle {
 		this.img = img;
 	}
 	
-	//prova
+	//metodo per il controllo della data???
+	/*
+	 * boolean result;
+		GregorianCalendar cal = new GregorianCalendar (29, 2, 2007);
+		cal.setLenient (false);
+
+		try {
+			cal.get (Calendar.DATE);
+			result=true;
+		} catch (IllegalArgumentException e) {
+			result=false;}
+	 */
 }

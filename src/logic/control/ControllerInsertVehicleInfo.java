@@ -42,59 +42,54 @@ public class ControllerInsertVehicleInfo {
 		vehicledao.saveVehicle(vehicleBean.getUsername(), vehicleBean.getTargaVehicle(), vehicleBean.getMarcaVehicle(), vehicleBean.getModelloVehicle(), vehicleBean.getCilindrataVehicle(), vehicleBean.getCavalliVehicle(), vehicleBean.getScadAssicurazione(), vehicleBean.getScadBollo(), vehicleBean.getScadRevisione(), vehicleBean.getScadTagliando());
 	}
 	
-	
-	
-	
-	
-	
-	
-	/*public void checkDeadlineInsurance(Date vehicleInsurance) {
+	public void checkDeadlineInsurance(GregorianCalendar vehicleInsurance) {
 		GregorianCalendar dataAttuale = new GregorianCalendar();
 		int annoAttuale = dataAttuale.get(GregorianCalendar.YEAR);
-		int meseAttuale = dataAttuale.get(GregorianCalendar.MONTH);
+		int meseAttuale = dataAttuale.get(GregorianCalendar.MONTH)+1;
 		
 		int annoDeadline = vehicleInsurance.get(GregorianCalendar.YEAR);
-		int meseDeadline = vehicleInsurance.get(GregorianCalendar.MONTH)-1;
+		int meseDeadline = vehicleInsurance.get(GregorianCalendar.MONTH);
 		
 		if(annoAttuale == annoDeadline && meseAttuale == meseDeadline);
+			//boolean result=true;
 			System.out.println("ricordati di controllare l'assicurazione!");
 	}
 	
-	public void checkDeadlineTax(Date vehicleTax) {
+	public void checkDeadlineTax(GregorianCalendar vehicleTax) {
 		GregorianCalendar dataAttuale = new GregorianCalendar();
 		int annoAttuale = dataAttuale.get(GregorianCalendar.YEAR);
-		int meseAttuale = dataAttuale.get(GregorianCalendar.MONTH);
+		int meseAttuale = dataAttuale.get(GregorianCalendar.MONTH)+1;
 		
 		int annoDeadline = vehicleTax.get(GregorianCalendar.YEAR);
-		int meseDeadline = vehicleTax.get(GregorianCalendar.MONTH)-1;
+		int meseDeadline = vehicleTax.get(GregorianCalendar.MONTH);
 		
 		if(annoAttuale == annoDeadline && meseAttuale == meseDeadline);
 			System.out.println("ricordati di controllare il bollo!");
 
 	}
 	
-	public void checkDeadlineReview(Date vehicleReview) {
+	public void checkDeadlineReview(GregorianCalendar vehicleReview) {
 		GregorianCalendar dataAttuale = new GregorianCalendar();
 		int annoAttuale = dataAttuale.get(GregorianCalendar.YEAR);
-		int meseAttuale = dataAttuale.get(GregorianCalendar.MONTH);
+		int meseAttuale = dataAttuale.get(GregorianCalendar.MONTH)+1;
 		
 		int annoDeadline = vehicleReview.get(GregorianCalendar.YEAR);
-		int meseDeadline = vehicleReview.get(GregorianCalendar.MONTH)-1;
+		int meseDeadline = vehicleReview.get(GregorianCalendar.MONTH);
 		
 		if(annoAttuale == annoDeadline && meseAttuale == meseDeadline);
 			System.out.println("ricordati di controllare la revisione!");
 	}
 	
-	public void checkDeadlineService(Date vehicleService) {
+	public void checkDeadlineService(GregorianCalendar vehicleService) {
 		GregorianCalendar dataAttuale = new GregorianCalendar();
 		int annoAttuale = dataAttuale.get(GregorianCalendar.YEAR);
-		int meseAttuale = dataAttuale.get(GregorianCalendar.MONTH);
+		int meseAttuale = dataAttuale.get(GregorianCalendar.MONTH)+1;
 		
 		int annoDeadline = vehicleService.get(GregorianCalendar.YEAR);
-		int meseDeadline = vehicleService.get(GregorianCalendar.MONTH)-1;
+		int meseDeadline = vehicleService.get(GregorianCalendar.MONTH);
 		
 		if(annoAttuale == annoDeadline && meseAttuale == meseDeadline);
 			System.out.println("ricordati di controllare i servizi??!");
-	}*/
+	}
 	
 }
