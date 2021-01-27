@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Polygon?>
@@ -46,11 +47,23 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Polygon fx:id="Back" onMouseClicked="#back" points="-81.41183471679688, 1.575347900390625, -123.31578063964844, -14.557525634765625, -81.41183471679688, -35.620323181152344" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Polygon fx:id="Back" onMouseClicked="#back" points="-81.41183471679688, 1.575347900390625, -123.31578063964844, -14.557525634765625, -81.41183471679688, -35.620323181152344" stroke="BLACK" strokeType="INSIDE" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets left="25.0" />
                      </GridPane.margin>
                   </Polygon>
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <ImageView fitHeight="64.0" fitWidth="73.0" layoutX="20.0" layoutY="7.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../images/Home.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </children>
+                  </Pane>
                </children>
             </GridPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.rowSpan="2147483647">
@@ -134,9 +147,9 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Text fx:id="confirmText" layoutX="759.0" layoutY="556.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="11.24495624088263">
+                  <Text fx:id="confirmText" layoutX="760.0" layoutY="554.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="295.37227557682013">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="14.0" />
                      </font>
                   </Text>
                </children>

@@ -36,10 +36,17 @@ public class ControllerInsertVehicleInfo {
 	
 	}*/
 	
-	public void saveVehicle(VehicleBean vehicleBean) {
+	public boolean saveVehicle(VehicleBean vehicleBean) {
 		
+		try {
 		VehicleDAO vehicledao = new VehicleDAO();
 		vehicledao.saveVehicle(vehicleBean.getUsername(), vehicleBean.getTargaVehicle(), vehicleBean.getMarcaVehicle(), vehicleBean.getModelloVehicle(), vehicleBean.getCilindrataVehicle(), vehicleBean.getCavalliVehicle(), vehicleBean.getScadAssicurazione(), vehicleBean.getScadBollo(), vehicleBean.getScadRevisione(), vehicleBean.getScadTagliando());
+		return true;
+		
+		} catch (Exception e){
+			return false;
+		}
+		
 	}
 	
 	public void checkDeadlineInsurance(GregorianCalendar vehicleInsurance) {

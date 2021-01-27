@@ -29,11 +29,11 @@ public class Vehicle {
 		this.vehiclePowertrains = vehiclePowertrains;
 		this.vehicleFuel = vehicleFuel;
 		this.deadlines = deadlines;
-		this.vehicleInsurance = vehicleInsurance;
+		/*this.vehicleInsurance = vehicleInsurance;
 		this.vehicleTax = vehicleTax;
 		this.vehicleReview = vehicleReview;
 		this.vehicleService = vehicleService;
-		this.img = img;
+		this.img = img;*/
 	}
 	
 	public Vehicle(String username, String targa, String marca, String modello, String cilindrata, String cavalli) {

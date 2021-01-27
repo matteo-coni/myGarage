@@ -2,9 +2,10 @@ package logic.bean;
 
 public class VehicleBean {
 	
-	public VehicleBean (String targa, String username) {
-		this.targaVehicle = targa;
+	public VehicleBean (String username, String targa) {
+		
 		this.Username = username;
+		this.targaVehicle = targa;
 	}
 	
 	public VehicleBean (String targa) {

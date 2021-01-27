@@ -53,8 +53,7 @@ public class ControllerGrafHome  {
 	ComboBox<String> menuSelectVehicle;
 	
 	
-	//@FXML
-	//AnchorPane anchor;
+	
 	
 	//Image imgVeh = new Image("/images/BookMechanic.png");
 	
@@ -87,7 +86,7 @@ public class ControllerGrafHome  {
 		
 	}
 	
-	@FXML
+	/*@FXML
 	public void initialize() {
 		
 		String username = ControllerMain.getInstance().getId();
@@ -95,7 +94,7 @@ public class ControllerGrafHome  {
 		List<VehicleBean> listVehicleBean = new ArrayList<VehicleBean>();
 		
 		ControllerViewVehicle controlViewVehicle = new ControllerViewVehicle();
-		listVehicleBean = controlViewVehicle.viewVehicle(username, listVehicleBean);
+		listVehicleBean = controlViewVehicle.viewVehicle(username); //listVehicleBean);
 		
 		for(VehicleBean vehiclebean: listVehicleBean) { //Clico for per aggiungere le targhe al "combobox" (Solo targhe legate all'username)
 			
@@ -108,6 +107,25 @@ public class ControllerGrafHome  {
 						
 		}
 		
+	}*/
+	
+	public void initialize() {
+		
+		String username = ControllerMain.getInstance().getId();
+		
+		
+		
+		ControllerViewVehicle controlViewVehicle = new ControllerViewVehicle();
+		List<String> targheVeicoli = controlViewVehicle.viewVehicle(username); //listVehicleBean);
+		
+		for(String targa: targheVeicoli) { //Clico for per aggiungere le targhe al "combobox" (Solo targhe legate all'username)
+						
+			//String targaVehicle = "ciao"; ---TEST-----
+			menuSelectVehicle.getItems().addAll(
+					targa);
+						
+		}
+		
 	}
 	
 	@FXML
@@ -116,8 +134,18 @@ public class ControllerGrafHome  {
 		// settarre i vari Text in base ad una ricerca del dao *********
 		String targaCb = menuSelectVehicle.getValue();
 		ControllerViewVehicle controlViewVehicle = new ControllerViewVehicle();
-		VehicleBean vehicle = controlViewVehicle.loadVehicle(targaCb);
+		VehicleBean vehiclebean = controlViewVehicle.loadVehicle(targaCb);
 		
+		
+		textTarga.setText(vehiclebean.getTargaVehicle());
+		textMarca.setText(vehiclebean.getMarcaVehicle());
+		textModello.setText(vehiclebean.getModelloVehicle());
+		textCilindrata.setText(vehiclebean.getCilindrataVehicle());
+		textCavalli.setText(vehiclebean.getCavalliVehicle());
+		textAssicurazione.setText(vehiclebean.getScadAssicurazione());
+		textBollo.setText(vehiclebean.getScadBollo());
+		textRevisione.setText(vehiclebean.getScadRevisione());
+		textTagliando.setText(vehiclebean.getScadTagliando());
 		
 		
 	}

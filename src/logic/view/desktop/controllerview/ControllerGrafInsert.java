@@ -10,10 +10,12 @@ import logic.view.desktop.view.View;
 import javafx.scene.shape.*;
 import javafx.fxml.*;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.*;
 import java.io.IOException;
 import javafx.scene.paint.*;
+
 
 
 
@@ -50,6 +52,8 @@ public class ControllerGrafInsert {
 	TextField insertTagliando;
 	@FXML
 	Text confirmText;
+	@FXML
+	ImageView homeImage;
 	
 	@FXML
 	public void back() throws IOException{
@@ -61,6 +65,15 @@ public class ControllerGrafInsert {
 		/*ControllerMain controlMain = new ControllerMain();
 		controlMain.replace(controlMain.getContainer(), view);*/
 	}
+	
+	/*@FXML
+	public void backHome() throws IOException{
+		FactoryView factory = FactoryView.getInstance();
+		View view;
+		view = factory.createView(TypeView.HOMEPAGE); 
+		
+		ControllerMain.getInstance().replace(ControllerMain.getContainer(), view);
+	}*/
 	
 	@FXML
 	public void setButton() {
@@ -89,15 +102,11 @@ public class ControllerGrafInsert {
 		if( targa=="") {
 			
 			confirmText.setText("Targa obbligatoria");
-			
 			Color R = Color.RED;
-			confirmText.setFill(R);
-			
-			
-			
+			confirmText.setFill(R);	
 		}
 		
-		VehicleBean vehicleBean = new VehicleBean(targa, username); //***** COSTRUTTORE BEAN VEICOLO.....
+		VehicleBean vehicleBean = new VehicleBean(username, targa); //***** COSTRUTTORE BEAN VEICOLO.....
 		vehicleBean.setMarcaVehicle(marca);
 		vehicleBean.setModelloVehicle(modello);
 		vehicleBean.setCilindrataVehicle(cilindrata);
@@ -108,11 +117,18 @@ public class ControllerGrafInsert {
 		vehicleBean.setScadTagliando(tagliando);
 		
 		ControllerInsertVehicleInfo controllerInsert =  ControllerInsertVehicleInfo.getInstance();
-		controllerInsert.saveVehicle(vehicleBean);
-		confirmText.setText("Veicolo inserito correttamente!");
+		if( controllerInsert.saveVehicle(vehicleBean)) {
+			confirmText.setText("Veicolo inserito correttamente!");
+			
+			Color G = Color.GREEN;
+			confirmText.setFill(G);
+		} else {
+			
+			confirmText.setText("Errore nell'inserimento");
 		
-		Color G = Color.GREEN;
-		confirmText.setFill(G);
+			Color R = Color.RED;
+			confirmText.setFill(R);
+		}
 		
 		
 		

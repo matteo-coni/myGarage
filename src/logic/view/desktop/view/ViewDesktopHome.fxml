@@ -47,15 +47,13 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="button3" alignment="BOTTOM_CENTER" contentDisplay="RIGHT" layoutX="80.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="104.0" text="3" textAlignment="CENTER" GridPane.rowIndex="1" />
                   <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <Circle fill="WHITE" layoutX="51.0" layoutY="36.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Text fx:id="label1" layoutX="38.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="M">
-                           <font>
-                              <Font size="33.0" />
-                           </font>
-                        </Text>
+                        <ImageView fitHeight="64.0" fitWidth="73.0" layoutX="20.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../images/Home.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </Pane>
                   <ImageView fitHeight="58.0" fitWidth="84.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
@@ -63,6 +61,12 @@
                         <Image url="@../../../../../images/help.png" />
                      </image>
                   </ImageView>
+                  <Circle fill="WHITE" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Text fx:id="label1" strokeType="OUTSIDE" strokeWidth="0.0" text="M">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Text>
                </children>
                <GridPane.margin>
                   <Insets />
@@ -215,7 +219,6 @@
                         <Cursor fx:constant="CLOSED_HAND" />
                      </cursor>
                   </ImageView>
-                  <Rectangle id="RectInsertVehicle" arcHeight="5.0" arcWidth="5.0" fill="#e17618" height="159.0" layoutX="25.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
@@ -229,7 +232,6 @@
                         <Cursor fx:constant="CLOSED_HAND" />
                      </cursor>
                   </ImageView>
-                  <Rectangle id="RectInsertVehicle" arcHeight="5.0" arcWidth="5.0" fill="#e17618" height="159.0" layoutX="25.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
@@ -243,7 +245,6 @@
                         <Cursor fx:constant="CLOSED_HAND" />
                      </cursor>
                   </ImageView>
-                  <Rectangle id="RectInsertVehicle" arcHeight="5.0" arcWidth="5.0" fill="#e17618" height="159.0" layoutX="25.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
                </children>
             </AnchorPane>
          </children>
