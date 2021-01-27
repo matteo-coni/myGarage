@@ -134,9 +134,9 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Text fx:id="confirmText" layoutX="763.0" layoutY="556.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="11.24495624088263">
+                  <Text fx:id="confirmText" layoutX="759.0" layoutY="556.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="11.24495624088263">
                      <font>
-                        <Font size="24.0" />
+                        <Font size="18.0" />
                      </font>
                   </Text>
                </children>

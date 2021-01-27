@@ -11,6 +11,7 @@ import java.util.List;
 
 import logic.model.Vehicle; 
 import logic.model.User;
+import logic.bean.*;
 
 
 public class VehicleDAO {
@@ -56,9 +57,9 @@ public class VehicleDAO {
 	
 	
 	
-	public List<Vehicle> findVehicle(String username){
+	public List<VehicleBean> findVehicle(String username){
 		
-		List<Vehicle> listVehicle = new ArrayList<Vehicle>();
+		List<VehicleBean> listVehicle = new ArrayList<VehicleBean>();
 		
 		try {
             // Carichiamo un driver per connetterci a Java DB
@@ -90,12 +91,13 @@ public class VehicleDAO {
                 //String marca = rs.getString("Marca");
                 //String modello = rs.getString("Modello");
                 
-                Vehicle vehicle = new Vehicle(username, targa); //marca, modello);
+                VehicleBean vehiclebean = new VehicleBean(targa); //marca, modello);
                 
                 
-                System.out.println(vehicle.getLicensePlate());
+                System.out.println(vehiclebean.getTargaVehicle());
+                //System.out.println(targa);
                 
-                listVehicle.add(vehicle);
+                listVehicle.add(vehiclebean);
                                                
                 
 
@@ -115,6 +117,68 @@ public class VehicleDAO {
 		
 		return listVehicle; 
 				
+		
+	}
+	
+	public VehicleBean createLoadVehicle(String targa) {
+		
+		VehicleBean vehiclebean = new VehicleBean(targa);
+		
+		try {
+            // Carichiamo un driver per connetterci a Java DB
+            String driver = "com.mysql.jdbc.Driver";
+            Class.forName(driver); 
+            
+            // Creiamo la stringa di connessione
+            String url = "jdbc:mysql://localhost:3306/mydb"; //inserire nome database
+            
+            // Otteniamo una connessione con username e password
+            Connection con = DriverManager.getConnection (url , "root", "admin");
+            
+            // Creiamo un oggetto Statement per interrogare il db
+            Statement stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY);
+            
+            // Eseguiamo una query e immagazziniamone i risultati	-----	INSERIRE LA GIUSTA QUERY PER CERCARE NEL DB
+            // in un oggetto ResultSet
+            String query = "SELECT * FROM Vehicle WHERE Targa = '" + targa + "';";
+            System.out.println(query); //prova stringa query
+            ResultSet rs = stm.executeQuery(query);
+            
+            rs.first();
+            
+            String targa2 = rs.getString("Targa");
+            String username = rs.getString("User_Username");
+            String marca = rs.getString("Marca");
+            String modello = rs.getString("Modello");
+            String cilindrata = rs.getString("Cilindrata");
+            String cavalli = rs.getString("Cavalli");
+            String assicurazione = rs.getString("Assicurazione");
+            String bollo = rs.getString("Bollo");
+            String revisione = rs.getString("Revisione");
+            String tagliando = rs.getString("Tagliando");
+            
+            //vehicle = new Vehicle(username, targa, marca, modello, cilindrata, cavalli);
+            vehiclebean.setTargaVehicle(targa2);
+            vehiclebean.setUsername(username);
+            vehiclebean.setMarcaVehicle(marca);
+            vehiclebean.setModelloVehicle(modello);
+            vehiclebean.setCilindrataVehicle(cilindrata);
+            vehiclebean.setCavalliVehicle(cavalli);
+           
+            
+           
+            
+            
+		
+		} catch (SQLException e) {
+            e.printStackTrace();
+            
+        }  catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+		
+		return vehiclebean;
 		
 	}
 

@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import logic.model.*;
+import logic.bean.*;
 import logic.control.ControllerViewVehicle;
 
 
@@ -59,14 +59,14 @@ public class ControllerGrafHome  {
 	//Image imgVeh = new Image("/images/BookMechanic.png");
 	
 	@FXML
-	public void exit() {
+	public void exit() { //////*******PROVA******
 		
 		System.out.println("ciaociao");
 		button3.setText("oh");
 		label1.setText("essu");
 		textTarga.setText("ei");
 		textModello.setText("ei");
-		//imageVehicle.setImage(imgVeh);
+		//imageVehicle.setImage(imgVeh); ****** FINE ******
 		
 		}
 	
@@ -89,27 +89,20 @@ public class ControllerGrafHome  {
 	
 	@FXML
 	public void initialize() {
-		System.out.println("ciao oh");
-		/*menuSelectVehicle.getItems().addAll(
-	            "Highest",
-	            "High",
-	            "Normal",
-	            "Low",
-	            "Lowest" 
-	        );  */
+		
 		String username = ControllerMain.getInstance().getId();
 		
-		List<Vehicle> listVehicle = new ArrayList<Vehicle>();
+		List<VehicleBean> listVehicleBean = new ArrayList<VehicleBean>();
 		
 		ControllerViewVehicle controlViewVehicle = new ControllerViewVehicle();
-		listVehicle = controlViewVehicle.viewVehicle(username);
+		listVehicleBean = controlViewVehicle.viewVehicle(username, listVehicleBean);
 		
-		for(Vehicle vehicle: listVehicle) { //Clico for per aggiungere le targhe al "combobox" (Solo targhe legate all'username)
+		for(VehicleBean vehiclebean: listVehicleBean) { //Clico for per aggiungere le targhe al "combobox" (Solo targhe legate all'username)
 			
-			String nameVehicle = "" + vehicle.getLicensePlate() + "";
-			
+			String targaVehicle = "" + vehiclebean.getTargaVehicle() + "";
+			//String targaVehicle = "ciao"; ---TEST-----
 			menuSelectVehicle.getItems().addAll(
-					nameVehicle);
+					targaVehicle);
 			
 			//System.out.println(nameVehicle); ----TEST----
 						
@@ -121,6 +114,11 @@ public class ControllerGrafHome  {
 	public void viewVehicle() {
 		
 		// settarre i vari Text in base ad una ricerca del dao *********
+		String targaCb = menuSelectVehicle.getValue();
+		ControllerViewVehicle controlViewVehicle = new ControllerViewVehicle();
+		VehicleBean vehicle = controlViewVehicle.loadVehicle(targaCb);
+		
+		
 		
 	}
 }

@@ -9,8 +9,8 @@ public class Vehicle {
 	private String licensePlate;
 	private String vehicleBrand;
 	private String vehicleModel;
-	private int vehicleDisplacement;
-	private int vehiclePowertrains;
+	private String vehicleDisplacement;
+	private String vehiclePowertrains;
 	private String vehicleFuel;
 	private GregorianCalendar vehicleInsurance = new GregorianCalendar();
 	private GregorianCalendar vehicleTax = new GregorianCalendar();
@@ -20,7 +20,7 @@ public class Vehicle {
 	private Image img;
 	
 	//*****COSTRUTTORE*****
-	public Vehicle(String licensPlate, String vehicleBrand, String vehicleModel, int vehicleDisplacement, int vehiclePowertrains, String vehicleFuel, Deadlines deadlines, /*Date vehicleInsurance, Date vehicleTax, Date vehicleReview, Date vehicleService,*/ Image img) {
+	public Vehicle(String licensPlate, String vehicleBrand, String vehicleModel, String vehicleDisplacement, String vehiclePowertrains, String vehicleFuel, Deadlines deadlines, /*Date vehicleInsurance, Date vehicleTax, Date vehicleReview, Date vehicleService,*/ Image img) {
 		
 		this.licensePlate = licensPlate;
 		this.vehicleBrand = vehicleBrand;
@@ -36,7 +36,14 @@ public class Vehicle {
 		this.img = img;
 	}
 	
-	public Vehicle(String username, String targa, String marca, String modello) {
+	public Vehicle(String username, String targa, String marca, String modello, String cilindrata, String cavalli) {
+		this.username = username;
+		this.licensePlate = targa;
+	
+		this.vehicleBrand = marca;
+		this.vehicleModel = modello;
+		this.vehicleDisplacement = cilindrata;
+		this.vehiclePowertrains = cavalli;
 		
 	}
 	
@@ -44,8 +51,21 @@ public class Vehicle {
 		this.username = username;
 		this.licensePlate = targa;
 	}
+	
+	public Vehicle(String targa) {
+		this.licensePlate = targa;
+	}
 		
 	//*****METODI*****	
+	
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	
 	public String getLicensePlate() {
 		return licensePlate;
 	}
@@ -70,19 +90,19 @@ public class Vehicle {
 		this.vehicleModel = vehicleModel;
 	}
 	
-	public int getVehicleDisplacement() {
+	public String getVehicleDisplacement() {
 		return vehicleDisplacement;
 	}
 	
-	public void setVehicleDisplacement(int vehicleDisplacement) {
+	public void setVehicleDisplacement(String vehicleDisplacement) {
 		this.vehicleDisplacement = vehicleDisplacement;
 	}
 	
-	public int getVehiclePowertrains() {
+	public String getVehiclePowertrains() {
 		return vehiclePowertrains;
 	}
 	
-	public void setVehiclePowertrains(int vehiclePowertrains) {
+	public void setVehiclePowertrains(String vehiclePowertrains) {
 		this.vehiclePowertrains = vehiclePowertrains;
 	}
 	

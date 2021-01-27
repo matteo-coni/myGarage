@@ -3,12 +3,16 @@ package logic.bean;
 public class VehicleBean {
 	
 	public VehicleBean (String targa, String username) {
-		targaVehicle = targa;
-		Username = username;
+		this.targaVehicle = targa;
+		this.Username = username;
+	}
+	
+	public VehicleBean (String targa) {
+		this.targaVehicle = targa;
 	}
 	
 	String Username;
-	String targaVehicle;
+	private String targaVehicle;
 	String marcaVehicle;
 	String modelloVehicle;
 	String cilindrataVehicle;
