@@ -38,23 +38,23 @@ public class UserDAO {
                
             	
                 System.out.println(username);
+                stm.close();
             	return true; //trovati --> ritorno vero
             	
             	// ****** MANCA LA CREAZIONE DELL'UTENTE USER    ****** 
             }
             
            
-            
-            
-            //username e password non trovati nel database
-            
-        /*} catch (SQLException e) {
+        } catch (SQLException e) {
         	e.printStackTrace();
         		
         } catch (ClassNotFoundException e) {
         	e.printStackTrace();
+       
+        } catch(NullPointerException np) {
+        	np.printStackTrace();
         
-        */} finally {
+        } finally {
        
         	try {
         		stm.close();
