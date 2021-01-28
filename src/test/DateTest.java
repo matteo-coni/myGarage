@@ -19,6 +19,7 @@ public class DateTest {
 		GregorianCalendar date= new GregorianCalendar(2019, 11, 25);
 		
 		assertEquals(true, TestDate.checkDeadlineInsurance(date));
+		
 	}
 	
 	@Test

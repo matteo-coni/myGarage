@@ -9,7 +9,11 @@ import java.sql.Statement;
 public class UserDAO {
 	
 	public boolean findUser(String username, String password) {
-        try {
+       
+		Statement stm = null;
+		Connection con = null;
+		
+		try {
             // Carichiamo un driver per connetterci a Java DB
             String driver = "com.mysql.jdbc.Driver";
             Class.forName(driver); 
@@ -18,10 +22,10 @@ public class UserDAO {
             String url = "jdbc:mysql://localhost:3306/mydb"; //inserire nome database
             
             // Otteniamo una connessione con username e password
-            Connection con = DriverManager.getConnection (url , "root", "admin");
+            con = DriverManager.getConnection (url , "root", "admin");
             
             // Creiamo un oggetto Statement per interrogare il db
-            Statement stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
+            stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_READ_ONLY);
             
             // Eseguiamo una query e immagazziniamone i risultati
@@ -32,27 +36,35 @@ public class UserDAO {
             
             if(res.next()) {
                
-            	res.close();
-                stm.close();
-                con.close();
+            	
                 System.out.println(username);
             	return true; //trovati --> ritorno vero
             	
-            	/****** MANCA LA CREAZIONE DELL'UTENTE USER    ****** */
+            	// ****** MANCA LA CREAZIONE DELL'UTENTE USER    ****** 
             }
-            res.close();
-            stm.close();
-            con.close();
             
-            return false; //username e password non trovati nel database
+           
+            
+            
+            //username e password non trovati nel database
             
         } catch (SQLException e) {
-            e.printStackTrace();
-            
-        }  catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+        		e.printStackTrace();
+        		
+        } catch (ClassNotFoundException e) {
+        		e.printStackTrace();
         
-       return false;
-    }
+        } finally {
+       
+        	try {
+        		stm.close();
+        		con.close();
+        	} catch (SQLException e2) {
+        		e2.printStackTrace();
+        	}    	
+        }
+		
+		return false;
+	}
 }
+
