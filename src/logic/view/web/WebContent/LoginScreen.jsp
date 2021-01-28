@@ -16,8 +16,8 @@
 	<head>
 		<title>myGarage Login Page</title>
 	</head>
-	<body>
-		<div>
+	  <body style="background-image: url(/trunk/images/BackgroundFerrari.jpg)">
+	  	<div>
 			<form action="LoginScreen.jsp" name="myform" method="POST">
 				<div style="text-align: center;"> </div>
 				<h1 style="text-align: center;">
@@ -33,11 +33,11 @@
 				<div style="text-align: center;"> </div>
 				<h4 style="text-align: center;">
 					<label for="username">Username</label>
-					<input type="text" id="username" name="username">
+					<input type="text" id="username" name="username" placeholder="username" required>
 				</h4>
 				<h4 style="text-align: center;">
 					<label for="password">Password</label>
-					<input type="text" id="password" name="password">
+					<input type="text" id="password" name="password" placeholder="password" required>
 				</h4>
 				<div style="text-align: center;"> </div>
 				<div style="text-align: center;">
