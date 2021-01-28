@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 public class UserDAO {
 	
-	public boolean findUser(String username, String password) {
+	public boolean findUser(String username, String password) throws Exception {
        
 		Statement stm = null;
 		Connection con = null;
@@ -48,13 +48,13 @@ public class UserDAO {
             
             //username e password non trovati nel database
             
-        } catch (SQLException e) {
+        /*} catch (SQLException e) {
         	e.printStackTrace();
         		
         } catch (ClassNotFoundException e) {
         	e.printStackTrace();
         
-        } finally {
+        */} finally {
        
         	try {
         		stm.close();
