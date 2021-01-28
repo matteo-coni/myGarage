@@ -2,31 +2,27 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="914.0" prefWidth="1294.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.view.desktop.controllerview.ControllerGrafBookMech">
    <children>
-      <BorderPane prefHeight="914.0" prefWidth="1294.0" />
-      <Line endX="206.0" endY="914.0" layoutX="10.0" layoutY="10.0" startX="206.0" />
-      <Line endX="1294.0" endY="156.0" layoutX="10.0" layoutY="10.0" startY="156.0" />
-      <GridPane layoutX="10.0" layoutY="10.0" prefHeight="914.0" prefWidth="1294.0" snapToPixel="false">
+      <Line endX="206.0" endY="914.0" startX="206.0" />
+      <Line endX="1294.0" endY="156.0" startY="156.0" />
+      <GridPane layoutX="-2.0" prefHeight="914.0" prefWidth="1294.0" snapToPixel="false">
          <columnConstraints>
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="206.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1135.6269226074219" minWidth="10.0" prefWidth="1087.2373046875" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="208.08651733398438" minWidth="10.0" prefWidth="207.08651733398438" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1135.6269226074219" minWidth="10.0" prefWidth="1086.1507873535156" />
          </columnConstraints>
          <rowConstraints>
             <RowConstraints maxHeight="212.92250061035156" minHeight="-Infinity" prefHeight="156.05210876464844" vgrow="SOMETIMES" />
@@ -36,154 +32,85 @@
             <RowConstraints maxHeight="657.1536560058594" minHeight="10.0" prefHeight="189.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <GridPane fx:id="grid" prefHeight="156.0" prefWidth="162.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Circle fill="WHITE" radius="32.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Text fx:id="label1" strokeType="OUTSIDE" strokeWidth="0.0" text="M">
-                     <font>
-                        <Font size="33.0" />
-                     </font>
-                  </Text>
-               </children>
-               <GridPane.margin>
-                  <Insets />
-               </GridPane.margin>
-            </GridPane>
             <AnchorPane prefHeight="919.0" prefWidth="1100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.rowSpan="2147483647">
-               <children>
-                  <Text layoutX="441.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Targa">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="652.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Marca">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="859.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modello">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="148.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assicurazione">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="26.0" layoutX="371.0" layoutY="218.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Text fx:id="textTarga" layoutX="372.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="198.93380905764036">
-                     <font>
-                        <Font size="21.0" />
-                     </font>
-                  </Text>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="26.0" layoutX="585.0" layoutY="218.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="26.0" layoutX="800.0" layoutY="218.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Text fx:id="textMarca" layoutX="587.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="198.9337480224841">
-                     <font>
-                        <Font size="21.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="textModello" layoutX="800.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="197.3901689209216">
-                     <font>
-                        <Font size="21.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="textCilindrata" layoutX="372.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="197.3901689209216">
-                     <font>
-                        <Font size="21.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="textCavalli" layoutX="587.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="197.3901689209216">
-                     <font>
-                        <Font size="21.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="textModello12" layoutX="382.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="197.3901689209216">
-                     <font>
-                        <Font size="21.0" />
-                     </font>
-                  </Text>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="26.0" layoutX="587.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="26.0" layoutX="372.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="26.0" layoutX="800.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="26.0" layoutX="116.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-                  <Text layoutX="435.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bollo">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="638.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Revisione">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="852.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tagliando">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="textAssicurazione" layoutX="114.0" layoutY="481.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="197.3901689209216">
-                     <font>
-                        <Font size="21.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="textBollo" layoutX="374.0" layoutY="481.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="197.3901689209216">
-                     <font>
-                        <Font size="21.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="textRevisione" layoutX="588.0" layoutY="480.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="197.3901689209216">
-                     <font>
-                        <Font size="21.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="textTagliando" layoutX="801.0" layoutY="480.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="197.3901689209216">
-                     <font>
-                        <Font size="21.0" />
-                     </font>
-                  </Text>
-                  <ComboBox fx:id="menuSelectVehicle" layoutX="577.0" layoutY="105.0" prefHeight="27.0" prefWidth="197.0" />
-                  <Button fx:id="viewButton" layoutX="814.0" layoutY="100.0" mnemonicParsing="false" onAction="#viewVehicle" prefHeight="27.0" prefWidth="118.0" style="-fx-background-color: green;" text="Visualizza">
-                     <font>
-                        <Font size="19.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-               </children>
                <GridPane.margin>
                   <Insets />
                </GridPane.margin>
+               <children>
+                  <ImageView fitHeight="760.0" fitWidth="1351.0" layoutX="-241.0" opacity="0.33" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="-241.0">
+                     <image>
+                        <Image url="@../../../../../images/BackgroundFerrari.jpg" />
+                     </image>
+                  </ImageView>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="169.0" layoutX="38.0" layoutY="48.0" stroke="BLACK" strokeType="INSIDE" width="1000.0" />
+                  <Text layoutX="211.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cerca un meccanico per prenotare un appuntamento:">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Text>
+               </children>
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="159.0" layoutX="25.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" width="160.0" />
+                  <ImageView fx:id="insertImage" fitHeight="152.0" fitWidth="146.0" layoutX="34.0" layoutY="24.0" onMouseClicked="#insertVehicle" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../images/InsertVehicle.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="159.0" layoutX="25.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" width="160.0" />
+                  <ImageView fitHeight="156.0" fitWidth="146.0" layoutX="38.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="38.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="23.0">
+                     <image>
+                        <Image url="@../../../../../images/Parking.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="159.0" layoutX="25.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" width="160.0" />
+                  <ImageView fitHeight="133.0" fitWidth="133.0" layoutX="47.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../images/BookMechanic.png" />
+                     </image>
+                  </ImageView>
+                  <Rectangle id="RectInsertVehicle" arcHeight="5.0" arcWidth="5.0" fill="#e17618" height="159.0" layoutX="25.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" width="15.0" />
                </children>
             </AnchorPane>
+            <GridPane prefHeight="158.0" prefWidth="216.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <ImageView fx:id="homeImage" fitHeight="64.0" fitWidth="73.0" layoutX="20.0" layoutY="7.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../images/Home.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </GridPane>
          </children>
       </GridPane>
-      <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="216.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="156.0" prefWidth="1089.0" snapToPixel="false" text="myGarage" textAlignment="CENTER" textFill="#e17618">
+      <Label alignment="CENTER" contentDisplay="BOTTOM" layoutX="205.0" layoutY="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="158.0" prefWidth="1090.0" snapToPixel="false" text="myGarage" textAlignment="CENTER" textFill="#e17618">
          <font>
             <Font name="System Italic" size="130.0" />
          </font>

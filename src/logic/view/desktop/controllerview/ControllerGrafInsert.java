@@ -99,11 +99,12 @@ public class ControllerGrafInsert {
 		String revisione = insertRevisione.getText();
 		String tagliando = insertTagliando.getText();
 		
-		if( targa=="") {
+		if( targa.equals("")) {
 			
 			confirmText.setText("Targa obbligatoria");
 			Color R = Color.RED;
 			confirmText.setFill(R);	
+			return;
 		}
 		
 		VehicleBean vehicleBean = new VehicleBean(username, targa); //***** COSTRUTTORE BEAN VEICOLO.....

@@ -2,6 +2,7 @@
 
 <!-- dichiarazione e instanziazione di una variabile -->
 <jsp:useBean id="ControllerLogin" scope="request" class="logic.control.ControllerLogin"/>
+<jsp:useBean id="LoginBean" scope="request" class="logic.bean.LoginBean"/>
 <!-- procedere con la dichiarazione di tutte le istanze utilizzate -->
 
 <!-- mappa gli attributi di un oggetto sui campi della form -->
@@ -9,8 +10,9 @@
 <!-- procedere nel mappare ogni attributo di ogni classe -->
 
 <%
+	LoginBean loginBean = new LoginBean();
 	if(request.getParameter("login")!=null){
-		if(ControllerLogin.isValidate()){
+		if(ControllerLogin.isValidate(loginBean)){
 %>
 			<jsp:forward page="riassuntoLogin.jsp"/>		
 <%		
