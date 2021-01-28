@@ -51,6 +51,8 @@ public class ControllerGrafHome  {
 	Text textTagliando;
 	@FXML
 	ComboBox<String> menuSelectVehicle;
+	@FXML
+	ImageView imageBookMechanic;
 	
 	
 	
@@ -86,28 +88,7 @@ public class ControllerGrafHome  {
 		
 	}
 	
-	/*@FXML
-	public void initialize() {
-		
-		String username = ControllerMain.getInstance().getId();
-		
-		List<VehicleBean> listVehicleBean = new ArrayList<VehicleBean>();
-		
-		ControllerViewVehicle controlViewVehicle = new ControllerViewVehicle();
-		listVehicleBean = controlViewVehicle.viewVehicle(username); //listVehicleBean);
-		
-		for(VehicleBean vehiclebean: listVehicleBean) { //Clico for per aggiungere le targhe al "combobox" (Solo targhe legate all'username)
-			
-			String targaVehicle = "" + vehiclebean.getTargaVehicle() + "";
-			//String targaVehicle = "ciao"; ---TEST-----
-			menuSelectVehicle.getItems().addAll(
-					targaVehicle);
-			
-			//System.out.println(nameVehicle); ----TEST----
-						
-		}
-		
-	}*/
+	
 	
 	public void initialize() {
 		
@@ -148,6 +129,21 @@ public class ControllerGrafHome  {
 		textTagliando.setText(vehiclebean.getScadTagliando());
 		
 		
+	}
+	
+	@FXML
+	public void bookMech() {
+		try {
+			FactoryView factory = FactoryView.getInstance();
+			View view;
+			view = factory.createView(TypeView.MECHANICPAGE); 
+				
+			ControllerMain.getInstance().replace(ControllerMain.getContainer(), view);
+			/*ControllerMain controlMain = new ControllerMain();
+			controlMain.replace(controlMain.getContainer(), view);*/
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 	}
 }
 

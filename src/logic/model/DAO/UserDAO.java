@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 public class UserDAO {
 	
-	public boolean findUser(String username, String password) throws Exception {
+	public boolean findUser(String username, String password)  {
        
 		Statement stm = null;
 		Connection con = null;

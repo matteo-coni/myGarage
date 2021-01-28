@@ -6,8 +6,9 @@ public enum TypeView {
 	LOGIN(0, "/logic/view/desktop/view/ViewDesktopMain.fxml"),
 	HOMEPAGE(1, "/logic/view/desktop/view/ViewDesktopHome.fxml"),
 	INSERTVEHICLEPAGE(2, "/logic/view/desktop/view/ViewInsert.fxml"),
-	PARKINGPAGE(3,""),
-	MECHANICPAGE(4,"");
+	MECHANICPAGE(3,"/logic/view/desktop/view/ViewDesktopMechBook.fxml"),
+	PARKINGPAGE(4,"");
+	
 	
 
 	private final int type;
