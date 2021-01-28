@@ -49,19 +49,23 @@ public class UserDAO {
             //username e password non trovati nel database
             
         } catch (SQLException e) {
-        		e.printStackTrace();
+        	e.printStackTrace();
         		
         } catch (ClassNotFoundException e) {
-        		e.printStackTrace();
+        	e.printStackTrace();
         
         } finally {
        
         	try {
         		stm.close();
         		con.close();
+        	
         	} catch (SQLException e2) {
         		e2.printStackTrace();
-        	}    	
+        	
+        	} catch(NullPointerException np) {
+        		np.printStackTrace();
+        	}
         }
 		
 		return false;
