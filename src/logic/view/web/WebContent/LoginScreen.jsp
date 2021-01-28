@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1"%>
 
 <!-- dichiarazione e instanziazione di una variabile -->
-<jsp:useBean id="User" scope="request" class="logic.model.User"/>
+<jsp:useBean id="ControllerLogin" scope="request" class="logic.control.ControllerLogin"/>
 <!-- procedere con la dichiarazione di tutte le istanze utilizzate -->
 
 <!-- mappa gli attributi di un oggetto sui campi della form -->
@@ -9,7 +9,17 @@
 <!-- procedere nel mappare ogni attributo di ogni classe -->
 
 <%
-//compilare in JAVA il corpo della pagina
+	if(request.getParameter("login")!=null){
+		if(ControllerLogin.isValidate()){
+%>
+			<jsp:forward page="riassuntoLogin.jsp"/>		
+<%		
+		} else {
+%>
+			<p style="color: red">Dati errati</p>
+<%
+		}
+	}
 %>
 
 <html>
