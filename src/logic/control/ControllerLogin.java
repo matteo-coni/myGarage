@@ -27,7 +27,7 @@ public class ControllerLogin {
 		UserDAO userdao = new UserDAO();
 		valid = userdao.findUser(loginBean.getUsername(),loginBean.getPassword());
 		
-		if (valid==true) {
+		if (valid) {
 			User user = new User(loginBean.getUsername());
 		}
 		return valid;
