@@ -85,6 +85,10 @@ public class VehicleDAO {
 		
 		List<Vehicle> listVehicle = new ArrayList<Vehicle>();
 		
+		ResultSet rs= null;
+		Connection con = null;
+		Statement stm = null;
+		
 		try {
             // Carichiamo un driver per connetterci a Java DB
             String driver = "com.mysql.jdbc.Driver";
@@ -94,17 +98,17 @@ public class VehicleDAO {
             String url = "jdbc:mysql://localhost:3306/mydb"; //inserire nome database
             
             // Otteniamo una connessione con username e password
-            Connection con = DriverManager.getConnection (url , "root", "admin");
+            con = DriverManager.getConnection (url , "root", "admin");
             
             // Creiamo un oggetto Statement per interrogare il db
-            Statement stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
+             stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_READ_ONLY);
             
             // Eseguiamo una query e immagazziniamone i risultati		INSERIRE LA GIUSTA QUERY PER CERCARE NEL DB
             // in un oggetto ResultSet
             String query = "SELECT * FROM Vehicle WHERE User_Username = '" + username + "';";
             System.out.println(query); //prova stringa query
-            ResultSet rs = stm.executeQuery(query);
+            rs = stm.executeQuery(query);
             
             rs.first();
            
@@ -134,9 +138,7 @@ public class VehicleDAO {
 
             }while(rs.next());
             
-            stm.close();
-            con.close();
-            rs.close();
+            
               
             
         } catch (SQLException e) {
@@ -144,6 +146,32 @@ public class VehicleDAO {
             
         }  catch (ClassNotFoundException e) {
             e.printStackTrace();
+        } finally {
+            
+        	if (rs != null) {
+                try {
+                    rs.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            rs = null;
+            if (stm != null) {
+                try {
+                    stm.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            stm = null;
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                con = null;
+            }
         }
 		
 		return listVehicle; 
