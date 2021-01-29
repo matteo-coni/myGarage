@@ -18,7 +18,9 @@ public class VehicleDAO {
 	
 	public void saveVehicle(String username, String targa, String marca, String modello, String cilindrata, String cavalli, String assicurazione,
 							String bollo, String revisione, String tagliando) { //AGGIUNGERE ULTERIORI INFO
-        try {
+        
+		Statement stm = null;
+		try {
             // Carichiamo un driver per connetterci a Java DB
             String driver = "com.mysql.jdbc.Driver";
             Class.forName(driver); 
@@ -30,7 +32,7 @@ public class VehicleDAO {
             Connection con = DriverManager.getConnection (url , "root", "admin");
             
             // Creiamo un oggetto Statement per interrogare il db
-            Statement stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
+            stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_READ_ONLY);
             
             // Eseguiamo una query e immagazziniamone i risultati		
@@ -51,8 +53,21 @@ public class VehicleDAO {
             
         }  catch (ClassNotFoundException e) {
             e.printStackTrace();
-        }
-		
+        
+        } finally {
+        	
+        	if(stm!=null) {
+        		
+        		try{
+        			stm.close();
+        		} catch (SQLException e) {
+        			e.printStackTrace();
+        			
+        		}
+        		
+        	}
+        	
+        }		
     }
 	
 	
