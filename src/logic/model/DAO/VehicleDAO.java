@@ -20,6 +20,7 @@ public class VehicleDAO {
 							String bollo, String revisione, String tagliando) { //AGGIUNGERE ULTERIORI INFO
         
 		Statement stm = null;
+		Connection con = null;
 		try {
             // Carichiamo un driver per connetterci a Java DB
             String driver = "com.mysql.jdbc.Driver";
@@ -29,7 +30,7 @@ public class VehicleDAO {
             String url = "jdbc:mysql://localhost:3306/mydb"; //inserire nome database
             
             // Otteniamo una connessione con username e password
-            Connection con = DriverManager.getConnection (url , "root", "admin");
+            con = DriverManager.getConnection (url , "root", "admin");
             
             // Creiamo un oggetto Statement per interrogare il db
             stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
@@ -56,14 +57,22 @@ public class VehicleDAO {
         
         } finally {
         	
-        	if(stm!=null) {
+        	if(stm!=null && con!=null) {
         		
         		try{
         			stm.close();
+        			con.close();
         		} catch (SQLException e) {
         			e.printStackTrace();
         			
         		}
+        	/*if(con!=null) {
+        		try {
+        			con.close();
+        		} catch (SQLException e) {
+        			e.printStackTrace();
+        		}
+        	}*/
         		
         	}
         	
