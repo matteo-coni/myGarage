@@ -57,7 +57,7 @@ public class VehicleDAO {
         
         } finally {
         	
-        	if(stm!=null && con!=null) {
+        	if(stm!=null) {
         		
         		try{
         			stm.close();
@@ -66,13 +66,13 @@ public class VehicleDAO {
         			e.printStackTrace();
         			
         		}
-        	/*if(con!=null) {
+        	if(con!=null) {
         		try {
         			con.close();
         		} catch (SQLException e) {
         			e.printStackTrace();
         		}
-        	}*/
+        	}
         		
         	}
         	
