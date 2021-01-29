@@ -14,7 +14,7 @@
 	if(request.getParameter("login")!=null){
 		if(ControllerLogin.isValidate(loginBean)){
 %>
-			<jsp:forward page="riassuntoLogin.jsp"/>		
+			<jsp:forward page="HomeScreen.jsp"/>
 <%		
 		} else {
 %>
@@ -28,34 +28,26 @@
 	<head>
 		<title>myGarage Login Page</title>
 	</head>
-	  <body style="background-image: url(/trunk/images/BackgroundFerrari.jpg)">
-	  	<div>
-			<form action="LoginScreen.jsp" name="myform" method="POST">
-				<div style="text-align: center;"> </div>
-				<h1 style="text-align: center;">
-					<br>
-				</h1>
-				<h1 style="text-align: center;">
-					<br>
-				</h1>
-				<h1 style="text-align: center;">
-					<br>
-				</h1>
-				<h1 style="text-align: center;">myGarage</h1>
-				<div style="text-align: center;"> </div>
-				<h4 style="text-align: center;">
-					<label for="username">Username</label>
-					<input type="text" id="username" name="username" placeholder="username" required>
-				</h4>
-				<h4 style="text-align: center;">
-					<label for="password">Password</label>
-					<input type="text" id="password" name="password" placeholder="password" required>
-				</h4>
-				<div style="text-align: center;"> </div>
-				<div style="text-align: center;">
-					<input name="login" value="Login" type="submit">
-				</div>
-			</form>
-		</div>
-	</body>
+	  <body style="background-image: url(/trunk/images/BackgroundFerrari_1024x768.jpg)">
+    	<div>
+      		<form action="Web.jsp" name="myform" method="POST">
+        <div style="text-align: center;"> </div>
+        <h1 style="text-align: center;"><br>
+        </h1>
+        <h1 style="text-align: center;"><br>
+        </h1>
+        <h1 style="text-align: center;"><br>
+        </h1>
+        <h1 style="text-align: center;">myGarage </h1>
+        <div style="text-align: center;"> </div>
+        <h4 style="text-align: center;"> <label for="username"> Username </label>
+          <input name="username" placeholder="username" required id="username" type="text"> </h4>
+        <h4 style="text-align: center;"> <label for="password"> Password </label>
+          <input name="password" placeholder="password" required id="password" type="text"> </h4>
+        <div style="text-align: center;"> </div>
+        <div style="text-align: center;"> <input name="login" value="Login" type="submit">
+        </div>
+      </form>
+    </div>
+  </body>
 </html>

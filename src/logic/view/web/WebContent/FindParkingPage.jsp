@@ -17,62 +17,74 @@
 		<title>Find Parking Page</title>
 	</head>
 	<body>
-		<table style="border-collapse: collapse; width: 1678px; height: 1042px;" border="1">
-			<tbody>
-				<tr style="height: 84px;">
-					<td style="width: 71px; height: 43px; text-align: center;">
-						<img src="?????" alt="help">
-					</td>
-					<td style="width: 71px; height: 43px; text-align: center;">
-						<img src="file:///C:/Users/Utente/Desktop/Universit%C3%A0/Ingegneria%20Informatica/Ingegneria%20del%20Software%20e%20Progettazione%20Web/Progetto/myGarage_not_final/myGarage.git/trunk/images/help.png" alt="help" style="width: 71px; height: 71px;">
-					</td>
-					<td style="width: 593px; text-align: center; height: 86px;" rowspan="2" colspan="6">
-						<h1 style="text-align: center;">
-							<strong>Find Parking</strong>
-						</h1>
-					</td>
-				</tr>
-				<tr style="height: 85px;">
-					<td style="width: 71px; height: 43px; text-align: center;">
-						<img src="?????" alt="help">
-					</td>
-					<td style="width: 71px; height: 43px; text-align: center;">
-						<img src="?????" alt="help">
-					</td>
-				</tr>
-				<tr style="height: 18px;">
-					<td style="width: 194px; height: 23px; text-align: center;" colspan="2">
-						<img src="file:///C:/Users/Utente/Desktop/Universit%C3%A0/Ingegneria%20Informatica/Ingegneria%20del%20Software%20e%20Progettazione%20Web/Progetto/myGarage_not_final/myGarage.git/trunk/images/InsertVehicle.png" alt="insertVehicle">
-					</td>
-					<td style="width: 302px; height: 23px;">
-						<h2 style="text-align: left;">Cerca Meccanico per:</h2>
-						<h4 style="text-align: left;">
-							<label for="city">Città&nbsp;&nbsp;&nbsp;</label>
-							<input name="city" type="text">
-							<label for="address"></label>
-						</h4>
-						<h4 style="text-align: left;">
-							<label for="address">Via</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							<input name="address" type="text">
-							<label for="zone"></label>
-						</h4>
-						<h4 style="text-align: left;">
-							<label for="zone">Zona</label>&nbsp;&nbsp;&nbsp;
-							<input name="zone" type="text">
-						</h4>
-					</td>
-				</tr>
-				<tr style="height: 18px;">
-					<td style="width: 194px; height: 153px; text-align: center;" colspan="2">
-						<img src="file:///C:/Users/Utente/Desktop/Universit%C3%A0/Ingegneria%20Informatica/Ingegneria%20del%20Software%20e%20Progettazione%20Web/Progetto/myGarage_not_final/myGarage.git/trunk/images/Parking.png" alt="Parking" style="width: 255px; height: 255px;">
-					</td>
-				</tr>
-				<tr style="height: 18px;">
-					<td style="height: 45px; width: 194px; text-align: center;" colspan="2">
-						<img src="file:///C:/Users/Utente/Desktop/Universit%C3%A0/Ingegneria%20Informatica/Ingegneria%20del%20Software%20e%20Progettazione%20Web/Progetto/myGarage_not_final/myGarage.git/trunk/images/BookMechanic.png" alt="bookMechanic" style="width: 255px; height: 256px;">
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</body>
+		<table style="border-collapse: collapse; width: 1667px; height: 702px;" border="1">
+      <tbody>
+        <tr style="height: 84px;">
+          <td style="width: 51px; height: 43px; text-align: center; margin-left: 64px;">
+            <a href="pippo.html"><img src="/trunk/images/settings_71x71.png"
+
+                alt="settings" title="settings"></a> </td>
+          <td style="width: 31px; height: 43px; text-align: center; margin-left: 147px;">
+            <a href="Help.html"><img src="/trunk/images/help_71x71.png"
+
+                alt="help" style="width: 71px; height: 71px;" title="help"></a>
+          </td>
+          <td style="width: 1518px; text-align: center; height: 86px; margin-left: -356px;"
+
+            rowspan="2" colspan="6">
+            <h1 style="text-align: center;"><b><strong>Find Parking</strong></b>
+            </h1>
+          </td>
+        </tr>
+        <tr style="height: 85px;">
+          <td style="width: 71px; height: 43px; text-align: center;"> <a href="HomeScreen.jsp"><img
+
+                src="/trunk/images/M_71x71.png"
+
+                alt="M" title="M"></a> </td>
+          <td style="width: 71px; height: 43px; text-align: center;"> <a href="LoginScreen.jsp"><img
+
+                src="/trunk/images/logout_71x71.png"
+
+                alt="logout" title="logout"></a> </td>
+        </tr>
+        <tr style="height: 18px;">
+          <td style="width: 194px; height: 23px; text-align: center;" colspan="2">
+            <a href="InsertVehiclePage.jsp"><img src="/trunk/images/InsertVehicle_250x250.png"
+
+                alt="insertVehicle" title="insertVehicle"></a> </td>
+          <td style="width: 302px; height: 23px;">
+            <h2 style="text-align: left;">Cerca Parcheggio per:</h2>
+            <h4 style="text-align: left;">
+            	<label for="city">Città&nbsp;&nbsp;&nbsp;</label>
+            	<input name="city" id="city" type="text"></h4>
+            <h4 style="text-align: left;">
+            	<label for="address">Via</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            	<input name="address" id="address" type="text"></h4>
+            <h4 style="text-align: left;">
+            	<label for="zone">Zona</label>&nbsp;&nbsp;&nbsp;
+              	<input name="zone" id="zone" type="text"></h4>
+            <p>
+            	<input name="cerca" value="Cerca" type="submit">
+            </p>
+          </td>
+        </tr>
+        <tr style="height: 18px;">
+          <td style="width: 194px; height: 153px; text-align: center;" colspan="2">
+            <a href="FindParkingPageSearched.jsp"><img src="/trunk/images/Parking_250x250_selected.png"
+
+                alt="bookParking_selected" style="width: 255px; height: 255px;"
+
+                title="bookParking_selected"></a> </td>
+        </tr>
+        <tr style="height: 18px;">
+          <td style="height: 45px; width: 194px; text-align: center;" colspan="2">
+            <a href="FindMechanicPage.jsp"><img src="/trunk/images/BookMechanic_250x250.png"
+
+                alt="bookMechanic" style="width: 255px; height: 256px;" title="bookMechanic"></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
 </html>

@@ -14,112 +14,125 @@
 
 <html>
   <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>insert_vehicle_page</title>
+    <title>Insert Vehicle Page</title>
   </head>
   <body>
-    <table style="border-collapse: collapse; width: 1678px; height: 1042px;" border="1">
+    <table style="border-collapse: collapse; width: 1667px; height: 954px;" border="1">
       <tbody>
         <tr style="height: 84px;">
-          <td style="width: 71px; height: 43px; text-align: center;"> <img src="?????"
+          <td style="width: 51px; height: 43px; text-align: center; margin-left: 64px;">
+            <a href="pippo.html"><img src="/trunk/images/settings_71x71.png"
 
-              alt="help"> </td>
-          <td style="width: 71px; height: 43px; text-align: center;"> <img src="/trunk/images/help.png"
+                alt="settings" title="settings"></a> </td>
+          <td style="width: 31px; height: 43px; text-align: center; margin-left: 147px;">
+            <a href="Help.html"><img src="/trunk/images/help_71x71.png"
 
-              alt="help" style="width: 71px; height: 71px;"> </td>
-          <td style="width: 593px; text-align: center; height: 86px;" rowspan="2"
+                alt="help" style="width: 71px; height: 71px;" title="help"></a>
+          </td>
+          <td style="width: 1477px; text-align: center; height: 86px; margin-left: -70px;"
 
-            colspan="6">
+            rowspan="2" colspan="6">
             <h1 style="text-align: center;"><strong>Insert Vehicle Information</strong>
             </h1>
           </td>
         </tr>
         <tr style="height: 85px;">
-          <td style="width: 71px; height: 43px; text-align: center;"> <img src="?????"
+          <td style="width: 71px; height: 43px; text-align: center;"> <a href="HomeScreen.jsp"><img
 
-              alt="help"> </td>
-          <td style="width: 71px; height: 43px; text-align: center;"> <img src="?????"
+                src="/trunk/images/M_71x71.png"
 
-              alt="help"> </td>
+                alt="M" title="M"></a> </td>
+          <td style="width: 71px; height: 43px; text-align: center;"> <a href="LoginScreen.jsp"><img
+
+                src="/trunk/images/logout_71x71.png"
+
+                alt="logout" title="logout"></a> </td>
         </tr>
         <tr style="height: 18px;">
           <td style="width: 194px; height: 23px; text-align: center;" colspan="2">
-            <img src="/trunk/images/InsertVehicle.png"
+            <a href="InsertVehiclePage.jsp"><img src="/trunk/images/InsertVehicle_250x250_selected.png"
 
-              alt="insertVehicle"> </td>
+                alt="insertVehicle_selected" title="insertVehicle_selected"></a>
+          </td>
           <td style="width: 302px; height: 23px;">
             <h4 style="text-align: center;">Inserisci Immagine</h4>
-            <h4 style="text-align: center;"><input type="file"></h4>
+            <h4 style="text-align: center;"><input name=foto id=foto type="file"></h4>
           </td>
           <td style="width: 288px; height: 23px;">
-            <h4 style="text-align: center;"><label for="license">Inserisci Targa</label></h4>
-            <h4 style="text-align: center;"><label for="license"></label><input
+            <h4 style="text-align: center;"><label for="licensePlate">Inserisci Targa</label></h4>
+            <h4 style="text-align: center;"><label for="licensePlate"></label><input
 
-                name="license" type="text"></h4>
+                name="licensePlate" id="licensePlate" type="text"></h4>
           </td>
           <td style="width: 288px; height: 23px;">
-            <h4 style="text-align: center;"> <label for="brand">Inserisci Marca</label></h4>
-            <h4 style="text-align: center;"><label for="brand"></label><input name="brand"
+            <h4 style="text-align: center;"> <label for="vehicleBrand">Inserisci Marca</label></h4>
+            <h4 style="text-align: center;"><label for="vehicleBrand"></label><input name="vehicleBrand"
 
-                type="text"></h4>
+                id="vehicleBrand" type="text"></h4>
           </td>
           <td style="width: 288px; height: 153px;">
-            <h4 style="text-align: center;"><label for="model">Inserisci Modello</label></h4>
-            <h4 style="text-align: center;"><label for="model"></label><label for="model"></label><input
+            <h4 style="text-align: center;"><label for="vehicleModel">Inserisci Modello</label></h4>
+            <h4 style="text-align: center;"><label for="vehicleModel"></label><label for="vehicleModel"></label><input
 
-                name="model" type="text"></h4>
+                name="vehicleModel" id="vehicleModel" type="text"></h4>
           </td>
         </tr>
         <tr style="height: 18px;">
           <td style="width: 194px; height: 153px; text-align: center;" colspan="2">
-            <img src="/trunk/images/Parking.png"
+            <a href="FindParkingPage.jsp"><img src="/trunk/images/Parking_250x250.png"
 
-              alt="Parking" style="width: 255px; height: 255px;"> </td>
-          <td> <br>
+                alt="bookParking" style="width: 255px; height: 255px;" title="bookParking"></a>
+          </td>
+          <td style="margin-left: -128px;"> <br>
           </td>
           <td style="width: 302px; height: 153px;">
-            <h4 style="text-align: center;"> <label for="cilindrata">Inserisci
+            <h4 style="text-align: center;"> <label for="vehicleDisplacement">Inserisci
                 Cilindrata</label></h4>
-            <h4 style="text-align: center;"><input name="cilindrata" type="text"></h4>
+            <h4 style="text-align: center;"><input name="vehicleDisplacement" id="vehicleDisplacement"
+
+                type="text"></h4>
           </td>
           <td style="width: 288px; height: 153px;">
-            <h4 style="text-align: center;"> <label for="cv">Inserisci Cavalli
+            <h4 style="text-align: center;"> <label for="vehiclePowertrains">Inserisci Cavalli
                 Motrici</label></h4>
-            <h4 style="text-align: center;"><input name="cv" type="text"></h4>
+            <h4 style="text-align: center;"><input name="vehiclePowertrains" id="vehiclePowertrains"
+
+                type="text"></h4>
           </td>
         </tr>
         <tr style="height: 18px;">
           <td style="height: 45px; width: 194px; text-align: center;" colspan="2">
-            <img src="/trunk/images/BookMechanic.png"
+            <a href="FindMechanicPage.jsp"><img src="/trunk/images/BookMechanic_250x250.png"
 
-              alt="bookMechanic" style="width: 255px; height: 256px;"> </td>
+                alt="bookMechanic" style="width: 255px; height: 256px;" title="bookMechanic"></a>
+          </td>
           <td style="width: 302px; height: 45px;">
-            <h4 style="text-align: center;"> <label for="assicurazione">Inserisci
+            <h4 style="text-align: center;"> <label for="vehicleInsurance">Inserisci
                 Data Assicurazione</label></h4>
-            <h4 style="text-align: center;"><label for="assicurazione"></label><input
+            <h4 style="text-align: center;"><label for="vehicleInsurance"></label><input
 
-                name="assicurazione" type="date"></h4>
+                name="vehicleInsurance" id="vehicleInsurance" type="date"></h4>
           </td>
           <td style="width: 288px; height: 45px;">
-            <h4 style="text-align: center;"><label for="bollo">Inserisci Data
+            <h4 style="text-align: center;"><label for="vehicleTax">Inserisci Data
                 Bollo</label></h4>
-            <h4 style="text-align: center;"><label for="bollo"></label><input name="bollo"
+            <h4 style="text-align: center;"><label for="vehicleTax"></label><input name="vehicleTax"
 
-                type="date"></h4>
+                id="vehicleTax" type="date"></h4>
           </td>
           <td style="width: 302px; height: 45px;">
-            <h4 style="text-align: center;"> <label for="revisione">Inserisci
+            <h4 style="text-align: center;"> <label for="vehicleReview">Inserisci
                 Data Revisione</label></h4>
-            <h4 style="text-align: center;"><label for="revisione"></label><input
+            <h4 style="text-align: center;"><label for="vehicleReview"></label><input
 
-                name="revisione" type="date"></h4>
+                name="vehicleReview" id="vehicleReview" type="date"></h4>
           </td>
           <td style="width: 288px; height: 45px;">
-            <h4 style="text-align: center;"> <label for="tagliando">Inserisci
+            <h4 style="text-align: center;"> <label for="vehicleService">Inserisci
                 Data Tagliando</label></h4>
-            <h4 style="text-align: center;"><label for="tagliando"></label><input
+            <h4 style="text-align: center;"><label for="vehicleService"></label><input
 
-                name="tagliando" type="date"></h4>
+                name="vehicleService" id="vehicleService" type="date"></h4>
           </td>
         </tr>
       </tbody>
