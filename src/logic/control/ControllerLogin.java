@@ -21,7 +21,7 @@ public class ControllerLogin {
 	//*****METODI*****
 	public boolean isValidate(LoginBean loginBean) {
 		boolean valid = false;
-		//try {
+		try {
 		//--query DAO
 		//controlla nel database se username e password sono giusti
 		UserDAO userdao = new UserDAO();
@@ -31,10 +31,10 @@ public class ControllerLogin {
 			User user = new User(loginBean.getUsername());
 		}
 		return valid;
-		/*} catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return valid;*/
+		return valid;
 	}
 	
 
