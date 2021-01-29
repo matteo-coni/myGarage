@@ -10,7 +10,7 @@ public class UserDAO {
 	
 	public boolean findUser(String username, String password) throws Exception {
        
-		Statement stm = null;
+		//Statement stm = null;
 		Connection con = null;
 		
 		try {
@@ -25,24 +25,25 @@ public class UserDAO {
             con = DriverManager.getConnection (url , "root", "admin");
             
             // Creiamo un oggetto Statement per interrogare il db
-            stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
-                    ResultSet.CONCUR_READ_ONLY);
-            
-            // Eseguiamo una query e immagazziniamone i risultati
-            // in un oggetto ResultSet
-            String qry = "SELECT * FROM User WHERE Username = '" + username + "'AND Password = '" + password + "';";
-            System.out.println(qry); //prova stringa query
-            ResultSet res = stm.executeQuery(qry);
-            
-            if(res.next()) {
-               
-            	
-                System.out.println(username);
-                stm.close();
-            	return true; //trovati --> ritorno vero
-            	
-            	// ****** MANCA LA CREAZIONE DELL'UTENTE USER    ****** 
-            }
+            try(Statement stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY)){
+            	 // Eseguiamo una query e immagazziniamone i risultati
+                // in un oggetto ResultSet
+                String qry = "SELECT * FROM User WHERE Username = '" + username + "'AND Password = '" + password + "';";
+                System.out.println(qry); //prova stringa query
+                ResultSet res = stm.executeQuery(qry);
+                
+                if(res.next()) {
+                   
+                	
+                    System.out.println(username);
+                    stm.close();
+                	return true; //trovati --> ritorno vero
+                	
+                	// ****** MANCA LA CREAZIONE DELL'UTENTE USER    ****** 
+                }
+            } 
+           
             
            
         /*} catch (SQLException e) {
@@ -57,10 +58,10 @@ public class UserDAO {
         } finally {
        
         	try {
-        		if(stm!=null && con!=null) {
-        		stm.close();
+        		//if(stm!=null && con!=null) {
+        		//stm.close();
         		con.close();
-        		}
+        		
         	
         	} catch (SQLException e2) {
         		e2.printStackTrace();
