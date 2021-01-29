@@ -60,7 +60,7 @@ public class UserDAO {
         	try {
         		//if(stm!=null && con!=null) {
         		//stm.close();
-        		con.close();
+        		if(con!=null) con.close();
         		
         	
         	} catch (SQLException e2) {
