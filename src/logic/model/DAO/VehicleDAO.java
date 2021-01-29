@@ -45,8 +45,8 @@ public class VehicleDAO {
             
             stm.executeUpdate(insertStm);
             
-            stm.close();
-            con.close();
+            //stm.close();
+            //con.close();
               
             
         } catch (SQLException e) {
