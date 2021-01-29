@@ -57,8 +57,10 @@ public class UserDAO {
         } finally {
        
         	try {
+        		if(stm!=null && con!=null) {
         		stm.close();
         		con.close();
+        		}
         	
         	} catch (SQLException e2) {
         		e2.printStackTrace();
