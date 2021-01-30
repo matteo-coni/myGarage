@@ -7,6 +7,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 
 import logic.model.Vehicle; 
@@ -79,7 +82,7 @@ public class VehicleDAO {
 	
 	public List<Vehicle> findVehicle(String username){
 		
-		List<Vehicle> listVehicle = new ArrayList<Vehicle>();
+		List<Vehicle> listVehicle = new ArrayList<>();
 		
 		ResultSet rs= null;
 		Connection con = null;
@@ -210,11 +213,22 @@ public class VehicleDAO {
             vehicle.setVehicleModel(modello);
             vehicle.setVehicleDisplacement(cilindrata);
             vehicle.setVehiclePowertrains(cavalli);
+            
+            Date dateAss=new SimpleDateFormat("dd/MM/yyyy").parse(assicurazione);
+            vehicle.setVehicleInsurance(dateAss);
+            
+            Date dateRev=new SimpleDateFormat("dd/MM/yyyy").parse(revisione);
+            vehicle.setVehicleReview(dateRev);
+            
 	
 		   } catch (SQLException e) {
 	            e.printStackTrace();
 	            
+	       } catch (ParseException pe){
+	    	   pe.printStackTrace();
+	    	   
 	       } finally {
+	       
 	            
 	        	if (rs != null) {
 	                try {
