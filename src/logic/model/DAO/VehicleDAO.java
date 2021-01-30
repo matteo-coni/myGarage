@@ -16,7 +16,8 @@ import logic.bean.*;
 
 public class VehicleDAO {
 	
-	final String url = "jdbc:mysql://localhost:3306/mydb";
+	final static String url = "jdbc:mysql://localhost:3306/mydb";
+	final static String driver = "com.mysql.jdbc.Driver";
 	
 	public void saveVehicle(String username, String targa, String marca, String modello, String cilindrata, String cavalli, String assicurazione,
 							String bollo, String revisione, String tagliando) { //AGGIUNGERE ULTERIORI INFO
@@ -27,7 +28,7 @@ public class VehicleDAO {
 		
 		try {
             // Carichiamo un driver per connetterci a Java DB
-            String driver = "com.mysql.jdbc.Driver";
+            //String driver = "com.mysql.jdbc.Driver";
             Class.forName(driver); 
             
             // Creiamo la stringa di connessione
@@ -56,8 +57,9 @@ public class VehicleDAO {
 		   } catch (SQLException e) {
 	            e.printStackTrace();
 	            
-	        }  catch (ClassNotFoundException e) {
-	            e.printStackTrace();
+	        }  catch (ClassNotFoundException e1) {
+	            e1.printStackTrace();
+	            
 	        } finally {
 	       
 	            if (stm != null) {
@@ -93,7 +95,7 @@ public class VehicleDAO {
 		
 		try {
             // Carichiamo un driver per connetterci a Java DB
-            String driver = "com.mysql.jdbc.Driver";
+            //String driver = "com.mysql.jdbc.Driver";
             Class.forName(driver); 
             
             // Creiamo la stringa di connessione
@@ -141,8 +143,8 @@ public class VehicleDAO {
         } catch (SQLException e) {
             e.printStackTrace();
             
-        }  catch (ClassNotFoundException e) {
-            e.printStackTrace();
+        }  catch (ClassNotFoundException e1) {
+            e1.printStackTrace();
         } finally {
             
         	if (rs != null) {
@@ -186,7 +188,7 @@ public class VehicleDAO {
 		
 		try {
             // Carichiamo un driver per connetterci a Java DB
-            String driver = "com.mysql.jdbc.Driver";
+            //String driver = "com.mysql.jdbc.Driver";
             Class.forName(driver); 
             
             // Creiamo la stringa di connessione
@@ -234,8 +236,9 @@ public class VehicleDAO {
 		   } catch (SQLException e) {
 	            e.printStackTrace();
 	            
-	        }  catch (ClassNotFoundException e) {
-	            e.printStackTrace();
+	        }  catch (ClassNotFoundException e1) {
+	            e1.printStackTrace();
+	            
 	        } finally {
 	            
 	        	if (rs != null) {
