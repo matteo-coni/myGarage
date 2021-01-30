@@ -16,6 +16,8 @@ import logic.bean.*;
 
 public class VehicleDAO {
 	
+	final String url = "jdbc:mysql://localhost:3306/mydb";
+	
 	public void saveVehicle(String username, String targa, String marca, String modello, String cilindrata, String cavalli, String assicurazione,
 							String bollo, String revisione, String tagliando) { //AGGIUNGERE ULTERIORI INFO
         
@@ -29,7 +31,7 @@ public class VehicleDAO {
             Class.forName(driver); 
             
             // Creiamo la stringa di connessione
-            String url = "jdbc:mysql://localhost:3306/mydb"; //inserire nome database
+            //String url = "jdbc:mysql://localhost:3306/mydb"; //inserire nome database
             
             // Otteniamo una connessione con username e password
             con = DriverManager.getConnection (url , "root", "admin");
@@ -95,7 +97,7 @@ public class VehicleDAO {
             Class.forName(driver); 
             
             // Creiamo la stringa di connessione
-            String url = "jdbc:mysql://localhost:3306/mydb"; //inserire nome database
+            //String url = "jdbc:mysql://localhost:3306/mydb"; //inserire nome database
             
             // Otteniamo una connessione con username e password
             con = DriverManager.getConnection (url , "root", "admin");
@@ -188,7 +190,7 @@ public class VehicleDAO {
             Class.forName(driver); 
             
             // Creiamo la stringa di connessione
-            String url = "jdbc:mysql://localhost:3306/mydb"; //inserire nome database
+            //String url = "jdbc:mysql://localhost:3306/mydb"; //inserire nome database
             
             // Otteniamo una connessione con username e password
             con = DriverManager.getConnection (url , "root", "admin");
