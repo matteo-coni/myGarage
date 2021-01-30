@@ -16,8 +16,8 @@ import logic.bean.*;
 
 public class VehicleDAO {
 	
-	final static String url = "jdbc:mysql://localhost:3306/mydb";
-	final static String driver = "com.mysql.jdbc.Driver";
+	static final String URL = "jdbc:mysql://localhost:3306/mydb";
+	static final String DRIVER = "com.mysql.jdbc.Driver";
 	
 	public void saveVehicle(String username, String targa, String marca, String modello, String cilindrata, String cavalli, String assicurazione,
 							String bollo, String revisione, String tagliando) { //AGGIUNGERE ULTERIORI INFO
@@ -29,13 +29,13 @@ public class VehicleDAO {
 		try {
             // Carichiamo un driver per connetterci a Java DB
             //String driver = "com.mysql.jdbc.Driver";
-            Class.forName(driver); 
+            Class.forName(DRIVER); 
             
             // Creiamo la stringa di connessione
-            //String url = "jdbc:mysql://localhost:3306/mydb"; //inserire nome database
+            //String URL = "jdbc:mysql://localhost:3306/mydb"; //inserire nome database
             
             // Otteniamo una connessione con username e password
-            con = DriverManager.getConnection (url , "root", "admin");
+            con = DriverManager.getConnection (URL , "root", "admin");
             
             // Creiamo un oggetto Statement per interrogare il db
             stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
@@ -96,13 +96,13 @@ public class VehicleDAO {
 		try {
             // Carichiamo un driver per connetterci a Java DB
             //String driver = "com.mysql.jdbc.Driver";
-            Class.forName(driver); 
+            Class.forName(DRIVER); 
             
             // Creiamo la stringa di connessione
-            //String url = "jdbc:mysql://localhost:3306/mydb"; //inserire nome database
+            //String URL = "jdbc:mysql://localhost:3306/mydb"; //inserire nome database
             
             // Otteniamo una connessione con username e password
-            con = DriverManager.getConnection (url , "root", "admin");
+            con = DriverManager.getConnection (URL , "root", "admin");
             
             // Creiamo un oggetto Statement per interrogare il db
              stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
@@ -189,13 +189,13 @@ public class VehicleDAO {
 		try {
             // Carichiamo un driver per connetterci a Java DB
             //String driver = "com.mysql.jdbc.Driver";
-            Class.forName(driver); 
+            Class.forName(DRIVER); 
             
             // Creiamo la stringa di connessione
-            //String url = "jdbc:mysql://localhost:3306/mydb"; //inserire nome database
+            //String URL = "jdbc:mysql://localhost:3306/mydb"; //inserire nome database
             
             // Otteniamo una connessione con username e password
-            con = DriverManager.getConnection (url , "root", "admin");
+            con = DriverManager.getConnection (URL , "root", "admin");
             
             // Creiamo un oggetto Statement per interrogare il db
             stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
