@@ -16,7 +16,9 @@ import logic.bean.*;
 
 public class VehicleDAO {
 	
+	// Stringa di connessione al db con nome e porta
 	static final String URL = "jdbc:mysql://localhost:3306/mydb";
+	// Stringa driver per il db
 	static final String DRIVER = "com.mysql.jdbc.Driver";
 	
 	public void saveVehicle(String username, String targa, String marca, String modello, String cilindrata, String cavalli, String assicurazione,
@@ -27,12 +29,6 @@ public class VehicleDAO {
 		Statement stm = null;
 		
 		try {
-            // Carichiamo un driver per connetterci a Java DB
-            //String driver = "com.mysql.jdbc.Driver";
-            Class.forName(DRIVER); 
-            
-            // Creiamo la stringa di connessione
-            //String URL = "jdbc:mysql://localhost:3306/mydb"; //inserire nome database
             
             // Otteniamo una connessione con username e password
             con = DriverManager.getConnection (URL , "root", "admin");
@@ -41,8 +37,8 @@ public class VehicleDAO {
             stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_READ_ONLY);
             
-            // Eseguiamo una query e immagazziniamone i risultati		
-            // in un oggetto ResultSet
+            // Stringa per insert e update stm	
+            
             String insertStm = String.format("INSERT INTO Vehicle (User_Username, Targa, Marca, Modello, Cilindrata, Cavalli, Assicurazione,"
             								+ " Bollo, Revisione, Tagliando) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')", username,
             								targa, marca, modello, cilindrata, cavalli, assicurazione, bollo, revisione, tagliando);
@@ -50,15 +46,11 @@ public class VehicleDAO {
             
             stm.executeUpdate(insertStm);
             
-            //stm.close();
-            //con.close();
+          
               
             
 		   } catch (SQLException e) {
 	            e.printStackTrace();
-	            
-	        }  catch (ClassNotFoundException e1) {
-	            e1.printStackTrace();
 	            
 	        } finally {
 	       
@@ -94,13 +86,7 @@ public class VehicleDAO {
 		Statement stm = null;
 		
 		try {
-            // Carichiamo un driver per connetterci a Java DB
-            //String driver = "com.mysql.jdbc.Driver";
-            Class.forName(DRIVER); 
-            
-            // Creiamo la stringa di connessione
-            //String URL = "jdbc:mysql://localhost:3306/mydb"; //inserire nome database
-            
+   
             // Otteniamo una connessione con username e password
             con = DriverManager.getConnection (URL , "root", "admin");
             
@@ -108,8 +94,8 @@ public class VehicleDAO {
              stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_READ_ONLY);
             
-            // Eseguiamo una query e immagazziniamone i risultati		INSERIRE LA GIUSTA QUERY PER CERCARE NEL DB
-            // in un oggetto ResultSet
+            // query ---> immagazziniamone i risultati	in result set	INSERIRE LA GIUSTA QUERY PER CERCARE NEL DB
+            
             String query = "SELECT * FROM Vehicle WHERE User_Username = '" + username + "';";
             System.out.println(query); //prova stringa query
             rs = stm.executeQuery(query);
@@ -143,8 +129,6 @@ public class VehicleDAO {
         } catch (SQLException e) {
             e.printStackTrace();
             
-        }  catch (ClassNotFoundException e1) {
-            e1.printStackTrace();
         } finally {
             
         	if (rs != null) {
@@ -187,12 +171,6 @@ public class VehicleDAO {
 		Statement stm = null;
 		
 		try {
-            // Carichiamo un driver per connetterci a Java DB
-            //String driver = "com.mysql.jdbc.Driver";
-            Class.forName(DRIVER); 
-            
-            // Creiamo la stringa di connessione
-            //String URL = "jdbc:mysql://localhost:3306/mydb"; //inserire nome database
             
             // Otteniamo una connessione con username e password
             con = DriverManager.getConnection (URL , "root", "admin");
@@ -201,8 +179,8 @@ public class VehicleDAO {
             stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_READ_ONLY);
             
-            // Eseguiamo una query e immagazziniamone i risultati	-----	INSERIRE LA GIUSTA QUERY PER CERCARE NEL DB
-            // in un oggetto ResultSet
+            //query e risultati in rs	-----	INSERIRE LA GIUSTA QUERY PER CERCARE NEL DB
+            
             String query = "SELECT * FROM Vehicle WHERE Targa = '" + targa + "';";
             System.out.println(query); //prova stringa query
             rs = stm.executeQuery(query);
@@ -236,10 +214,7 @@ public class VehicleDAO {
 		   } catch (SQLException e) {
 	            e.printStackTrace();
 	            
-	        }  catch (ClassNotFoundException e1) {
-	            e1.printStackTrace();
-	            
-	        } finally {
+	       } finally {
 	            
 	        	if (rs != null) {
 	                try {
