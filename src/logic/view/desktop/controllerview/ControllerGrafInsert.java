@@ -14,6 +14,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.*;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+
 import javafx.scene.paint.*;
 
 
@@ -87,6 +92,8 @@ public class ControllerGrafInsert {
 	@FXML
 	public void confirmInsert() {
 		
+		
+		try {
 		String username = ControllerMain.getInstance().getId();					//******TEST****
 		String targa = insertTarga.getText();
 		String modello = insertModello.getText();
@@ -112,25 +119,42 @@ public class ControllerGrafInsert {
 		vehicleBean.setModelloVehicle(modello);
 		vehicleBean.setCilindrataVehicle(cilindrata);
 		vehicleBean.setCavalliVehicle(cavalli);
-		
-		
-		vehicleBean.setScadAssicurazione(assicurazione);
+		/*vehicleBean.setScadAssicurazione(assicurazione);
 		vehicleBean.setScadBollo(bollo);
 		vehicleBean.setScadRevisione(revisione);
-		vehicleBean.setScadTagliando(tagliando);
+		vehicleBean.setScadTagliando(tagliando);*/
+		
+		Date dateAss=new SimpleDateFormat("dd/MM/yyyy").parse(assicurazione);
+        vehicleBean.setScadAssicurazione(dateAss);
+        
+        Date dateRev=new SimpleDateFormat("dd/MM/yyyy").parse(revisione);
+        vehicleBean.setScadRevisione(dateRev);
+        
+        Date dateBollo=new SimpleDateFormat("dd/MM/yyyy").parse(bollo);
+        vehicleBean.setScadBollo(dateBollo);
+        
+        Date dateTagl=new SimpleDateFormat("dd/MM/yyyy").parse(tagliando);
+        vehicleBean.setScadTagliando(dateTagl);
 		
 		ControllerInsertVehicleInfo controllerInsert =  ControllerInsertVehicleInfo.getInstance();
 		if( controllerInsert.saveVehicle(vehicleBean)) {
+			
 			confirmText.setText("Veicolo inserito correttamente!");
 			
 			Color G = Color.GREEN;
 			confirmText.setFill(G);
+		
 		} else {
 			
 			confirmText.setText("Errore nell'inserimento");
 		
 			Color R = Color.RED;
 			confirmText.setFill(R);
+		}
+		
+		} catch (ParseException pe) {
+			pe.printStackTrace();
+	
 		}
 		
 		

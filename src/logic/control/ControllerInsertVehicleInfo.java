@@ -5,6 +5,9 @@ import javafx.fxml.*;
 import java.util.*;
 import logic.model.Vehicle;
 import java.awt.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
 import logic.bean.*;
 import logic.model.DAO.*;
 
@@ -40,7 +43,15 @@ public class ControllerInsertVehicleInfo {
 		
 		try {
 		VehicleDAO vehicledao = new VehicleDAO();
-		vehicledao.saveVehicle(vehicleBean.getUsername(), vehicleBean.getTargaVehicle(), vehicleBean.getMarcaVehicle(), vehicleBean.getModelloVehicle(), vehicleBean.getCilindrataVehicle(), vehicleBean.getCavalliVehicle(), vehicleBean.getScadAssicurazione(), vehicleBean.getScadBollo(), vehicleBean.getScadRevisione(), vehicleBean.getScadTagliando());
+		
+		DateFormat sdf = new SimpleDateFormat("dd-MM-yyyy",Locale.ITALY);
+		String ass = sdf.format(vehicleBean.getScadAssicurazione());
+		String rev = sdf.format(vehicleBean.getScadRevisione());
+		String bollo = sdf.format(vehicleBean.getScadBollo());
+		String tagl = sdf.format(vehicleBean.getScadTagliando());
+		
+		
+		vehicledao.saveVehicle(vehicleBean.getUsername(), vehicleBean.getTargaVehicle(), vehicleBean.getMarcaVehicle(), vehicleBean.getModelloVehicle(), vehicleBean.getCilindrataVehicle(), vehicleBean.getCavalliVehicle(), ass, bollo, rev, tagl);
 		return true;
 		
 		} catch (Exception e){
@@ -60,6 +71,13 @@ public class ControllerInsertVehicleInfo {
 		if(annoAttuale == annoDeadline && meseAttuale == meseDeadline);
 			//boolean result=true;
 			System.out.println("ricordati di controllare l'assicurazione!");
+	}
+	
+	public void checkAssicurazione (Date dateAssic) {
+		
+		//vehicleBean.getScadAssicurazione().compareTo(vehicleBean.getScadBollo());
+		//USARE IL .compareTo--- data1 > data2 --> ris > 0
+		
 	}
 	
 	public void checkDeadlineTax(GregorianCalendar vehicleTax) {
