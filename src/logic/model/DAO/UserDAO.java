@@ -8,6 +8,8 @@ import java.sql.Statement;
 
 public class UserDAO {
 	
+	final String url = "jdbc:mysql://localhost:3306/mydb";
+	
 	public boolean findUser(String username, String password) throws Exception {
        
 		//Statement stm = null;
@@ -19,7 +21,7 @@ public class UserDAO {
             Class.forName(driver); 
             
             // Creiamo la stringa di connessione
-            String url = "jdbc:mysql://localhost:3306/mydb"; //inserire nome database
+            //String url = "jdbc:mysql://localhost:3306/mydb"; //inserire nome database
             
             // Otteniamo una connessione con username e password
             con = DriverManager.getConnection (url , "root", "admin");

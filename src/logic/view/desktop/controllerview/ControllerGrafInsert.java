@@ -112,6 +112,8 @@ public class ControllerGrafInsert {
 		vehicleBean.setModelloVehicle(modello);
 		vehicleBean.setCilindrataVehicle(cilindrata);
 		vehicleBean.setCavalliVehicle(cavalli);
+		
+		
 		vehicleBean.setScadAssicurazione(assicurazione);
 		vehicleBean.setScadBollo(bollo);
 		vehicleBean.setScadRevisione(revisione);

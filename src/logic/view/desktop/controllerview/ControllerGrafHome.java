@@ -10,8 +10,11 @@ import logic.view.desktop.factory.viewfactory.FactoryView;
 import logic.view.desktop.factory.viewfactory.TypeView;
 import logic.view.desktop.view.View;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import logic.bean.*;
 import logic.control.ControllerViewVehicle;
@@ -123,10 +126,17 @@ public class ControllerGrafHome  {
 		textModello.setText(vehiclebean.getModelloVehicle());
 		textCilindrata.setText(vehiclebean.getCilindrataVehicle());
 		textCavalli.setText(vehiclebean.getCavalliVehicle());
-		textAssicurazione.setText(vehiclebean.getScadAssicurazione());
-		textBollo.setText(vehiclebean.getScadBollo());
-		textRevisione.setText(vehiclebean.getScadRevisione());
-		textTagliando.setText(vehiclebean.getScadTagliando());
+		
+		DateFormat sdf = new SimpleDateFormat("dd-MM-yyyy",Locale.ITALY);
+		String ass = sdf.format(vehiclebean.getScadAssicurazione());
+		String rev = sdf.format(vehiclebean.getScadRevisione());
+		String bollo = sdf.format(vehiclebean.getScadBollo());
+		String tagl = sdf.format(vehiclebean.getScadTagliando());
+		
+		textAssicurazione.setText(ass);
+		textBollo.setText(bollo);
+		textRevisione.setText(rev);
+		textTagliando.setText(tagl);
 		
 		
 	}

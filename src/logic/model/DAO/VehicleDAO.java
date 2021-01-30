@@ -201,6 +201,7 @@ public class VehicleDAO {
             String revisione = rs.getString("Revisione");
             String tagliando = rs.getString("Tagliando");
             
+            
             //Vehicle vehicle = new Vehicle(username, targa, marca, modello, cilindrata, cavalli);
            /* vehiclebean.setTargaVehicle(targa2);
             vehiclebean.setUsername(username);
@@ -219,6 +220,12 @@ public class VehicleDAO {
             
             Date dateRev=new SimpleDateFormat("dd/MM/yyyy").parse(revisione);
             vehicle.setVehicleReview(dateRev);
+            
+            Date dateBollo=new SimpleDateFormat("dd/MM/yyyy").parse(bollo);
+            vehicle.setVehicleTax(dateBollo);
+            
+            Date dateTagl=new SimpleDateFormat("dd/MM/yyyy").parse(tagliando);
+            vehicle.setVehicleReview(dateTagl);
             
 	
 		   } catch (SQLException e) {

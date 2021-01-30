@@ -1,10 +1,12 @@
 package logic.bean;
 
+import java.util.Date;
+
 public class VehicleBean {
 	
 	public VehicleBean (String username, String targa) {
 		
-		this.Username = username;
+		this.username = username;
 		this.targaVehicle = targa;
 	}
 	
@@ -12,23 +14,23 @@ public class VehicleBean {
 		this.targaVehicle = targa;
 	}
 	
-	String Username;
-	private String targaVehicle;
+	String username;
+	String targaVehicle;
 	String marcaVehicle;
 	String modelloVehicle;
 	String cilindrataVehicle;
 	String cavalliVehicle;
-	String scadAssicurazione;
-	String scadBollo;
-	String scadRevisione;
-	String scadTagliando;
+	Date scadAssicurazione = new Date();
+	Date scadBollo = new Date();
+	Date scadRevisione = new Date();
+	Date scadTagliando = new Date();
 	
 	public String getUsername() {
-		return Username;
+		return username;
 	}
 
 	public void setUsername(String username) {
-		Username = username;
+		this.username = username;
 	}
 
 	public String getTargaVehicle() {
@@ -71,35 +73,35 @@ public class VehicleBean {
 		this.cavalliVehicle = cavalliVehicle;
 	}
 	
-	public String getScadAssicurazione() {
+	public Date getScadAssicurazione() {
 		return scadAssicurazione;
 	}
 	
-	public void setScadAssicurazione(String scadAssicurazione) {
+	public void setScadAssicurazione(Date scadAssicurazione) {
 		this.scadAssicurazione = scadAssicurazione;
 	}
 	
-	public String getScadBollo() {
+	public Date getScadBollo() {
 		return scadBollo;
 	}
 	
-	public void setScadBollo(String scadBollo) {
+	public void setScadBollo(Date scadBollo) {
 		this.scadBollo = scadBollo;
 	}
 	
-	public String getScadRevisione() {
+	public Date getScadRevisione() {
 		return scadRevisione;
 	}
 	
-	public void setScadRevisione(String scadRevisione) {
+	public void setScadRevisione(Date scadRevisione) {
 		this.scadRevisione = scadRevisione;
 	}
 	
-	public String getScadTagliando() {
+	public Date getScadTagliando() {
 		return scadTagliando;
 	}
 	
-	public void setScadTagliando(String scadTagliando) {
+	public void setScadTagliando(Date scadTagliando) {
 		this.scadTagliando = scadTagliando;
 	}
 

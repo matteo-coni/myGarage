@@ -12,12 +12,13 @@ public class Vehicle {
 	private String vehicleDisplacement;
 	private String vehiclePowertrains;
 	private String vehicleFuel;
-	private GregorianCalendar vehicleInsurance = new GregorianCalendar();
-	private GregorianCalendar vehicleTax = new GregorianCalendar();
-	private GregorianCalendar vehicleReview = new GregorianCalendar();
-	private GregorianCalendar vehicleService = new GregorianCalendar();
+	private Date vehicleInsurance = new Date();
+	private Date vehicleTax = new Date();
+	private Date vehicleReview = new Date();
+	private Date vehicleService = new Date();
 	private Deadlines deadlines;
 	private Image img;
+	
 	
 	//*****COSTRUTTORE*****
 	public Vehicle(String licensPlate, String vehicleBrand, String vehicleModel, String vehicleDisplacement, String vehiclePowertrains, String vehicleFuel, Deadlines deadlines, /*Date vehicleInsurance, Date vehicleTax, Date vehicleReview, Date vehicleService,*/ Image img) {
@@ -114,35 +115,35 @@ public class Vehicle {
 		this.vehicleFuel = vehicleFuel;
 	}
 	
-	public GregorianCalendar getVehicleInsurance() {
+	public Date getVehicleInsurance() {
 		return vehicleInsurance;
 	}
 
-	public void setVehicleInsurance(GregorianCalendar vehicleInsurance) {
+	public void setVehicleInsurance(Date vehicleInsurance) {
 		this.vehicleInsurance = vehicleInsurance;
 	}
 
-	public GregorianCalendar getVehicleTax() {
+	public Date getVehicleTax() {
 		return vehicleTax;
 	}
 
-	public void setVehicleTax(GregorianCalendar vehicleTax) {
+	public void setVehicleTax(Date vehicleTax) {
 		this.vehicleTax = vehicleTax;
 	}
 
-	public GregorianCalendar getVehicleReview() {
+	public Date getVehicleReview() {
 		return vehicleReview;
 	}
 
-	public void setVehicleReview(GregorianCalendar vehicleReview) {
+	public void setVehicleReview(Date vehicleReview) {
 		this.vehicleReview = vehicleReview;
 	}
 
-	public GregorianCalendar getVehicleService() {
+	public Date getVehicleService() {
 		return vehicleService;
 	}
 
-	public void setVehicleService(GregorianCalendar vehicleService) {
+	public void setVehicleService(Date vehicleService) {
 		this.vehicleService = vehicleService;
 	}
 
