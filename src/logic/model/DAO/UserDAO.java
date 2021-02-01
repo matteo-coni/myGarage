@@ -1,4 +1,4 @@
-package logic.model.DAO;
+package logic.model.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,59 +8,72 @@ import java.sql.Statement;
 
 public class UserDAO {
 	
-	static final String url = "jdbc:mysql://localhost:3306/mydb";
+	static final String URL = "jdbc:mysql://localhost:3306/mydb";
 	static final String DRIVER = "com.mysql.jdbc.Driver";
 	static final String USERNAMEDB = "root";
 	static final String PASSWORDDB = "admin";
 	
-	public boolean findUser(String username, String password) throws Exception {
+	public boolean findUser(String username, String password) {
        
-		//Statement stm = null;
+		Statement stm = null;
 		Connection con = null;
+		ResultSet res = null;
 		
-		//try {
-            // Carichiamo un driver per connetterci a Java DB
-            String driver = "com.mysql.jdbc.Driver";
-            Class.forName(driver); 
-           
-            
+		try {
+            // Carichiamo un driver per connetterci a Java
+                     
             // Otteniamo una connessione con username e password
-            con = DriverManager.getConnection (url , USERNAMEDB, PASSWORDDB);
+            con = DriverManager.getConnection (URL , USERNAMEDB, PASSWORDDB);
             
             // Creiamo un oggetto Statement per interrogare il db
-            try(Statement stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
-                    ResultSet.CONCUR_READ_ONLY)){
+            stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY);
             	
             	 // Eseguiamo una query e immagazziniamone i risultati
                 // in un oggetto ResultSet
-                String qry = "SELECT * FROM User WHERE Username = '" + username + "'AND Password = '" + password + "';";
-                System.out.println(qry); //prova stringa query
-                ResultSet res = stm.executeQuery(qry);
+            String qry = "SELECT * FROM User WHERE Username = '" + username + "'AND Password = '" + password + "';";
+            System.out.println(qry); //prova stringa query
+            res = stm.executeQuery(qry);
                 
-                if(res.next()) {
+            if(res.next()) {
                    
-                    System.out.println(username);
-                    stm.close();
-                	return true; //trovati --> ritorno vero
+                System.out.println(username);
+                stm.close();
+              	return true; //trovati --> ritorno vero
                 	
                 	// ****** MANCA LA CREAZIONE DELL'UTENTE USER    ****** 
                 }
              
        
+        } catch (SQLException e) {
+            e.printStackTrace();
+            
         } finally {
-       
-        	try {
-        		//if(stm!=null && con!=null) {
-        		//stm.close();
-        		if(con!=null) con.close();
-        		
-        	
-        	} catch (SQLException e2) {
-        		e2.printStackTrace();
-        	
-        	} catch(NullPointerException np) {
-        		np.printStackTrace();
-        	}
+            
+        	if (res != null) {
+                try {
+                    res.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+                }
+            }
+            res = null;
+            if (stm != null) {
+                try {
+                    stm.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            stm = null;
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                con = null;
+            }
         }
 		
 		return false;
