@@ -46,7 +46,7 @@ public class ControllerInsertVehicleInfo {
 		try {
 		VehicleDAO vehicledao = new VehicleDAO();
 		
-		DateFormat sdf = new SimpleDateFormat("dd-MM-yyyy",Locale.ITALY);
+		DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy",Locale.ITALY);
 		String ass = sdf.format(vehicleBean.getScadAssicurazione());
 		String rev = sdf.format(vehicleBean.getScadRevisione());
 		String bollo = sdf.format(vehicleBean.getScadBollo());

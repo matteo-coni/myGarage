@@ -23,6 +23,8 @@ public class VehicleDAO {
 	static final String URL = "jdbc:mysql://localhost:3306/mydb";
 	// Stringa driver per il db
 	static final String DRIVER = "com.mysql.jdbc.Driver";
+	static final String USERNAMEDB = "root";
+	static final String PASSWORDDB = "admin";
 	
 	public void saveVehicle(String username, String targa, String marca, String modello, String cilindrata, String cavalli, String assicurazione,
 							String bollo, String revisione, String tagliando) { //AGGIUNGERE ULTERIORI INFO
@@ -34,7 +36,7 @@ public class VehicleDAO {
 		try {
             
             // Otteniamo una connessione con username e password
-            con = DriverManager.getConnection (URL , "root", "admin");
+            con = DriverManager.getConnection (URL , USERNAMEDB, PASSWORDDB);
             
             // Creiamo un oggetto Statement per interrogare il db
             stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
@@ -91,7 +93,7 @@ public class VehicleDAO {
 		try {
    
             // Otteniamo una connessione con username e password
-            con = DriverManager.getConnection (URL , "root", "admin");
+            con = DriverManager.getConnection (URL , USERNAMEDB, PASSWORDDB);
             
             // Creiamo un oggetto Statement per interrogare il db
              stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
@@ -137,8 +139,8 @@ public class VehicleDAO {
         	if (rs != null) {
                 try {
                     rs.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
                 }
             }
             rs = null;
@@ -176,7 +178,7 @@ public class VehicleDAO {
 		try {
             
             // Otteniamo una connessione con username e password
-            con = DriverManager.getConnection (URL , "root", "admin");
+            con = DriverManager.getConnection (URL , USERNAMEDB, PASSWORDDB);
             
             // Creiamo un oggetto Statement per interrogare il db
             stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
@@ -190,8 +192,7 @@ public class VehicleDAO {
             
             rs.first();
             
-            String targa2 = rs.getString("Targa");
-            String username = rs.getString("User_Username");
+            
             String marca = rs.getString("Marca");
             String modello = rs.getString("Modello");
             String cilindrata = rs.getString("Cilindrata");
@@ -200,15 +201,7 @@ public class VehicleDAO {
             String bollo = rs.getString("Bollo");
             String revisione = rs.getString("Revisione");
             String tagliando = rs.getString("Tagliando");
-            
-            
-            //Vehicle vehicle = new Vehicle(username, targa, marca, modello, cilindrata, cavalli);
-           /* vehiclebean.setTargaVehicle(targa2);
-            vehiclebean.setUsername(username);
-            vehiclebean.setMarcaVehicle(marca);
-            vehiclebean.setModelloVehicle(modello);
-            vehiclebean.setCilindrataVehicle(cilindrata);
-            vehiclebean.setCavalliVehicle(cavalli);*/
+           
             
             vehicle.setVehicleBrand(marca);
             vehicle.setVehicleModel(modello);
@@ -248,8 +241,8 @@ public class VehicleDAO {
 	            if (stm != null) {
 	                try {
 	                    stm.close();
-	                } catch (SQLException e) {
-	                    e.printStackTrace();
+	                } catch (SQLException e1) {
+	                    e1.printStackTrace();
 	                }
 	            }
 	            stm = null;

@@ -8,7 +8,10 @@ import java.sql.Statement;
 
 public class UserDAO {
 	
-	final String url = "jdbc:mysql://localhost:3306/mydb";
+	static final String url = "jdbc:mysql://localhost:3306/mydb";
+	static final String DRIVER = "com.mysql.jdbc.Driver";
+	static final String USERNAMEDB = "root";
+	static final String PASSWORDDB = "admin";
 	
 	public boolean findUser(String username, String password) throws Exception {
        
@@ -19,12 +22,10 @@ public class UserDAO {
             // Carichiamo un driver per connetterci a Java DB
             String driver = "com.mysql.jdbc.Driver";
             Class.forName(driver); 
-            
-            // Creiamo la stringa di connessione
-            //String url = "jdbc:mysql://localhost:3306/mydb"; //inserire nome database
+           
             
             // Otteniamo una connessione con username e password
-            con = DriverManager.getConnection (url , "root", "admin");
+            con = DriverManager.getConnection (url , USERNAMEDB, PASSWORDDB);
             
             // Creiamo un oggetto Statement per interrogare il db
             try(Statement stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,

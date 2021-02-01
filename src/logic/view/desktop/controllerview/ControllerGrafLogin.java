@@ -39,7 +39,8 @@ public class ControllerGrafLogin {
 		String password = passwordField.getText();
 		
 		LoginBean loginBean = new LoginBean(username,password);
-		ControllerLogin controlLogin = ControllerLogin.getInstance();
+		//ControllerLogin controlLogin = ControllerLogin.getInstance();
+		ControllerLogin controlLogin = new ControllerLogin();
 		
 		
 		if (controlLogin.isValidate(loginBean)){

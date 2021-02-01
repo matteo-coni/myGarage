@@ -6,7 +6,7 @@ import logic.model.User;
 
 public class ControllerLogin {
 	//*****PROVA SINGLETON*****
-	private static ControllerLogin instance = null;
+	//private static ControllerLogin instance = null;
 	
 	//*****COSTRUTTORE*****
 	//private ControllerLogin() {} //"private" perche' tramite getInstance() potra essere chiamato solo dall'interno
@@ -15,11 +15,11 @@ public class ControllerLogin {
 		
 	}
 	
-	public static ControllerLogin getInstance() {
+	/*public static ControllerLogin getInstance() {
 		if(instance == null)
 			instance = new ControllerLogin();
 		return instance;
-	}
+	}*/
 	//*****FINE SINGLETON*****
 	
 	//*****METODI*****

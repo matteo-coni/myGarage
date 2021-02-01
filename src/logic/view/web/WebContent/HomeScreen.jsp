@@ -59,7 +59,7 @@
         </tr>
         <tr style="height: 18px;">
           <td style="width: 194px; height: 23px; text-align: center;" colspan="2">
-            <a href="InsertVehiclePage.jsp"><img src="/trunk/images/InsertVehicle_250x250.png"
+            <a href="InsertVehiclePage.jsp"><img src="images/InsertVehicle_250x250.png"
 
                 alt="insertVehicle" title="insertVehicle"></a> </td>
         </tr>
@@ -72,7 +72,7 @@
         </tr>
         <tr style="height: 18px;">
           <td style="height: 45px; width: 194px; text-align: center;" colspan="2">
-            <a href="FindMechanicPage.jsp"><img src="/trunk/images/BookMechanic_250x250.png"
+            <a href="FindMechanicPage.jsp"><img src="file:///Users/matteo/Desktop/Progetto_ISPW/myGarage.git/trunk/images/BookMechanic_250x250.png"
 
                 alt="bookMechanic" style="width: 255px; height: 256px;" title="bookMechanic"></a>
           </td>
