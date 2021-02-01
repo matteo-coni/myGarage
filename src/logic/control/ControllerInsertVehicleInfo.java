@@ -1,10 +1,9 @@
 package logic.control;
 
-import javafx.fxml.*;
+
 
 import java.util.*;
-import logic.model.Vehicle;
-import java.awt.*;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 

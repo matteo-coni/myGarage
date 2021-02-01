@@ -13,8 +13,6 @@ import java.text.SimpleDateFormat;
 
 
 import logic.model.Vehicle; 
-import logic.model.User;
-import logic.bean.*;
 
 
 public class VehicleDAO {
@@ -115,13 +113,14 @@ public class VehicleDAO {
                 String modello = rs.getString("Modello");
                 String cilindrata = rs.getString("Cilindrata");
                 String cavalli = rs.getString("Cavalli");
-                String assicurazione = rs.getString("Assicurazione");
+                /*String assicurazione = rs.getString("Assicurazione");
                 String bollo = rs.getString("Bollo");
                 String revisione = rs.getString("Revisione");
-                String tagliando = rs.getString("Tagliando");
+                String tagliando = rs.getString("Tagliando");*/
                 
                 Vehicle vehicle = new Vehicle(username, targa, marca, modello, cilindrata, cavalli);
-                //vehicle.setVehicleInsurance(vehicleInsurance);
+                //vehicle.setVehicleInsurance(assicurazione);
+                
                 
                 
                 System.out.println(vehicle.getLicensePlate());

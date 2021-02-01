@@ -2,7 +2,7 @@ package logic.control;
 
 import logic.bean.*;
 import logic.model.DAO.*;
-import logic.model.User;
+//import logic.model.User;
 
 public class ControllerLogin {
 	//*****PROVA SINGLETON*****
@@ -32,7 +32,7 @@ public class ControllerLogin {
 		valid = userdao.findUser(loginBean.getUsername(),loginBean.getPassword());
 		
 		if (valid) {
-			User user = new User(loginBean.getUsername());
+			//User user = new User(loginBean.getUsername());
 		}
 		return valid;
 		} catch (Exception e) {

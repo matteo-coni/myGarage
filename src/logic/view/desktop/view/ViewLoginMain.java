@@ -17,10 +17,7 @@ import logic.view.desktop.factory.viewfactory.TypeView;
 
 
 public class ViewLoginMain extends Application {
-	
-	
-	private double offsetX;
-	private double offsetY;
+
 	private Parent root;
 	
 	public Parent getRoot() {
@@ -48,16 +45,7 @@ public class ViewLoginMain extends Application {
 		
 			Scene ViewLoginMain = new Scene(root);
 			mainStage.setScene(ViewLoginMain);
-			
-			/*root.setOnMousePressed(event -> {
-				offsetX = event.getSceneX();
-				offsetY = event.getSceneY();			
-			});
-
-			root.setOnMouseDragged(event -> {
-				mainStage.setX(event.getScreenX()-offsetX);
-				mainStage.setY(event.getScreenY()-offsetY);
-			});*/
+		
 			//ControllerMain ctrl = new ControllerMain();
 			ControllerMain ctrl = ControllerMain.getInstance();
 			FactoryView factory = FactoryView.getInstance();
