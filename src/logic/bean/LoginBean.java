@@ -2,13 +2,17 @@ package logic.bean;
 
 public class LoginBean {
 	
+	public LoginBean() {
+		
+	}
+	
 	public LoginBean(String user, String pwd) {
 		username = user;
 		password = pwd;
 	}
 	
-	private final String username;
-	private final String password;
+	private String username;
+	private String password;
 	private int id;
 	private String type;
 	

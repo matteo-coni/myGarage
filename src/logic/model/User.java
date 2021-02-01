@@ -8,6 +8,11 @@ public class User {
 	private Vehicle vehicle;
 	
 	//*****COSTRUTTORE*****
+	
+	public User () {
+		
+	}
+	
 	public User(String name, String surname, String accountID, Vehicle vehicle) {
 		super();
 		this.name = name;

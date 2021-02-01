@@ -9,7 +9,11 @@ public class ControllerLogin {
 	private static ControllerLogin instance = null;
 	
 	//*****COSTRUTTORE*****
-	private ControllerLogin() {} //"private" perche' tramite getInstance() potra essere chiamato solo dall'interno
+	//private ControllerLogin() {} //"private" perche' tramite getInstance() potra essere chiamato solo dall'interno
+	
+	public ControllerLogin() {
+		
+	}
 	
 	public static ControllerLogin getInstance() {
 		if(instance == null)
