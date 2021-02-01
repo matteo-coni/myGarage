@@ -11,6 +11,8 @@ import java.text.SimpleDateFormat;
 import logic.bean.*;
 import logic.model.DAO.*;
 
+
+
 public class ControllerInsertVehicleInfo {
 	//*****PROVA SINGLETON*****
 	private static ControllerInsertVehicleInfo istance = null;
