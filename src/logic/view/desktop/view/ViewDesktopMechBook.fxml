@@ -44,7 +44,7 @@
                         <Image url="@../../../../../images/BackgroundFerrari.jpg" />
                      </image>
                   </ImageView>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="169.0" layoutX="38.0" layoutY="48.0" stroke="BLACK" strokeType="INSIDE" width="1000.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="183.0" layoutX="38.0" layoutY="48.0" stroke="BLACK" strokeType="INSIDE" width="1000.0" />
                   <Text layoutX="211.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cerca un meccanico per prenotare un appuntamento:">
                      <font>
                         <Font size="29.0" />
@@ -65,7 +65,7 @@
                         <Font size="17.0" />
                      </font>
                   </TextField>
-                  <Text layoutX="72.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Indirizzo:">
+                  <Text layoutX="91.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -80,17 +80,17 @@
                         <Font size="24.0" />
                      </font>
                   </Text>
-                  <Text layoutX="544.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*E' possibile....." wrappingWidth="214.22847039482872">
+                  <Text layoutX="195.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*campo obbligatorio" wrappingWidth="339.9870153167037">
                      <font>
-                        <Font size="33.0" />
+                        <Font size="17.0" />
                      </font>
                   </Text>
-                  <Button layoutX="748.0" layoutY="130.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="147.0" text="Visualizza">
+                  <Button layoutX="690.0" layoutY="138.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="147.0" text="Visualizza">
                      <font>
                         <Font size="25.0" />
                      </font>
                   </Button>
-                  <GridPane layoutX="42.0" layoutY="239.0" prefHeight="305.0" prefWidth="994.0">
+                  <GridPane layoutX="42.0" layoutY="250.0" prefHeight="305.0" prefWidth="994.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -101,6 +101,11 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                   </GridPane>
+                  <Text layoutX="591.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clicca su &quot;Visualizza&quot; per ottenere i primi 3 meccanici ordinati in base alla percentuale di sconto!" textAlignment="CENTER" wrappingWidth="343.5703125">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Text>
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
