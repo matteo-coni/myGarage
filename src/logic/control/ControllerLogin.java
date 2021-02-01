@@ -1,8 +1,7 @@
 package logic.control;
 
 import logic.bean.*;
-import logic.model.DAO.*;
-//import logic.model.User;
+import logic.model.dao.*;
 
 public class ControllerLogin {
 	//*****PROVA SINGLETON*****
