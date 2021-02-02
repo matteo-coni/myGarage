@@ -10,6 +10,10 @@ public class Mechanic {
 	private String city;
 	
 	//*****COSTRUTTORE*****
+	public Mechanic() {
+		
+	}
+	
 	public Mechanic(String name, String surname, String garage, String address, String zone, String city) {
 		this.name = name;
 		this.surname = surname;
