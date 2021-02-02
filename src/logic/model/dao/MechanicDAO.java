@@ -40,7 +40,7 @@ public class MechanicDAO {
             
             // query ---> immagazziniamone i risultati	in result set	INSERIRE LA GIUSTA QUERY PER CERCARE NEL DB
             
-            String query = " '" + city + "';"; //Scrivere query per cercare by city
+            String query = "SELECT * FROM Mechanic WHERE Città = '" + city + "' ORDER BY PercSconto;"; //Scrivere query per cercare by city
             System.out.println(query); //prova stringa query
             
             rs = stm.executeQuery(query);
@@ -54,17 +54,17 @@ public class MechanicDAO {
                 String città = rs.getString("Città");
                 String zona = rs.getString("Zona");
                 String indirizzo = rs.getString("Indirizzo");
-                String percSconto = rs.getString("PercSconto");
-           
+                int percSconto = rs.getInt("PercSconto");
+                
+                
                 
                 Mechanic mechanic = new Mechanic();
                 mechanic.setCity(città);
                 mechanic.setZone(zona);
                 mechanic.setAddress(indirizzo);
                 mechanic.setGarage(officina);
-              
-             
-                
+                mechanic.setPercSconto(percSconto);
+
                 listMechanic.add(mechanic);
 
             }while(rs.next());

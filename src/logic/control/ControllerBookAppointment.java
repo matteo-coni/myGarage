@@ -27,7 +27,7 @@ public class ControllerBookAppointment {
 	
 	//*****METODI*****
 	
-	public List<MechanicBean> searchByCity(String city) {
+	/*public List<MechanicBean> searchByCity(String city) {
 		List<MechanicBean> listMechanicBean = new ArrayList<>();
 		
 		MechanicDAO mechanicDao = new MechanicDAO();
@@ -39,10 +39,47 @@ public class ControllerBookAppointment {
 	public List<MechanicBean> searchByCityName(String city, String name) {
 		List<MechanicBean> listMechanicBean = new ArrayList<>();
 		return listMechanicBean;
-	}
+	}*/
 	
 	public List<MechanicBean> searchByAll(String city, String zone, String name) {
 		List<MechanicBean> listMechanicBean = new ArrayList<>();
+		List<Mechanic> listMechanic = new ArrayList<>();
+		
+		if (name.equals("")){
+			if (zone.equals("")) {
+				
+				MechanicDAO mechanicDao = new MechanicDAO();
+				listMechanic = mechanicDao.searchByCity(city);
+			
+			} else {
+			//listMechanicBean = controlBook.searchByCityZone(città,zona);
+			}
+		} else {
+			if (zone.equals("")) {
+				//listMechanicBean = controlBook.searchByCityName(città,nome);
+			} else {
+				//listMechanicBean = controlBook.searchByAll(città,zona,nome);
+			}
+		}
+		
+		try{
+			for (int i=0; i<=2; i++) {
+		
+			//MechanicBean mechanicBean = new MechanicBean();
+			Mechanic mechanic = new Mechanic();
+			mechanic = listMechanic.get(i);
+			
+			MechanicBean mechanicBean = new MechanicBean(mechanic.getName(), mechanic.getGarage(), mechanic.getCity(), mechanic.getZone(), mechanic.getAddress(), mechanic.getPercSconto());
+			
+			listMechanicBean.add(mechanicBean);
+			}
+			
+		} catch (IndexOutOfBoundsException ie) {
+			
+			return listMechanicBean; //Se la lunghezza della lista è minore di 3 (alias indice 2) mi fermo 
+									 // e ritorno la lista costruita fino a quel punto
+		}
+		
 		return listMechanicBean;
 	}
 	

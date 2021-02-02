@@ -119,7 +119,8 @@ public class ControllerGrafBookMech {
 			return;
 		}
 		
-		if (nome.equals("")){
+		listMechanicBean = controlBook.searchByAll(città,zona,nome);
+		/*if (nome.equals("")){
 			if (zona.equals("")) {
 				listMechanicBean = controlBook.searchByCity(città);
 			} else {
@@ -131,8 +132,11 @@ public class ControllerGrafBookMech {
 			} else {
 				listMechanicBean = controlBook.searchByAll(città,zona,nome);
 			}
-		}
+		}*/
+		//System.out.println(listMechanicBean.get(0).getIndirizzo()); //TESTOK
 		
-		
+		nome1.setText(listMechanicBean.get(0).getOfficina());
+		indirizzo1.setText(listMechanicBean.get(0).getIndirizzo());
+		sconto1.setText(String.valueOf(listMechanicBean.get(0).getPercSconto())+'%');
 	}
 }

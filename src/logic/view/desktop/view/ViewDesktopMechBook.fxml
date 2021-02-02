@@ -87,7 +87,7 @@
                         <Font size="17.0" />
                      </font>
                   </Text>
-                  <Button fx:id="buttonVisualizza" layoutX="690.0" layoutY="138.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="147.0" text="Visualizza">
+                  <Button fx:id="buttonVisualizza" layoutX="690.0" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#findMechanic" prefHeight="61.0" prefWidth="147.0" text="Visualizza">
                      <font>
                         <Font size="25.0" />
                      </font>

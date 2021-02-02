@@ -3,20 +3,19 @@ package logic.model;
 public class Mechanic {
 	//*****ATTRIBUTI*****
 	private String name;
-	private String surname;
 	private String garage;
 	private String address;
 	private String zone;
 	private String city;
+	private int percSconto;
 	
 	//*****COSTRUTTORE*****
 	public Mechanic() {
 		
 	}
 	
-	public Mechanic(String name, String surname, String garage, String address, String zone, String city) {
+	public Mechanic(String name, String garage, String city,  String zone, String address, int percSconto) {
 		this.name = name;
-		this.surname = surname;
 		this.garage = garage;
 		this.address = address;
 		this.zone = zone;
@@ -31,12 +30,7 @@ public class Mechanic {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getSurname() {
-		return surname;
-	}
-	public void setSurname(String surname) {
-		this.surname = surname;
-	}
+	
 	public String getGarage() {
 		return garage;
 	}
@@ -60,6 +54,12 @@ public class Mechanic {
 	}
 	public void setCity(String city) {
 		this.city = city;
+	}
+	public int getPercSconto() {
+		return percSconto;
+	}
+	public void setPercSconto(int percSconto) {
+		this.percSconto = percSconto;
 	}
 	
 		
