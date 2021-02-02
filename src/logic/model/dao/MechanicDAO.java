@@ -49,21 +49,20 @@ public class MechanicDAO {
            
             do{
                 
-                String targa = rs.getString("Targa");
+                String officina = rs.getString("Officina");
                 
-                String marca = rs.getString("Marca");
-                String modello = rs.getString("Modello");
-                String cilindrata = rs.getString("Cilindrata");
-                String cavalli = rs.getString("Cavalli");
-                /*String assicurazione = rs.getString("Assicurazione");
-                String bollo = rs.getString("Bollo");
-                String revisione = rs.getString("Revisione");
-                String tagliando = rs.getString("Tagliando");*/
+                String città = rs.getString("Città");
+                String zona = rs.getString("Zona");
+                String indirizzo = rs.getString("Indirizzo");
+                String percSconto = rs.getString("PercSconto");
+           
                 
                 Mechanic mechanic = new Mechanic();
-                //vehicle.setVehicleInsurance(assicurazione);
-                     
-               // System.out.println(vehicle.getLicensePlate());
+                mechanic.setCity(città);
+                mechanic.setZone(zona);
+                mechanic.setAddress(indirizzo);
+                mechanic.setGarage(officina);
+              
              
                 
                 listMechanic.add(mechanic);

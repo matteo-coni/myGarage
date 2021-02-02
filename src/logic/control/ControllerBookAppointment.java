@@ -3,9 +3,10 @@ package logic.control;
 import java.util.*;
 
 
-import logic.model.Vehicle;
+
 import logic.model.Mechanic;
 import logic.bean.MechanicBean;
+import logic.model.dao.MechanicDAO;
 import logic.model.Booking;
 import logic.model.User;
 
@@ -28,6 +29,10 @@ public class ControllerBookAppointment {
 	
 	public List<MechanicBean> searchByCity(String city) {
 		List<MechanicBean> listMechanicBean = new ArrayList<>();
+		
+		MechanicDAO mechanicDao = new MechanicDAO();
+		List<Mechanic> listMechanic = mechanicDao.searchByCity(city);
+		
 		return listMechanicBean;
 	}
 	
