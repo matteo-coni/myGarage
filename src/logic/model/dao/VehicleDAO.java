@@ -217,7 +217,8 @@ public class VehicleDAO {
             vehicle.setVehicleTax(dateBollo);
             
             Date dateTagl=new SimpleDateFormat("dd/MM/yyyy").parse(tagliando);
-            vehicle.setVehicleReview(dateTagl);
+            vehicle.setVehicleService(dateTagl);
+            
             
 	
 		   } catch (SQLException e) {

@@ -47,6 +47,9 @@ public class ControllerViewVehicle {
 		vehiclebean.setScadBollo(vehicle.getVehicleTax());
 		vehiclebean.setScadRevisione(vehicle.getVehicleReview());
 		vehiclebean.setScadTagliando(vehicle.getVehicleService());
+		//TEST
+		System.out.println(vehicle.getVehicleService());
+		System.out.println(vehiclebean.getScadTagliando());
 		
 		
 		return vehiclebean;

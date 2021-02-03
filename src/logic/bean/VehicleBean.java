@@ -1,11 +1,9 @@
 package logic.bean;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.util.Date;
-import java.util.Locale;
 
-import javafx.scene.control.TextField;
+import java.util.Date;
+
+
 
 public class VehicleBean {
 	
