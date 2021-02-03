@@ -117,7 +117,13 @@ public class ControllerGrafBookMech {
 		bookingBean.setNomeOfficina(nome1.getText());
 		bookingBean.setDataPrenotazione(date1);
 		bookingBean.setProblemi(txtProblem1.getText());
-		bookingBean.setVeicolo(selectVehicle.getValue());
+		
+		
+		if(selectVehicle.getValue() != null) {
+			bookingBean.setVeicolo(selectVehicle.getValue());
+		} else {
+			bookingBean.setVeicolo("Non definito");
+		}
 		
 		ControllerBookAppointment controlBook = new ControllerBookAppointment();
 		controlBook.saveBooking(bookingBean);
