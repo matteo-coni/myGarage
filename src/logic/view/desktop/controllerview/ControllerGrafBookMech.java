@@ -4,11 +4,16 @@ import logic.view.desktop.view.View;
 import logic.view.desktop.factory.viewfactory.FactoryView;
 import logic.view.desktop.factory.viewfactory.TypeView;
 import logic.control.ControllerBookAppointment;
+import logic.control.ControllerViewVehicle;
 import logic.bean.MechanicBean;
+import logic.bean.BookingBean;
 
 import java.io.IOException;
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javafx.fxml.FXML;
@@ -65,6 +70,8 @@ public class ControllerGrafBookMech {
 	TextField zonaCerca;
 	@FXML
 	TextField cittàCerca;
+	@FXML
+	ComboBox<String> selectVehicle;
 	
 	
 	@FXML
@@ -97,10 +104,26 @@ public class ControllerGrafBookMech {
 	
 	@FXML
 	public void confirmBooking() {
+		
+		BookingBean bookingBean = new BookingBean();
 		//String data = datePick.getAccessibleText();
 		//System.out.println(data);
-		LocalDate datap = datePick1.getValue();
-		System.out.println(datap.toString());
+		LocalDate datap1 = datePick1.getValue();
+		//System.out.println(datap.toString());
+		Instant instant = Instant.from(datap1.atStartOfDay(ZoneId.systemDefault()));
+		Date date1 = Date.from(instant);
+		
+		bookingBean.setUsername(ControllerMain.getInstance().getId());
+		bookingBean.setNomeOfficina(nome1.getText());
+		bookingBean.setDataPrenotazione(date1);
+		bookingBean.setProblemi(textProblem1.getText());
+		bookingBean.setVeicolo(selectVehicle.getValue());
+		
+		ControllerBookAppointment controlBook = new ControllerBookAppointment();
+		controlBook.saveBooking(bookingBean);
+		
+		
+	
 		
 	}
 	
@@ -139,4 +162,24 @@ public class ControllerGrafBookMech {
 		indirizzo1.setText(listMechanicBean.get(0).getIndirizzo());
 		sconto1.setText(String.valueOf(listMechanicBean.get(0).getPercSconto())+'%');
 	}
+
+	public void initialize() {
+		
+		String username = ControllerMain.getInstance().getId();
+		
+		
+		
+		ControllerViewVehicle controlViewVehicle = new ControllerViewVehicle();
+		List<String> targheVeicoli = controlViewVehicle.viewVehicle(username); //listVehicleBean);
+		
+		for(String targa: targheVeicoli) { //Clico for per aggiungere le targhe al "combobox" (Solo targhe legate all'username)
+						
+			//String targaVehicle = "ciao"; ---TEST-----
+			selectVehicle.getItems().addAll(
+					targa);
+						
+		}
+		
+	}
+	
 }

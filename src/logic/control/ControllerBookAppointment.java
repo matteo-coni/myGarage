@@ -5,6 +5,7 @@ import java.util.*;
 
 
 import logic.model.Mechanic;
+import logic.bean.BookingBean;
 import logic.bean.MechanicBean;
 import logic.model.dao.MechanicDAO;
 import logic.model.Booking;
@@ -88,21 +89,12 @@ public class ControllerBookAppointment {
 		return listMechanicBean;
 	}
 	
-	/*public void saveNewVehicle(){
+	
+	public void saveBooking(BookingBean bookingBean) {
 		
 	}
-	public void editVehicle(){
-		
-	}
-	public void deleteVehicle(){
-		
-	}
-	public void findMechanic(String address, String area, String city){
-		
-	}
-	public void bookApp(Mechanic infoMech, User infoDriver, Date dateBook, String problems, Vehicle selVehicle){
-		
-	}
+	
+	/*
 	public void saveFavorite(Mechanic infoMech){
 		
 	}
