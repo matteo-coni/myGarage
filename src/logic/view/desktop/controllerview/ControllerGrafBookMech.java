@@ -59,7 +59,7 @@ public class ControllerGrafBookMech {
 	@FXML
 	TextField sconto3;
 	@FXML
-	TextField textProblem1;
+	TextArea txtProblem1;
 	@FXML
 	TextField textProblem2;
 	@FXML
@@ -116,7 +116,7 @@ public class ControllerGrafBookMech {
 		bookingBean.setUsername(ControllerMain.getInstance().getId());
 		bookingBean.setNomeOfficina(nome1.getText());
 		bookingBean.setDataPrenotazione(date1);
-		bookingBean.setProblemi(textProblem1.getText());
+		bookingBean.setProblemi(txtProblem1.getText());
 		bookingBean.setVeicolo(selectVehicle.getValue());
 		
 		ControllerBookAppointment controlBook = new ControllerBookAppointment();

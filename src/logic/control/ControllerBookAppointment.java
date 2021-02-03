@@ -8,8 +8,9 @@ import logic.model.Mechanic;
 import logic.bean.BookingBean;
 import logic.bean.MechanicBean;
 import logic.model.dao.MechanicDAO;
+import logic.model.dao.BookingDAO;
 import logic.model.Booking;
-import logic.model.User;
+
 
 public class ControllerBookAppointment {
 	//*****PROVA SINGLETON*****
@@ -91,6 +92,18 @@ public class ControllerBookAppointment {
 	
 	
 	public void saveBooking(BookingBean bookingBean) {
+		
+		BookingDAO bookingDao = new BookingDAO();
+		Booking booking = new Booking();
+		
+		booking.setUsername(bookingBean.getUsername());
+		booking.setNameGarage(bookingBean.getNomeOfficina());
+		booking.setProblems(bookingBean.getProblemi());
+		booking.setDateBook(bookingBean.getDataPrenotazione());
+		booking.setBookingConfirm(bookingBean.getConfermaPren());
+		booking.setSelVehicle(bookingBean.getVeicolo());
+		
+		bookingDao.saveBooking(booking);
 		
 	}
 	

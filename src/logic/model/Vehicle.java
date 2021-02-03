@@ -16,27 +16,11 @@ public class Vehicle {
 	private Date vehicleTax = new Date();
 	private Date vehicleReview = new Date();
 	private Date vehicleService = new Date();
-	private Deadlines deadlines;
+
 	private Image img;
 	
 	
-	//*****COSTRUTTORE*****
-	public Vehicle(String licensPlate, String vehicleBrand, String vehicleModel, String vehicleDisplacement, String vehiclePowertrains, String vehicleFuel, Deadlines deadlines, /*Date vehicleInsurance, Date vehicleTax, Date vehicleReview, Date vehicleService,*/ Image img) {
-		
-		this.licensePlate = licensPlate;
-		this.vehicleBrand = vehicleBrand;
-		this.vehicleModel = vehicleModel;
-		this.vehicleDisplacement = vehicleDisplacement;
-		this.vehiclePowertrains = vehiclePowertrains;
-		this.vehicleFuel = vehicleFuel;
-		this.deadlines = deadlines;
-		/*this.vehicleInsurance = vehicleInsurance;
-		this.vehicleTax = vehicleTax;
-		this.vehicleReview = vehicleReview;
-		this.vehicleService = vehicleService;
-		this.img = img;*/
-	}
-	
+	//*****COSTRUTTORE****
 	public Vehicle(String username, String targa, String marca, String modello, String cilindrata, String cavalli) {
 		this.username = username;
 		this.licensePlate = targa;

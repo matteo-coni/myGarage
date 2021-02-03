@@ -5,7 +5,7 @@ public class MechanicBean {
 	//Attributi
 	private String nome;
 	private String officina;
-	private String città;
+	private String citta;
 	private String zona;
 	private String indirizzo;
 	private int percSconto;
@@ -14,10 +14,10 @@ public class MechanicBean {
 		
 	}
 	
-	public MechanicBean(String nome, String officina, String città, String zona, String indirizzo, int percSconto) {
+	public MechanicBean(String nome, String officina, String citta, String zona, String indirizzo, int percSconto) {
 		this.nome = nome;
 		this.officina = officina;
-		this.città = città;
+		this.citta = citta;
 		this.zona = zona;
 		this.indirizzo = indirizzo;
 		this.percSconto = percSconto;
@@ -40,11 +40,11 @@ public class MechanicBean {
 	}
 
 	public String getCittà() {
-		return città;
+		return citta;
 	}
 
-	public void setCittà(String città) {
-		this.città = città;
+	public void setCittà(String citta) {
+		this.citta = citta;
 	}
 
 	public String getZona() {

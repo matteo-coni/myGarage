@@ -130,10 +130,10 @@
                         <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                            <children>
                               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="102.0" stroke="BLACK" strokeType="INSIDE" width="497.0" />
-                              <TextArea fx:id="txtProblem1" layoutX="9.0" layoutY="23.0" prefHeight="72.0" prefWidth="269.0" />
                               <DatePicker fx:id="datePick1" layoutX="303.0" layoutY="23.0" prefHeight="21.0" prefWidth="157.0" />
                               <Button fx:id="buttonBooking1" layoutX="345.0" layoutY="62.0" mnemonicParsing="false" onMouseClicked="#confirmBooking" text="Prenota" />
                               <Text layoutX="64.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inserisci qui i problemi del veicolo:" />
+                              <TextArea fx:id="txtProblem1" layoutX="9.0" layoutY="23.0" prefHeight="72.0" prefWidth="269.0" />
                            </children>
                         </Pane>
                         <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
