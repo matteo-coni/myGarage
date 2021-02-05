@@ -39,11 +39,11 @@ public class MechanicBean {
 		this.officina = officina;
 	}
 
-	public String getCitt√†() {
+	public String getCitta†() {
 		return citta;
 	}
 
-	public void setCitt√†(String citta) {
+	public void setCitta†(String citta) {
 		this.citta = citta;
 	}
 
