@@ -69,7 +69,7 @@ public class ControllerGrafBookMech {
 	@FXML
 	TextField zonaCerca;
 	@FXML
-	TextField citta†Cerca;
+	TextField cittaCerca;
 	@FXML
 	ComboBox<String> selectVehicle;
 	
@@ -138,17 +138,17 @@ public class ControllerGrafBookMech {
 		
 		String nome = nomeCerca.getText();
 		String zona = zonaCerca.getText();
-		String citta† = citta†Cerca.getText();
+		String citta = cittaCerca.getText();
 		
 		ControllerBookAppointment controlBook = new ControllerBookAppointment();
 		List<MechanicBean> listMechanicBean = new ArrayList<>();
 		
-		if (citta†.equals("")){
+		if (citta.equals("")){
 			//Scrivere di dover inserire la citt√† obbligatoriamente
 			return;
 		}
 		
-		listMechanicBean = controlBook.searchByAll(citta†,zona,nome);
+		listMechanicBean = controlBook.searchByAll(citta,zona,nome);
 		/*if (nome.equals("")){
 			if (zona.equals("")) {
 				listMechanicBean = controlBook.searchByCity(citt√†);

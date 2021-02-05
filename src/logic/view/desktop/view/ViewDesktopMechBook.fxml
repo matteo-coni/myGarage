@@ -63,7 +63,7 @@
                         <Font size="17.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="cittàCerca" layoutX="192.0" layoutY="167.0" prefHeight="34.0" prefWidth="313.0">
+                  <TextField fx:id="cittaCerca" layoutX="192.0" layoutY="167.0" prefHeight="34.0" prefWidth="313.0">
                      <font>
                         <Font size="17.0" />
                      </font>
