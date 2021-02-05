@@ -23,20 +23,24 @@ public class ControllerLogin {
 	
 	//*****METODI*****
 	public boolean isValidate(LoginBean loginBean) {
+		
 		boolean valid = false;
 		try {
-		//--query DAO
-		//controlla nel database se username e password sono giusti
-		UserDAO userdao = new UserDAO();
-		valid = userdao.findUser(loginBean.getUsername(),loginBean.getPassword());
+			//--query DAO
+			//controlla nel database se username e password sono giusti
+			UserDAO userdao = new UserDAO();
+			valid = userdao.findUser(loginBean.getUsername(),loginBean.getPassword());
 		
-		if (valid) {
-			//User user = new User(loginBean.getUsername());
-		}
-		return valid;
+			if (valid) {
+				//User user = new User(loginBean.getUsername());
+			}
+			
+			return valid;
+		
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 		return valid;
 	}
 	

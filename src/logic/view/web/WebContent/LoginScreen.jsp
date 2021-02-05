@@ -1,4 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1"%>
+<%@ page import="java.util.*" %>
+<%@ page import="logic.bean.*" %>
+
 
 <!-- dichiarazione e instanziazione di una variabile -->
 <jsp:useBean id="ControllerLogin" scope="request" class="logic.control.ControllerLogin"/>
@@ -6,13 +9,24 @@
 <!-- procedere con la dichiarazione di tutte le istanze utilizzate -->
 
 <!-- mappa gli attributi di un oggetto sui campi della form -->
-<jsp:setProperty name="User" property="*" />
+<jsp:setProperty name="loginBean" property="*" />
 <!-- procedere nel mappare ogni attributo di ogni classe -->
 
 <%
 	
+	
 	if(request.getParameter("login")!=null){
-		if(ControllerLogin.isValidate(loginBean)){
+		
+		
+		
+		String username = request.getParameter("username");
+		System.out.println(username);
+		String password = request.getParameter("password");
+		
+		LoginBean loginBEAN = new LoginBean(username,password);
+		
+		
+		if(ControllerLogin.isValidate(loginBEAN)){
 %>
 			<jsp:forward page="HomeScreen.jsp"/>
 <%		
@@ -30,8 +44,9 @@
 	</head>
 	  <body style="background-image: url(/trunk/images/BackgroundFerrari_1024x768.jpg)">
     	<div>
-      		<form action="HomeScreen.jsp" name="myform" method="POST">
-        <div style="text-align: center;"> </div>
+    	;
+      		<form action="LoginScreen.jsp" name="myform" method="POST">
+        <div style="text-align: center;"> </div> 
         <h1 style="text-align: center;"><br>
         </h1>
         <h1 style="text-align: center;"><br>
@@ -40,12 +55,17 @@
         </h1>
         <h1 style="text-align: center;">myGarage </h1>
         <div style="text-align: center;"> </div>
-        <h4 style="text-align: center;"> <label for="username"> Username </label>
-          <input name="username" placeholder="username" required id="username" type="text"> </h4>
-        <h4 style="text-align: center;"> <label for="password"> Password </label>
-          <input name="password" placeholder="password" required id="password" type="text"> </h4>
+        <h4 style="text-align: center;"> 
+        	<label for="username"> Username </label>
+          		<input name="username" placeholder="username" required id="username" type="text"> 
+        </h4>
+        <h4 style="text-align: center;"> 
+        	<label for="password"> Password </label>
+          		<input name="password" placeholder="password" required id="password" type="text"> 
+        </h4>
         <div style="text-align: center;"> </div>
-        <div style="text-align: center;"> <input name="login" value="Login" type="submit">
+        <div style="text-align: center;"> 
+        		<input name="login" value="login" type="submit">
         </div>
       </form>
     </div>

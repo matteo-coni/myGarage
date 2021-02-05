@@ -9,7 +9,7 @@ import java.sql.Statement;
 public class UserDAO {
 	
 	static final String URL = "jdbc:mysql://localhost:3306/mydb";
-	static final String DRIVER = "com.mysql.jdbc.Driver";
+	static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 	static final String USERNAMEDB = "root";
 	static final String PASSWORDDB = "admin";
 	
@@ -21,6 +21,7 @@ public class UserDAO {
 		
 		try {
             // Carichiamo un driver per connetterci a Java
+			Class.forName(DRIVER);
                      
             // Otteniamo una connessione con username e password
             con = DriverManager.getConnection (URL , USERNAMEDB, PASSWORDDB);
@@ -47,6 +48,11 @@ public class UserDAO {
        
         } catch (SQLException e) {
             e.printStackTrace();
+        
+        } catch (ClassNotFoundException cnf) {
+        	
+        	cnf.printStackTrace();
+        	//System.out.println("error");
             
         } finally {
             
