@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1"%>
-
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
 <!-- dichiarazione e instanziazione di una variabile -->
 <jsp:useBean id="vehiclebean" scope="request" class="logic.bean.VehicleBean"/>
 <jsp:useBean id="controlViewVehicle" scope="request" class="logic.control.ControllerViewVehicle"/>
@@ -11,7 +12,7 @@
 
 <%
 //compilare in JAVA il corpo della pagina
-//	if (request.getParameter("carica")!=null){
+	if (request.getParameter("")!=null){
 		
 		String targaCb = "BB/636/CG";//request.getParameter("Vehicle");
 		//ControllerViewVehicle controlViewVehicle = new ControllerViewVehicle();
@@ -21,7 +22,7 @@
 %>		
 		
 <% 		
-	
+	}
 %>
 
 <html>
@@ -61,10 +62,14 @@
           <td>
             <h4 style="text-align: center;">Seleziona il tuo Veicolo</h4>
             <div style="text-align: center;">
-              <select name="Vehicle" size="1">
+              <select name="Vehicle" id="select" size="1">
                 <option disabled="disabled" selected="selected">Veicolo</option>
                 <option>Vehicle Number 1</option>
                 <option>Vehicle Number 2</option>
+                <%
+                	List<String> listVehicle = new ArrayList<String>();
+                	listVehicle = controlViewVehicle.viewVehicle("admin");
+                %>
               </select>
               <button id="load" name="Load" value="Visualizza" type="button" onClick="fnc('<%=vehiclebean.getTargaVehicle()%>')">Visualizza Info</button> 
              		
@@ -72,10 +77,11 @@
 						
                     	function fnc(prova)
 						{
-							//AGGIUNGERE I VARI SET
+							//AGGIUNGERE I VARI SET TEXT
+						
 				
-		   				 document.getElementById("licensePlate").textContent = prova;  
-		   					 
+		   				 document.getElementById("licensePlate").textContent = prova; 
+		   				 document.getElementById("vehicleBrand").textContent = prova; 
 		   					 
 						}
 					</script>
@@ -94,7 +100,7 @@
                   <td style="width: 302px; height: 23px;">
                     <h4 style="text-align: center;">Immagine</h4>
                     <h4 style="text-align: center;">
-                    <button id="carica" name="carica" value="Carica" type="button" onClick="fnc('<%=vehiclebean.getTargaVehicle()%>')"></button> </h4>
+                    <button id="carica" name="carica" value="Carica" type="button">Carica</button> </h4>
                    
                   </td>
                   <td style="width: 288px; height: 23px;">
@@ -110,7 +116,7 @@
                     <h4 style="text-align: center;">
                      <label for="vehicleBrand">Marca</label></h4>
                     <h4 style="text-align: center;">
-                    <label for="vehicleBrand"></label><input
+                    <label id="vehicleBrand"></label><input
 
                         name="vehicleBrand" id="vehicleBrand" readonly="readonly"
 
