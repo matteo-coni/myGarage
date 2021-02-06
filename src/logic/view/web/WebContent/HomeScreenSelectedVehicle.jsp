@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1"%>
 
 <!-- dichiarazione e instanziazione di una variabile -->
-<jsp:useBean id="User" scope="request" class="logic.model.User"/>
+<jsp:useBean id="vehiclebean" scope="request" class="logic.bean.VehicleBean"/>
+<jsp:useBean id="controlViewVehicle" scope="request" class="logic.control.ControllerViewVehicle"/>
 <!-- procedere con la dichiarazione di tutte le istanze utilizzate -->
 
 <!-- mappa gli attributi di un oggetto sui campi della form -->
@@ -10,6 +11,17 @@
 
 <%
 //compilare in JAVA il corpo della pagina
+//	if (request.getParameter("carica")!=null){
+		
+		String targaCb = "BB/636/CG";//request.getParameter("Vehicle");
+		//ControllerViewVehicle controlViewVehicle = new ControllerViewVehicle();
+		vehiclebean = controlViewVehicle.loadVehicle(targaCb);
+		//System.out.println(vehiclebean.getMarcaVehicle());
+		vehiclebean.setTargaVehicle(targaCb);
+%>		
+		
+<% 		
+	
 %>
 
 <html>
@@ -54,6 +66,19 @@
                 <option>Vehicle Number 1</option>
                 <option>Vehicle Number 2</option>
               </select>
+              <button id="load" name="Load" value="Visualizza" type="button" onClick="fnc('<%=vehiclebean.getTargaVehicle()%>')">Visualizza Info</button> 
+             		
+             		<script type="text/javascript"> 
+						
+                    	function fnc(prova)
+						{
+							//AGGIUNGERE I VARI SET
+				
+		   				 document.getElementById("licensePlate").textContent = prova;  
+		   					 
+		   					 
+						}
+					</script>
             </div>
           </td>
         </tr>
@@ -68,31 +93,36 @@
                 <tr style="height: 18px;">
                   <td style="width: 302px; height: 23px;">
                     <h4 style="text-align: center;">Immagine</h4>
-                    <h4 style="text-align: center;"><input name="carica" value="Carica"
-
-type="submit"></h4>
+                    <h4 style="text-align: center;">
+                    <button id="carica" name="carica" value="Carica" type="button" onClick="fnc('<%=vehiclebean.getTargaVehicle()%>')"></button> </h4>
+                   
                   </td>
                   <td style="width: 288px; height: 23px;">
-                    <h4 style="text-align: center;"><label for="licensePlate">Targa</label></h4>
-                    <h4 style="text-align: center;"><label for="licensePlate"></label><input
-
-                        name="licensePlate" id="licensePlate" readonly="readonly"
-
-                        type="text"></h4>
+                    <h4 style="text-align: center;">
+                    <label for="licensePlate">Targa</label></h4>
+                    <h4 style="text-align: center;">
+                    <label id="licensePlate"></label>
+                    
+                    </h4>
+                  
                   </td>
                   <td style="width: 288px; height: 23px;">
-                    <h4 style="text-align: center;"> <label for="vehicleBrand">Marca</label></h4>
-                    <h4 style="text-align: center;"><label for="vehicleBrand"></label><input
+                    <h4 style="text-align: center;">
+                     <label for="vehicleBrand">Marca</label></h4>
+                    <h4 style="text-align: center;">
+                    <label for="vehicleBrand"></label><input
 
                         name="vehicleBrand" id="vehicleBrand" readonly="readonly"
 
                         type="text"></h4>
                   </td>
                   <td style="width: 288px; height: 153px;">
-                    <h4 style="text-align: center;"><label for="vehicleModel">Modello</label></h4>
-                    <h4 style="text-align: center;"><label for="vehicleModel"></label><label
-
-                        for="vehicleModel"></label><input name="vehicleModel" id="vehicleModel"
+                    <h4 style="text-align: center;">
+                    <label for="vehicleModel">Modello</label></h4>
+                    
+                    <h4 style="text-align: center;">
+                    <label for="vehicleModel"></label>
+                    <label for="vehicleModel"></label><input name="vehicleModel" id="vehicleModel"
 
                         readonly="readonly" type="text"></h4>
                   </td>

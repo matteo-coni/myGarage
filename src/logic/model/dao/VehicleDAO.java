@@ -20,7 +20,7 @@ public class VehicleDAO {
 	// Stringa di connessione al db con nome e porta
 	static final String URL = "jdbc:mysql://localhost:3306/mydb";
 	// Stringa driver per il db
-	static final String DRIVER = "com.mysql.jdbc.Driver";
+	static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 	static final String USERNAMEDB = "root";
 	static final String PASSWORDDB = "admin";
 	
@@ -33,6 +33,7 @@ public class VehicleDAO {
 		
 		try {
             
+			Class.forName(DRIVER);
             // Otteniamo una connessione con username e password
             con = DriverManager.getConnection (URL , USERNAMEDB, PASSWORDDB);
             
@@ -54,6 +55,8 @@ public class VehicleDAO {
             
 		   } catch (SQLException e) {
 	            e.printStackTrace();
+		   } catch (ClassNotFoundException cnf) {
+			   cnf.printStackTrace();
 	            
 	        } finally {
 	       
@@ -89,7 +92,8 @@ public class VehicleDAO {
 		Statement stm = null;
 		
 		try {
-   
+			
+			Class.forName(DRIVER);
             // Otteniamo una connessione con username e password
             con = DriverManager.getConnection (URL , USERNAMEDB, PASSWORDDB);
             
@@ -132,7 +136,10 @@ public class VehicleDAO {
                
         } catch (SQLException e) {
             e.printStackTrace();
-            
+       
+        } catch (ClassNotFoundException cnf) {
+			   cnf.printStackTrace();
+			   
         } finally {
             
         	if (rs != null) {
@@ -176,6 +183,7 @@ public class VehicleDAO {
 		
 		try {
             
+			Class.forName(DRIVER);
             // Otteniamo una connessione con username e password
             con = DriverManager.getConnection (URL , USERNAMEDB, PASSWORDDB);
             
@@ -226,7 +234,10 @@ public class VehicleDAO {
 	            
 	       } catch (ParseException pe){
 	    	   pe.printStackTrace();
-	    	   
+	       
+	       } catch (ClassNotFoundException cnf) {
+			   cnf.printStackTrace();
+			   
 	       } finally {
 	       
 	            

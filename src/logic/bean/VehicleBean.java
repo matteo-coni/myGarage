@@ -17,6 +17,10 @@ public class VehicleBean {
 		this.targaVehicle = targa;
 	}
 	
+	public VehicleBean() {
+		
+	}
+	
 	String username;
 	String targaVehicle;
 	String marcaVehicle;
