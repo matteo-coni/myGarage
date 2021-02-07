@@ -136,7 +136,7 @@ public class ControllerGrafInsert {
         Date dateTagl=new SimpleDateFormat("dd/MM/yyyy").parse(tagliando);
         vehicleBean.setScadTagliando(dateTagl);
 		
-		ControllerInsertVehicleInfo controllerInsert =  ControllerInsertVehicleInfo.getInstance();
+		ControllerInsertVehicleInfo controllerInsert =  new ControllerInsertVehicleInfo();
 		if( controllerInsert.saveVehicle(vehicleBean)) {
 			
 			confirmText.setText("Veicolo inserito correttamente!");

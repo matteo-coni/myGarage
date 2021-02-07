@@ -41,6 +41,7 @@
 	}
 %>
 
+<!DOCTYPE>
 <html>
 	<head>
 		<title>myGarage Login Page</title>

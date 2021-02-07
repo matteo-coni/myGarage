@@ -14,16 +14,16 @@ import logic.model.dao.*;
 
 public class ControllerInsertVehicleInfo {
 	//*****PROVA SINGLETON*****
-	private static ControllerInsertVehicleInfo istance = null;
+	//private static ControllerInsertVehicleInfo istance = null;
 	
 	//*****COSTRUTTORE*****
-	private ControllerInsertVehicleInfo() {} //"private" perch� tramite getInstance() potr� essere chiamato solo dall'interno
+	public ControllerInsertVehicleInfo() {} //"private" perch� tramite getInstance() potr� essere chiamato solo dall'interno
 	
-	public static ControllerInsertVehicleInfo getInstance() {
+	/*public static ControllerInsertVehicleInfo getInstance() {
 		if(istance == null)
 			istance = new ControllerInsertVehicleInfo();
 		return istance;
-	}
+	}*/
 	//*****FINE SINGLETON*****
 	
 	//*****METODI*****

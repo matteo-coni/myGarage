@@ -1,22 +1,73 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1"%>
-
+<%@ page import="java.text.*" %>
+<%@ page import="java.util.Date" %>
 <!-- dichiarazione e instanziazione di una variabile -->
-<jsp:useBean id="User" scope="request" class="logic.model.User"/>
+<jsp:useBean id="vehiclebean" scope="request" class="logic.bean.VehicleBean"/>
+<jsp:useBean id="controlInsertVehicle" scope="request" class="logic.control.ControllerInsertVehicleInfo"/>
 <!-- procedere con la dichiarazione di tutte le istanze utilizzate -->
 
 <!-- mappa gli attributi di un oggetto sui campi della form -->
-<jsp:setProperty name="User" property="*" />
+
 <!-- procedere nel mappare ogni attributo di ogni classe -->
 
 <%
 //compilare in JAVA il corpo della pagina
+	if(request.getParameter("Insert")!=null){
+		
+		String username = (String)session.getAttribute("username");
+		vehiclebean.setUsername(username);
+		vehiclebean.setTargaVehicle(request.getParameter("licensePlate"));
+		vehiclebean.setMarcaVehicle(request.getParameter("vehicleBrand"));
+		vehiclebean.setModelloVehicle(request.getParameter("vehicleModel"));
+		vehiclebean.setCilindrataVehicle(request.getParameter("vehicleDisplacement"));
+		vehiclebean.setCavalliVehicle(request.getParameter("vehiclePowertrains"));
+		
+	
+		
+		try{
+		
+			if (request.getParameter("VehicleInsurance") != ""){
+				Date dateAss=new SimpleDateFormat("dd/MM/yyyy").parse(request.getParameter("vehicleInsurance"));
+       			vehiclebean.setScadAssicurazione(dateAss);
+			}
+			if (request.getParameter("VehicleReview") != ""){
+				Date dateRev=new SimpleDateFormat("dd/MM/yyyy").parse(request.getParameter("vehicleReview"));
+        		vehiclebean.setScadRevisione(dateRev);
+			}
+			if (request.getParameter("VehicleTax") != ""){
+        		Date dateBollo=new SimpleDateFormat("dd/MM/yyyy").parse(request.getParameter("vehicleTax"));
+        		vehiclebean.setScadBollo(dateBollo);
+			}
+			if (request.getParameter("VehicleService") != ""){
+        		Date dateTagl=new SimpleDateFormat("dd/MM/yyyy").parse(request.getParameter("vehicleService"));
+        		vehiclebean.setScadTagliando(dateTagl);
+			}
+		
+		//System.out.println(vehiclebean.getTargaVehicle());
+		//System.out.println(vehiclebean.getUsername());
+			if(controlInsertVehicle.saveVehicle(vehiclebean)){
+		
+			} else {
+			%>
+			<p  style="color: red">Dati errati</p>>	
+			<%
+			}
+		
+		} catch (ParseException e){ 
+			%>
+			<p  style="color: red">Dati errati</p>>
+			<% 
+		}
+	}
 %>
 
+<!DOCTYPE>
 <html>
   <head>
     <title>Insert Vehicle Page</title>
   </head>
   <body>
+  <form action="InsertVehiclePage.jsp" name="myform" method="POST">
     <table style="border-collapse: collapse; width: 1667px; height: 954px;" border="1">
       <tbody>
         <tr style="height: 84px;">
@@ -32,8 +83,8 @@
           <td style="width: 1477px; text-align: center; height: 86px; margin-left: -70px;"
 
             rowspan="2" colspan="6">
-            <h1 style="text-align: center;"><strong>Insert Vehicle Information</strong>
-            </h1>
+            <h1 style="text-align: center;"><strong>Insert Vehicle Information</strong></h1>
+            <h1><button name="Insert" >Inserisci veicolo</button></h1>
           </td>
         </tr>
         <tr style="height: 85px;">
@@ -137,5 +188,6 @@
         </tr>
       </tbody>
     </table>
+    </form>
   </body>
 </html>
