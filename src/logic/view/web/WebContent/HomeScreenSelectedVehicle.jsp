@@ -1,35 +1,76 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.text.*"  %>
+<%@ page import="java.util.Locale" %>
 <!-- dichiarazione e instanziazione di una variabile -->
 <jsp:useBean id="vehiclebean" scope="request" class="logic.bean.VehicleBean"/>
 <jsp:useBean id="controlViewVehicle" scope="request" class="logic.control.ControllerViewVehicle"/>
 <!-- procedere con la dichiarazione di tutte le istanze utilizzate -->
 
 <!-- mappa gli attributi di un oggetto sui campi della form -->
-<jsp:setProperty name="User" property="*" />
+<!--  jsp:setProperty name="User" property="*" /> -->
 <!-- procedere nel mappare ogni attributo di ogni classe -->
 
 <%
 //compilare in JAVA il corpo della pagina
-	if (request.getParameter("")!=null){
+	String ass = "";
+	String rev = "";
+	String bollo = "";
+	String tagl = "";
+	String targa = "";
+	String marca = "";
+	String cavalli = "";
+	String cilindrata = "";
+	String modello = "";
+	
+	if (request.getParameter("Load") != null){
+	
+		String targaCb = request.getParameter("Vehicle"); //"BB/636/CG";
 		
-		String targaCb = "BB/636/CG";//request.getParameter("Vehicle");
-		//ControllerViewVehicle controlViewVehicle = new ControllerViewVehicle();
 		vehiclebean = controlViewVehicle.loadVehicle(targaCb);
-		//System.out.println(vehiclebean.getMarcaVehicle());
+		//System.out.println(vehiclebean.getMarcaVehicle());//TEST
 		vehiclebean.setTargaVehicle(targaCb);
-%>		
+		System.out.println(session.getAttribute("username"));
 		
-<% 		
+		if(vehiclebean.getTargaVehicle()!=null){
+			targa = vehiclebean.getTargaVehicle();
+		}
+		if(vehiclebean.getMarcaVehicle()!=null){
+			marca = vehiclebean.getMarcaVehicle();
+		}
+		if(vehiclebean.getModelloVehicle()!=null){
+			modello = vehiclebean.getModelloVehicle();
+		}
+		if(vehiclebean.getCilindrataVehicle()!=null){
+			cilindrata = vehiclebean.getCilindrataVehicle();
+		}
+		if (vehiclebean.getCavalliVehicle()!=null){
+			cavalli = vehiclebean.getCavalliVehicle();
+		}
+		
+		if(vehiclebean.getScadAssicurazione()!=null && vehiclebean.getScadBollo()!=null && vehiclebean.getScadRevisione()!=null && vehiclebean.getScadTagliando()!=null){	
+		
+			DateFormat sdf = new SimpleDateFormat("dd-MM-yyyy",Locale.ITALY);
+			ass = sdf.format(vehiclebean.getScadAssicurazione());
+			rev = sdf.format(vehiclebean.getScadRevisione());
+			bollo = sdf.format(vehiclebean.getScadBollo());
+			tagl = sdf.format(vehiclebean.getScadTagliando());
+		}
 	}
-%>
+%> 	
+		
 
+
+		
+    	
+<!DOCTYPE>
 <html>
   <head>
     <title>Home Page</title>
   </head>
   <body>
+  <form action="HomeScreenSelectedVehicle.jsp" name="myform" method="POST">
     <table style="border-collapse: collapse; width: 1667px; height: 954px;" border="1">
       <tbody>
         <tr style="height: 84px;">
@@ -63,28 +104,25 @@
             <h4 style="text-align: center;">Seleziona il tuo Veicolo</h4>
             <div style="text-align: center;">
               <select name="Vehicle" id="select" size="1">
-                <option disabled="disabled" selected="selected">Veicolo</option>
-                <option>Vehicle Number 1</option>
-                <option>Vehicle Number 2</option>
-                <%
+                <option selected="selected">Veicolo</option>
+                
+            	<%
                 	List<String> listVehicle = new ArrayList<String>();
-                	listVehicle = controlViewVehicle.viewVehicle("admin");
+                	String username = (String)session.getAttribute("username");
+                	listVehicle = controlViewVehicle.viewVehicle(username);
+                	//System.out.println(session.getAttribute("username")); //TESTT
+                	for(String targaVehicle: listVehicle){
+                %>
+                	<option> <%=targaVehicle%> </option>
+                <% 		
+                	} 
                 %>
               </select>
-              <button id="load" name="Load" value="Visualizza" type="button" onClick="fnc('<%=vehiclebean.getTargaVehicle()%>')">Visualizza Info</button> 
+              <button name="Load" >Visualizza Info</button> 
+             	
              		
-             		<script type="text/javascript"> 
 						
-                    	function fnc(prova)
-						{
-							//AGGIUNGERE I VARI SET TEXT
-						
-				
-		   				 document.getElementById("licensePlate").textContent = prova; 
-		   				 document.getElementById("vehicleBrand").textContent = prova; 
-		   					 
-						}
-					</script>
+                 
             </div>
           </td>
         </tr>
@@ -108,7 +146,7 @@
                     <label for="licensePlate">Targa</label></h4>
                     <h4 style="text-align: center;">
                     <label id="licensePlate"></label>
-                    
+                    <label style="color: red"><%=targa %></label>
                     </h4>
                   
                   </td>
@@ -116,21 +154,18 @@
                     <h4 style="text-align: center;">
                      <label for="vehicleBrand">Marca</label></h4>
                     <h4 style="text-align: center;">
-                    <label id="vehicleBrand"></label><input
-
-                        name="vehicleBrand" id="vehicleBrand" readonly="readonly"
-
-                        type="text"></h4>
+                    <label id="vehicleBrand"></label>
+                    <label style="color: red"><%=marca %></label>
+                    </h4>
                   </td>
                   <td style="width: 288px; height: 153px;">
                     <h4 style="text-align: center;">
                     <label for="vehicleModel">Modello</label></h4>
                     
                     <h4 style="text-align: center;">
-                    <label for="vehicleModel"></label>
-                    <label for="vehicleModel"></label><input name="vehicleModel" id="vehicleModel"
-
-                        readonly="readonly" type="text"></h4>
+                    <label id="vehicleModel"></label>
+                    <label style="color: red"><%=modello %></label>
+                    </h4>
                   </td>
                 </tr>
               </tbody>
@@ -150,17 +185,16 @@
               <tbody>
                 <tr style="height: 18px;">
                   <td style="width: 302px; height: 153px;">
-                    <h4 style="text-align: center;"> <label for="vehicleDisplacement">Cilindrata</label></h4>
-                    <h4 style="text-align: center;"><input name="vehicleDisplacement"
-
-                        id="vehicleDisplacement" readonly="readonly" type="text"></h4>
+                    <h4 style="text-align: center;"> 
+                    <label for="vehicleDisplacement">Cilindrata</label></h4>
+                    <h4 style="text-align: center;">
+                    <label style="color: red"><%=cilindrata %></label></h4>
                   </td>
                   <td style="width: 288px; height: 153px;">
-                    <h4 style="text-align: center;"> <label for="vehiclePowertrains">Cavalli
-                        Motrici</label></h4>
-                    <h4 style="text-align: center;"><input name="vehiclePowertrains"
-
-                        id="vehiclePowertrains" readonly="readonly" type="text"></h4>
+                    <h4 style="text-align: center;">
+                     <label for="vehiclePowertrains">Cavalli Motrici</label></h4>
+                    <h4 style="text-align: center;">
+                    <label style="color: red"><%=cavalli %></label></h4>
                   </td>
                 </tr>
               </tbody>
@@ -179,29 +213,24 @@
                 <tr style="height: 18px;">
                   <td style="width: 302px; height: 45px; text-align: center;">
                     <h4> <label for="vehicleInsurance">Data Assicurazione</label></h4>
-                    <h4><label for="vehicleInsurance"></label><input name="vehicleInsurance"
-
-                        id="vehicleInsurance" readonly="readonly" type="text"></h4>
+                    <h4><label id="vehicleInsurance"></label></h4>
+                    <h4><label style="color: red"><%=ass %></label></h4>
                   </td>
                   <td style="width: 288px; height: 45px; text-align: center;">
                     <h4><label for="vehicleTax">Data Bollo</label></h4>
-                    <h4><label for="vehicleTax"></label><input name="vehicleTax" id="vehicleTax"
-
-                        readonly="readonly" type="text"></h4>
+                    <h4><label id="vehicleTax"></label>
+                    <label style="color: red"><%=bollo %></label></h4>
                   </td>
                   <td style="width: 302px; height: 45px; text-align: center;">
                     <h4> <label for="vehicleReview">Data Revisione</label></h4>
-                    <h4><label for="vehicleReview"></label><input name="vehicleReview"
-
-                        id="vehicleReview" readonly="readonly" type="text"></h4>
+                    <h4><label id="vehicleReview"></label></h4>
+                   	<h4> <label style="color: red"><%=rev %></label></h4>
                   </td>
                   <td style="width: 288px; height: 45px; text-align: center;">
                     <h4> <label for="vehicleService">Data Tagliando</label></h4>
-                    <h4 style="text-align: center;"><label for="vehicleService"></label><input
-
-                        name="vehicleService" id="vehicleService" readonly="readonly"
-
-                        type="text"></h4>
+                    <h4 style="text-align: center;">
+                    <label id="vehicleService"></label>
+                    <label style="color: red"><%=bollo %></label></h4>
                   </td>
                 </tr>
               </tbody>
@@ -210,5 +239,7 @@
         </tr>
       </tbody>
     </table>
+    </form>
   </body>
 </html>
+                    

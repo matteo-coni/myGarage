@@ -27,7 +27,11 @@
 		
 		if(ControllerLogin.isValidate(loginBEAN)){
 %>
-			<jsp:forward page="HomeScreen.jsp"/>
+<%//Session("User") = username; 
+ //localStorage.setItem("username", "admin");
+ 		session.setAttribute("username", username);
+%>
+			<jsp:forward page="HomeScreenSelectedVehicle.jsp"/>
 <%		
 		} else {
 %>
@@ -56,11 +60,11 @@
         <div style="text-align: center;"> </div>
         <h4 style="text-align: center;"> 
         	<label for="username"> Username </label>
-          		<input name="username" placeholder="username" required id="username" type="text"> 
+          		<input name="username" placeholder="username" required id="username" type="text" autocomplete="off"> 
         </h4>
         <h4 style="text-align: center;"> 
         	<label for="password"> Password </label>
-          		<input name="password" placeholder="password" required id="password" type="text"> 
+          		<input name="password" type= "password" placeholder="password" required id="password" autocomplete="off"> 
         </h4>
         <div style="text-align: center;"> </div>
         <div style="text-align: center;"> 
