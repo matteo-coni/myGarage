@@ -1,15 +1,47 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1"%>
-
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <!-- dichiarazione e instanziazione di una variabile -->
-<jsp:useBean id="User" scope="request" class="logic.model.User"/>
+<jsp:useBean id="controlViewVehicle" scope="request" class="logic.control.ControllerViewVehicle"/>
+<jsp:useBean id="controlBook" scope="request" class="logic.control.ControllerBookAppointment"/>
+<jsp:useBean id="bookingBean" scope="request" class="logic.bean.BookingBean"/>
+
 <!-- procedere con la dichiarazione di tutte le istanze utilizzate -->
 
 <!-- mappa gli attributi di un oggetto sui campi della form -->
-<jsp:setProperty name="User" property="*" />
+
 <!-- procedere nel mappare ogni attributo di ogni classe -->
 
 <%
 //compilare in JAVA il corpo della pagina
+	String nome1 = (String)session.getAttribute("nome1");
+	String indirizzo1 = (String)session.getAttribute("indirizzo1");
+	String sconto1 = (String)session.getAttribute("sconto1");
+
+	if (request.getParameter("prenota1")!=null){
+		
+		nome1 = request.getParameter("name1");
+		String problems1 = request.getParameter("problems1");
+		String date1 = (String)request.getParameter("dateBook1");
+		
+		bookingBean.setUsername(String.valueOf(session.getAttribute("username")));
+		bookingBean.setNomeOfficina(nome1);	
+		bookingBean.setProblemi(problems1);
+		
+		Date date=new SimpleDateFormat("dd/MM/yyyy").parse(date1);
+		System.out.println(date);
+		bookingBean.setDataPrenotazione(date);
+		
+		if(request.getParameter("Vehicle")!=null){
+			bookingBean.setVeicolo(request.getParameter("Vehicle"));
+		} else {
+			bookingBean.setVeicolo("Veicolo non definito");
+		}
+		
+		controlBook.saveBooking(bookingBean);
+	}
 %>
 
 <html>
@@ -17,6 +49,7 @@
     <title>Find Mechanic Page</title>
   </head>
   <body>
+  <form action="ListOfMechanic.jsp" name="myform" method="POST">
     <table style="border-collapse: collapse; width: 1667px; height: 702px;" border="1">
       <tbody>
         <tr style="height: 84px;">
@@ -34,6 +67,21 @@
             rowspan="2" colspan="6">
             <h1 style="text-align: center;"><b><strong>Find Mechanic</strong></b>
             </h1>
+            <select name="Vehicle" id="select" size="1">
+                <option selected="selected">Veicolo</option>
+                
+            	<%
+                	List<String> listVehicle = new ArrayList<String>();
+                	String username = (String)session.getAttribute("username");
+                	listVehicle = controlViewVehicle.viewVehicle(username);
+                	//System.out.println(session.getAttribute("username")); //TESTT
+                	for(String targaVehicle: listVehicle){
+                %>
+                	<option> <%=targaVehicle%> </option>
+                <% 		
+                	} 
+                %>
+              </select>
           </td>
         </tr>
         <tr style="height: 85px;">
@@ -50,35 +98,34 @@
         </tr>
         <tr style="height: 18px;">
           <td style="width: 194px; height: 23px; text-align: center;" colspan="2">
-            <a href="pippo.html"><img src="images_web/"
+            <a href="InsertVehiclePage.jsp"><img src="images_web/InsertVehicle_250x250.png"
 
                 alt="insertVehicle" title="insertVehicle"></a> </td>
           <td style="text-align: center;">
-            <h4>Nome:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; <input name="name"
-
-                id="name" readonly="readonly" type="text"></h4>
-            <h4>Indirizzo: &nbsp; <input name="address" id="address" readonly="readonly"
+            <h4>Nome:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
+            
+             <input name="name1" id="name1" readonly="readonly" value="<%=nome1 %>" type="text"></h4>
+            
+            <h4>Indirizzo: &nbsp; <input name="address1" id="address1" value="<%=indirizzo1 %>" readonly="readonly"
 
                 type="text"></h4>
           </td>
           <td style="text-align: center;">
-            <h4>Sconto:&nbsp; <input name="name" id="name" readonly="readonly"
-
-                type="text"></h4>
+            <h4>Sconto:&nbsp; <input name="sconto1" id="sconto1" readonly="readonly" value="<%=sconto1 %>" type="text"></h4>
           </td>
           <td style="text-align: center;">
             <h4>Inserisci qui i problemi del veicolo:</h4>
-            <div><textarea id="problems" name="problems" rows="4" cols="50"></textarea></div>
+            <div><textarea id="problems1" name="problems1" rows="4" cols="50"></textarea></div>
           </td>
           <td style="text-align: center;">
             <h4>Prenota:</h4>
-            <input name="dateBook" id="dateBook" type="date"> <br>
+            <input name="dateBook1" id="dateBook1" type="date"> <br>
             <br>
-            <input type="submit"> </td>
+            <input name="prenota1" value ="prenota" type="submit"> </td>
         </tr>
         <tr style="height: 18px;">
           <td style="width: 194px; height: 153px; text-align: center;" colspan="2">
-            <a href="pippo.html"><img src="images_web/Parking_250x250.png"
+            <a href=""><img src="images_web/Parking_250x250.png"
 
                 alt="bookParking" style="width: 255px; height: 255px;" title="bookParking"></a>
           </td>
@@ -97,17 +144,17 @@
           </td>
           <td style="text-align: center;">
             <h4>Inserisci qui i problemi del veicolo:</h4>
-            <div><textarea id="problems" name="problems" rows="4" cols="50"></textarea></div>
+            <div><textarea id="problems2" name="problems2" rows="4" cols="50"></textarea></div>
           </td>
           <td style="text-align: center;">
             <h4>Prenota:</h4>
-            <input name="dateBook" id="dateBook" type="date"> <br>
+            <input name="dateBook2" id="dateBook2" type="date"> <br>
             <br>
-            <input type="submit"> </td>
+            <input name="prenota2" value="prenota" type="submit"> </td>
         </tr>
         <tr style="height: 18px;">
           <td style="height: 45px; width: 194px; text-align: center;" colspan="2">
-            <a href="pippo.html"><img src="images_web/BookMechanic_250x250_selected.png"
+            <a href="FindMechanicPage.jsp"><img src="images_web/BookMechanic_250x250_selected.png"
 
                 alt="bookMechanic_selected" style="width: 255px; height: 256px;"
 
@@ -131,11 +178,12 @@
           </td>
           <td style="text-align: center;">
             <h4>Prenota:</h4>
-            <input name="dateBook" id="dateBook" type="date"> <br>
+            <input name="dateBook3" id="dateBook3" type="date"> <br>
             <br>
-            <input type="submit"> </td>
+            <input name="prenota3" value="prenota" type="submit"> </td>
         </tr>
       </tbody>
     </table>
+    </form>
   </body>
 </html>

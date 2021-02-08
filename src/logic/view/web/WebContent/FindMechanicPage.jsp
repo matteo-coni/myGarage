@@ -1,15 +1,48 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1"%>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
+<%@ page import="logic.bean.MechanicBean" %>
+
 
 <!-- dichiarazione e instanziazione di una variabile -->
-<jsp:useBean id="User" scope="request" class="logic.model.User"/>
+<jsp:useBean id="controlBook" scope="request" class="logic.control.ControllerBookAppointment"/>
+<jsp:useBean id="mechanicBean" scope="request" class="logic.bean.MechanicBean"/>
 <!-- procedere con la dichiarazione di tutte le istanze utilizzate -->
 
 <!-- mappa gli attributi di un oggetto sui campi della form -->
-<jsp:setProperty name="User" property="*" />
+
 <!-- procedere nel mappare ogni attributo di ogni classe -->
 
 <%
-//compilare in JAVA il corpo della pagina
+	//TEST System.out.println("prova");
+	
+	if( request.getParameter("cerca") != null){
+
+		String nome = request.getParameter("name");
+		String citta = request.getParameter("city");
+		String zona = request.getParameter("zone");
+		
+		List<MechanicBean> listMechanicBean = new ArrayList<>();
+		
+		
+			
+			listMechanicBean = controlBook.searchByAll(citta, zona, nome);
+			
+			String nomeprova = "ciao prova";
+			Thread.sleep(500);
+			String nome1 = listMechanicBean.get(0).getOfficina();
+			String indirizzo1 = listMechanicBean.get(0).getIndirizzo();
+			String sconto1 = String.valueOf(listMechanicBean.get(0).getPercSconto())+"%";
+			//System.out.println("nome");
+			session.setAttribute("nome1", nome1);
+			session.setAttribute("indirizzo1", indirizzo1);
+			session.setAttribute("sconto1", sconto1);
+			%>
+				<jsp:forward page="ListOfMechanic.jsp"/>
+			<% 
+	}
+
+	
 %>
 
 <html>
@@ -17,6 +50,7 @@
 		<title>Find Mechanic Page</title>
 	</head>
 	<body>
+	<form action="FindMechanicPage.jsp" name="myform" method="POST">
 		<table style="border-collapse: collapse; width: 1667px; height: 702px;" border="1">
       <tbody>
         <tr style="height: 84px;">
@@ -60,16 +94,20 @@
             	<input name="city" id="city" type="text">
             </h4>
             <h4 style="text-align: left;">
-            	<label for="address">Via</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-            	<input name="address" id="address" type="text">
+            	<label for="address">Nome</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            	<input name="name" id="name" type="text">
             </h4>
             <h4 style="text-align: left;">
             	<label for="zone">Zona</label>&nbsp;&nbsp;&nbsp;
               	<input name="zone" id="zone" type="text">
             </h4>
+            
             <p>
-            	<input name="cerca" value="Cerca" type="submit">
+            	<!--  <button name="cerca" id="cerca" type="submit" > Cerca </button> -->
+    			<input name="cerca" value="cerca" type="submit">
+            	
             </p>
+            
           </td>
         </tr>
         <tr style="height: 18px;">
@@ -88,6 +126,8 @@
                 title="bookMechanic_selected"></a> </td>
         </tr>
       </tbody>
+      
     </table>
+   </form>
   </body>
 </html>
