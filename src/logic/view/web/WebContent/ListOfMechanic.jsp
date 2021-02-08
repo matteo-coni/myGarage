@@ -20,13 +20,35 @@
 	String indirizzo1 = (String)session.getAttribute("indirizzo1");
 	String sconto1 = (String)session.getAttribute("sconto1");
 	
-	String nome2 = (String)session.getAttribute("nome2");
-	String indirizzo2 = (String)session.getAttribute("nome2");
-	String sconto2 = (String)session.getAttribute("nome2");
+	String nome2 = "";
+	if(session.getAttribute("nome2") != null){
+		nome2 = (String)session.getAttribute("nome2");
+	}
+	String indirizzo2 = "";
+	if(session.getAttribute("indirizzo2")!=null){
+		indirizzo2 = (String)session.getAttribute("indirzzo2");
+	}
+	String sconto2="";
+	if(session.getAttribute("sconto2")!=null){
+		sconto2 = (String)session.getAttribute("sconto2");
+	}
+	
+	String nome3 = "";
+	if(session.getAttribute("nome3") != null){
+		nome3 = (String)session.getAttribute("nome3");
+	}
+	String indirizzo3 = "";
+	if(session.getAttribute("indirizzo3")!=null){
+		indirizzo3 = (String)session.getAttribute("indirzzo3");
+	}
+	String sconto3="";
+	if(session.getAttribute("sconto3")!=null){
+		sconto3 = (String)session.getAttribute("sconto3");
+	}
 
 	if (request.getParameter("prenota1")!=null){
 		
-		nome1 = request.getParameter("name1");
+		nome1 = (String)session.getAttribute("nome1");
 		String problems1 = request.getParameter("problems1");
 		String date1 = (String)request.getParameter("dateBook1");
 		
@@ -49,15 +71,38 @@
 	
 	if (request.getParameter("prenota2")!=null){
 		
-		nome1 = request.getParameter("name2");
-		String problems1 = request.getParameter("problems2");
-		String date1 = (String)request.getParameter("dateBook2");
+		nome2 = request.getParameter("name2");
+		String problems2 = request.getParameter("problems2");
+		String date2 = (String)request.getParameter("dateBook2");
+		
+		bookingBean.setUsername(String.valueOf(session.getAttribute("username")));
+		bookingBean.setNomeOfficina(nome2);	
+		bookingBean.setProblemi(problems2);
+		
+		Date date=new SimpleDateFormat("dd/MM/yyyy").parse(date2);
+		
+		bookingBean.setDataPrenotazione(date);
+		
+		if(request.getParameter("Vehicle")!=null){
+			bookingBean.setVeicolo(request.getParameter("Vehicle"));
+		} else {
+			bookingBean.setVeicolo("Veicolo non definito");
+		}
+		
+		controlBook.saveBooking(bookingBean);
+	}
+	
+if (request.getParameter("prenota3")!=null){
+		
+		nome3 = request.getParameter("name3");
+		String problems3 = request.getParameter("problems3");
+		String date3 = (String)request.getParameter("dateBook3");
 		
 		bookingBean.setUsername(String.valueOf(session.getAttribute("username")));
 		bookingBean.setNomeOfficina(nome1);	
-		bookingBean.setProblemi(problems1);
+		bookingBean.setProblemi(problems3);
 		
-		Date date=new SimpleDateFormat("dd/MM/yyyy").parse(date1);
+		Date date=new SimpleDateFormat("dd/MM/yyyy").parse(date3);
 		
 		bookingBean.setDataPrenotazione(date);
 		
@@ -102,7 +147,6 @@
                 	List<String> listVehicle = new ArrayList<String>();
                 	String username = (String)session.getAttribute("username");
                 	listVehicle = controlViewVehicle.viewVehicle(username);
-                	//System.out.println(session.getAttribute("username")); //TESTT
                 	for(String targaVehicle: listVehicle){
                 %>
                 	<option> <%=targaVehicle%> </option>
@@ -187,17 +231,14 @@
 
                 title="bookMechanic_selected"></a> </td>
           <td style="text-align: center;">
-            <h4>Nome:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; <input name="name"
-
-                id="name" readonly="readonly" type="text"></h4>
-            <h4>Indirizzo: &nbsp; <input name="address" id="address" readonly="readonly"
-
-                type="text"></h4>
+            <h4>Nome: &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; 
+            
+            <input name="name3" id="name3" value="<%=nome3%>" readonly="readonly" type="text"></h4>
+            
+            <h4>Indirizzo: &nbsp; <input name="address3" id="address3" value="<%=indirizzo3%>" readonly="readonly" type="text"></h4>
           </td>
           <td style="text-align: center;">
-            <h4>Sconto:&nbsp; <input name="name" id="name" readonly="readonly"
-
-                type="text"></h4>
+            <h4>Sconto:&nbsp; <input name="sconto3" id="sconto3" value="<%=sconto3%>" readonly="readonly"  type="text"></h4>
           </td>
           <td style="text-align: center;">
             <h4>Inserisci qui i problemi del veicolo:</h4>

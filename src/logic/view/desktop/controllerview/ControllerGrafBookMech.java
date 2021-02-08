@@ -148,24 +148,39 @@ public class ControllerGrafBookMech {
 		}
 		
 		listMechanicBean = controlBook.searchByAll(citta,zona,nome);
-		/*if (nome.equals("")){
-			if (zona.equals("")) {
-				listMechanicBean = controlBook.searchByCity(citta);
-			} else {
-				listMechanicBean = controlBook.searchByCityZone(citta,zona);
-			}
-		} else {
-			if (zona.equals("")) {
-				listMechanicBean = controlBook.searchByCityName(citta,nome);
-			} else {
-				listMechanicBean = controlBook.searchByAll(citta,zona,nome);
-			}
-		}*/
-		//System.out.println(listMechanicBean.get(0).getIndirizzo()); //TESTOK
 		
-		nome1.setText(listMechanicBean.get(0).getOfficina());
-		indirizzo1.setText(listMechanicBean.get(0).getIndirizzo());
-		sconto1.setText(String.valueOf(listMechanicBean.get(0).getPercSconto())+'%');
+		if(listMechanicBean.isEmpty()) return;
+		
+		if(listMechanicBean.size()==1) {
+			nome1.setText(listMechanicBean.get(0).getOfficina());
+			indirizzo1.setText(listMechanicBean.get(0).getIndirizzo());
+			sconto1.setText(String.valueOf(listMechanicBean.get(0).getPercSconto())+'%');
+		}
+		
+		if(listMechanicBean.size()==2) {
+			nome1.setText(listMechanicBean.get(0).getOfficina());
+			indirizzo1.setText(listMechanicBean.get(0).getIndirizzo());
+			sconto1.setText(String.valueOf(listMechanicBean.get(0).getPercSconto())+'%');
+			
+			nome2.setText(listMechanicBean.get(1).getOfficina());
+			indirizzo2.setText(listMechanicBean.get(1).getIndirizzo());
+			sconto2.setText(String.valueOf(listMechanicBean.get(1).getPercSconto())+'%');
+		}
+		
+		if(listMechanicBean.size()==3) {
+			nome1.setText(listMechanicBean.get(0).getOfficina());
+			indirizzo1.setText(listMechanicBean.get(0).getIndirizzo());
+			sconto1.setText(String.valueOf(listMechanicBean.get(0).getPercSconto())+'%');
+			
+			nome2.setText(listMechanicBean.get(1).getOfficina());
+			indirizzo2.setText(listMechanicBean.get(1).getIndirizzo());
+			sconto2.setText(String.valueOf(listMechanicBean.get(1).getPercSconto())+'%');
+			
+			nome3.setText(listMechanicBean.get(2).getOfficina());
+			indirizzo3.setText(listMechanicBean.get(2).getIndirizzo());
+			sconto3.setText(String.valueOf(listMechanicBean.get(2).getPercSconto())+'%');
+		}
+		
 	}
 
 	public void initialize() {
