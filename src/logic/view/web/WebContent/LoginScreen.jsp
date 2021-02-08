@@ -46,7 +46,12 @@
 	<head>
 		<title>myGarage Login Page</title>
 	</head>
-	  <body style="background-image: url(/trunk/images/BackgroundFerrari_1024x768.jpg)">
+	  <body style="background-image: url('images_web/BackgroundFerrari_1024x768.jpg');
+	  		
+	  		backgroud-repeat: no-repeat;
+	  		background-attachment: fixed;
+	  		background-size: cover;
+	  		background-color: rgba(255,255,255,0.7);">
     	<div>
     	;
       		<form action="LoginScreen.jsp" name="myform" method="POST">

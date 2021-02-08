@@ -26,7 +26,7 @@
 
                 alt="settings" title="settings"></a> </td>
           <td style="width: 31px; height: 43px; text-align: center; margin-left: 147px;">
-            <a href="Help.html"><img src="/trunk/images/help_71x71.png"
+            <a href="Help.html"><img src="/myGarage/images/help_71x71.png"
 
                 alt="help" style="width: 71px; height: 71px;" title="help"></a>
           </td>

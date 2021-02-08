@@ -69,7 +69,7 @@
   <head>
     <title>Home Page</title>
   </head>
-  <body>
+  
   <form action="HomeScreenSelectedVehicle.jsp" name="myform" method="POST">
     <table style="border-collapse: collapse; width: 1667px; height: 954px;" border="1">
       <tbody>
@@ -128,7 +128,7 @@
         </tr>
         <tr style="height: 18px;">
           <td style="width: 194px; height: 23px; text-align: center;" colspan="2">
-            <a href="InsertVehiclePage.jsp"><img src="/trunk/images/InsertVehicle_250x250.png"
+            <a href="InsertVehiclePage.jsp"><img src="images_web/InsertVehicle_250x250.png"
 
                 alt="insertVehicle" title="insertVehicle"></a> </td>
           <td>
