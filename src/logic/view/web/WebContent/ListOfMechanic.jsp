@@ -48,7 +48,7 @@
 
 	if (request.getParameter("prenota1")!=null){
 		
-		nome1 = (String)session.getAttribute("nome1");
+		nome1 = request.getParameter("name1");
 		String problems1 = request.getParameter("problems1");
 		String date1 = (String)request.getParameter("dateBook1");
 		
@@ -117,7 +117,7 @@ if (request.getParameter("prenota3")!=null){
 %>
 
 <!DOCTYPE>
-<html>
+<html lang="">
   <head>
     <title>Find Mechanic Page</title>
   </head>
@@ -147,6 +147,7 @@ if (request.getParameter("prenota3")!=null){
                 	List<String> listVehicle = new ArrayList<String>();
                 	String username = (String)session.getAttribute("username");
                 	listVehicle = controlViewVehicle.viewVehicle(username);
+                	//System.out.println(session.getAttribute("username")); //TESTT
                 	for(String targaVehicle: listVehicle){
                 %>
                 	<option> <%=targaVehicle%> </option>
@@ -231,8 +232,7 @@ if (request.getParameter("prenota3")!=null){
 
                 title="bookMechanic_selected"></a> </td>
           <td style="text-align: center;">
-            <h4>Nome: &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; 
-            
+            <h4>Nome:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; 
             <input name="name3" id="name3" value="<%=nome3%>" readonly="readonly" type="text"></h4>
             
             <h4>Indirizzo: &nbsp; <input name="address3" id="address3" value="<%=indirizzo3%>" readonly="readonly" type="text"></h4>
