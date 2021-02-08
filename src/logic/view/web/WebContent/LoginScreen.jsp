@@ -50,8 +50,7 @@
 	  		
 	  		backgroud-repeat: no-repeat;
 	  		background-attachment: fixed;
-	  		background-size: cover;
-	  		background-color: rgba(255,255,255,0.7);">
+	  		background-size: cover;">
     	<div>
     	;
       		<form action="LoginScreen.jsp" name="myform" method="POST">
