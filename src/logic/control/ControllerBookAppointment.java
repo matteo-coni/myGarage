@@ -13,61 +13,57 @@ import logic.model.Booking;
 
 
 public class ControllerBookAppointment {
-	//*****PROVA SINGLETON*****
+	// ****PROVA SINGLETON*****
 	//private static ControllerBookAppointment istance = null;
 	
 	//*****COSTRUTTORE*****
 	public ControllerBookAppointment() {} //"private" perch� tramite getInstance() potr� essere chiamato solo dall'interno
 	
-	/*public static ControllerBookAppointment getInstance() {
-		if(istance == null)
-			istance = new ControllerBookAppointment();
-		return istance;
-	}*/
-	//*****FINE SINGLETON*****
+	//public static ControllerBookAppointment getInstance() {
+	//	if(istance == null)
+	//		istance = new ControllerBookAppointment();
+	//	return istance;
+	//}
+	// *****FINE SINGLETON*****
 	
 	
-	//*****METODI*****
+	// *****METODI*****
 	
-	/*public List<MechanicBean> searchByCity(String city) {
-		List<MechanicBean> listMechanicBean = new ArrayList<>();
-		
-		MechanicDAO mechanicDao = new MechanicDAO();
-		List<Mechanic> listMechanic = mechanicDao.searchByCity(city);
-		
-		return listMechanicBean;
-	}
-	
-	public List<MechanicBean> searchByCityName(String city, String name) {
-		List<MechanicBean> listMechanicBean = new ArrayList<>();
-		return listMechanicBean;
-	}*/
 	
 	public List<MechanicBean> searchByAll(String city, String zone, String name) {
+		
 		List<MechanicBean> listMechanicBean = new ArrayList<>();
 		List<Mechanic> listMechanic = new ArrayList<>();
 		
+		MechanicDAO mechanicDao = new MechanicDAO();
+		
 		if (name.equals("")){
+			
 			if (zone.equals("")) {
 				
-				MechanicDAO mechanicDao = new MechanicDAO();
 				listMechanic = mechanicDao.searchByCity(city);
 			
 			} else {
-			//listMechanicBean = controlBook.searchByCityZone(città,zona);
+			
+				listMechanic = mechanicDao.searchByCityZone(city,zone);
 			}
 		} else {
+			
 			if (zone.equals("")) {
-				//listMechanicBean = controlBook.searchByCityName(città,nome);
+				
+				listMechanic = mechanicDao.searchByCityName(city,name);
+			
 			} else {
-				//listMechanicBean = controlBook.searchByAll(città,zona,nome);
+			
+				listMechanic = mechanicDao.searchByCityZoneName(city,zone,name);
+				
 			}
 		}
 		
 		try{
+			
 			for (int i=0; i<=2; i++) {
 		
-			//MechanicBean mechanicBean = new MechanicBean();
 			Mechanic mechanic = new Mechanic();
 			mechanic = listMechanic.get(i);
 			
@@ -106,16 +102,5 @@ public class ControllerBookAppointment {
 		bookingDao.saveBooking(booking);
 		
 	}
-	
-	/*
-	public void saveFavorite(Mechanic infoMech){
-		
-	}
-	public void contactMechanicBook(Mechanic infoMech, Booking infoBookng){
-		
-	}
-	public void confirmBooking(Boolean value){
-		
-	}*/
 	
 }

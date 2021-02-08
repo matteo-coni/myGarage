@@ -31,7 +31,7 @@
 		bookingBean.setProblemi(problems1);
 		
 		Date date=new SimpleDateFormat("dd/MM/yyyy").parse(date1);
-		System.out.println(date);
+		
 		bookingBean.setDataPrenotazione(date);
 		
 		if(request.getParameter("Vehicle")!=null){

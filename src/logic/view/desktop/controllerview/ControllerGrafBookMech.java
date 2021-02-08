@@ -106,8 +106,7 @@ public class ControllerGrafBookMech {
 	public void confirmBooking() {
 		
 		BookingBean bookingBean = new BookingBean();
-		//String data = datePick.getAccessibleText();
-		//System.out.println(data);
+		
 		LocalDate datap1 = datePick1.getValue();
 		//System.out.println(datap.toString());
 		Instant instant = Instant.from(datap1.atStartOfDay(ZoneId.systemDefault()));
@@ -151,15 +150,15 @@ public class ControllerGrafBookMech {
 		listMechanicBean = controlBook.searchByAll(citta,zona,nome);
 		/*if (nome.equals("")){
 			if (zona.equals("")) {
-				listMechanicBean = controlBook.searchByCity(città);
+				listMechanicBean = controlBook.searchByCity(citta);
 			} else {
-				listMechanicBean = controlBook.searchByCityZone(città,zona);
+				listMechanicBean = controlBook.searchByCityZone(citta,zona);
 			}
 		} else {
 			if (zona.equals("")) {
-				listMechanicBean = controlBook.searchByCityName(città,nome);
+				listMechanicBean = controlBook.searchByCityName(citta,nome);
 			} else {
-				listMechanicBean = controlBook.searchByAll(città,zona,nome);
+				listMechanicBean = controlBook.searchByAll(citta,zona,nome);
 			}
 		}*/
 		//System.out.println(listMechanicBean.get(0).getIndirizzo()); //TESTOK
