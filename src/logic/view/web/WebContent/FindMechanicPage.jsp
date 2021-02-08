@@ -25,6 +25,7 @@
 		List<MechanicBean> listMechanicBean = new ArrayList<>();
 		
 		
+		if(request.getParameter("city")!=""){	
 			
 			listMechanicBean = controlBook.searchByAll(citta, zona, nome);
 			
@@ -40,11 +41,13 @@
 			%>
 				<jsp:forward page="ListOfMechanic.jsp"/>
 			<% 
+		}
 	}
 
 	
 %>
 
+<!DOCTYPE>
 <html>
 	<head>
 		<title>Find Mechanic Page</title>
@@ -90,7 +93,7 @@
           <td style="width: 302px; height: 23px;">
             <h2 style="text-align: left;">Cerca Meccanico per:</h2>
             <h4 style="text-align: left;">
-            	<label for="city">Città&nbsp;&nbsp;&nbsp;</label>
+            	<label for="city">Città*&nbsp;&nbsp;&nbsp;</label>
             	<input name="city" id="city" type="text">
             </h4>
             <h4 style="text-align: left;">

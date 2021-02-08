@@ -19,6 +19,10 @@
 	String nome1 = (String)session.getAttribute("nome1");
 	String indirizzo1 = (String)session.getAttribute("indirizzo1");
 	String sconto1 = (String)session.getAttribute("sconto1");
+	
+	String nome2 = (String)session.getAttribute("nome2");
+	String indirizzo2 = (String)session.getAttribute("nome2");
+	String sconto2 = (String)session.getAttribute("nome2");
 
 	if (request.getParameter("prenota1")!=null){
 		
@@ -42,8 +46,32 @@
 		
 		controlBook.saveBooking(bookingBean);
 	}
+	
+	if (request.getParameter("prenota2")!=null){
+		
+		nome1 = request.getParameter("name2");
+		String problems1 = request.getParameter("problems2");
+		String date1 = (String)request.getParameter("dateBook2");
+		
+		bookingBean.setUsername(String.valueOf(session.getAttribute("username")));
+		bookingBean.setNomeOfficina(nome1);	
+		bookingBean.setProblemi(problems1);
+		
+		Date date=new SimpleDateFormat("dd/MM/yyyy").parse(date1);
+		
+		bookingBean.setDataPrenotazione(date);
+		
+		if(request.getParameter("Vehicle")!=null){
+			bookingBean.setVeicolo(request.getParameter("Vehicle"));
+		} else {
+			bookingBean.setVeicolo("Veicolo non definito");
+		}
+		
+		controlBook.saveBooking(bookingBean);
+	}
 %>
 
+<!DOCTYPE>
 <html>
   <head>
     <title>Find Mechanic Page</title>
@@ -85,12 +113,12 @@
           </td>
         </tr>
         <tr style="height: 85px;">
-          <td style="width: 71px; height: 43px; text-align: center;"> <a href="pippo.html"><img
+          <td style="width: 71px; height: 43px; text-align: center;"> <a><img
 
                 src="images_web/M_71x71.png"
 
                 alt="M" title="M"></a> </td>
-          <td style="width: 71px; height: 43px; text-align: center;"> <a href="pippo.html"><img
+          <td style="width: 71px; height: 43px; text-align: center;"> <a href="LoginScreen.html"><img
 
                 src="images_web/logout_71x71.png"
 
@@ -104,11 +132,9 @@
           <td style="text-align: center;">
             <h4>Nome:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
             
-             <input name="name1" id="name1" readonly="readonly" value="<%=nome1 %>" type="text"></h4>
+             <input name="name1" id="name1" readonly="readonly" value="<%=nome1 %>" readonly="readonly" type="text"></h4>
             
-            <h4>Indirizzo: &nbsp; <input name="address1" id="address1" value="<%=indirizzo1 %>" readonly="readonly"
-
-                type="text"></h4>
+            <h4>Indirizzo: &nbsp; <input name="address1" id="address1" value="<%=indirizzo1 %>" readonly="readonly"  type="text"></h4>
           </td>
           <td style="text-align: center;">
             <h4>Sconto:&nbsp; <input name="sconto1" id="sconto1" readonly="readonly" value="<%=sconto1 %>" type="text"></h4>
@@ -130,17 +156,18 @@
                 alt="bookParking" style="width: 255px; height: 255px;" title="bookParking"></a>
           </td>
           <td style="text-align: center;">
-            <h4>Nome:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; <input name="name"
-
-                id="name" readonly="readonly" type="text"></h4>
-            <h4>Indirizzo: &nbsp; <input name="address" id="address" readonly="readonly"
-
-                type="text"></h4>
+            <h4>Nome:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; 
+            
+            <input name="name2"  id="name2" value="<%=nome2%>" readonly="readonly" type="text"></h4>
+           
+            <h4>Indirizzo: &nbsp; 
+            
+            <input name="address2" id="address2" readonly="readonly" value="<%=indirizzo2%>" type="text"></h4>
           </td>
           <td style="text-align: center;">
-            <h4>Sconto:&nbsp; <input name="name" id="name" readonly="readonly"
-
-                type="text"></h4>
+            <h4>Sconto:&nbsp; 
+            
+            <input name="sconto2" id="sconto2" readonly="readonly" value="<%=sconto2%>" type="text"></h4>
           </td>
           <td style="text-align: center;">
             <h4>Inserisci qui i problemi del veicolo:</h4>
