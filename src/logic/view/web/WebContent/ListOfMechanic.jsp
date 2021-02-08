@@ -21,11 +21,11 @@
       <tbody>
         <tr style="height: 84px;">
           <td style="width: 51px; height: 43px; text-align: center; margin-left: 64px;">
-            <a href="pippo.html"><img src="../myGarage_not_final/myGarage.git/trunk/images/settings_71x71.png"
+            <a href="pippo.html"><img src="images_web/settings_71x71.png"
 
                 alt="settings" title="settings"></a> </td>
           <td style="width: 31px; height: 43px; text-align: center; margin-left: 147px;">
-            <a href="pippo.html"><img src="../myGarage_not_final/myGarage.git/trunk/images/help_71x71.png"
+            <a href="pippo.html"><img src="images_web/help_71x71.png"
 
                 alt="help" style="width: 71px; height: 71px;" title="help"></a>
           </td>
@@ -39,18 +39,18 @@
         <tr style="height: 85px;">
           <td style="width: 71px; height: 43px; text-align: center;"> <a href="pippo.html"><img
 
-                src="../myGarage_not_final/myGarage.git/trunk/images/M_71x71.png"
+                src="images_web/M_71x71.png"
 
                 alt="M" title="M"></a> </td>
           <td style="width: 71px; height: 43px; text-align: center;"> <a href="pippo.html"><img
 
-                src="../myGarage_not_final/myGarage.git/trunk/images/logout_71x71.png"
+                src="images_web/logout_71x71.png"
 
                 alt="logout" title="logout"></a> </td>
         </tr>
         <tr style="height: 18px;">
           <td style="width: 194px; height: 23px; text-align: center;" colspan="2">
-            <a href="pippo.html"><img src="../myGarage_not_final/myGarage.git/trunk/images/InsertVehicle_250x250.png"
+            <a href="pippo.html"><img src="images_web/"
 
                 alt="insertVehicle" title="insertVehicle"></a> </td>
           <td style="text-align: center;">
@@ -78,7 +78,7 @@
         </tr>
         <tr style="height: 18px;">
           <td style="width: 194px; height: 153px; text-align: center;" colspan="2">
-            <a href="pippo.html"><img src="../myGarage_not_final/myGarage.git/trunk/images/Parking_250x250.png"
+            <a href="pippo.html"><img src="images_web/Parking_250x250.png"
 
                 alt="bookParking" style="width: 255px; height: 255px;" title="bookParking"></a>
           </td>
@@ -107,7 +107,7 @@
         </tr>
         <tr style="height: 18px;">
           <td style="height: 45px; width: 194px; text-align: center;" colspan="2">
-            <a href="pippo.html"><img src="../myGarage_not_final/myGarage.git/trunk/images/BookMechanic_250x250_selected.png"
+            <a href="pippo.html"><img src="images_web/BookMechanic_250x250_selected.png"
 
                 alt="bookMechanic_selected" style="width: 255px; height: 256px;"
 

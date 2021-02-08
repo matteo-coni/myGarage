@@ -72,11 +72,11 @@
       <tbody>
         <tr style="height: 84px;">
           <td style="width: 51px; height: 43px; text-align: center; margin-left: 64px;">
-            <a href="pippo.html"><img src="/trunk/images/settings_71x71.png"
+            <a href="pippo.html"><img src="images_web/settings_71x71.png"
 
                 alt="settings" title="settings"></a> </td>
           <td style="width: 31px; height: 43px; text-align: center; margin-left: 147px;">
-            <a href="Help.html"><img src="/trunk/images/help_71x71.png"
+            <a href="Help.html"><img src="images_web/help_71x71.png"
 
                 alt="help" style="width: 71px; height: 71px;" title="help"></a>
           </td>
@@ -90,18 +90,18 @@
         <tr style="height: 85px;">
           <td style="width: 71px; height: 43px; text-align: center;"> <a href="HomeScreen.jsp"><img
 
-                src="/trunk/images/M_71x71.png"
+                src="images_web/M_71x71.png"
 
                 alt="M" title="M"></a> </td>
           <td style="width: 71px; height: 43px; text-align: center;"> <a href="LoginScreen.jsp"><img
 
-                src="/trunk/images/logout_71x71.png"
+                src="images_web/logout_71x71.png"
 
                 alt="logout" title="logout"></a> </td>
         </tr>
         <tr style="height: 18px;">
           <td style="width: 194px; height: 23px; text-align: center;" colspan="2">
-            <a href="InsertVehiclePage.jsp"><img src="/trunk/images/InsertVehicle_250x250_selected.png"
+            <a href="InsertVehiclePage.jsp"><img src="images_web/InsertVehicle_250x250_selected.png"
 
                 alt="insertVehicle_selected" title="insertVehicle_selected"></a>
           </td>
@@ -130,7 +130,7 @@
         </tr>
         <tr style="height: 18px;">
           <td style="width: 194px; height: 153px; text-align: center;" colspan="2">
-            <a href="FindParkingPage.jsp"><img src="/trunk/images/Parking_250x250.png"
+            <a href="FindParkingPage.jsp"><img src="images_web/Parking_250x250.png"
 
                 alt="bookParking" style="width: 255px; height: 255px;" title="bookParking"></a>
           </td>
@@ -153,7 +153,7 @@
         </tr>
         <tr style="height: 18px;">
           <td style="height: 45px; width: 194px; text-align: center;" colspan="2">
-            <a href="FindMechanicPage.jsp"><img src="/trunk/images/BookMechanic_250x250.png"
+            <a href="FindMechanicPage.jsp"><img src="images_web/BookMechanic_250x250.png"
 
                 alt="bookMechanic" style="width: 255px; height: 256px;" title="bookMechanic"></a>
           </td>
