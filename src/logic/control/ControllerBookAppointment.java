@@ -81,10 +81,10 @@ public class ControllerBookAppointment {
 		return listMechanicBean;
 	}
 	
-	public List<MechanicBean> searchByCityZone(String city, String zone) {
+	/*public List<MechanicBean> searchByCityZone(String city, String zone) {
 		List<MechanicBean> listMechanicBean = new ArrayList<>();
 		return listMechanicBean;
-	}
+	}*/
 	
 	
 	public void saveBooking(BookingBean bookingBean) {
