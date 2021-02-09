@@ -1,44 +1,35 @@
 package test;
 
 import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
 import java.util.*;
 
-import org.junit.Test;
-import logic.control.*;
+import logic.control.ControllerInsertVehicleInfo;
+import logic.bean.VehicleBean;
 
 public class DateTest {
 	
+	//Confronto fra date
 	@Test
 	public void CheckDate() {
-		//confronto tra date
-		boolean result;
+		ControllerInsertVehicleInfo TestDate= new ControllerInsertVehicleInfo();
 		
-		//RICHIAMARE METODO DA ControllerInsertVehicleInfo
-		ControllerInsertVehicleInfo TestDate= ControllerInsertVehicleInfo.getInstance();
-		
-		GregorianCalendar date= new GregorianCalendar(2019, 11, 25);
+		GregorianCalendar date= new GregorianCalendar(2021, 03, 25);
 		
 		assertEquals(true, TestDate.checkDeadlineInsurance(date));
-		
 	}
 	
+	//Verifica esistenza data
 	@Test
 	public void CorrectDate() {
-		//verifica dell'esistenza di una data
-		boolean result;
-		GregorianCalendar cal = new GregorianCalendar (29, 2, 2007);
-		cal.setLenient (false);
-
-		try {
-			cal.get (Calendar.DATE);
-			result=true;
-		} catch (IllegalArgumentException e) {
-			result=false;}
+		VehicleBean TestDate= new VehicleBean();
 		
-		assertEquals(false, cal);
+		GregorianCalendar cal = new GregorianCalendar (29, 2, 2007);
+		
+		assertEquals(false, TestDate.checkDate(cal));
 	}
 
 }
 
-	//yesterday.isBefore(today);
-	//today.isAfter(yesterday);
+//yesterday.isBefore(today);
+//today.isAfter(yesterday);

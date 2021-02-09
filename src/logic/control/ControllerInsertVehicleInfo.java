@@ -61,7 +61,8 @@ public class ControllerInsertVehicleInfo {
 		
 	}
 	
-	public void checkDeadlineInsurance(GregorianCalendar vehicleInsurance) {
+	public boolean checkDeadlineInsurance(GregorianCalendar vehicleInsurance) {
+		boolean result;
 		GregorianCalendar dataAttuale = new GregorianCalendar();
 		int annoAttuale = dataAttuale.get(GregorianCalendar.YEAR);
 		int meseAttuale = dataAttuale.get(GregorianCalendar.MONTH)+1;
@@ -69,9 +70,9 @@ public class ControllerInsertVehicleInfo {
 		int annoDeadline = vehicleInsurance.get(GregorianCalendar.YEAR);
 		int meseDeadline = vehicleInsurance.get(GregorianCalendar.MONTH);
 		
-		if(annoAttuale == annoDeadline && meseAttuale == meseDeadline);
-			//boolean result=true;
+		if(annoAttuale == annoDeadline && meseAttuale == meseDeadline);{
 			System.out.println("ricordati di controllare l'assicurazione!");
+			return result=true;}
 	}
 	
 	public void checkAssicurazione (Date dateAssic) {

@@ -51,7 +51,7 @@ public class MechanicDAO {
                 
                 String officina = rs.getString("Officina");
                 
-                String città = rs.getString("Città");
+                String citta = rs.getString("Citta");
                 String zona = rs.getString("Zona");
                 String indirizzo = rs.getString("Indirizzo");
                 int percSconto = rs.getInt("PercSconto");
@@ -59,7 +59,7 @@ public class MechanicDAO {
                 
                 
                 Mechanic mechanic = new Mechanic();
-                mechanic.setCity(città);
+                mechanic.setCity(citta);
                 mechanic.setZone(zona);
                 mechanic.setAddress(indirizzo);
                 mechanic.setGarage(officina);
@@ -135,7 +135,7 @@ public class MechanicDAO {
                 
                 String officina = rs.getString("Officina");
                 
-                String città = rs.getString("Città");
+                String citta = rs.getString("Citta");
                 String zona = rs.getString("Zona");
                 String indirizzo = rs.getString("Indirizzo");
                 int percSconto = rs.getInt("PercSconto");
@@ -143,7 +143,7 @@ public class MechanicDAO {
                 
                 
                 Mechanic mechanic = new Mechanic();
-                mechanic.setCity(città);
+                mechanic.setCity(citta);
                 mechanic.setZone(zona);
                 mechanic.setAddress(indirizzo);
                 mechanic.setGarage(officina);
@@ -219,7 +219,7 @@ public class MechanicDAO {
                 
                 String officina = rs.getString("Officina");
                 
-                String città = rs.getString("Città");
+                String citta = rs.getString("Citta");
                 String zona = rs.getString("Zona");
                 String indirizzo = rs.getString("Indirizzo");
                 int percSconto = rs.getInt("PercSconto");
@@ -227,7 +227,7 @@ public class MechanicDAO {
                 
                 
                 Mechanic mechanic = new Mechanic();
-                mechanic.setCity(città);
+                mechanic.setCity(citta);
                 mechanic.setZone(zona);
                 mechanic.setAddress(indirizzo);
                 mechanic.setGarage(officina);
@@ -302,7 +302,7 @@ public class MechanicDAO {
                 
                 String officina = rs.getString("Officina");
                 
-                String città = rs.getString("Città");
+                String citta = rs.getString("Citta");
                 String zona = rs.getString("Zona");
                 String indirizzo = rs.getString("Indirizzo");
                 int percSconto = rs.getInt("PercSconto");
@@ -310,7 +310,7 @@ public class MechanicDAO {
                 
                 
                 Mechanic mechanic = new Mechanic();
-                mechanic.setCity(città);
+                mechanic.setCity(citta);
                 mechanic.setZone(zona);
                 mechanic.setAddress(indirizzo);
                 mechanic.setGarage(officina);

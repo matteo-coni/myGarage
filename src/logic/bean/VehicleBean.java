@@ -1,7 +1,9 @@
 package logic.bean;
 
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 
 
@@ -132,4 +134,15 @@ public class VehicleBean {
 	    System.out.println(d);
 	    //da rivedere in che formato stampa la data
 	}*/
+	
+	public boolean checkDate(GregorianCalendar data) {
+		//verifica dell'esistenza di una data
+		data.setLenient(false);
+		try {
+			data.get(Calendar.DATE);
+			return true;
+		} catch (IllegalArgumentException e) {
+			return false;}
+	}
+	
 }
