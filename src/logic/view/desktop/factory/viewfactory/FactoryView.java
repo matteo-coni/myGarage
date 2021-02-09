@@ -29,6 +29,8 @@ public class FactoryView {
 			return new ViewInsertVehicle(view);
 		case 3:
 			return new ViewBookMech(view);
+		case 4:
+			return new ViewListMech(view);
 		default:
 			//throw new IOException("Factory exception: view not found");
 			return new ViewLogin(view);
