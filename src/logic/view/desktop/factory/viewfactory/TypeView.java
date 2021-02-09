@@ -7,7 +7,7 @@ public enum TypeView {
 	HOMEPAGE(1, "/logic/view/desktop/view/ViewDesktopHome.fxml"),
 	INSERTVEHICLEPAGE(2, "/logic/view/desktop/view/ViewInsert.fxml"),
 	MECHANICPAGE(3,"/logic/view/desktop/view/ViewDesktopMechBook.fxml"),
-	LISTBOOKINGMECHPAGE(4,"logic/view/desktop/view/ViewListBookMech.fxml");
+	LISTBOOKINGMECHPAGE(4,"/logic/view/desktop/view/ViewListBookMech.fxml");
 	
 	
 
