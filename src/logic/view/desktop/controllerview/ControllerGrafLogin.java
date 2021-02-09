@@ -26,7 +26,7 @@ public class ControllerGrafLogin {
 	@FXML
 	Button registrButton;
 	@FXML
-	Button loginButtonFB;
+	Button loginButtonMech;
 	@FXML
 	Button loginButtonGoogle;
 	@FXML
@@ -60,8 +60,29 @@ public class ControllerGrafLogin {
 			textError.setText("Username o password errati");
 		
 			
-		}
+		}	
+	}
+	
+	@FXML
+	public void loginMech() throws IOException{
 		
+		String username = usernameField.getText();
+		String password = passwordField.getText();
+		
+		LoginBean loginBean = new LoginBean(username,password);
+		ControllerLogin controlLogin = new ControllerLogin();
+		
+		if(controlLogin.isValidateMech(loginBean)) {
+			
+			ControllerMain.getInstance().setId(loginBean.getUsername());
+			FactoryView factory = FactoryView.getInstance();
+			View view;
+			view = factory.createView(TypeView.LISTBOOKINGMECHPAGE); 
+				
+			ControllerMain.getInstance().replace(ControllerMain.getContainer(), view);
+		} else {
+			textError.setText("Username o password errati --- L'utente non è un meccanico");
+		}
 		
 	}
 

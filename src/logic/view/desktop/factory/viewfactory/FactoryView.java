@@ -31,6 +31,7 @@ public class FactoryView {
 			return new ViewBookMech(view);
 		case 4:
 			return new ViewListMech(view);
+		
 		default:
 			//throw new IOException("Factory exception: view not found");
 			return new ViewLogin(view);

@@ -84,5 +84,77 @@ public class UserDAO {
 		
 		return false;
 	}
+	
+	public boolean findUserMech(String username, String password) {
+	       
+		Statement stm = null;
+		Connection con = null;
+		ResultSet res = null;
+		
+		try {
+            // Carichiamo un driver per connetterci a Java
+			Class.forName(DRIVER);
+                     
+            // Otteniamo una connessione con username e password
+            con = DriverManager.getConnection (URL , USERNAMEDB, PASSWORDDB);
+            
+            // Creiamo un oggetto Statement per interrogare il db
+            stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY);
+            	
+            	 // Eseguiamo una query e immagazziniamone i risultati
+                // in un oggetto ResultSet
+            String qry = "SELECT * FROM User WHERE Username = '" + username + "' AND Password = '" + password + "' AND Mech = '1';";
+            System.out.println(qry); //prova stringa query
+            res = stm.executeQuery(qry);
+                
+            if(res.next()) {
+                   
+                System.out.println(username);
+                stm.close();
+              	return true; //trovati --> ritorno vero
+                	
+                	// ****** MANCA LA CREAZIONE DELL'UTENTE USER    ****** 
+                }
+             
+       
+        } catch (SQLException e) {
+            e.printStackTrace();
+        
+        } catch (ClassNotFoundException cnf) {
+        	
+        	cnf.printStackTrace();
+        	//System.out.println("error");
+            
+        } finally {
+            
+        	if (res != null) {
+                try {
+                    res.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+                }
+            }
+            res = null;
+            if (stm != null) {
+                try {
+                    stm.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            stm = null;
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                con = null;
+            }
+        }
+		
+		return false;
+	}
 }
 
