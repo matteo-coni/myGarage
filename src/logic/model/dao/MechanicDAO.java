@@ -15,7 +15,7 @@ public class MechanicDAO {
 	// Stringa di connessione al db con nome e porta
 	static final String URL = "jdbc:mysql://localhost:3306/mydb";
 	// Stringa driver per il db
-	static final String DRIVER = "com.mysql.jdbc.Driver";
+	static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 	static final String USERNAMEDB = "root";
 	static final String PASSWORDDB = "admin";
 	
@@ -30,7 +30,8 @@ public class MechanicDAO {
 		Statement stm = null;
 		
 		try {
-   
+			
+			Class.forName(DRIVER);
             // Otteniamo una connessione con username e password
             con = DriverManager.getConnection (URL , USERNAMEDB, PASSWORDDB);
             
@@ -51,7 +52,7 @@ public class MechanicDAO {
                 
                 String officina = rs.getString("Officina");
                 
-                String citta = rs.getString("Citta");
+                String citta = rs.getString("Città");
                 String zona = rs.getString("Zona");
                 String indirizzo = rs.getString("Indirizzo");
                 int percSconto = rs.getInt("PercSconto");
@@ -72,7 +73,10 @@ public class MechanicDAO {
         } catch (SQLException se) {
             se.printStackTrace();
             
-        } finally {
+        } catch (ClassNotFoundException e) {
+			
+			e.printStackTrace();
+		} finally {
             
         	if (rs != null) {
                 try {
@@ -114,7 +118,7 @@ public class MechanicDAO {
 		Statement stm = null;
 		
 		try {
-   
+			Class.forName(DRIVER);
             // Otteniamo una connessione con username e password
             con = DriverManager.getConnection (URL , USERNAMEDB, PASSWORDDB);
             
@@ -135,7 +139,7 @@ public class MechanicDAO {
                 
                 String officina = rs.getString("Officina");
                 
-                String citta = rs.getString("Citta");
+                String citta = rs.getString("Città");
                 String zona = rs.getString("Zona");
                 String indirizzo = rs.getString("Indirizzo");
                 int percSconto = rs.getInt("PercSconto");
@@ -156,7 +160,10 @@ public class MechanicDAO {
         } catch (SQLException e) {
             e.printStackTrace();
             
-        } finally {
+        } catch (ClassNotFoundException e) {
+			
+			e.printStackTrace();
+		} finally {
             
         	if (rs != null) {
                 try {
@@ -198,7 +205,7 @@ public class MechanicDAO {
 		Statement stm = null;
 		
 		try {
-   
+			Class.forName(DRIVER);
             // Otteniamo una connessione con username e password
             con = DriverManager.getConnection (URL , USERNAMEDB, PASSWORDDB);
             
@@ -219,7 +226,7 @@ public class MechanicDAO {
                 
                 String officina = rs.getString("Officina");
                 
-                String citta = rs.getString("Citta");
+                String citta = rs.getString("Città");
                 String zona = rs.getString("Zona");
                 String indirizzo = rs.getString("Indirizzo");
                 int percSconto = rs.getInt("PercSconto");
@@ -240,7 +247,10 @@ public class MechanicDAO {
         } catch (SQLException e) {
             e.printStackTrace();
             
-        } finally {
+        } catch (ClassNotFoundException e) {
+			
+			e.printStackTrace();
+		} finally {
             
         	if (rs != null) {
                 try {
@@ -281,7 +291,7 @@ public class MechanicDAO {
 		Statement stm = null;
 		
 		try {
-   
+			Class.forName(DRIVER);
             // Otteniamo una connessione con username e password
             con = DriverManager.getConnection (URL , USERNAMEDB, PASSWORDDB);
             
@@ -302,7 +312,7 @@ public class MechanicDAO {
                 
                 String officina = rs.getString("Officina");
                 
-                String citta = rs.getString("Citta");
+                String citta = rs.getString("Città");
                 String zona = rs.getString("Zona");
                 String indirizzo = rs.getString("Indirizzo");
                 int percSconto = rs.getInt("PercSconto");
@@ -323,7 +333,10 @@ public class MechanicDAO {
         } catch (SQLException se) {
             se.printStackTrace();
             
-        } finally {
+        } catch (ClassNotFoundException e) {
+		
+			e.printStackTrace();
+		} finally {
             
         	if (rs != null) {
                 try {
