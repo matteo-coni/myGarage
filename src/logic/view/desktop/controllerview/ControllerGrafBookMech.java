@@ -61,9 +61,9 @@ public class ControllerGrafBookMech {
 	@FXML
 	TextArea txtProblem1;
 	@FXML
-	TextField textProblem2;
+	TextField txtProblem2;
 	@FXML
-	TextField textProblem3;
+	TextField txtProblem3;
 	@FXML
 	TextField nomeCerca;
 	@FXML
@@ -103,7 +103,7 @@ public class ControllerGrafBookMech {
 	}
 	
 	@FXML
-	public void confirmBooking() {
+	public void confirmBooking1() {
 		
 		BookingBean bookingBean = new BookingBean();
 		
@@ -116,6 +116,64 @@ public class ControllerGrafBookMech {
 		bookingBean.setNomeOfficina(nome1.getText());
 		bookingBean.setDataPrenotazione(date1);
 		bookingBean.setProblemi(txtProblem1.getText());
+		
+		
+		if(selectVehicle.getValue() != null) {
+			bookingBean.setVeicolo(selectVehicle.getValue());
+		} else {
+			bookingBean.setVeicolo("Non definito");
+		}
+		
+		ControllerBookAppointment controlBook = new ControllerBookAppointment();
+		controlBook.saveBooking(bookingBean);
+		
+		
+	
+		
+	}
+	@FXML
+	public void confirmBooking2() {
+		
+		BookingBean bookingBean = new BookingBean();
+		
+		LocalDate datap2 = datePick2.getValue();
+		//System.out.println(datap.toString());
+		Instant instant = Instant.from(datap2.atStartOfDay(ZoneId.systemDefault()));
+		Date date2 = Date.from(instant);
+		
+		bookingBean.setUsername(ControllerMain.getInstance().getId());
+		bookingBean.setNomeOfficina(nome2.getText());
+		bookingBean.setDataPrenotazione(date2);
+		bookingBean.setProblemi(txtProblem2.getText());
+		
+		
+		if(selectVehicle.getValue() != null) {
+			bookingBean.setVeicolo(selectVehicle.getValue());
+		} else {
+			bookingBean.setVeicolo("Non definito");
+		}
+		
+		ControllerBookAppointment controlBook = new ControllerBookAppointment();
+		controlBook.saveBooking(bookingBean);
+		
+		
+	
+		
+	}
+	@FXML
+	public void confirmBooking3() {
+		
+		BookingBean bookingBean = new BookingBean();
+		
+		LocalDate datap3 = datePick3.getValue();
+		//System.out.println(datap.toString());
+		Instant instant = Instant.from(datap3.atStartOfDay(ZoneId.systemDefault()));
+		Date date3 = Date.from(instant);
+		
+		bookingBean.setUsername(ControllerMain.getInstance().getId());
+		bookingBean.setNomeOfficina(nome3.getText());
+		bookingBean.setDataPrenotazione(date3);
+		bookingBean.setProblemi(txtProblem3.getText());
 		
 		
 		if(selectVehicle.getValue() != null) {

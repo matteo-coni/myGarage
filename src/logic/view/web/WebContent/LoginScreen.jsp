@@ -39,7 +39,34 @@
 <%
 		}
 	}
+
+	if(request.getParameter("loginMech")!=null){
+	
+	
+	
+		String username = request.getParameter("username");
+		System.out.println(username);
+		String password = request.getParameter("password");
+	
+		LoginBean loginBEAN = new LoginBean(username,password);
+	
+	
+		if(ControllerLogin.isValidateMech(loginBEAN)){
 %>
+<%//Session("User") = username; 
+//localStorage.setItem("username", "admin");
+		session.setAttribute("username", username);
+%>
+			<jsp:forward page="ListOfBookingMechanicPage.jsp"/>
+<%		
+		} else {
+%>
+			<p style="color: red">Dati errati</p>
+<%
+		}
+	}
+%>
+
 
 <!DOCTYPE>
 <html>
@@ -74,6 +101,10 @@
         <div style="text-align: center;"> </div>
         <div style="text-align: center;"> 
         		<input name="login" value="login" type="submit">
+        </div>
+         <div style="text-align: center;"> </div>
+        <div style="text-align: center;"> 
+        		<input name="loginMech" value="login as mechanic" type="submit">
         </div>
       </form>
     </div>

@@ -1,15 +1,63 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1"%>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.util.Locale" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.text.DateFormat" %>
+<%@ page import="logic.bean.BookingBean" %>
 
 <!-- dichiarazione e instanziazione di una variabile -->
-<jsp:useBean id="User" scope="request" class="logic.model.User"/>
+<jsp:useBean id="controlViewBook" scope="request" class="logic.control.ControllerViewBook"/>
 <!-- procedere con la dichiarazione di tutte le istanze utilizzate -->
 
 <!-- mappa gli attributi di un oggetto sui campi della form -->
-<jsp:setProperty name="User" property="*" />
+
 <!-- procedere nel mappare ogni attributo di ogni classe -->
 
 <%
 //compilare in JAVA il corpo della pagina
+	List<BookingBean> listBookingBean = new ArrayList<>();
+		
+		listBookingBean = controlViewBook.findBooking((String)session.getAttribute("username"));
+		String nome1="";
+		String targa1="";
+		String data1="";
+		
+		//if(listBookingBean.size()==1) {
+			nome1 = listBookingBean.get(0).getUsername();
+			targa1 =listBookingBean.get(0).getVeicolo();
+			
+			DateFormat sdf = new SimpleDateFormat("dd-MM-yyyy",Locale.ITALY);
+			String data = sdf.format(listBookingBean.get(0).getDataPrenotazione());
+			data1 = data;
+		//}
+		
+		System.out.println(nome1);
+		
+		/* if(listBookingBean.size()==2) {
+			nome1.setText(listBookingBean.get(0).getUsername());
+			targa1.setText(listBookingBean.get(0).getVeicolo());
+			data1.setText(String.valueOf(listBookingBean.get(0).getDataPrenotazione()));
+			
+			nome2.setText(listBookingBean.get(1).getUsername());
+			targa2.setText(listBookingBean.get(1).getVeicolo());
+			data2.setText(String.valueOf(listBookingBean.get(1).getDataPrenotazione()));
+		}
+		
+		if(listBookingBean.size()==3) {
+			nome1.setText(listBookingBean.get(0).getUsername());
+			targa1.setText(listBookingBean.get(0).getVeicolo());
+			data1.setText(String.valueOf(listBookingBean.get(0).getDataPrenotazione()));
+			
+			nome2.setText(listBookingBean.get(1).getUsername());
+			targa2.setText(listBookingBean.get(1).getVeicolo());
+			data2.setText(String.valueOf(listBookingBean.get(1).getDataPrenotazione()));
+			
+			nome3.setText(listBookingBean.get(2).getUsername());
+			targa3.setText(listBookingBean.get(2).getVeicolo());
+			data3.setText(String.valueOf(listBookingBean.get(2).getDataPrenotazione()));
+		}*/
 %>
 
 <html>
@@ -52,7 +100,7 @@
           <td style="text-align: center;">
             <h4>Nome:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; <input name="name"
 
-                id="name" readonly="readonly" type="text"></h4>
+                id="name" readonly="readonly" value="<%=nome1 %>" type="text"></h4>
             <h4>Cognome:&nbsp;&nbsp; <input name="surname" id="surname" readonly="readonly"
 
                 type="text"></h4>
