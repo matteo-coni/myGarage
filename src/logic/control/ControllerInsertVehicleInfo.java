@@ -60,16 +60,16 @@ public class ControllerInsertVehicleInfo {
 		
 	}
 	
-	public static boolean checkDeadlineInsurance(GregorianCalendar vehicleInsurance) {
+	public boolean checkDeadline(GregorianCalendar deadline) {
 		GregorianCalendar dataAttuale = new GregorianCalendar();
 		int annoAttuale = dataAttuale.get(GregorianCalendar.YEAR);
 		int meseAttuale = dataAttuale.get(GregorianCalendar.MONTH)+1;
 		
-		int annoDeadline = vehicleInsurance.get(GregorianCalendar.YEAR);
-		int meseDeadline = vehicleInsurance.get(GregorianCalendar.MONTH);
+		int annoDeadline = deadline.get(GregorianCalendar.YEAR);
+		int meseDeadline = deadline.get(GregorianCalendar.MONTH);
 		
 		if(annoAttuale == annoDeadline && meseAttuale == meseDeadline){
-			System.out.println("ricordati di controllare l'assicurazione!");
+			//System.out.println("ricordati di controllare DEADLINE!");
 			return true;
 		}
 		else
@@ -81,43 +81,6 @@ public class ControllerInsertVehicleInfo {
 		//vehicleBean.getScadAssicurazione().compareTo(vehicleBean.getScadBollo());
 		//USARE IL .compareTo--- data1 > data2 --> ris > 0
 		
-	}
-	
-	public void checkDeadlineTax(GregorianCalendar vehicleTax) {
-		GregorianCalendar dataAttuale = new GregorianCalendar();
-		int annoAttuale = dataAttuale.get(GregorianCalendar.YEAR);
-		int meseAttuale = dataAttuale.get(GregorianCalendar.MONTH)+1;
-		
-		int annoDeadline = vehicleTax.get(GregorianCalendar.YEAR);
-		int meseDeadline = vehicleTax.get(GregorianCalendar.MONTH);
-		
-		if(annoAttuale == annoDeadline && meseAttuale == meseDeadline)
-			System.out.println("ricordati di controllare il bollo!");
-
-	}
-	
-	public void checkDeadlineReview(GregorianCalendar vehicleReview) {
-		GregorianCalendar dataAttuale = new GregorianCalendar();
-		int annoAttuale = dataAttuale.get(GregorianCalendar.YEAR);
-		int meseAttuale = dataAttuale.get(GregorianCalendar.MONTH)+1;
-		
-		int annoDeadline = vehicleReview.get(GregorianCalendar.YEAR);
-		int meseDeadline = vehicleReview.get(GregorianCalendar.MONTH);
-		
-		if(annoAttuale == annoDeadline && meseAttuale == meseDeadline)
-			System.out.println("ricordati di controllare la revisione!");
-	}
-	
-	public void checkDeadlineService(GregorianCalendar vehicleService) {
-		GregorianCalendar dataAttuale = new GregorianCalendar();
-		int annoAttuale = dataAttuale.get(GregorianCalendar.YEAR);
-		int meseAttuale = dataAttuale.get(GregorianCalendar.MONTH)+1;
-		
-		int annoDeadline = vehicleService.get(GregorianCalendar.YEAR);
-		int meseDeadline = vehicleService.get(GregorianCalendar.MONTH);
-		
-		if(annoAttuale == annoDeadline && meseAttuale == meseDeadline)
-			System.out.println("ricordati di controllare i servizi??!");
 	}
 	
 }
