@@ -55,6 +55,7 @@
 	<body>
 	<form action="FindMechanicPage.jsp" name="myform" method="POST">
 		<table style="border-collapse: collapse; width: 1667px; height: 702px;" border="1">
+		<th></th>
       <tbody>
         <tr style="height: 84px;">
           <td style="width: 51px; height: 43px; text-align: center; margin-left: 64px;">
