@@ -12,7 +12,7 @@
 //compilare in JAVA il corpo della pagina
 %>
 
-<html>
+<html lang="">
   <head>
     <title>Home Page</title>
   </head>

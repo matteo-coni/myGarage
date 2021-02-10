@@ -13,7 +13,7 @@
 %>
 
 <!DOCTYPE>
-<html>
+<html lang="">
 	<head>
 		<title>Find Parking Page</title>
 	</head>

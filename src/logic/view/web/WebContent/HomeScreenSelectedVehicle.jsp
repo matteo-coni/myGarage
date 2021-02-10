@@ -65,7 +65,7 @@
 		
     	
 <!DOCTYPE>
-<html>
+<html lang="">
   <head>
     <title>Home Page</title>
   </head>

@@ -48,7 +48,7 @@
 %>
 
 <!DOCTYPE>
-<html>
+<html lang="">
 	<head>
 		<title>Find Mechanic Page</title>
 	</head>

@@ -69,7 +69,7 @@
 
 
 <!DOCTYPE>
-<html>
+<html lang="">
 	<head>
 		<title>myGarage Login Page</title>
 	</head>

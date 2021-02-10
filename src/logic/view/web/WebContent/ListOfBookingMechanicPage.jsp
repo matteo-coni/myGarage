@@ -60,7 +60,7 @@
 		}*/
 %>
 
-<html>
+<html lang="">
   <head>
     <title>List Of Booking</title>
   </head>
