@@ -20,6 +20,7 @@ public class Mechanic {
 		this.address = address;
 		this.zone = zone;
 		this.city = city;
+		this.percSconto=percSconto;
 	}
 	
 	//*****METODI*****
@@ -62,5 +63,4 @@ public class Mechanic {
 		this.percSconto = percSconto;
 	}
 	
-		
 }
