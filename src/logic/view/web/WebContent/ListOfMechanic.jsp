@@ -48,7 +48,7 @@
 
 	if (request.getParameter("prenota1")!=null){
 		
-		nome1 = request.getParameter("name1");
+		
 		String problems1 = request.getParameter("problems1");
 		String date1 = (String)request.getParameter("dateBook1");
 		
@@ -71,7 +71,7 @@
 	
 	if (request.getParameter("prenota2")!=null){
 		
-		nome2 = request.getParameter("name2");
+		//nome2 = request.getParameter("name2");
 		String problems2 = request.getParameter("problems2");
 		String date2 = (String)request.getParameter("dateBook2");
 		
