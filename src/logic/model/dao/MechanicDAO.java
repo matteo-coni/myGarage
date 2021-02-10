@@ -160,9 +160,9 @@ public class MechanicDAO {
         } catch (SQLException e) {
             e.printStackTrace();
             
-        } catch (ClassNotFoundException e) {
+        } catch (ClassNotFoundException e1) {
 			
-			e.printStackTrace();
+			e1.printStackTrace();
 		} finally {
             
         	if (rs != null) {
@@ -357,8 +357,8 @@ public class MechanicDAO {
             if (con != null) {
                 try {
                     con.close();
-                } catch (SQLException es) {
-                    es.printStackTrace();
+                } catch (SQLException e1) {
+                    e1.printStackTrace();
                 }
                 con = null;
             }
