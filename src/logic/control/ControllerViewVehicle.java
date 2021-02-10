@@ -10,7 +10,7 @@ import logic.model.dao.*;
 public class ControllerViewVehicle {
 
 	public ControllerViewVehicle() {
-		
+		//Costruttore
 	}
 	
 	
