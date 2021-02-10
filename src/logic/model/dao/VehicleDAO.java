@@ -216,16 +216,16 @@ public class VehicleDAO {
             vehicle.setVehicleDisplacement(cilindrata);
             vehicle.setVehiclePowertrains(cavalli);
             
-            Date dateAss=new SimpleDateFormat("format").parse(assicurazione);
+            Date dateAss=new SimpleDateFormat(format).parse(assicurazione);
             vehicle.setVehicleInsurance(dateAss);
             
-            Date dateRev=new SimpleDateFormat("format").parse(revisione);
+            Date dateRev=new SimpleDateFormat(format).parse(revisione);
             vehicle.setVehicleReview(dateRev);
             
-            Date dateBollo=new SimpleDateFormat("format").parse(bollo);
+            Date dateBollo=new SimpleDateFormat(format).parse(bollo);
             vehicle.setVehicleTax(dateBollo);
             
-            Date dateTagl=new SimpleDateFormat("format").parse(tagliando);
+            Date dateTagl=new SimpleDateFormat(format).parse(tagliando);
             vehicle.setVehicleService(dateTagl);
             
             
