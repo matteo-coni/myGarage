@@ -145,4 +145,18 @@ public class VehicleBean {
 			return false;}
 	}
 	
+	public boolean checkLicensePlate(String license) {
+		int i=0;
+		int strlen = license.length();
+
+		if(strlen==7){
+			char[] letter= new char[strlen];
+			for(i=0; i<strlen;i++)
+				letter[i]=license.charAt(i);
+			if(Character.isLetter(letter[0])&&Character.isLetter(letter[1])&&Character.isDigit(letter[2])&&Character.isDigit(letter[3])&&Character.isDigit(letter[4])&&Character.isLetter(letter[5])&&Character.isLetter(letter[6]))
+				return true;
+		}
+		return false;
+	}
+	
 }
