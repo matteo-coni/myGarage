@@ -61,9 +61,9 @@ public class ControllerGrafBookMech {
 	@FXML
 	TextArea txtProblem1;
 	@FXML
-	TextField txtProblem2;
+	TextArea txtProblem2;
 	@FXML
-	TextField txtProblem3;
+	TextArea txtProblem3;
 	@FXML
 	TextField nomeCerca;
 	@FXML

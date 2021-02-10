@@ -17,11 +17,11 @@ public class ControllerViewVehicle {
 	public List<String> viewVehicle(String username){//, List<VehicleBean> listVehicle) {
 		
 		
-		List<String> targheVeicoli = new ArrayList<String>();
+		List<String> targheVeicoli = new ArrayList<>();
 		VehicleDAO vehicledao = new VehicleDAO();
-		List<Vehicle> listVehicle_Prova = vehicledao.findVehicle(username);
+		List<Vehicle> listVehicle = vehicledao.findVehicle(username);
 		
-		for(Vehicle vehicle : listVehicle_Prova) {
+		for(Vehicle vehicle : listVehicle) {
 			
 			targheVeicoli.add(vehicle.getLicensePlate());
 		}
