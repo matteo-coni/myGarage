@@ -94,7 +94,7 @@
 	
 if (request.getParameter("prenota3")!=null){
 		
-		nome3 = request.getParameter("name3");
+		//nome3 = request.getParameter("name3");
 		String problems3 = request.getParameter("problems3");
 		String date3 = (String)request.getParameter("dateBook3");
 		
