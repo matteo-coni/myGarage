@@ -7,9 +7,11 @@ public class BookingBean {
 	private String nomeOfficina;
 	private String username;
 	private String veicolo;
-	private Date dataPrenotazione;// = new Date();
+	private Date dataPrenotazione;
 	private Boolean confermaPren;
 	private String problemi;
+	
+	//Date dataPrenotazione;// = new Date();
 	
 	//COSTRUTTORI
 	public BookingBean () {
