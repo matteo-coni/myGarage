@@ -14,8 +14,7 @@ public class ControllerLogin {
 		
 		boolean valid = false;
 		try {
-			//--query DAO
-			//controlla nel database se username e password sono giusti
+			//--query DAO -- controlla nel database se username e password sono giusti
 			UserDAO userdao = new UserDAO();
 			valid = userdao.findUser(loginBean.getUsername(),loginBean.getPassword());
 		
@@ -33,8 +32,7 @@ public class ControllerLogin {
 		
 		boolean validmech = false;
 		try {
-			//--query DAO
-			//controlla nel database se username e password sono giusti
+			//--query DAO -- controlla nel database se username e password sono giusti
 			UserDAO userdaomech = new UserDAO();
 			validmech = userdaomech.findUserMech(loginBeanMech.getUsername(),loginBeanMech.getPassword());
 		

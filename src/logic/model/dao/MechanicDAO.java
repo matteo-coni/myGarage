@@ -286,7 +286,7 @@ public class MechanicDAO {
 		
 		List<Mechanic> listMechanic = new ArrayList<>();
 		
-		ResultSet rs= null;
+		ResultSet rsc= null;
 		Connection con = null;
 		Statement stm = null;
 		
@@ -304,18 +304,18 @@ public class MechanicDAO {
             String query = testo + city + "' AND Zona = '" + zone + "' AND Officina = '" + name + testo2; //Scrivere query per cercare by city
             System.out.println(query); //prova stringa query
             
-            rs = stm.executeQuery(query);
+            rsc = stm.executeQuery(query);
             
-            rs.first();
+            rsc.first();
            
             do{
                 
-                String officina = rs.getString("Officina");
+                String officina = rsc.getString("Officina");
                 
-                String citta = rs.getString("Città");
-                String zona = rs.getString("Zona");
-                String indirizzo = rs.getString("Indirizzo");
-                int percSconto = rs.getInt("PercSconto");
+                String citta = rsc.getString("Città");
+                String zona = rsc.getString("Zona");
+                String indirizzo = rsc.getString("Indirizzo");
+                int percSconto = rsc.getInt("PercSconto");
                 
                 
                 
@@ -328,7 +328,7 @@ public class MechanicDAO {
 
                 listMechanic.add(mechanic);
 
-            }while(rs.next());
+            }while(rsc.next());
                
         } catch (SQLException se) {
             se.printStackTrace();
@@ -338,14 +338,14 @@ public class MechanicDAO {
 			e.printStackTrace();
 		} finally {
             
-        	if (rs != null) {
+        	if (rsc != null) {
                 try {
-                    rs.close();
+                    rsc.close();
                 } catch (SQLException sqle) {
                     sqle.printStackTrace();
                 }
             }
-            rs = null;
+            rsc = null;
             if (stm != null) {
                 try {
                     stm.close();

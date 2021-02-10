@@ -14,7 +14,7 @@ public class ControllerViewVehicle {
 	}
 	
 	
-	public List<String> viewVehicle(String username){//, List<VehicleBean> listVehicle) {
+	public List<String> viewVehicle(String username){
 		
 		
 		List<String> targheVeicoli = new ArrayList<>();

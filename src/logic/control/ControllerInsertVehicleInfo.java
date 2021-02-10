@@ -18,26 +18,9 @@ public class ControllerInsertVehicleInfo {
 		//Costruttore
 	}
 	
-	/*public static ControllerInsertVehicleInfo getInstance() {
-		if(istance == null)
-			istance = new ControllerInsertVehicleInfo();
-		return istance;
-	}*/
-	//*****FINE SINGLETON*****
 	
-	//*****METODI*****
-	public void checkVehicle(String licensePlate) {
-		/*
-		 * if(licensePlate== **query su DAO per licensePlate in DB**)
-		 * 	return false;
-		 * else
-		 * 	return true;
-		*/
-	}
 	
-	/*public void saveVehicle(String licensePlate, String vehicleBrand, String vehicleModel, int vehicleDisplacement, int vehiclePowertrains, String vehicleFuel, Date vehicleInsurance, Date vehicleTax, Date vehicleReview, Date vehicleService, Image img){
 	
-	}*/
 	
 	public boolean saveVehicle(VehicleBean vehicleBean) {
 		
