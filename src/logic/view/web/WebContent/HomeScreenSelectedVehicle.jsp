@@ -135,6 +135,8 @@
                 alt="insertVehicle" title="insertVehicle"></a> </td>
           <td>
             <table style="width: 1416px; height: 1px;" border="1">
+            <caption></caption>
+				<th scope=""></th>
               <tbody>
                 <tr style="height: 18px;">
                   <td style="width: 302px; height: 23px;">
@@ -181,9 +183,9 @@
                 alt="bookParking" style="width: 255px; height: 255px;" title="bookParking"></a>
           </td>
           <td style="text-align: center; height: 261px;">
-            <table style="text-align: center; margin-left: auto; margin-right: auto;"
-
-              border="1">
+            <table style="text-align: center; margin-left: auto; margin-right: auto;" border="1">
+            <caption></caption>
+				<th scope=""></th>
               <tbody>
                 <tr style="height: 18px;">
                   <td style="width: 302px; height: 153px;">
@@ -211,6 +213,8 @@
           </td>
           <td style="height: 260px;">
             <table style="width: 1416px; height: 1px;" border="1">
+            <caption></caption>
+				<th scope=""></th>
               <tbody>
                 <tr style="height: 18px;">
                   <td style="width: 302px; height: 45px; text-align: center;">
