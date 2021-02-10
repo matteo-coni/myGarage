@@ -25,7 +25,7 @@ public class ControllerBookAppointment {
 	public List<MechanicBean> searchByAll(String city, String zone, String name) {
 		
 		List<MechanicBean> listMechanicBean = new ArrayList<>();
-		List<Mechanic> listMechanic = new ArrayList<>();
+		List<Mechanic> listMechanic;// = new ArrayList<>();
 		
 		MechanicDAO mechanicDao = new MechanicDAO();
 		
@@ -56,7 +56,7 @@ public class ControllerBookAppointment {
 			
 			for (int i=0; i<=2; i++) {
 		
-			Mechanic mechanic = new Mechanic();
+			Mechanic mechanic;// = new Mechanic();
 			mechanic = listMechanic.get(i);
 			
 			MechanicBean mechanicBean = new MechanicBean(mechanic.getName(), mechanic.getGarage(), mechanic.getCity(), mechanic.getZone(), mechanic.getAddress(), mechanic.getPercSconto());
