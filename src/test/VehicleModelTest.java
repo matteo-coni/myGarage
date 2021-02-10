@@ -7,6 +7,8 @@ import org.junit.Test;
 import logic.control.ControllerViewVehicle;
 import logic.bean.VehicleBean;
 
+//TEST MATTEO CONI
+
 public class VehicleModelTest {
 
 	@Test
