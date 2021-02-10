@@ -12,7 +12,7 @@ public class DateTest {
 	
 	//Confronto fra date
 	@Test
-	public void checkDate() {
+	public void checkDateDeadline() {
 		ControllerInsertVehicleInfo testDate= new ControllerInsertVehicleInfo();
 		
 		GregorianCalendar date= new GregorianCalendar(2021, 03, 25);
@@ -25,7 +25,7 @@ public class DateTest {
 	public void correctDate() {
 		VehicleBean testDate= new VehicleBean();
 		
-		GregorianCalendar cal = new GregorianCalendar (2007, 2, 29);
+		GregorianCalendar cal = new GregorianCalendar(0000, 02, 29);
 		
 		assertEquals(false, testDate.checkDate(cal));
 	}
