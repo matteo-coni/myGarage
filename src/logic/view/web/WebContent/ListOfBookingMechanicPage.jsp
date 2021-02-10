@@ -17,47 +17,55 @@
 
 <%
 //compilare in JAVA il corpo della pagina
-	List<BookingBean> listBookingBean = new ArrayList<>();
+		List<BookingBean> listBookingBean = new ArrayList<>();
 		
+		DateFormat sdf = new SimpleDateFormat("dd-MM-yyyy",Locale.ITALY);		
+
 		listBookingBean = controlViewBook.findBooking((String)session.getAttribute("username"));
 		String nome1="";
 		String targa1="";
 		String data1="";
+		String nome2="";
+		String targa2="";
+		String data2="";
+		String nome3="";
+		String targa3="";
+		String data3="";
 		
-		//if(listBookingBean.size()==1) {
+		//System.out.println(listBookingBean.size());
+		
+		if(listBookingBean.size()==1) {
 			nome1 = listBookingBean.get(0).getUsername();
 			targa1 =listBookingBean.get(0).getVeicolo();
+			data1 = sdf.format(listBookingBean.get(0).getDataPrenotazione());
 			
-			DateFormat sdf = new SimpleDateFormat("dd-MM-yyyy",Locale.ITALY);
-			String data = sdf.format(listBookingBean.get(0).getDataPrenotazione());
-			data1 = data;
-		//}
+		}
 		
 		System.out.println(nome1);
 		
-		/* if(listBookingBean.size()==2) {
-			nome1.setText(listBookingBean.get(0).getUsername());
-			targa1.setText(listBookingBean.get(0).getVeicolo());
-			data1.setText(String.valueOf(listBookingBean.get(0).getDataPrenotazione()));
+		if(listBookingBean.size()==2) {
+			nome1 = listBookingBean.get(0).getUsername();
+			targa1 =listBookingBean.get(0).getVeicolo();
+			data1 = sdf.format(listBookingBean.get(0).getDataPrenotazione());
 			
-			nome2.setText(listBookingBean.get(1).getUsername());
-			targa2.setText(listBookingBean.get(1).getVeicolo());
-			data2.setText(String.valueOf(listBookingBean.get(1).getDataPrenotazione()));
+			nome2 = listBookingBean.get(1).getUsername();
+			targa2 =listBookingBean.get(1).getVeicolo();
+			data2 = sdf.format(listBookingBean.get(1).getDataPrenotazione());
 		}
 		
 		if(listBookingBean.size()==3) {
-			nome1.setText(listBookingBean.get(0).getUsername());
-			targa1.setText(listBookingBean.get(0).getVeicolo());
-			data1.setText(String.valueOf(listBookingBean.get(0).getDataPrenotazione()));
+			nome1 = listBookingBean.get(0).getUsername();
+			targa1 =listBookingBean.get(0).getVeicolo();
+			data1 = sdf.format(listBookingBean.get(0).getDataPrenotazione());
 			
-			nome2.setText(listBookingBean.get(1).getUsername());
-			targa2.setText(listBookingBean.get(1).getVeicolo());
-			data2.setText(String.valueOf(listBookingBean.get(1).getDataPrenotazione()));
+			nome2 = listBookingBean.get(1).getUsername();
+			targa2 =listBookingBean.get(1).getVeicolo();
+			data2 = sdf.format(listBookingBean.get(1).getDataPrenotazione());
 			
-			nome3.setText(listBookingBean.get(2).getUsername());
-			targa3.setText(listBookingBean.get(2).getVeicolo());
-			data3.setText(String.valueOf(listBookingBean.get(2).getDataPrenotazione()));
-		}*/
+			nome3 = listBookingBean.get(2).getUsername();
+			targa3 =listBookingBean.get(2).getVeicolo();
+			data3 = sdf.format(listBookingBean.get(2).getDataPrenotazione());
+		}
 %>
 <!DOCTYPE html>
 <html lang="">
@@ -103,10 +111,11 @@
             <h4>Nome:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; <input name="name"
 
                 id="name" readonly="readonly" value="<%=nome1 %>" type="text"></h4>
-            <h4>Cognome:&nbsp;&nbsp; <input name="surname" id="surname" readonly="readonly"
+            
+            <h4>Data:&nbsp;&nbsp; <input name="surname" id="surname" readonly="readonly" value="<%=data1 %>"
 
                 type="text"></h4>
-            <h4>Targa:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; <input name="address"
+            <h4>Targa:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; <input name="address" value="<%=targa1 %>"
 
                 id="address" readonly="readonly" type="text"></h4>
           </td>
@@ -127,13 +136,13 @@ type="submit"> <br>
                 alt="bookParking" style="width: 255px; height: 255px;" title="bookParking"></a>
           </td>
           <td style="text-align: center;">
-            <h4>Nome:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; <input name="name"
+            <h4>Nome:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; <input name="name" value="<%=nome2 %>"
 
                 id="name" readonly="readonly" type="text"></h4>
-            <h4>Cognome:&nbsp;&nbsp; <input name="surname" id="surname" readonly="readonly"
+            <h4>Data:&nbsp;&nbsp; <input name="surname" id="surname" readonly="readonly" value="<%=data2 %>"
 
                 type="text"></h4>
-            <h4>Targa:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; <input name="address"
+            <h4>Targa:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; <input name="address" value="<%=targa2 %>"
 
                 id="address" readonly="readonly" type="text"></h4>
           </td>
@@ -154,13 +163,13 @@ type="submit"> <br>
                 alt="bookMechanic" style="width: 255px; height: 256px;" title="bookMechanic"></a>
           </td>
           <td style="text-align: center;">
-            <h4>Nome:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; <input name="name"
+            <h4>Nome:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; <input name="name" value="<%=nome3 %>"
 
                 id="name" readonly="readonly" type="text"></h4>
-            <h4>Cognome:&nbsp;&nbsp; <input name="surname" id="surname" readonly="readonly"
+            <h4>Data:&nbsp;&nbsp; <input name="surname" id="surname" readonly="readonly" value="<%=data3 %>"
 
                 type="text"></h4>
-            <h4>Targa:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; <input name="address"
+            <h4>Targa:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; <input name="address" value="<%=targa3 %>"
 
                 id="address" readonly="readonly" type="text"></h4>
           </td>

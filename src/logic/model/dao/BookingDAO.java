@@ -84,7 +84,7 @@ public class BookingDAO {
 		
 		List<Booking> listBooking = new ArrayList<>();
 		
-		ResultSet rs= null;
+		ResultSet rst= null;
 		Connection con = null;
 		Statement stm = null;
 		
@@ -102,21 +102,21 @@ public class BookingDAO {
             String query = "SELECT * FROM Booking WHERE Officina = '" + nomeOfficina + "' ORDER BY Data ASC;"; //Scrivere query per cercare by city
             System.out.println(query); //prova stringa query
             
-            rs = stm.executeQuery(query);
+            rst = stm.executeQuery(query);
             
-            rs.first();
+            rst.first();
            
             do{
                 
-                String username = rs.getString("Username");
+                String username = rst.getString("Username");
                 
                 //String Officina = rs.getString("");
-                String problemi = rs.getString("Problemi");
-                String data = rs.getString("Data");
+                String problemi = rst.getString("Problemi");
+                String data = rst.getString("Data");
                 Date date=new SimpleDateFormat("dd/MM/yyyy").parse(data);
                 
-                Boolean confermata = rs.getBoolean("Confermata");
-                String veicolo = rs.getString("Veicolo");
+                Boolean confermata = rst.getBoolean("Confermata");
+                String veicolo = rst.getString("Veicolo");
                 
                 Booking booking = new Booking();
                 booking.setNameGarage(nomeOfficina);
@@ -128,7 +128,7 @@ public class BookingDAO {
 
                 listBooking.add(booking);
 
-            }while(rs.next());
+            }while(rst.next());
                
         } catch (SQLException se) {
             se.printStackTrace();
@@ -141,14 +141,14 @@ public class BookingDAO {
 			
 		} finally {
             
-        	if (rs != null) {
+        	if (rst != null) {
                 try {
-                    rs.close();
+                    rst.close();
                 } catch (SQLException sqle) {
                     sqle.printStackTrace();
                 }
             }
-            rs = null;
+            rst = null;
             if (stm != null) {
                 try {
                     stm.close();
@@ -169,6 +169,57 @@ public class BookingDAO {
 		
 		return listBooking; 
 		
+	}
+
+	public void confirmBooking(String username, String nomeOfficina, String targa, int val) {
+		
+		Connection conn = null;
+		Statement stmt = null;
+		
+		
+		try {
+			Class.forName(DRIVER);
+            // Otteniamo una connessione con username e password
+            conn = DriverManager.getConnection (URL , USERNAMEDB, PASSWORDDB);
+            
+            // Creiamo un oggetto Statement per interrogare il db
+            stmt = conn.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY);
+            
+            // Stringa per insert e update stm	
+            
+            String updateStm = String.format("UPDATE Booking SET Confermata = '" + val + "' where Officina = '" + nomeOfficina + "' AND Username = '" + username + "' AND Veicolo = '" + targa + "';");
+           
+            System.out.println(updateStm); //prova stringa query
+            
+            stmt.executeUpdate(updateStm);
+            
+		   } catch (SQLException sql) {
+			   sql.printStackTrace();
+	       
+		   } catch (ClassNotFoundException e2) {
+	        	e2.printStackTrace();
+	        	
+		} finally {
+	       
+	            if (stmt != null) {
+	                try {
+	                    stmt.close();
+	                } catch (SQLException e) {
+	                    e.printStackTrace();
+	                }
+	            }
+	            stmt = null;
+	            
+	            if (conn != null) {
+	                try {
+	                    conn.close();
+	                } catch (SQLException e) {
+	                    e.printStackTrace();
+	                }
+	                conn = null;
+	            }
+	        }
 	}
 	
 

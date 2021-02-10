@@ -42,5 +42,11 @@ public class ControllerViewBook {
 		return listBookingBean;
 		
 	}
+	
+	public void confirmBooking(String username, String nomeOfficina, String targa, int val) {
+		
+		BookingDAO bookingDao = new BookingDAO();
+		bookingDao.confirmBooking(username,nomeOfficina,targa,val);
+	}
 
 }

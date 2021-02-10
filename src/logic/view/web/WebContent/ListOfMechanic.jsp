@@ -26,7 +26,7 @@
 	}
 	String indirizzo2 = "";
 	if(session.getAttribute("indirizzo2")!=null){
-		indirizzo2 = (String)session.getAttribute("indirzzo2");
+		indirizzo2 = (String)session.getAttribute("indirizzo2");
 	}
 	String sconto2="";
 	if(session.getAttribute("sconto2")!=null){
@@ -39,7 +39,7 @@
 	}
 	String indirizzo3 = "";
 	if(session.getAttribute("indirizzo3")!=null){
-		indirizzo3 = (String)session.getAttribute("indirzzo3");
+		indirizzo3 = (String)session.getAttribute("indirizzo3");
 	}
 	String sconto3="";
 	if(session.getAttribute("sconto3")!=null){

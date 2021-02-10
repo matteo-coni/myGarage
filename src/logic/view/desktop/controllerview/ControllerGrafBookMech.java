@@ -246,7 +246,7 @@ public class ControllerGrafBookMech {
 		
 		
 		ControllerViewVehicle controlViewVehicle = new ControllerViewVehicle();
-		List<String> targheVeicoli = controlViewVehicle.viewVehicle(username); //listVehicleBean);
+		List<String> targheVeicoli = controlViewVehicle.viewVehicle(username); 
 		
 		for(String targa: targheVeicoli) { //Clico for per aggiungere le targhe al "combobox" (Solo targhe legate all'username)
 						

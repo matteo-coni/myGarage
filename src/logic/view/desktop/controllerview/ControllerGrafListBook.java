@@ -10,6 +10,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import logic.bean.BookingBean;
 
 import logic.control.ControllerViewBook;
@@ -56,20 +58,85 @@ public class ControllerGrafListBook {
 	TextArea problemi2;
 	@FXML
 	TextArea problemi3;
+	@FXML
+	Rectangle redGreen1;
+	@FXML
+	Rectangle redGreen2;
+	@FXML
+	Rectangle redGreen3;
+	
+	@FXML
+	public void confirm1() {
+		String username = nome1.getText();
+		String targa = targa1.getText();
+		ControllerViewBook controlViewBook = new ControllerViewBook();
+		controlViewBook.confirmBooking(username, ControllerMain.getInstance().getId(),targa,1); // 1 per la conferma, 0 declina
+		//setta il colore come verde
+		redGreen1.setFill(Color.GREEN);
+	}
+	
+	@FXML
+	public void confirm2() {
+		String username = nome2.getText();
+		String targa = targa2.getText();
+		ControllerViewBook controlViewBook = new ControllerViewBook();
+		controlViewBook.confirmBooking(username, ControllerMain.getInstance().getId(),targa,1); // 1 per la conferma, 0 declina
+		//setta il colore come verde
+		redGreen2.setFill(Color.GREEN);
+	}
+	@FXML
+	public void confirm3() {
+		String username = nome3.getText();
+		String targa = targa3.getText();
+		ControllerViewBook controlViewBook = new ControllerViewBook();
+		controlViewBook.confirmBooking(username, ControllerMain.getInstance().getId(),targa,1); // 1 per la conferma, 0 declina
+		//setta il colore come verde
+		redGreen3.setFill(Color.GREEN);
+	}
+	
+	@FXML
+	public void decline1() {
+		String usernamedecline = nome1.getText();
+		String targadecline = targa1.getText();
+		ControllerViewBook controlViewBook = new ControllerViewBook();
+		controlViewBook.confirmBooking(usernamedecline, ControllerMain.getInstance().getId(),targadecline,0); // 1 per la conferma, 0 declina
+		//setta il colore come verde
+		redGreen1.setFill(Color.RED);
+	}
+	@FXML
+	public void decline2() {
+		String usernamedecline = nome2.getText();
+		String targadecline = targa2.getText();
+		ControllerViewBook controlViewBook = new ControllerViewBook();
+		controlViewBook.confirmBooking(usernamedecline, ControllerMain.getInstance().getId(),targadecline,0); // 1 per la conferma, 0 declina
+		//setta il colore come verde
+		redGreen1.setFill(Color.RED);
+	}
+	@FXML
+	public void decline3() {
+		String usernameDecline = nome3.getText();
+		String targaDecline = targa3.getText();
+		ControllerViewBook controlViewBook = new ControllerViewBook();
+		controlViewBook.confirmBooking(usernameDecline, ControllerMain.getInstance().getId(),targaDecline,0); // 1 per la conferma, 0 declina
+		//setta il colore come verde
+		redGreen1.setFill(Color.RED);
+	}
+	
 	
 	public void initialize() {
 		
+		DateFormat sdf = new SimpleDateFormat("dd-MM-yyyy",Locale.ITALY);
 		List<BookingBean> listBookingBean = new ArrayList<>();
 		ControllerViewBook controlViewBook = new ControllerViewBook();
 		listBookingBean = controlViewBook.findBooking(ControllerMain.getInstance().getId());
+		
 		
 		if(listBookingBean.isEmpty()) return;
 		
 		if(listBookingBean.size()==1) {
 			nome1.setText(listBookingBean.get(0).getUsername());
 			targa1.setText(listBookingBean.get(0).getVeicolo());
-			
-			DateFormat sdf = new SimpleDateFormat("dd-MM-yyyy",Locale.ITALY);
+
 			String data = sdf.format(listBookingBean.get(0).getDataPrenotazione());
 			data1.setText(data);
 		}
@@ -77,25 +144,30 @@ public class ControllerGrafListBook {
 		if(listBookingBean.size()==2) {
 			nome1.setText(listBookingBean.get(0).getUsername());
 			targa1.setText(listBookingBean.get(0).getVeicolo());
-			data1.setText(String.valueOf(listBookingBean.get(0).getDataPrenotazione()));
+			String data = sdf.format(listBookingBean.get(0).getDataPrenotazione());
+			data1.setText(data);
 			
 			nome2.setText(listBookingBean.get(1).getUsername());
 			targa2.setText(listBookingBean.get(1).getVeicolo());
-			data2.setText(String.valueOf(listBookingBean.get(1).getDataPrenotazione()));
+			String datap2 = sdf.format(listBookingBean.get(1).getDataPrenotazione());
+			data2.setText(datap2);
 		}
 		
 		if(listBookingBean.size()==3) {
 			nome1.setText(listBookingBean.get(0).getUsername());
 			targa1.setText(listBookingBean.get(0).getVeicolo());
-			data1.setText(String.valueOf(listBookingBean.get(0).getDataPrenotazione()));
+			String data = sdf.format(listBookingBean.get(0).getDataPrenotazione());
+			data1.setText(data);
 			
 			nome2.setText(listBookingBean.get(1).getUsername());
 			targa2.setText(listBookingBean.get(1).getVeicolo());
-			data2.setText(String.valueOf(listBookingBean.get(1).getDataPrenotazione()));
+			String datap2 = sdf.format(listBookingBean.get(1).getDataPrenotazione());
+			data2.setText(datap2);
 			
 			nome3.setText(listBookingBean.get(2).getUsername());
 			targa3.setText(listBookingBean.get(2).getVeicolo());
-			data3.setText(String.valueOf(listBookingBean.get(2).getDataPrenotazione()));
+			String datap3 = sdf.format(listBookingBean.get(2).getDataPrenotazione());
+			data3.setText(datap3);
 		}
 	}
 }
