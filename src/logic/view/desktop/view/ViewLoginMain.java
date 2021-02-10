@@ -31,7 +31,7 @@ public class ViewLoginMain extends Application {
 		try {
 			load();
 		} catch (IOException e) {
-			
+			e.printStackTrace();
 		}
 	}
 	public void load() throws IOException {
@@ -54,7 +54,7 @@ public class ViewLoginMain extends Application {
 			mainStage.show();
 
 		} catch (IllegalStateException e) {
-			
+			e.printStackTrace();
 		}
 	}
 	public static List<Node> getAllNodes(Parent p){

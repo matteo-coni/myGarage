@@ -13,7 +13,8 @@ public class View {
         try {
             setRoot(loader.load());
         } catch (IOException e) {
-                    }
+        	e.printStackTrace();
+        }
     }
 
     public Parent getRoot() {
