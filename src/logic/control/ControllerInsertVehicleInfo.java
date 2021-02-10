@@ -13,11 +13,9 @@ import logic.model.dao.*;
 
 
 public class ControllerInsertVehicleInfo {
-	//*****PROVA SINGLETON*****
-	//private static ControllerInsertVehicleInfo istance = null;
-	
-	//*****COSTRUTTORE*****
-	public ControllerInsertVehicleInfo() {} //"private" perch� tramite getInstance() potr� essere chiamato solo dall'interno
+	public ControllerInsertVehicleInfo() {
+		//Costruttore
+	}
 	
 	/*public static ControllerInsertVehicleInfo getInstance() {
 		if(istance == null)
