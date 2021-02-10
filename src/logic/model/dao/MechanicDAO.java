@@ -18,14 +18,16 @@ public class MechanicDAO {
 	static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 	static final String USERNAMEDB = "root";
 	static final String PASSWORDDB = "admin";
+	static final String OFFICINA = "officina";
 	String testo= "SELECT * FROM Mechanic WHERE Città = '";
 	String testo2 = "' ORDER BY PercSconto DESC;";	
+	
 	
 	public List<Mechanic> searchByCity(String city){
 		
 		List<Mechanic> listMechanic = new ArrayList<>();
 		
-		ResultSet rs= null;
+		ResultSet res= null;
 		Connection con = null;
 		Statement stm = null;
 		
@@ -44,18 +46,18 @@ public class MechanicDAO {
             String query = testo + city + testo2; //Scrivere query per cercare by city
             System.out.println(query); //prova stringa query
             
-            rs = stm.executeQuery(query);
+            res = stm.executeQuery(query);
             
-            rs.first();
+            res.first();
            
             do{
                 
-                String officina = rs.getString("Officina");
+                String officina = res.getString(OFFICINA);
                 
-                String citta = rs.getString("Città");
-                String zona = rs.getString("Zona");
-                String indirizzo = rs.getString("Indirizzo");
-                int percSconto = rs.getInt("PercSconto");
+                String citta = res.getString("Città");
+                String zona = res.getString("Zona");
+                String indirizzo = res.getString("Indirizzo");
+                int percSconto = res.getInt("PercSconto");
                 
                 
                 
@@ -68,7 +70,7 @@ public class MechanicDAO {
 
                 listMechanic.add(mechanic);
 
-            }while(rs.next());
+            }while(res.next());
                
         } catch (SQLException se) {
             se.printStackTrace();
@@ -78,14 +80,14 @@ public class MechanicDAO {
 			e.printStackTrace();
 		} finally {
             
-        	if (rs != null) {
+        	if (res != null) {
                 try {
-                    rs.close();
+                    res.close();
                 } catch (SQLException sqle) {
                     sqle.printStackTrace();
                 }
             }
-            rs = null;
+            res = null;
             if (stm != null) {
                 try {
                     stm.close();
@@ -137,7 +139,7 @@ public class MechanicDAO {
            
             do{
                 
-                String officina = rs.getString("Officina");
+                String officina = rs.getString(OFFICINA);
                 
                 String citta = rs.getString("Città");
                 String zona = rs.getString("Zona");
@@ -200,7 +202,7 @@ public class MechanicDAO {
 		
 		List<Mechanic> listMechanic = new ArrayList<>();
 		
-		ResultSet rs= null;
+		ResultSet rst= null;
 		Connection con = null;
 		Statement stm = null;
 		
@@ -218,18 +220,18 @@ public class MechanicDAO {
             String query = testo + city + "' AND Officina = '" + name + testo2; //Scrivere query per cercare by city/name
             System.out.println(query); //prova stringa query
             
-            rs = stm.executeQuery(query);
+            rst = stm.executeQuery(query);
             
-            rs.first();
+            rst.first();
            
             do{
                 
-                String officina = rs.getString("Officina");
+                String officina = rst.getString(OFFICINA);
                 
-                String citta = rs.getString("Città");
-                String zona = rs.getString("Zona");
-                String indirizzo = rs.getString("Indirizzo");
-                int percSconto = rs.getInt("PercSconto");
+                String citta = rst.getString("Città");
+                String zona = rst.getString("Zona");
+                String indirizzo = rst.getString("Indirizzo");
+                int percSconto = rst.getInt("PercSconto");
                 
                 
                 
@@ -242,7 +244,7 @@ public class MechanicDAO {
 
                 listMechanic.add(mechanic);
 
-            }while(rs.next());
+            }while(rst.next());
                
         } catch (SQLException e) {
             e.printStackTrace();
@@ -252,14 +254,14 @@ public class MechanicDAO {
 			e1.printStackTrace();
 		} finally {
             
-        	if (rs != null) {
+        	if (rst != null) {
                 try {
-                    rs.close();
+                    rst.close();
                 } catch (SQLException sqle) {
                     sqle.printStackTrace();
                 }
             }
-            rs = null;
+            rst = null;
             if (stm != null) {
                 try {
                     stm.close();
@@ -302,7 +304,7 @@ public class MechanicDAO {
             // query ---> immagazziniamone i risultati	in result set	INSERIRE LA GIUSTA QUERY PER CERCARE NEL DB
             
             String query = testo + city + "' AND Zona = '" + zone + "' AND Officina = '" + name + testo2; //Scrivere query per cercare by city
-            System.out.println(query); //prova stringa query
+            System.err.println(query); //prova stringa query
             
             rsc = stm.executeQuery(query);
             
@@ -310,7 +312,7 @@ public class MechanicDAO {
            
             do{
                 
-                String officina = rsc.getString("Officina");
+                String officina = rsc.getString(OFFICINA);
                 
                 String citta = rsc.getString("Città");
                 String zona = rsc.getString("Zona");
