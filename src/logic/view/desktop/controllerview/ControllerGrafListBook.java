@@ -16,7 +16,9 @@ import logic.control.ControllerViewBook;
 
 public class ControllerGrafListBook {
 
-	public ControllerGrafListBook() {}
+	public ControllerGrafListBook() {
+		//Costruttore
+	}
 
 	@FXML
 	Button accetta1;
