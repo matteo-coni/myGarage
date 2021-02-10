@@ -18,7 +18,13 @@ public class MechanicDAO {
 	static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 	static final String USERNAMEDB = "root";
 	static final String PASSWORDDB = "admin";
-	static final String OFFICINA = "officina";
+	
+	static final String OFFICINA = "Officina";
+	static final String CITTA = "Città";
+	static final String ZONA = "Zona";
+	static final String INDIRIZZO = "Indirizzo";
+	static final String PERCSCONTO = "PercSconto";
+	
 	String testo= "SELECT * FROM Mechanic WHERE Città = '";
 	String testo2 = "' ORDER BY PercSconto DESC;";	
 	
@@ -27,7 +33,7 @@ public class MechanicDAO {
 		
 		List<Mechanic> listMechanic = new ArrayList<>();
 		
-		ResultSet res= null;
+		ResultSet ress= null;
 		Connection conn = null;
 		Statement stm = null;
 		
@@ -46,18 +52,18 @@ public class MechanicDAO {
             String query = testo + city + testo2; //Scrivere query per cercare by city
             System.err.println(query); //prova stringa query
             
-            res = stm.executeQuery(query);
+            ress = stm.executeQuery(query);
             
-            res.first();
+            ress.first();
            
             do{
                 
-                String officina = res.getString(OFFICINA);
+                String officina = ress.getString(OFFICINA);
                 
-                String citta = res.getString("Città");
-                String zona = res.getString("Zona");
-                String indirizzo = res.getString("Indirizzo");
-                int percSconto = res.getInt("PercSconto");
+                String citta = ress.getString(CITTA);
+                String zona = ress.getString(ZONA);
+                String indirizzo = ress.getString(INDIRIZZO);
+                int percSconto = ress.getInt(PERCSCONTO);
                 
                 
                 
@@ -70,7 +76,7 @@ public class MechanicDAO {
 
                 listMechanic.add(mechanic);
 
-            }while(res.next());
+            }while(ress.next());
                
         } catch (SQLException se) {
             se.printStackTrace();
@@ -80,14 +86,14 @@ public class MechanicDAO {
 			e.printStackTrace();
 		} finally {
             
-        	if (res != null) {
+        	if (ress != null) {
                 try {
-                    res.close();
+                    ress.close();
                 } catch (SQLException sqle) {
                     sqle.printStackTrace();
                 }
             }
-            res = null;
+            ress = null;
             if (stm != null) {
                 try {
                     stm.close();
@@ -141,10 +147,10 @@ public class MechanicDAO {
                 
                 String officina = rs.getString(OFFICINA);
                 
-                String citta = rs.getString("Città");
-                String zona = rs.getString("Zona");
-                String indirizzo = rs.getString("Indirizzo");
-                int percSconto = rs.getInt("PercSconto");
+                String citta = rs.getString(CITTA);
+                String zona = rs.getString(ZONA);
+                String indirizzo = rs.getString(INDIRIZZO);
+                int percSconto = rs.getInt(PERCSCONTO);
                 
                 
                 
@@ -228,10 +234,10 @@ public class MechanicDAO {
                 
                 String officina = rst.getString(OFFICINA);
                 
-                String citta = rst.getString("Città");
-                String zona = rst.getString("Zona");
-                String indirizzo = rst.getString("Indirizzo");
-                int percSconto = rst.getInt("PercSconto");
+                String citta = rst.getString(CITTA);
+                String zona = rst.getString(ZONA);
+                String indirizzo = rst.getString(INDIRIZZO);
+                int percSconto = rst.getInt(PERCSCONTO);
                 
                 
                 
@@ -314,10 +320,10 @@ public class MechanicDAO {
                 
                 String officina = rsc.getString(OFFICINA);
                 
-                String citta = rsc.getString("Città");
-                String zona = rsc.getString("Zona");
-                String indirizzo = rsc.getString("Indirizzo");
-                int percSconto = rsc.getInt("PercSconto");
+                String citta = rsc.getString(CITTA);
+                String zona = rsc.getString(ZONA);
+                String indirizzo = rsc.getString(INDIRIZZO);
+                int percSconto = rsc.getInt(PERCSCONTO);
                 
                 
                 
