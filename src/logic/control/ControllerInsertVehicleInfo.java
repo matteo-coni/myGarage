@@ -68,10 +68,8 @@ public class ControllerInsertVehicleInfo {
 		int annoDeadline = deadline.get(GregorianCalendar.YEAR);
 		int meseDeadline = deadline.get(GregorianCalendar.MONTH);
 		
-		if(annoAttuale == annoDeadline && meseAttuale == meseDeadline){
-			//System.out.println("ricordati di controllare DEADLINE!");
+		if(annoAttuale == annoDeadline && meseAttuale == meseDeadline)
 			return true;
-		}
 		else
 			return false;
 	}
