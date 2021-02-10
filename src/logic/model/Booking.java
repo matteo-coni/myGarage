@@ -23,9 +23,9 @@ public class Booking {
 		this.selVehicle = selVehicle;
 	}
 	
-	public Booking() {
+	/*public Booking() {
 		
-	}
+	}*/
 	
 	
 	//*****METODI*****
@@ -77,6 +77,4 @@ public class Booking {
 		this.username = username;
 	}
 	
-	
-
 }
