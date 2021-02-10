@@ -53,15 +53,10 @@ public class BookingDAO {
             
             stm.executeUpdate(insertStm);
             
-          
-              
-            
-		   } catch (SQLException e) {
-	            e.printStackTrace();
-	            
-	        } catch (ClassNotFoundException e) {
-			
-			e.printStackTrace();
+		   } catch (SQLException e1) {
+			   e1.printStackTrace();
+	        } catch (ClassNotFoundException e2) {
+	        	e2.printStackTrace();
 		} finally {
 	       
 	            if (stm != null) {
