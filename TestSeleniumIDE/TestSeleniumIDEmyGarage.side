@@ -118,6 +118,17 @@
       ],
       "value": ""
     }, {
+      "id": "b1275b2f-2849-4ad7-aabc-43d9de305545",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=td:nth-child(3) label:nth-child(2)",
+      "targets": [
+        ["css=td:nth-child(3) label:nth-child(2)", "css:finder"],
+        ["xpath=//td[3]/h4[2]/label[2]", "xpath:position"],
+        ["xpath=//label[contains(.,'Ferrari')]", "xpath:innerText"]
+      ],
+      "value": "Ferrari"
+    }, {
       "id": "77b98ee5-0a12-4a87-9828-e4588b8bcdde",
       "comment": "",
       "command": "click",
