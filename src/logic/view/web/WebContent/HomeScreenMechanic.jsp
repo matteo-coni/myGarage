@@ -38,10 +38,10 @@
         <tr style="height: 85px;">
           <td style="width: 71px; height: 43px; text-align: center;"> <a href="HomeScreen.jsp"><img
 
-                src="/trunk/images/M_71x71.png" alt="M" title="M"></a> </td>
+                src="images_web/M_71x71.png" alt="M" title="M"></a> </td>
           <td style="width: 71px; height: 43px; text-align: center;"> <a href="LoginScreen.jsp"><img
 
-                src="/trunk/images/logout_71x71.png" alt="logout" title="logout"></a>
+                src="images_web/logout_71x71.png" alt="logout" title="logout"></a>
           </td>
           <td style="text-align: center;"> <input name="view_book" value="Visulizza Penotazioni Pendenti"
 
