@@ -68,9 +68,12 @@ public class ControllerInsertVehicleInfo {
 		int annoDeadline = vehicleInsurance.get(GregorianCalendar.YEAR);
 		int meseDeadline = vehicleInsurance.get(GregorianCalendar.MONTH);
 		
-		if(annoAttuale == annoDeadline && meseAttuale == meseDeadline);{
+		if(annoAttuale == annoDeadline && meseAttuale == meseDeadline){
 			System.out.println("ricordati di controllare l'assicurazione!");
-			return true;}
+			return true;
+		}
+		else
+			return false;
 	}
 	
 	public void checkAssicurazione (Date dateAssic) {
@@ -88,7 +91,7 @@ public class ControllerInsertVehicleInfo {
 		int annoDeadline = vehicleTax.get(GregorianCalendar.YEAR);
 		int meseDeadline = vehicleTax.get(GregorianCalendar.MONTH);
 		
-		if(annoAttuale == annoDeadline && meseAttuale == meseDeadline);
+		if(annoAttuale == annoDeadline && meseAttuale == meseDeadline)
 			System.out.println("ricordati di controllare il bollo!");
 
 	}
@@ -101,7 +104,7 @@ public class ControllerInsertVehicleInfo {
 		int annoDeadline = vehicleReview.get(GregorianCalendar.YEAR);
 		int meseDeadline = vehicleReview.get(GregorianCalendar.MONTH);
 		
-		if(annoAttuale == annoDeadline && meseAttuale == meseDeadline);
+		if(annoAttuale == annoDeadline && meseAttuale == meseDeadline)
 			System.out.println("ricordati di controllare la revisione!");
 	}
 	
@@ -113,7 +116,7 @@ public class ControllerInsertVehicleInfo {
 		int annoDeadline = vehicleService.get(GregorianCalendar.YEAR);
 		int meseDeadline = vehicleService.get(GregorianCalendar.MONTH);
 		
-		if(annoAttuale == annoDeadline && meseAttuale == meseDeadline);
+		if(annoAttuale == annoDeadline && meseAttuale == meseDeadline)
 			System.out.println("ricordati di controllare i servizi??!");
 	}
 	
