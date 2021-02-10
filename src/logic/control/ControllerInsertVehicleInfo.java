@@ -13,6 +13,7 @@ import logic.model.dao.*;
 
 
 public class ControllerInsertVehicleInfo {
+	
 	public ControllerInsertVehicleInfo() {
 		//Costruttore
 	}
@@ -59,8 +60,7 @@ public class ControllerInsertVehicleInfo {
 		
 	}
 	
-	public boolean checkDeadlineInsurance(GregorianCalendar vehicleInsurance) {
-		boolean result;
+	public static boolean checkDeadlineInsurance(GregorianCalendar vehicleInsurance) {
 		GregorianCalendar dataAttuale = new GregorianCalendar();
 		int annoAttuale = dataAttuale.get(GregorianCalendar.YEAR);
 		int meseAttuale = dataAttuale.get(GregorianCalendar.MONTH)+1;
@@ -70,7 +70,7 @@ public class ControllerInsertVehicleInfo {
 		
 		if(annoAttuale == annoDeadline && meseAttuale == meseDeadline);{
 			System.out.println("ricordati di controllare l'assicurazione!");
-			return result=true;}
+			return true;}
 	}
 	
 	public void checkAssicurazione (Date dateAssic) {
