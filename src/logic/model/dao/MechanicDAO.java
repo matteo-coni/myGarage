@@ -18,8 +18,8 @@ public class MechanicDAO {
 	static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 	static final String USERNAMEDB = "root";
 	static final String PASSWORDDB = "admin";
-	
-	
+	String testo= "SELECT * FROM Mechanic WHERE Città = '";
+		
 	
 	public List<Mechanic> searchByCity(String city){
 		
@@ -41,7 +41,7 @@ public class MechanicDAO {
             
             // query ---> immagazziniamone i risultati	in result set	INSERIRE LA GIUSTA QUERY PER CERCARE NEL DB
             
-            String query = "SELECT * FROM Mechanic WHERE Città = '" + city + "' ORDER BY PercSconto DESC;"; //Scrivere query per cercare by city
+            String query = testo + city + "' ORDER BY PercSconto DESC;"; //Scrivere query per cercare by city
             System.out.println(query); //prova stringa query
             
             rs = stm.executeQuery(query);
@@ -128,7 +128,7 @@ public class MechanicDAO {
             
             // query ---> immagazziniamone i risultati	in result set	INSERIRE LA GIUSTA QUERY PER CERCARE NEL DB
             
-            String query = "SELECT * FROM Mechanic WHERE Città = '" + city + "' AND Zona = '" + zone + "' ORDER BY PercSconto DESC;"; //Scrivere query per cercare by city/zone
+            String query = testo + city + "' AND Zona = '" + zone + "' ORDER BY PercSconto DESC;"; //Scrivere query per cercare by city/zone
             System.out.println(query); //prova stringa query
             
             rs = stm.executeQuery(query);
@@ -215,7 +215,7 @@ public class MechanicDAO {
             
             // query ---> immagazziniamone i risultati	in result set	INSERIRE LA GIUSTA QUERY PER CERCARE NEL DB
             
-            String query = "SELECT * FROM Mechanic WHERE Città = '" + city + "' AND Officina = '" + name + "' ORDER BY PercSconto DESC;"; //Scrivere query per cercare by city/name
+            String query = testo + city + "' AND Officina = '" + name + "' ORDER BY PercSconto DESC;"; //Scrivere query per cercare by city/name
             System.out.println(query); //prova stringa query
             
             rs = stm.executeQuery(query);
@@ -301,7 +301,7 @@ public class MechanicDAO {
             
             // query ---> immagazziniamone i risultati	in result set	INSERIRE LA GIUSTA QUERY PER CERCARE NEL DB
             
-            String query = "SELECT * FROM Mechanic WHERE Città = '" + city + "' AND Zona = '" + zone + "' AND Officina = '" + name + "' ORDER BY PercSconto DESC;"; //Scrivere query per cercare by city
+            String query = testo + city + "' AND Zona = '" + zone + "' AND Officina = '" + name + "' ORDER BY PercSconto DESC;"; //Scrivere query per cercare by city
             System.out.println(query); //prova stringa query
             
             rs = stm.executeQuery(query);
