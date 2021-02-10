@@ -16,7 +16,7 @@ public class DateTest {
 		
 		GregorianCalendar date= new GregorianCalendar(2021, 03, 25);
 		
-		assertEquals(true, TestDate.checkDeadlineInsurance(date));
+		assertEquals(true, TestDate.checkDeadline(date));
 	}
 	
 	//Verifica esistenza data
