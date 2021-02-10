@@ -25,6 +25,8 @@ import javafx.scene.paint.*;
 
 
 public class ControllerGrafInsert {
+	
+	String format="dd/MM/yyyy";
 
 	@FXML
 	Polygon Back;
@@ -112,16 +114,16 @@ public class ControllerGrafInsert {
 		vehicleBean.setCavalliVehicle(cavalli);
 		
 		
-		Date dateAss=new SimpleDateFormat("dd/MM/yyyy").parse(assicurazione);
+		Date dateAss=new SimpleDateFormat(format).parse(assicurazione);
         vehicleBean.setScadAssicurazione(dateAss);
         
-        Date dateRev=new SimpleDateFormat("dd/MM/yyyy").parse(revisione);
+        Date dateRev=new SimpleDateFormat(format).parse(revisione);
         vehicleBean.setScadRevisione(dateRev);
         
-        Date dateBollo=new SimpleDateFormat("dd/MM/yyyy").parse(bollo);
+        Date dateBollo=new SimpleDateFormat(format).parse(bollo);
         vehicleBean.setScadBollo(dateBollo);
         
-        Date dateTagl=new SimpleDateFormat("dd/MM/yyyy").parse(tagliando);
+        Date dateTagl=new SimpleDateFormat(format).parse(tagliando);
         vehicleBean.setScadTagliando(dateTagl);
 		
 		ControllerInsertVehicleInfo controllerInsert =  new ControllerInsertVehicleInfo();

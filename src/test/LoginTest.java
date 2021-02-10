@@ -10,7 +10,7 @@ import logic.control.ControllerLogin;
 public class LoginTest {
 
 	@Test
-	public void CheckLogin() {
+	public void checkLogin() {
 		
 		ControllerLogin controlLogin = new ControllerLogin();
 		LoginBean loginBean = new LoginBean("admin","admin");
@@ -22,7 +22,7 @@ public class LoginTest {
 	}
 	
 	@Test
-	public void CheckLoginMech() {
+	public void checkLoginMech() {
 		ControllerLogin controlLoginMech = new ControllerLogin();
 		LoginBean loginBeanMech = new LoginBean("mechanic","mechanic");
 		

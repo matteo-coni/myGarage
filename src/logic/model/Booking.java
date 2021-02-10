@@ -18,7 +18,6 @@ public class Booking {
 		this.dateBook = dateBook;
 		this.nameGarage = nameGarage;
 		this.problems = problems;
-		this.dateBook = dateBook;
 		this.bookingConfirm = bookingConfirm;	
 		this.selVehicle = selVehicle;
 	}

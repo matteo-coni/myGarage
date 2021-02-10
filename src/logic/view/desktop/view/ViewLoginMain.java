@@ -43,8 +43,8 @@ public class ViewLoginMain extends Application {
 	public void start(Stage mainStage) throws Exception{		
 		try {
 		
-			Scene ViewLoginMain = new Scene(root);
-			mainStage.setScene(ViewLoginMain);
+			Scene viewLoginMain = new Scene(root);
+			mainStage.setScene(viewLoginMain);
 		
 			//ControllerMain ctrl = new ControllerMain();
 			ControllerMain ctrl = ControllerMain.getInstance();

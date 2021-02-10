@@ -10,10 +10,10 @@ public class LicensePlateTest {
 	@Test
 	public void checkFormat() {
 		//verifica correttezza formato targa italiana
-		VehicleBean TestFormat= new VehicleBean();
+		VehicleBean testFormat= new VehicleBean();
 		
 		String exlicense = "Za225Ld";
 		
-		assertEquals(true, TestFormat.checkLicensePlate(exlicense));
+		assertEquals(true, testFormat.checkLicensePlate(exlicense));
 	}
 }
