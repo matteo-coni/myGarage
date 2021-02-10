@@ -71,7 +71,7 @@
           <td style="width: 1518px; text-align: center; height: 86px; margin-left: -356px;"
 
             rowspan="2" colspan="6">
-            <h1 style="text-align: center;"><b>Find Mechanic</b>
+            <h1 style="text-align: center;"><strong>Find Mechanic</strong>
             </h1>
           </td>
         </tr>
