@@ -15,7 +15,9 @@ import logic.view.desktop.view.View;
 
 public class ControllerGrafLogin {
 	
-	public ControllerGrafLogin() {}
+	public ControllerGrafLogin() {
+		//Costruttore
+	}
 	
 	@FXML
 	Button loginButton;
