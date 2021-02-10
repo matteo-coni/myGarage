@@ -12,12 +12,11 @@ import logic.model.dao.BookingDAO;
 import logic.model.Booking;
 
 
-public class ControllerBookAppointment {
-	// ****PROVA SINGLETON*****
-	//private static ControllerBookAppointment istance = null;
-	
+public class ControllerBookAppointment {	
 	//*****COSTRUTTORE*****
-	public ControllerBookAppointment() {} //"private" perch� tramite getInstance() potr� essere chiamato solo dall'interno
+	public ControllerBookAppointment() {
+		//Costruttore
+	}
 	
 	//public static ControllerBookAppointment getInstance() {
 	//	if(istance == null)
@@ -28,8 +27,6 @@ public class ControllerBookAppointment {
 	
 	
 	// *****METODI*****
-	
-	
 	public List<MechanicBean> searchByAll(String city, String zone, String name) {
 		
 		List<MechanicBean> listMechanicBean = new ArrayList<>();
