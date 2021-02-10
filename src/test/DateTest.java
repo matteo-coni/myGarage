@@ -24,7 +24,7 @@ public class DateTest {
 	public void correctDate() {
 		VehicleBean testDate= new VehicleBean();
 		
-		GregorianCalendar cal = new GregorianCalendar (29, 2, 2007);
+		GregorianCalendar cal = new GregorianCalendar (2007, 2, 29);
 		
 		assertEquals(false, testDate.checkDate(cal));
 	}
