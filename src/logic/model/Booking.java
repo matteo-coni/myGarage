@@ -23,9 +23,9 @@ public class Booking {
 		this.selVehicle = selVehicle;
 	}
 	
-	/*public Booking() {
-		
-	}*/
+	public Booking() {
+		//Costruttore
+	}
 	
 	
 	//*****METODI*****
