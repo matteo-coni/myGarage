@@ -133,11 +133,11 @@ public class BookingDAO {
         } catch (SQLException se) {
             se.printStackTrace();
             
-        } catch (ClassNotFoundException e) {
+        } catch (ClassNotFoundException e1) {
 			
-			e.printStackTrace();
-		} catch (ParseException e) {
-			e.printStackTrace();
+			e1.printStackTrace();
+		} catch (ParseException e2) {
+			e2.printStackTrace();
 			
 		} finally {
             
