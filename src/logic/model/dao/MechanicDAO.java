@@ -247,9 +247,9 @@ public class MechanicDAO {
         } catch (SQLException e) {
             e.printStackTrace();
             
-        } catch (ClassNotFoundException e) {
+        } catch (ClassNotFoundException e1) {
 			
-			e.printStackTrace();
+			e1.printStackTrace();
 		} finally {
             
         	if (rs != null) {
