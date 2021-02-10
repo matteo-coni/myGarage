@@ -23,6 +23,7 @@ public class VehicleDAO {
 	static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 	static final String USERNAMEDB = "root";
 	static final String PASSWORDDB = "admin";
+	String format ="dd/MM/yyyy";
 	
 	public void saveVehicle(String username, String targa, String marca, String modello, String cilindrata, String cavalli, String assicurazione,
 							String bollo, String revisione, String tagliando) { //AGGIUNGERE ULTERIORI INFO
@@ -215,16 +216,16 @@ public class VehicleDAO {
             vehicle.setVehicleDisplacement(cilindrata);
             vehicle.setVehiclePowertrains(cavalli);
             
-            Date dateAss=new SimpleDateFormat("dd/MM/yyyy").parse(assicurazione);
+            Date dateAss=new SimpleDateFormat("format").parse(assicurazione);
             vehicle.setVehicleInsurance(dateAss);
             
-            Date dateRev=new SimpleDateFormat("dd/MM/yyyy").parse(revisione);
+            Date dateRev=new SimpleDateFormat("format").parse(revisione);
             vehicle.setVehicleReview(dateRev);
             
-            Date dateBollo=new SimpleDateFormat("dd/MM/yyyy").parse(bollo);
+            Date dateBollo=new SimpleDateFormat("format").parse(bollo);
             vehicle.setVehicleTax(dateBollo);
             
-            Date dateTagl=new SimpleDateFormat("dd/MM/yyyy").parse(tagliando);
+            Date dateTagl=new SimpleDateFormat("format").parse(tagliando);
             vehicle.setVehicleService(dateTagl);
             
             
