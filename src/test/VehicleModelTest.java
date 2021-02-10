@@ -10,7 +10,7 @@ import logic.bean.VehicleBean;
 public class VehicleModelTest {
 
 	@Test
-	public void CheckVehicleModel() {
+	public void checkVehicleModel() {
 		
 		String targa = "BB/636/CG";
 		
