@@ -13,17 +13,12 @@ import logic.model.Booking;
 
 
 public class ControllerBookAppointment {	
-	//*****COSTRUTTORE*****
+	// *****COSTRUTTORE*****
 	public ControllerBookAppointment() {
 		//Costruttore
 	}
 	
-	//public static ControllerBookAppointment getInstance() {
-	//	if(istance == null)
-	//		istance = new ControllerBookAppointment();
-	//	return istance;
-	//}
-	// *****FINE SINGLETON*****
+	
 	
 	
 	// *****METODI*****
@@ -78,11 +73,7 @@ public class ControllerBookAppointment {
 		return listMechanicBean;
 	}
 	
-	/*public List<MechanicBean> searchByCityZone(String city, String zone) {
-		List<MechanicBean> listMechanicBean = new ArrayList<>();
-		return listMechanicBean;
-	}*/
-	
+
 	
 	public void saveBooking(BookingBean bookingBean) {
 		

@@ -94,7 +94,7 @@
         </tr>
         <tr style="height: 18px;">
           <td style="width: 194px; height: 23px; text-align: center;" colspan="2">
-            <a href="LifOfBookingMechanic.jsp"><img src="images_web/list_selected.png"
+            <a href="ListOfBookingMechanic.jsp"><img src="images_web/list_selected.png"
 
                 alt="listOfBooking" title="listOfBooking"></a> </td>
           <td style="text-align: center;">

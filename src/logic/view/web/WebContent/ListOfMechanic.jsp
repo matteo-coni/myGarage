@@ -163,7 +163,7 @@ if (request.getParameter("prenota3")!=null){
                 src="images_web/M_71x71.png"
 
                 alt="M" title="M"></a> </td>
-          <td style="width: 71px; height: 43px; text-align: center;"> <a href="LoginScreen.html"><img
+          <td style="width: 71px; height: 43px; text-align: center;"> <a href="LoginScreen.jsp"><img
 
                 src="images_web/logout_71x71.png"
 
