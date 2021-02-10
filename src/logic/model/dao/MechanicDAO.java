@@ -28,23 +28,23 @@ public class MechanicDAO {
 		List<Mechanic> listMechanic = new ArrayList<>();
 		
 		ResultSet res= null;
-		Connection con = null;
+		Connection conn = null;
 		Statement stm = null;
 		
 		try {
 			
 			Class.forName(DRIVER);
             // Otteniamo una connessione con username e password
-            con = DriverManager.getConnection (URL , USERNAMEDB, PASSWORDDB);
+            conn = DriverManager.getConnection (URL , USERNAMEDB, PASSWORDDB);
             
             // Creiamo un oggetto Statement per interrogare il db
-             stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
+             stm = conn.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_READ_ONLY);
             
             // query ---> immagazziniamone i risultati	in result set	INSERIRE LA GIUSTA QUERY PER CERCARE NEL DB
             
             String query = testo + city + testo2; //Scrivere query per cercare by city
-            System.out.println(query); //prova stringa query
+            System.err.println(query); //prova stringa query
             
             res = stm.executeQuery(query);
             
@@ -96,13 +96,13 @@ public class MechanicDAO {
                 }
             }
             stm = null;
-            if (con != null) {
+            if (conn != null) {
                 try {
-                    con.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
+                    conn.close();
+                } catch (SQLException esc) {
+                    esc.printStackTrace();
                 }
-                con = null;
+                conn = null;
             }
         }
 		
@@ -117,7 +117,7 @@ public class MechanicDAO {
 		
 		ResultSet rs= null;
 		Connection con = null;
-		Statement stm = null;
+		Statement stmt = null;
 		
 		try {
 			Class.forName(DRIVER);
@@ -125,7 +125,7 @@ public class MechanicDAO {
             con = DriverManager.getConnection (URL , USERNAMEDB, PASSWORDDB);
             
             // Creiamo un oggetto Statement per interrogare il db
-             stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
+             stmt = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_READ_ONLY);
             
             // query ---> immagazziniamone i risultati	in result set	INSERIRE LA GIUSTA QUERY PER CERCARE NEL DB
@@ -133,7 +133,7 @@ public class MechanicDAO {
             String query = testo + city + "' AND Zona = '" + zone + testo2; //Scrivere query per cercare by city/zone
             System.out.println(query); //prova stringa query
             
-            rs = stm.executeQuery(query);
+            rs = stmt.executeQuery(query);
             
             rs.first();
            
@@ -175,14 +175,14 @@ public class MechanicDAO {
                 }
             }
             rs = null;
-            if (stm != null) {
+            if (stmt != null) {
                 try {
-                    stm.close();
-                } catch (SQLException es) {
-                    es.printStackTrace();
+                    stmt.close();
+                } catch (SQLException ess) {
+                    ess.printStackTrace();
                 }
             }
-            stm = null;
+            stmt = null;
             if (con != null) {
                 try {
                     con.close();
