@@ -14,7 +14,7 @@ public class Booking {
 	
 	//*****COSTRUTTORE*****
 	public Booking (String username, String nameGarage, String problems, Date dateBook, boolean bookingConfirm, String selVehicle) {
-		
+		this.username = username;
 		this.dateBook = dateBook;
 		this.nameGarage = nameGarage;
 		this.problems = problems;
