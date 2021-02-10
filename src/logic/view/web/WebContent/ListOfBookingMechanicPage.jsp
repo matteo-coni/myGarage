@@ -66,6 +66,37 @@
 			targa3 =listBookingBean.get(2).getVeicolo();
 			data3 = sdf.format(listBookingBean.get(2).getDataPrenotazione());
 		}
+		
+		if(request.getParameter("accetta1")!=null){
+			
+			controlViewBook.confirmBooking(nome1,(String)session.getAttribute("username"),targa1 ,1);
+		}
+		
+		if(request.getParameter("accetta2")!=null){
+			
+			controlViewBook.confirmBooking(nome2,(String)session.getAttribute("username"),targa2 ,1);
+		}
+		
+		if(request.getParameter("accetta3")!=null){
+			
+			controlViewBook.confirmBooking(nome3,(String)session.getAttribute("username"),targa3 ,1);
+		}
+		
+		if(request.getParameter("declina1")!=null){
+			
+			controlViewBook.confirmBooking(nome1,(String)session.getAttribute("username"),targa1 ,0);
+		}
+		
+		if(request.getParameter("declina2")!=null){
+			
+			controlViewBook.confirmBooking(nome2,(String)session.getAttribute("username"),targa2 ,0);
+		}
+		
+		if(request.getParameter("declina3")!=null){
+			
+			controlViewBook.confirmBooking(nome3,(String)session.getAttribute("username"),targa3 ,0);
+		}
+		
 %>
 <!DOCTYPE html>
 <html lang="">
@@ -73,6 +104,7 @@
     <title>List Of Booking</title>
   </head>
   <body>
+  <form action="ListOfBookingMechanicPage.jsp" name="myform" method="POST">
     <table style="border-collapse: collapse; width: 1667px; height: 954px;" border="1">
     <caption></caption>
 		<th scope=""></th>
@@ -122,12 +154,12 @@
           <td style="text-align: center;"> <textarea id="problems" name="problems"
 
 rows="4" cols="50" readonly="readonly"></textarea> </td>
-          <td style="text-align: center;"> <input name="accetta" value="Accetta"
-
-type="submit"> <br>
+          <td style="text-align: center;"> 
+          <!--   <input name="accetta1" value="Accetta" type="submit"> <br> -->
+          <button name="accetta1">Accetta</button>
             <br>
             <br>
-            <input name="declina" value="Declina" type="submit"> </td>
+           <button name="declina1">Declina</button> </td>
         </tr>
         <tr style="height: 18px;">
           <td style="width: 194px; height: 153px; text-align: center;" colspan="2">
@@ -149,12 +181,11 @@ type="submit"> <br>
           <td style="text-align: center;"> <textarea id="problems" name="problems"
 
 rows="4" cols="50" readonly="readonly"></textarea> </td>
-          <td style="text-align: center;"> <input name="accetta" value="Accetta"
-
-type="submit"> <br>
+          <td style="text-align: center;"> 
+          <button name="accetta2">Accetta</button><br>
             <br>
             <br>
-            <input name="declina" value="Declina" type="submit"> </td>
+            <button name="declina2">Declina</button> </td>
         </tr>
         <tr style="height: 18px;">
           <td style="height: 45px; width: 194px; text-align: center;" colspan="2">
@@ -176,14 +207,13 @@ type="submit"> <br>
           <td style="text-align: center;"> <textarea id="problems" name="problems"
 
 rows="4" cols="50" readonly="readonly"></textarea> </td>
-          <td style="text-align: center;"> <input name="accetta" value="Accetta"
-
-type="submit"> <br>
+          <td style="text-align: center;"> <button name="accetta3">Accetta</button><br>
             <br>
             <br>
-            <input name="declina" value="Declina" type="submit"> </td>
+            <button name="declina3">Declina</button> </td>
         </tr>
       </tbody>
     </table>
+    </form>
   </body>
 </html>
