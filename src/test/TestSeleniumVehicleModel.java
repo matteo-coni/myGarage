@@ -11,7 +11,7 @@ import org.junit.Test;
 public class TestSeleniumVehicleModel {
 
 	@Test
-	public void CheckCorrectModel() {
+	public void checkCorrectModel() {
 		
 		System.setProperty("webdriver.chrome.driver", "Driver/chromedriver");
 		WebDriver driver = new ChromeDriver();
