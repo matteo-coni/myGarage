@@ -9,7 +9,9 @@ import logic.model.dao.BookingDAO;
 
 public class ControllerViewBook {
 	
-	public ControllerViewBook(){}
+	public ControllerViewBook(){
+		//Costruttore
+	}
 	
 	public List<BookingBean> findBooking(String mechanic){
 		
