@@ -59,7 +59,7 @@ public class ControllerGrafHome  {
 	
 	
 	
-	//Image imgVeh = new Image("/images/BookMechanic.png");
+	
 	
 	@FXML
 	public void exit() { //////*******PROVA******
@@ -69,7 +69,7 @@ public class ControllerGrafHome  {
 		label1.setText("essu");
 		textTarga.setText("ei");
 		textModello.setText("ei");
-		//imageVehicle.setImage(imgVeh); ****** FINE ******
+		
 		
 		}
 	
@@ -82,8 +82,7 @@ public class ControllerGrafHome  {
 		view = factory.createView(TypeView.INSERTVEHICLEPAGE); 
 			
 		ControllerMain.getInstance().replace(ControllerMain.getContainer(), view);
-		/*ControllerMain controlMain = new ControllerMain();
-		controlMain.replace(controlMain.getContainer(), view);*/
+		
 		} catch (IOException e) {
 			//dummy
 		}
@@ -99,9 +98,9 @@ public class ControllerGrafHome  {
 		
 		
 		ControllerViewVehicle controlViewVehicle = new ControllerViewVehicle();
-		List<String> targheVeicoli = controlViewVehicle.viewVehicle(username); //listVehicleBean);
+		List<String> targheVeicoliHome = controlViewVehicle.viewVehicle(username); 
 		
-		for(String targa: targheVeicoli) { //Clico for per aggiungere le targhe al "combobox" (Solo targhe legate all'username)
+		for(String targa: targheVeicoliHome) { //Clico for per aggiungere le targhe al "combobox" (Solo targhe legate all'username)
 						
 			//String targaVehicle = "ciao"; ---TEST-----
 			menuSelectVehicle.getItems().addAll(
@@ -148,10 +147,9 @@ public class ControllerGrafHome  {
 			view = factory.createView(TypeView.MECHANICPAGE); 
 				
 			ControllerMain.getInstance().replace(ControllerMain.getContainer(), view);
-			/*ControllerMain controlMain = new ControllerMain();
-			controlMain.replace(controlMain.getContainer(), view);*/
-			} catch (IOException e) {
-				e.printStackTrace();
+			
+			} catch (IOException eIo) {
+				eIo.printStackTrace();
 			}
 	}
 }

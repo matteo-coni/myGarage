@@ -67,18 +67,9 @@ public class ControllerGrafInsert {
 		view = factory.createView(TypeView.HOMEPAGE); 
 		
 		ControllerMain.getInstance().replace(ControllerMain.getContainer(), view);
-		/*ControllerMain controlMain = new ControllerMain();
-		controlMain.replace(controlMain.getContainer(), view);*/
+		
 	}
 	
-	/*@FXML
-	public void backHome() throws IOException{
-		FactoryView factory = FactoryView.getInstance();
-		View view;
-		view = factory.createView(TypeView.HOMEPAGE); 
-		
-		ControllerMain.getInstance().replace(ControllerMain.getContainer(), view);
-	}*/
 	
 	@FXML
 	public void setButton() {
@@ -119,10 +110,7 @@ public class ControllerGrafInsert {
 		vehicleBean.setModelloVehicle(modello);
 		vehicleBean.setCilindrataVehicle(cilindrata);
 		vehicleBean.setCavalliVehicle(cavalli);
-		/*vehicleBean.setScadAssicurazione(assicurazione);
-		vehicleBean.setScadBollo(bollo);
-		vehicleBean.setScadRevisione(revisione);
-		vehicleBean.setScadTagliando(tagliando);*/
+		
 		
 		Date dateAss=new SimpleDateFormat("dd/MM/yyyy").parse(assicurazione);
         vehicleBean.setScadAssicurazione(dateAss);

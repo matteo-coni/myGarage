@@ -21,11 +21,7 @@ public class ControllerMain  {
 			
 		return instance;
 	}
-	///Fine singleton
-	
-	/*public ControllerMain() {
-		
-	}*/
+	//Fine singleton
 	
 	private static BorderPane container;
 	private String id = ""; 

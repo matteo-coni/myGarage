@@ -41,7 +41,7 @@ public class ControllerGrafLogin {
 		String password = passwordField.getText();
 		
 		LoginBean loginBean = new LoginBean(username,password);
-		//ControllerLogin controlLogin = ControllerLogin.getInstance();
+		
 		ControllerLogin controlLogin = new ControllerLogin();
 		
 		
@@ -54,8 +54,7 @@ public class ControllerGrafLogin {
 			view = factory.createView(TypeView.HOMEPAGE); 
 				
 			ControllerMain.getInstance().replace(ControllerMain.getContainer(), view);
-			/*ControllerMain controlMain = new ControllerMain();
-			controlMain.replace(controlMain.getContainer(), view);*/
+			
 			
 		} else {
 			System.out.println("errore nel login"); //debug

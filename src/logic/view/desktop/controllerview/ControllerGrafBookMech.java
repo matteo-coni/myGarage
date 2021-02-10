@@ -81,8 +81,7 @@ public class ControllerGrafBookMech {
 		view = factory.createView(TypeView.HOMEPAGE); 
 		
 		ControllerMain.getInstance().replace(ControllerMain.getContainer(), view);
-		/*ControllerMain controlMain = new ControllerMain();
-		controlMain.replace(controlMain.getContainer(), view);*/
+		
 	}
 	
 	@FXML
@@ -94,8 +93,7 @@ public class ControllerGrafBookMech {
 		view = factory.createView(TypeView.INSERTVEHICLEPAGE); 
 			
 		ControllerMain.getInstance().replace(ControllerMain.getContainer(), view);
-		/*ControllerMain controlMain = new ControllerMain();
-		controlMain.replace(controlMain.getContainer(), view);*/
+		
 		} catch (IOException e) {
 			//dummy
 		}
