@@ -55,7 +55,8 @@
 	<body>
 	<form action="FindMechanicPage.jsp" name="myform" method="POST">
 		<table style="border-collapse: collapse; width: 1667px; height: 702px;" border="1">
-		<th></th>
+		<caption></caption>
+		<th scope=""></th>
       <tbody>
         <tr style="height: 84px;">
           <td style="width: 51px; height: 43px; text-align: center; margin-left: 64px;">
@@ -70,7 +71,7 @@
           <td style="width: 1518px; text-align: center; height: 86px; margin-left: -356px;"
 
             rowspan="2" colspan="6">
-            <h1 style="text-align: center;"><b><strong>Find Mechanic</strong></b>
+            <h1 style="text-align: center;"><b>Find Mechanic</b>
             </h1>
           </td>
         </tr>

@@ -124,6 +124,8 @@ if (request.getParameter("prenota3")!=null){
   <body>
   <form action="ListOfMechanic.jsp" name="myform" method="POST">
     <table style="border-collapse: collapse; width: 1667px; height: 702px;" border="1">
+    <caption></caption>
+		<th scope=""></th>
       <tbody>
         <tr style="height: 84px;">
           <td style="width: 51px; height: 43px; text-align: center; margin-left: 64px;">
