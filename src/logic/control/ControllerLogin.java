@@ -19,9 +19,6 @@ public class ControllerLogin {
 			UserDAO userdao = new UserDAO();
 			valid = userdao.findUser(loginBean.getUsername(),loginBean.getPassword());
 		
-			if (valid) {
-				//User user = new User(loginBean.getUsername());
-			}
 			
 			return valid;
 		
@@ -32,26 +29,24 @@ public class ControllerLogin {
 		return valid;
 	}
 	
-	public boolean isValidateMech(LoginBean loginBean) {
+	public boolean isValidateMech(LoginBean loginBeanMech) {
 		
-		boolean valid = false;
+		boolean validmech = false;
 		try {
 			//--query DAO
 			//controlla nel database se username e password sono giusti
-			UserDAO userdao = new UserDAO();
-			valid = userdao.findUserMech(loginBean.getUsername(),loginBean.getPassword());
+			UserDAO userdaomech = new UserDAO();
+			validmech = userdaomech.findUserMech(loginBeanMech.getUsername(),loginBeanMech.getPassword());
 		
-			if (valid) {
-				//User user = new User(loginBean.getUsername());
-			}
 			
-			return valid;
+			
+			return validmech;
 		
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (Exception ex) {
+			ex.printStackTrace();
 		}
 		
-		return valid;
+		return validmech;
 	}
 	
 }
