@@ -116,7 +116,7 @@ if (request.getParameter("prenota3")!=null){
 	}
 %>
 
-<!DOCTYPE>
+<!DOCTYPE html>
 <html lang="">
   <head>
     <title>Find Mechanic Page</title>

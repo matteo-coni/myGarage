@@ -61,7 +61,7 @@
 	}
 %>
 
-<!DOCTYPE>
+<!DOCTYPE html>
 <html lang="">
   <head>
     <title>Insert Vehicle Page</title>

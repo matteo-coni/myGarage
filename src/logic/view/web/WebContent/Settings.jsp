@@ -11,7 +11,7 @@
 <%
 //compilare in JAVA il corpo della pagina
 %>
-
+<!DOCTYPE html>
 <html>
   <head>
     <title>Settings</title>

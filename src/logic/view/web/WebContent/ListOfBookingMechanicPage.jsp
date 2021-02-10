@@ -59,7 +59,7 @@
 			data3.setText(String.valueOf(listBookingBean.get(2).getDataPrenotazione()));
 		}*/
 %>
-
+<!DOCTYPE html>
 <html lang="">
   <head>
     <title>List Of Booking</title>
