@@ -21,7 +21,7 @@ public class BookingTest {
 		String usernameBook = listBookingBean.get(0).getUsername();
 		
 		assertEquals("admin",usernameBook);
-;		
+		
 	}
 
 }

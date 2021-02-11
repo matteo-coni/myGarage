@@ -9,11 +9,7 @@
 
 <!-- dichiarazione e instanziazione di una variabile -->
 <jsp:useBean id="controlViewBook" scope="request" class="logic.control.ControllerViewBook"/>
-<!-- procedere con la dichiarazione di tutte le istanze utilizzate -->
 
-<!-- mappa gli attributi di un oggetto sui campi della form -->
-
-<!-- procedere nel mappare ogni attributo di ogni classe -->
 
 <%
 //compilare in JAVA il corpo della pagina
@@ -32,7 +28,7 @@
 		String targa3="";
 		String data3="";
 		
-		//System.out.println(listBookingBean.size());
+		
 		
 		if(listBookingBean.size()==1) {
 			nome1 = listBookingBean.get(0).getUsername();
@@ -155,7 +151,7 @@
 
 rows="4" cols="50" readonly="readonly"></textarea> </td>
           <td style="text-align: center;"> 
-          <!--   <input name="accetta1" value="Accetta" type="submit"> <br> -->
+          
           <button name="accetta1">Accetta</button>
             <br>
             <br>

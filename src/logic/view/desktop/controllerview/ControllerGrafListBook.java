@@ -2,7 +2,6 @@ package logic.view.desktop.controllerview;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -126,7 +125,7 @@ public class ControllerGrafListBook {
 	public void initialize() {
 		
 		DateFormat sdf = new SimpleDateFormat("dd-MM-yyyy",Locale.ITALY);
-		List<BookingBean> listBookingBean = new ArrayList<>();
+		List<BookingBean> listBookingBean;// = new ArrayList<>();
 		ControllerViewBook controlViewBook = new ControllerViewBook();
 		listBookingBean = controlViewBook.findBooking(ControllerMain.getInstance().getId());
 		

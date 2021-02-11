@@ -47,10 +47,6 @@ public class ControllerMain  {
 		
 	}
 	
-	/*@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		ControllerMain.setContainer(container);
-	}*/	
 	
 }
 

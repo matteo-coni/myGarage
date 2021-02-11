@@ -33,26 +33,21 @@ public class UserDAO {
             	 // Eseguiamo una query e immagazziniamone i risultati
                 // in un oggetto ResultSet
             String qry = "SELECT * FROM User WHERE Username = '" + username + "'AND Password = '" + password + "';";
-            System.out.println(qry); //prova stringa query
+            
             res = stm.executeQuery(qry);
                 
             if(res.next()) {
-                   
-                System.out.println(username);
+
                 stm.close();
               	return true; //trovati --> ritorno vero
-                	
-                	// ****** MANCA LA CREAZIONE DELL'UTENTE USER    ****** 
                 }
              
        
         } catch (SQLException e) {
             e.printStackTrace();
         
-        } catch (ClassNotFoundException cnf) {
-        	
+        } catch (ClassNotFoundException cnf) {	
         	cnf.printStackTrace();
-        	//System.out.println("error");
             
         } finally {
             
@@ -75,21 +70,21 @@ public class UserDAO {
             if (con != null) {
                 try {
                     con.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
+                } catch (SQLException eCon) {
+                    eCon.printStackTrace();
                 }
                 con = null;
             }
         }
 		
-		return false;
+		return false; //se non trovati 
 	}
 	
 	public boolean findUserMech(String username, String password) {
 	       
 		Statement stm = null;
 		Connection con = null;
-		ResultSet res = null;
+		ResultSet rs = null;
 		
 		try {
             // Carichiamo un driver per connetterci a Java
@@ -105,37 +100,34 @@ public class UserDAO {
             	 // Eseguiamo una query e immagazziniamone i risultati
                 // in un oggetto ResultSet
             String qry = "SELECT * FROM User WHERE Username = '" + username + "' AND Password = '" + password + "' AND Mech = '1';";
-            System.out.println(qry); //prova stringa query
-            res = stm.executeQuery(qry);
+            rs = stm.executeQuery(qry);
                 
-            if(res.next()) {
-                   
-                System.out.println(username);
+            if(rs.next()) {
+                 
                 stm.close();
               	return true; //trovati --> ritorno vero
-                	
-                	// ****** MANCA LA CREAZIONE DELL'UTENTE USER    ****** 
+ 
                 }
              
        
         } catch (SQLException e) {
             e.printStackTrace();
         
-        } catch (ClassNotFoundException cnf) {
+        } catch (ClassNotFoundException cnfe) {
         	
-        	cnf.printStackTrace();
-        	//System.out.println("error");
+        	cnfe.printStackTrace();
+        	
             
         } finally {
             
-        	if (res != null) {
+        	if (rs != null) {
                 try {
-                    res.close();
+                    rs.close();
                 } catch (SQLException sqle) {
                     sqle.printStackTrace();
                 }
             }
-            res = null;
+            rs = null;
             if (stm != null) {
                 try {
                     stm.close();
@@ -147,8 +139,8 @@ public class UserDAO {
             if (con != null) {
                 try {
                     con.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
+                } catch (SQLException eS) {
+                    eS.printStackTrace();
                 }
                 con = null;
             }

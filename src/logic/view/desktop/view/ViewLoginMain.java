@@ -45,8 +45,6 @@ public class ViewLoginMain extends Application {
 		
 			Scene viewLoginMain = new Scene(root);
 			mainStage.setScene(viewLoginMain);
-		
-			//ControllerMain ctrl = new ControllerMain();
 			ControllerMain ctrl = ControllerMain.getInstance();
 			FactoryView factory = FactoryView.getInstance();
 			View subview = factory.createView(TypeView.LOGIN);

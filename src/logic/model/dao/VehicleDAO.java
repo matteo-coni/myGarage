@@ -31,17 +31,17 @@ public class VehicleDAO {
 	public Boolean saveVehicle(Vehicle vehicle) throws DuplicatedVehicleException, EmptyLicensePlateFieldException { //AGGIUNGERE ULTERIORI INFO
         
 		
-		Connection con = null;
+		Connection conn = null;
 		Statement stm = null;
 		
 		try {
             
 			Class.forName(DRIVER);
             // Otteniamo una connessione con username e password
-            con = DriverManager.getConnection (URL , USERNAMEDB, PASSWORDDB);
+            conn = DriverManager.getConnection (URL , USERNAMEDB, PASSWORDDB);
             
             // Creiamo un oggetto Statement per interrogare il db
-            stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
+            stm = conn.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_READ_ONLY);
             
             // Stringa per insert e update stm	
@@ -66,7 +66,7 @@ public class VehicleDAO {
             String insertStm = String.format("INSERT INTO Vehicle (User_Username, Targa, Marca, Modello, Cilindrata, Cavalli, Assicurazione,"
             								+ " Bollo, Revisione, Tagliando) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')", username,
             								targa, marca, modello, cilindrata, cavalli, assicurazione, bollo, revisione, tagliando);
-            System.out.println(insertStm); //prova stringa query
+        
             
            if(stm.executeUpdate(insertStm)>0) { //restituisce il numero delle modifiche, quindi con 0 non è possibile
         	   return true;
@@ -77,7 +77,7 @@ public class VehicleDAO {
 		   } catch (SQLException e) {
 			   
 			   throw new DuplicatedVehicleException("Veicolo già presente");
-	          // e.printStackTrace();
+	          
 		   } catch (ClassNotFoundException cnf) {
 			   cnf.printStackTrace();
 	            
@@ -92,13 +92,13 @@ public class VehicleDAO {
 	            }
 	            stm = null;
 	            
-	            if (con != null) {
+	            if (conn != null) {
 	                try {
-	                    con.close();
+	                    conn.close();
 	                } catch (SQLException e) {
 	                    e.printStackTrace();
 	                }
-	                con = null;
+	                conn = null;
 	            }
 	        }
 		return false;
@@ -111,7 +111,7 @@ public class VehicleDAO {
 		
 		List<Vehicle> listVehicle = new ArrayList<>();
 		
-		ResultSet rs= null;
+		ResultSet rst= null;
 		Connection con = null;
 		Statement stm = null;
 		
@@ -128,35 +128,26 @@ public class VehicleDAO {
             // query ---> immagazziniamone i risultati	in result set	INSERIRE LA GIUSTA QUERY PER CERCARE NEL DB
             
             String query = "SELECT * FROM Vehicle WHERE User_Username = '" + username + "';";
-            System.out.println(query); //prova stringa query
-            rs = stm.executeQuery(query);
             
-            rs.first();
+            rst = stm.executeQuery(query);
+            
+            rst.first();
            
             do{
                 
-                String targa = rs.getString("Targa");
+                String targa = rst.getString("Targa");
                 
-                String marca = rs.getString("Marca");
-                String modello = rs.getString("Modello");
-                String cilindrata = rs.getString("Cilindrata");
-                String cavalli = rs.getString("Cavalli");
-                /*String assicurazione = rs.getString("Assicurazione");
-                String bollo = rs.getString("Bollo");
-                String revisione = rs.getString("Revisione");
-                String tagliando = rs.getString("Tagliando");*/
+                String marca = rst.getString("Marca");
+                String modello = rst.getString("Modello");
+                String cilindrata = rst.getString("Cilindrata");
+                String cavalli = rst.getString("Cavalli");
                 
                 Vehicle vehicle = new Vehicle(username, targa, marca, modello, cilindrata, cavalli);
-                //vehicle.setVehicleInsurance(assicurazione);
-                
-                
-                
-                System.out.println(vehicle.getLicensePlate());
              
                 
                 listVehicle.add(vehicle);
 
-            }while(rs.next());
+            }while(rst.next());
                
         } catch (SQLException e) {
             e.printStackTrace();
@@ -166,14 +157,14 @@ public class VehicleDAO {
 			   
         } finally {
             
-        	if (rs != null) {
+        	if (rst != null) {
                 try {
-                    rs.close();
+                    rst.close();
                 } catch (SQLException sqle) {
                     sqle.printStackTrace();
                 }
             }
-            rs = null;
+            rst = null;
             if (stm != null) {
                 try {
                     stm.close();
@@ -203,7 +194,7 @@ public class VehicleDAO {
 		
 		ResultSet rs= null;
 		Connection con = null;
-		Statement stm = null;
+		Statement stmt = null;
 		
 		try {
             
@@ -212,14 +203,13 @@ public class VehicleDAO {
             con = DriverManager.getConnection (URL , USERNAMEDB, PASSWORDDB);
             
             // Creiamo un oggetto Statement per interrogare il db
-            stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
+            stmt = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_READ_ONLY);
             
-            //query e risultati in rs	-----	INSERIRE LA GIUSTA QUERY PER CERCARE NEL DB
-            
+            //query e risultati in rs	-----	INSERIRE LA GIUSTA QUERY PER CERCARE NEL DB  
             String query = "SELECT * FROM Vehicle WHERE Targa = '" + targa + "';";
-            System.out.println(query); //prova stringa query
-            rs = stm.executeQuery(query);
+            
+            rs = stmt.executeQuery(query);
             
             rs.first();
             
@@ -273,14 +263,14 @@ public class VehicleDAO {
 	                }
 	            }
 	            rs = null;
-	            if (stm != null) {
+	            if (stmt != null) {
 	                try {
-	                    stm.close();
-	                } catch (SQLException e1) {
-	                    e1.printStackTrace();
+	                    stmt.close();
+	                } catch (SQLException est) {
+	                    est.printStackTrace();
 	                }
 	            }
-	            stm = null;
+	            stmt = null;
 	            if (con != null) {
 	                try {
 	                    con.close();

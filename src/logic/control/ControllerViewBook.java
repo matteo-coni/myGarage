@@ -16,7 +16,7 @@ public class ControllerViewBook {
 	public List<BookingBean> findBooking(String mechanic){
 		
 		List<Booking> listBooking = new ArrayList<>();
-		List<BookingBean> listBookingBean = new ArrayList<>();
+		List<BookingBean> listBookingBean =  new ArrayList<>();
 		
 		BookingDAO bookingDao = new BookingDAO();
 		listBooking = bookingDao.findBooking(mechanic);
@@ -25,7 +25,7 @@ public class ControllerViewBook {
 			
 			for (int i=0; i<=2; i++) {
 		
-			Booking booking = new Booking();
+			Booking booking;// = new Booking();
 			booking = listBooking.get(i);
 			
 			BookingBean bookingBean = new BookingBean(booking.getUsername(), booking.getNameGarage(), booking.getProblems(), booking.getDateBook(), booking.getBookingConfirm(), booking.getSelVehicle());

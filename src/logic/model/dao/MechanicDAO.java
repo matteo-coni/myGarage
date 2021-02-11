@@ -48,9 +48,8 @@ public class MechanicDAO {
                     ResultSet.CONCUR_READ_ONLY);
             
             // query ---> immagazziniamone i risultati	in result set	INSERIRE LA GIUSTA QUERY PER CERCARE NEL DB
+             String query = testo + city + testo2; //Scrivere query per cercare by city
             
-            String query = testo + city + testo2; //Scrivere query per cercare by city
-            System.err.println(query); //prova stringa query
             
             ress = stm.executeQuery(query);
             
@@ -134,10 +133,9 @@ public class MechanicDAO {
              stmt = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_READ_ONLY);
             
-            // query ---> immagazziniamone i risultati	in result set	INSERIRE LA GIUSTA QUERY PER CERCARE NEL DB
-            
+            // query ---> immagazziniamone i risultati	in result set	INSERIRE LA GIUSTA QUERY PER CERCARE NEL DB  
             String query = testo + city + "' AND Zona = '" + zone + testo2; //Scrivere query per cercare by city/zone
-            System.out.println(query); //prova stringa query
+            
             
             rs = stmt.executeQuery(query);
             
@@ -221,10 +219,8 @@ public class MechanicDAO {
              stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_READ_ONLY);
             
-            // query ---> immagazziniamone i risultati	in result set	INSERIRE LA GIUSTA QUERY PER CERCARE NEL DB
-            
+            // query ---> immagazziniamone i risultati	in result set	INSERIRE LA GIUSTA QUERY PER CERCARE NEL DB         
             String query = testo + city + "' AND Officina = '" + name + testo2; //Scrivere query per cercare by city/name
-            System.out.println(query); //prova stringa query
             
             rst = stm.executeQuery(query);
             
@@ -307,10 +303,9 @@ public class MechanicDAO {
              stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_READ_ONLY);
             
-            // query ---> immagazziniamone i risultati	in result set	INSERIRE LA GIUSTA QUERY PER CERCARE NEL DB
-            
+            // query ---> immagazziniamone i risultati	in result set	INSERIRE LA GIUSTA QUERY PER CERCARE NEL DB     
             String query = testo + city + "' AND Zona = '" + zone + "' AND Officina = '" + name + testo2; //Scrivere query per cercare by city
-            System.err.println(query); //prova stringa query
+            
             
             rsc = stm.executeQuery(query);
             

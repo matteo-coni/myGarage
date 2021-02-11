@@ -31,7 +31,7 @@ public class ControllerViewVehicle {
 	}
 
 	
-	public VehicleBean loadVehicle(String targa) {
+	public VehicleBean loadVehicle(String targa) { //chiama il dao per ottenere un veicolo e setta la relativa bean
 		
 		VehicleBean vehiclebean = new VehicleBean(targa);
 		Vehicle vehicle;
@@ -47,9 +47,7 @@ public class ControllerViewVehicle {
 		vehiclebean.setScadBollo(vehicle.getVehicleTax());
 		vehiclebean.setScadRevisione(vehicle.getVehicleReview());
 		vehiclebean.setScadTagliando(vehicle.getVehicleService());
-		//TEST
-		System.out.println(vehicle.getVehicleService());
-		System.out.println(vehiclebean.getScadTagliando());
+		
 		
 		
 		return vehiclebean;

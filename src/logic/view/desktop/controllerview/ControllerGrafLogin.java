@@ -46,7 +46,6 @@ public class ControllerGrafLogin {
 		
 		
 		if (controlLogin.isValidate(loginBean)){
-			System.out.println(username);
 			
 			ControllerMain.getInstance().setId(loginBean.getUsername());
 			FactoryView factory = FactoryView.getInstance();
@@ -57,7 +56,7 @@ public class ControllerGrafLogin {
 			
 			
 		} else {
-			System.out.println("errore nel login"); //debug
+			//debug
 			textError.setText("Username o password errati");
 		
 			

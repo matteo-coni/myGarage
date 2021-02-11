@@ -77,10 +77,8 @@ public class ControllerGrafInsert {
 	
 	@FXML
 	public void setButton() {
-		//grid1.add(button,0,0); //*************PROVA INSERIMENTO RUNTIME*************
-		String string = insertTarga.getText();
-		System.out.println(string);
-		System.out.println(ControllerMain.getInstance().getId());
+		//ok
+		
 		
 	}
 	
@@ -101,11 +99,7 @@ public class ControllerGrafInsert {
 		String revisione = insertRevisione.getText();
 		String tagliando = insertTagliando.getText();
 		
-		/*if( targa.equals("")) {
-			
-			throw new EmptyLicensePlateFieldException("Targa obbligatoria");
-			//return;
-		}*/
+		
 		
 		VehicleBean vehicleBean = new VehicleBean(username, targa); // ***** COSTRUTTORE BEAN VEICOLO.....
 		vehicleBean.setMarcaVehicle(marca);
@@ -139,7 +133,7 @@ public class ControllerGrafInsert {
 			confirmText.setText("Errore nell'inserimento");	
 			Color red = Color.RED;
 			confirmText.setFill(red);
-			//throw new DuplicatedVehicleException("Veicolo duplicato");
+			
 		}
 		
 		} catch (ParseException pe) {
@@ -160,7 +154,7 @@ public class ControllerGrafInsert {
 			confirmText.setText(dupExc.getMessage());
 			Color red = Color.RED;
 			confirmText.setFill(red);
-			System.err.println("provaerr2");
+			
 		}
 		
 	}

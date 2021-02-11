@@ -64,7 +64,6 @@ public class ControllerGrafHome  {
 	@FXML
 	public void exit() { //////*******PROVA******
 		
-		System.out.println("ciaociao");
 		button3.setText("oh");
 		label1.setText("essu");
 		textTarga.setText("ei");
@@ -84,7 +83,7 @@ public class ControllerGrafHome  {
 		ControllerMain.getInstance().replace(ControllerMain.getContainer(), view);
 		
 		} catch (IOException e) {
-			//dummy
+			e.printStackTrace();
 		}
 		
 	}

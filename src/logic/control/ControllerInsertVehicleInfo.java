@@ -39,14 +39,13 @@ public class ControllerInsertVehicleInfo {
 		return result;
 		
 		} catch (DuplicatedVehicleException dve) {
-			System.err.println(dve.getMessage());
-			//return false;
-			throw dve;
+			
+			throw dve; //il chiamante dovrà gestire questa eccezione, idem sotto
 		
 		} catch (EmptyLicensePlateFieldException emptyException) {
-			//System.err.println(emptyException.getMessage());
+			
 			throw emptyException;
-			//return false;
+			
 		
 		}		
 	}

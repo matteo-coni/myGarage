@@ -26,7 +26,7 @@ public class BookingDAO {
 		
 	public void saveBooking(Booking booking) {
 		
-		Connection con = null;
+		Connection connect = null;
 		Statement stm = null;
 		
 		
@@ -37,10 +37,10 @@ public class BookingDAO {
 		try {
 			Class.forName(DRIVER);
             // Otteniamo una connessione con username e password
-            con = DriverManager.getConnection (URL , USERNAMEDB, PASSWORDDB);
+            connect = DriverManager.getConnection (URL , USERNAMEDB, PASSWORDDB);
             
             // Creiamo un oggetto Statement per interrogare il db
-            stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
+            stm = connect.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_READ_ONLY);
             
             // Stringa per insert e update stm	
@@ -49,32 +49,34 @@ public class BookingDAO {
             								+ "VALUES ('%s', '%s', '%s', '%s', '%d', '%s')", booking.getUsername(), booking.getNameGarage(),
             								booking.getProblems(), dataBook, 0, booking.getSelVehicle());
            
-            System.out.println(insertStm); //prova stringa query
+           
             
-            stm.executeUpdate(insertStm);
+            stm.executeUpdate(insertStm);  //System.out.println(insertStm); prova stringa query
             
 		   } catch (SQLException e1) {
 			   e1.printStackTrace();
-	        } catch (ClassNotFoundException e2) {
-	        	e2.printStackTrace();
+	       
+		   } catch (ClassNotFoundException cnf) {
+	        	cnf.printStackTrace();
+	        	
 		} finally {
 	       
 	            if (stm != null) {
 	                try {
 	                    stm.close();
-	                } catch (SQLException e) {
-	                    e.printStackTrace();
+	                } catch (SQLException estm) {
+	                    estm.printStackTrace();
 	                }
 	            }
 	            stm = null;
 	            
-	            if (con != null) {
+	            if (connect != null) {
 	                try {
-	                    con.close();
+	                    connect.close();
 	                } catch (SQLException e) {
 	                    e.printStackTrace();
 	                }
-	                con = null;
+	                connect = null;
 	            }
 	        }
 				
@@ -86,7 +88,7 @@ public class BookingDAO {
 		
 		ResultSet rst= null;
 		Connection con = null;
-		Statement stm = null;
+		Statement stat = null;
 		
 		try {
 			Class.forName(DRIVER);
@@ -94,23 +96,21 @@ public class BookingDAO {
             con = DriverManager.getConnection (URL , USERNAMEDB, PASSWORDDB);
             
             // Creiamo un oggetto Statement per interrogare il db
-             stm = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
+             stat = con.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_READ_ONLY);
             
             // query ---> immagazziniamone i risultati	in result set	INSERIRE LA GIUSTA QUERY PER CERCARE NEL DB
             
             String query = "SELECT * FROM Booking WHERE Officina = '" + nomeOfficina + "' ORDER BY Data ASC;"; //Scrivere query per cercare by city
-            System.out.println(query); //prova stringa query
             
-            rst = stm.executeQuery(query);
+            
+            rst = stat.executeQuery(query); //System.out.println(query); prova stringa query
             
             rst.first();
            
             do{
                 
-                String username = rst.getString("Username");
-                
-                //String Officina = rs.getString("");
+                String username = rst.getString("Username"); 
                 String problemi = rst.getString("Problemi");
                 String data = rst.getString("Data");
                 Date date=new SimpleDateFormat("dd/MM/yyyy").parse(data);
@@ -149,19 +149,19 @@ public class BookingDAO {
                 }
             }
             rst = null;
-            if (stm != null) {
+            if (stat != null) {
                 try {
-                    stm.close();
+                    stat.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }
-            stm = null;
+            stat = null;
             if (con != null) {
                 try {
                     con.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
+                } catch (SQLException eC) {
+                    eC.printStackTrace();
                 }
                 con = null;
             }
@@ -188,11 +188,11 @@ public class BookingDAO {
             
             // Stringa per insert e update stm	
             
-            String updateStm = String.format("UPDATE Booking SET Confermata = '" + val + "' where Officina = '" + nomeOfficina + "' AND Username = '" + username + "' AND Veicolo = '" + targa + "';");
+            String updateStm = "UPDATE Booking SET Confermata = '" + val + "' where Officina = '" + nomeOfficina + "' AND Username = '" + username + "' AND Veicolo = '" + targa + "';";
            
-            System.out.println(updateStm); //prova stringa query
+           
             
-            stmt.executeUpdate(updateStm);
+            stmt.executeUpdate(updateStm);  //System.out.println(updateStm); prova stringa query
             
 		   } catch (SQLException sql) {
 			   sql.printStackTrace();

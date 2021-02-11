@@ -6,11 +6,7 @@
 <!-- dichiarazione e instanziazione di una variabile -->
 <jsp:useBean id="vehiclebean" scope="request" class="logic.bean.VehicleBean"/>
 <jsp:useBean id="controlViewVehicle" scope="request" class="logic.control.ControllerViewVehicle"/>
-<!-- procedere con la dichiarazione di tutte le istanze utilizzate -->
 
-<!-- mappa gli attributi di un oggetto sui campi della form -->
-<!--  jsp:setProperty name="User" property="*" /> -->
-<!-- procedere nel mappare ogni attributo di ogni classe -->
 
 <%
 //compilare in JAVA il corpo della pagina

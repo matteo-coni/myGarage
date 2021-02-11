@@ -36,7 +36,7 @@
 				String nome1 = listMechanicBean.get(0).getOfficina();
 				String indirizzo1 = listMechanicBean.get(0).getIndirizzo();
 				String sconto1 = String.valueOf(listMechanicBean.get(0).getPercSconto())+"%";
-				//System.out.println("nome");
+				
 				session.setAttribute("nome1", nome1);
 				session.setAttribute("indirizzo1", indirizzo1);
 				session.setAttribute("sconto1", sconto1);
@@ -46,7 +46,7 @@
 				String nome1 = listMechanicBean.get(0).getOfficina();
 				String indirizzo1 = listMechanicBean.get(0).getIndirizzo();
 				String sconto1 = String.valueOf(listMechanicBean.get(0).getPercSconto())+"%";
-				//System.out.println("nome");
+				
 				session.setAttribute("nome1", nome1);
 				session.setAttribute("indirizzo1", indirizzo1);
 				session.setAttribute("sconto1", sconto1);
@@ -54,7 +54,7 @@
 				String nome2 = listMechanicBean.get(1).getOfficina();
 				String indirizzo2 = listMechanicBean.get(1).getIndirizzo();
 				String sconto2 = String.valueOf(listMechanicBean.get(1).getPercSconto())+"%";
-				//System.out.println("nome");
+				
 				session.setAttribute("nome2", nome2);
 				session.setAttribute("indirizzo2", indirizzo2);
 				session.setAttribute("sconto2", sconto2);
@@ -65,7 +65,7 @@
 				String nome1 = listMechanicBean.get(0).getOfficina();
 				String indirizzo1 = listMechanicBean.get(0).getIndirizzo();
 				String sconto1 = String.valueOf(listMechanicBean.get(0).getPercSconto())+"%";
-				//System.out.println("nome");
+				
 				session.setAttribute("nome1", nome1);
 				session.setAttribute("indirizzo1", indirizzo1);
 				session.setAttribute("sconto1", sconto1);
@@ -73,7 +73,7 @@
 				String nome2 = listMechanicBean.get(1).getOfficina();
 				String indirizzo2 = listMechanicBean.get(1).getIndirizzo();
 				String sconto2 = String.valueOf(listMechanicBean.get(1).getPercSconto())+"%";
-				//System.out.println("nome");
+				
 				session.setAttribute("nome2", nome2);
 				session.setAttribute("indirizzo2", indirizzo2);
 				session.setAttribute("sconto2", sconto2);
@@ -81,7 +81,7 @@
 				String nome3 = listMechanicBean.get(2).getOfficina();
 				String indirizzo3 = listMechanicBean.get(2).getIndirizzo();
 				String sconto3 = String.valueOf(listMechanicBean.get(2).getPercSconto())+"%";
-				//System.out.println("nome");
+				
 				session.setAttribute("nome3", nome3);
 				session.setAttribute("indirizzo3", indirizzo3);
 				session.setAttribute("sconto3", sconto3);
@@ -157,7 +157,7 @@
             </h4>
             
             <p>
-            	<!--  <button name="cerca" id="cerca" type="submit" > Cerca </button> -->
+            	
     			<input name="cerca" value="cerca" type="submit">
             	
             </p>

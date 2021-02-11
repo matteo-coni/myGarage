@@ -5,11 +5,7 @@
 <!-- dichiarazione e instanziazione di una variabile -->
 <jsp:useBean id="vehiclebean" scope="request" class="logic.bean.VehicleBean"/>
 <jsp:useBean id="controlInsertVehicle" scope="request" class="logic.control.ControllerInsertVehicleInfo"/>
-<!-- procedere con la dichiarazione di tutte le istanze utilizzate -->
 
-<!-- mappa gli attributi di un oggetto sui campi della form -->
-
-<!-- procedere nel mappare ogni attributo di ogni classe -->
 
 <%
 //compilare in JAVA il corpo della pagina
@@ -57,7 +53,7 @@
 		
 		} catch (ParseException e){ 
 			
-		//	<!--   <p  style="color: red">Dati errati</p>> -->
+		
 			err = "Inserire tutte le date!";
 			 
 		} catch (EmptyLicensePlateFieldException emptyLicense){

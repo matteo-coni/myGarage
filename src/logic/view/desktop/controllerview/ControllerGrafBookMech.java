@@ -13,16 +13,18 @@ import java.io.IOException;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.scene.control.*;
 
 public class ControllerGrafBookMech {
-
+	
+	private static String NONDEFINITO = "Non definito";
 	@FXML
 	ImageView homeImage;
 	@FXML
@@ -72,6 +74,8 @@ public class ControllerGrafBookMech {
 	@FXML
 	TextField cittaCerca;
 	@FXML
+	Text errorText;
+	@FXML
 	ComboBox<String> selectVehicle;
 	
 	
@@ -96,7 +100,7 @@ public class ControllerGrafBookMech {
 		ControllerMain.getInstance().replace(ControllerMain.getContainer(), view);
 		
 		} catch (IOException e) {
-			//dummy
+			e.printStackTrace();
 		}
 		
 	}
@@ -105,34 +109,34 @@ public class ControllerGrafBookMech {
 	public void confirmBooking1() {
 		
 		try{
+			
 			BookingBean bookingBean = new BookingBean();
-		
-		
-		LocalDate datap1 = datePick1.getValue();
-		//System.out.println(datap.toString());
-		Instant instant = Instant.from(datap1.atStartOfDay(ZoneId.systemDefault()));
-		Date date1 = Date.from(instant);
-		
-		bookingBean.setUsername(ControllerMain.getInstance().getId());
-		bookingBean.setNomeOfficina(nome1.getText());
-		bookingBean.setDataPrenotazione(date1);
-		bookingBean.setProblemi(txtProblem1.getText());
-		
-		
-		if(selectVehicle.getValue() != null) {
-			bookingBean.setVeicolo(selectVehicle.getValue());
-		} else {
-			bookingBean.setVeicolo("Non definito");
-		}
-		
-		ControllerBookAppointment controlBook = new ControllerBookAppointment();
-		controlBook.saveBooking(bookingBean);
-		
-		} catch(EmptyDatePickException emptyDatePick) {
-			System.err.println(emptyDatePick.getMessage());
+
+			LocalDate datap1 = datePick1.getValue();
 			
-		} catch(NullPointerException npe) {
+			Instant instant = Instant.from(datap1.atStartOfDay(ZoneId.systemDefault()));
+			Date date1 = Date.from(instant);
 			
+			bookingBean.setUsername(ControllerMain.getInstance().getId());
+			bookingBean.setNomeOfficina(nome1.getText());
+			bookingBean.setDataPrenotazione(date1);
+			bookingBean.setProblemi(txtProblem1.getText());
+			
+			
+			if(selectVehicle.getValue() != null) {
+				bookingBean.setVeicolo(selectVehicle.getValue());
+			} else {
+				bookingBean.setVeicolo(NONDEFINITO);
+			}
+			
+			ControllerBookAppointment controlBook = new ControllerBookAppointment();
+			controlBook.saveBooking(bookingBean);
+		
+		} catch(EmptyDatePickException emptyDatePick1) {
+			errorText.setText("Inserire data");
+			
+		} catch(NullPointerException ne) {
+			ne.printStackTrace();
 		}
 		
 		
@@ -143,34 +147,33 @@ public class ControllerGrafBookMech {
 	public void confirmBooking2() {
 		
 		try {
-		BookingBean bookingBean = new BookingBean();
+			BookingBean bookingBean = new BookingBean();
+			
+			LocalDate datap2 = datePick2.getValue();
+			Instant instant = Instant.from(datap2.atStartOfDay(ZoneId.systemDefault()));
+			Date date2 = Date.from(instant);
+			
+			bookingBean.setUsername(ControllerMain.getInstance().getId());
+			bookingBean.setNomeOfficina(nome2.getText());
+			bookingBean.setDataPrenotazione(date2);
+			bookingBean.setProblemi(txtProblem2.getText());
+			
+			
+			if(selectVehicle.getValue() != null) {
+				bookingBean.setVeicolo(selectVehicle.getValue());
+			} else {
+				bookingBean.setVeicolo(NONDEFINITO);
+			}
+			
+			ControllerBookAppointment controlBook = new ControllerBookAppointment();
+			controlBook.saveBooking(bookingBean);
 		
-		LocalDate datap2 = datePick2.getValue();
-		//System.out.println(datap.toString());
-		Instant instant = Instant.from(datap2.atStartOfDay(ZoneId.systemDefault()));
-		Date date2 = Date.from(instant);
+		} catch(EmptyDatePickException emptyDatePick2) {
+			errorText.setText("Inserire data");
 		
-		bookingBean.setUsername(ControllerMain.getInstance().getId());
-		bookingBean.setNomeOfficina(nome2.getText());
-		bookingBean.setDataPrenotazione(date2);
-		bookingBean.setProblemi(txtProblem2.getText());
-		
-		
-		if(selectVehicle.getValue() != null) {
-			bookingBean.setVeicolo(selectVehicle.getValue());
-		} else {
-			bookingBean.setVeicolo("Non definito");
+		} catch(NullPointerException npe) {
+			npe.printStackTrace();
 		}
-		
-		ControllerBookAppointment controlBook = new ControllerBookAppointment();
-		controlBook.saveBooking(bookingBean);
-		
-	} catch(EmptyDatePickException emptyDatePick) {
-		System.err.println(emptyDatePick.getMessage());
-		
-	} catch(NullPointerException npe) {
-		
-	}
 		
 		
 	
@@ -180,33 +183,35 @@ public class ControllerGrafBookMech {
 	public void confirmBooking3() {
 		
 		try{
+			
 			BookingBean bookingBean = new BookingBean();
 		
-		LocalDate datap3 = datePick3.getValue();
-		//System.out.println(datap.toString());
-		Instant instant = Instant.from(datap3.atStartOfDay(ZoneId.systemDefault()));
-		Date date3 = Date.from(instant);
-		
-		bookingBean.setUsername(ControllerMain.getInstance().getId());
-		bookingBean.setNomeOfficina(nome3.getText());
-		bookingBean.setDataPrenotazione(date3);
-		bookingBean.setProblemi(txtProblem3.getText());
-		
-		
-		if(selectVehicle.getValue() != null) {
-			bookingBean.setVeicolo(selectVehicle.getValue());
-		} else {
-			bookingBean.setVeicolo("Non definito");
-		}
-		
-		ControllerBookAppointment controlBook = new ControllerBookAppointment();
-		controlBook.saveBooking(bookingBean);
+			LocalDate datap3 = datePick3.getValue();
+			
+			Instant instant = Instant.from(datap3.atStartOfDay(ZoneId.systemDefault()));
+			Date date3 = Date.from(instant);
+			
+			bookingBean.setUsername(ControllerMain.getInstance().getId());
+			bookingBean.setNomeOfficina(nome3.getText());
+			bookingBean.setDataPrenotazione(date3);
+			bookingBean.setProblemi(txtProblem3.getText());
+			
+			
+			if(selectVehicle.getValue() != null) {
+				bookingBean.setVeicolo(selectVehicle.getValue());
+			} else {
+				bookingBean.setVeicolo(NONDEFINITO);
+			}
+			
+			ControllerBookAppointment controlBook = new ControllerBookAppointment();
+			controlBook.saveBooking(bookingBean);
 	
-		} catch(EmptyDatePickException emptyDatePick) {
-		System.err.println(emptyDatePick.getMessage());
+		} catch(EmptyDatePickException emptyDatePick3) {
+			
+			errorText.setText("Inserire data");
 		
-	} catch(NullPointerException npe) {
-		
+		} catch(NullPointerException np) {
+			np.printStackTrace();
 	}
 		
 	
@@ -221,10 +226,12 @@ public class ControllerGrafBookMech {
 		String citta = cittaCerca.getText();
 		
 		ControllerBookAppointment controlBook = new ControllerBookAppointment();
-		List<MechanicBean> listMechanicBean = new ArrayList<>();
+		List<MechanicBean> listMechanicBean;// = new ArrayList<>();
 		
 		if (citta.equals("")){
 			//Scrivere di dover inserire la città obbligatoriamente
+			errorText.setText("Inserire la città");
+			errorText.setFill(Color.RED);
 			return;
 		}
 		

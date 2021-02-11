@@ -1,7 +1,6 @@
 package logic.view.desktop.factory.viewfactory;
 
-//import logic.view.desktop.view.View;
-//import logic.view.desktop.view.ViewLogin;
+
 import logic.view.desktop.view.*;
 import java.io.IOException;
 
@@ -33,7 +32,6 @@ public class FactoryView {
 			return new ViewListMech(view);
 		
 		default:
-			//throw new IOException("Factory exception: view not found");
 			return new ViewLogin(view);
 		}
 	}
