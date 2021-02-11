@@ -53,15 +53,7 @@ public class ControllerInsertVehicleInfo {
 		
 		if(annoAttuale == annoDeadline && meseAttuale == (meseDeadline-1))
 			return true;
-		else
-			return false;
-	}
-	
-	public void checkAssicurazione (Date dateAssic) {
-		
-		//vehicleBean.getScadAssicurazione().compareTo(vehicleBean.getScadBollo());
-		//USARE IL .compareTo--- data1 > data2 --> ris > 0
-		
+		return false;
 	}
 	
 }

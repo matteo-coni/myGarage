@@ -155,11 +155,8 @@ public class VehicleBean {
 				letter[i]=license.charAt(i);
 			if(Character.isLetter(letter[0])&&Character.isLetter(letter[1])&&Character.isDigit(letter[2])&&Character.isDigit(letter[3])&&Character.isDigit(letter[4])&&Character.isLetter(letter[5])&&Character.isLetter(letter[6]))
 				return true;
-			else
-				return false;
 		}
-		else
-			return false;
+		return false;
 	}
 	
 }
