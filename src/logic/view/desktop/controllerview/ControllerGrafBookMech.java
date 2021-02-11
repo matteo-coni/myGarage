@@ -131,6 +131,8 @@ public class ControllerGrafBookMech {
 		} catch(EmptyDatePickException emptyDatePick) {
 			System.err.println(emptyDatePick.getMessage());
 			
+		} catch(NullPointerException npe) {
+			
 		}
 		
 		
@@ -166,6 +168,8 @@ public class ControllerGrafBookMech {
 	} catch(EmptyDatePickException emptyDatePick) {
 		System.err.println(emptyDatePick.getMessage());
 		
+	} catch(NullPointerException npe) {
+		
 	}
 		
 		
@@ -197,8 +201,11 @@ public class ControllerGrafBookMech {
 		
 		ControllerBookAppointment controlBook = new ControllerBookAppointment();
 		controlBook.saveBooking(bookingBean);
-	} catch(EmptyDatePickException emptyDatePick) {
+	
+		} catch(EmptyDatePickException emptyDatePick) {
 		System.err.println(emptyDatePick.getMessage());
+		
+	} catch(NullPointerException npe) {
 		
 	}
 		
