@@ -125,7 +125,7 @@ public class ControllerGrafListBook {
 	public void initialize() {
 		
 		DateFormat sdf = new SimpleDateFormat("dd-MM-yyyy",Locale.ITALY);
-		List<BookingBean> listBookingBean;// = new ArrayList<>();
+		List<BookingBean> listBookingBean;
 		ControllerViewBook controlViewBook = new ControllerViewBook();
 		listBookingBean = controlViewBook.findBooking(ControllerMain.getInstance().getId());
 		

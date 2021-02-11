@@ -24,7 +24,10 @@ import javafx.scene.control.*;
 
 public class ControllerGrafBookMech {
 	
-	private static String NONDEFINITO = "Non definito";
+	private static String nondefinito = "Non definito";
+	private static String inseriredata = "Inserire data";
+	private static String dataerrata = "Data errata";
+	
 	@FXML
 	ImageView homeImage;
 	@FXML
@@ -126,17 +129,17 @@ public class ControllerGrafBookMech {
 			if(selectVehicle.getValue() != null) {
 				bookingBean.setVeicolo(selectVehicle.getValue());
 			} else {
-				bookingBean.setVeicolo(NONDEFINITO);
+				bookingBean.setVeicolo(nondefinito);
 			}
 			
 			ControllerBookAppointment controlBook = new ControllerBookAppointment();
 			controlBook.saveBooking(bookingBean);
 		
 		} catch(EmptyDatePickException emptyDatePick1) {
-			errorText.setText("Inserire data");
+			errorText.setText(inseriredata);
 			
 		} catch(NullPointerException ne) {
-			ne.printStackTrace();
+			errorText.setText(dataerrata);
 		}
 		
 		
@@ -162,17 +165,17 @@ public class ControllerGrafBookMech {
 			if(selectVehicle.getValue() != null) {
 				bookingBean.setVeicolo(selectVehicle.getValue());
 			} else {
-				bookingBean.setVeicolo(NONDEFINITO);
+				bookingBean.setVeicolo(nondefinito);
 			}
 			
 			ControllerBookAppointment controlBook = new ControllerBookAppointment();
 			controlBook.saveBooking(bookingBean);
 		
 		} catch(EmptyDatePickException emptyDatePick2) {
-			errorText.setText("Inserire data");
+			errorText.setText(inseriredata);
 		
 		} catch(NullPointerException npe) {
-			npe.printStackTrace();
+			errorText.setText(dataerrata);
 		}
 		
 		
@@ -200,7 +203,7 @@ public class ControllerGrafBookMech {
 			if(selectVehicle.getValue() != null) {
 				bookingBean.setVeicolo(selectVehicle.getValue());
 			} else {
-				bookingBean.setVeicolo(NONDEFINITO);
+				bookingBean.setVeicolo(nondefinito);
 			}
 			
 			ControllerBookAppointment controlBook = new ControllerBookAppointment();
@@ -208,10 +211,10 @@ public class ControllerGrafBookMech {
 	
 		} catch(EmptyDatePickException emptyDatePick3) {
 			
-			errorText.setText("Inserire data");
+			errorText.setText(inseriredata);
 		
 		} catch(NullPointerException np) {
-			np.printStackTrace();
+			errorText.setText(dataerrata);
 	}
 		
 	
@@ -226,7 +229,7 @@ public class ControllerGrafBookMech {
 		String citta = cittaCerca.getText();
 		
 		ControllerBookAppointment controlBook = new ControllerBookAppointment();
-		List<MechanicBean> listMechanicBean;// = new ArrayList<>();
+		List<MechanicBean> listMechanicBean;
 		
 		if (citta.equals("")){
 			//Scrivere di dover inserire la città obbligatoriamente

@@ -255,7 +255,14 @@ public class MechanicDAO {
 			
 			e1.printStackTrace();
 		} finally {
-            
+			if (stm != null) {
+                try {
+                    stm.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            stm = null;
         	if (rst != null) {
                 try {
                     rst.close();
@@ -264,14 +271,7 @@ public class MechanicDAO {
                 }
             }
             rst = null;
-            if (stm != null) {
-                try {
-                    stm.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            stm = null;
+            
             if (con != null) {
                 try {
                     con.close();

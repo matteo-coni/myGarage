@@ -147,7 +147,7 @@ public class ControllerGrafInsert {
 			confirmText.setText(e.getMessage());
 			Color red = Color.RED;
 			confirmText.setFill(red);
-			System.err.println("provaerr2");
+			
 			
 		} catch (DuplicatedVehicleException dupExc) {
 			
