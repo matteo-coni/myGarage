@@ -7,11 +7,14 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Date;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-
+import logic.exception.DuplicatedVehicleException;
+import logic.exception.EmptyLicensePlateFieldException;
 import logic.model.Vehicle; 
 
 
@@ -25,8 +28,7 @@ public class VehicleDAO {
 	static final String PASSWORDDB = "admin";
 	String format ="dd/MM/yyyy";
 	
-	public void saveVehicle(String username, String targa, String marca, String modello, String cilindrata, String cavalli, String assicurazione,
-							String bollo, String revisione, String tagliando) { //AGGIUNGERE ULTERIORI INFO
+	public Boolean saveVehicle(Vehicle vehicle) throws DuplicatedVehicleException, EmptyLicensePlateFieldException { //AGGIUNGERE ULTERIORI INFO
         
 		
 		Connection con = null;
@@ -43,19 +45,39 @@ public class VehicleDAO {
                     ResultSet.CONCUR_READ_ONLY);
             
             // Stringa per insert e update stm	
+            String username = vehicle.getUsername(); 
+            String targa = vehicle.getLicensePlate();
+            String marca = vehicle.getVehicleBrand();
+            String modello = vehicle.getVehicleModel();
+            String cilindrata = vehicle.getVehicleDisplacement();
+            String cavalli = vehicle.getVehiclePowertrains();
+           
+            DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy",Locale.ITALY);
+           
+            String assicurazione = sdf.format(vehicle.getVehicleInsurance());
+			String bollo = sdf.format(vehicle.getVehicleTax()); 
+			String revisione = sdf.format(vehicle.getVehicleReview());
+			String tagliando = sdf.format(vehicle.getVehicleService());
+			
+			if(targa=="") {
+				throw new EmptyLicensePlateFieldException("Targa obbligatoria");
+			}
             
             String insertStm = String.format("INSERT INTO Vehicle (User_Username, Targa, Marca, Modello, Cilindrata, Cavalli, Assicurazione,"
             								+ " Bollo, Revisione, Tagliando) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')", username,
             								targa, marca, modello, cilindrata, cavalli, assicurazione, bollo, revisione, tagliando);
             System.out.println(insertStm); //prova stringa query
             
-            stm.executeUpdate(insertStm);
-            
-          
-              
-            
+           if(stm.executeUpdate(insertStm)>0) { //restituisce il numero delle modifiche, quindi con 0 non è possibile
+        	   return true;
+           } 
+           
+           
+    
 		   } catch (SQLException e) {
-	            e.printStackTrace();
+			   
+			   throw new DuplicatedVehicleException("Veicolo già presente");
+	           //e.printStackTrace();
 		   } catch (ClassNotFoundException cnf) {
 			   cnf.printStackTrace();
 	            
@@ -79,6 +101,7 @@ public class VehicleDAO {
 	                con = null;
 	            }
 	        }
+		return false;
 				
     }
 	
