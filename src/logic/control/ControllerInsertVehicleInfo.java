@@ -15,7 +15,7 @@ public class ControllerInsertVehicleInfo {
 	}
 	
 	public boolean saveVehicle(VehicleBean vehicleBean) throws EmptyLicensePlateFieldException, DuplicatedVehicleException{
-		
+		boolean result=false;
 		try {
 		VehicleDAO vehicledao = new VehicleDAO();
 		Vehicle vehicle = new Vehicle(vehicleBean.getTargaVehicle());
@@ -33,14 +33,10 @@ public class ControllerInsertVehicleInfo {
 		
 		
 		
-		if (vehicledao.saveVehicle(vehicle)) {
-			
-			return true;
+		if (vehicledao.saveVehicle(vehicle))
+			result= true;
 		
-		} else {
-			
-			return false;
-		}
+		return result;
 		
 		} catch (DuplicatedVehicleException dve) {
 			System.err.println(dve.getMessage());
