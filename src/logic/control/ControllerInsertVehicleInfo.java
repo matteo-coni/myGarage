@@ -36,9 +36,11 @@ public class ControllerInsertVehicleInfo {
 		if (vehicledao.saveVehicle(vehicle)) {
 			
 			return true;
-		}
-		return false;
 		
+		} else {
+			
+			return false;
+		}
 		
 		} catch (DuplicatedVehicleException dve) {
 			System.err.println(dve.getMessage());
@@ -49,13 +51,12 @@ public class ControllerInsertVehicleInfo {
 			throw emptyException;
 			//return false;
 		
-		} //catch (Exception e){
-			//return false;
+		} 
 		
 			
-		}
+}
 		
-	//}
+	
 	
 	public boolean checkDeadline(GregorianCalendar deadline) {
 		boolean result=false;
