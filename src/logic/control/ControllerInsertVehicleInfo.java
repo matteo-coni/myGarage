@@ -2,10 +2,10 @@ package logic.control;
 
 import java.util.*;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-
 import logic.bean.*;
+import logic.exception.DuplicatedVehicleException;
+import logic.exception.EmptyLicensePlateFieldException;
+import logic.model.Vehicle;
 import logic.model.dao.*;
 
 public class ControllerInsertVehicleInfo {
@@ -14,26 +14,48 @@ public class ControllerInsertVehicleInfo {
 		//Costruttore
 	}
 	
-	public boolean saveVehicle(VehicleBean vehicleBean) {
+	public boolean saveVehicle(VehicleBean vehicleBean) throws EmptyLicensePlateFieldException{
 		
 		try {
 		VehicleDAO vehicledao = new VehicleDAO();
+		Vehicle vehicle = new Vehicle(vehicleBean.getTargaVehicle());
 		
-		DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy",Locale.ITALY);
-		String ass = sdf.format(vehicleBean.getScadAssicurazione());
-		String rev = sdf.format(vehicleBean.getScadRevisione());
-		String bollo = sdf.format(vehicleBean.getScadBollo());
-		String tagl = sdf.format(vehicleBean.getScadTagliando());
+		vehicle.setLicensePlate(vehicleBean.getTargaVehicle());
+		vehicle.setUsername(vehicleBean.getUsername());
+		vehicle.setVehicleBrand(vehicleBean.getMarcaVehicle());
+		vehicle.setVehicleModel(vehicleBean.getModelloVehicle());
+		vehicle.setVehiclePowertrains(vehicleBean.getCavalliVehicle());
+		vehicle.setVehicleDisplacement(vehicleBean.getCilindrataVehicle());
+		vehicle.setVehicleInsurance(vehicleBean.getScadAssicurazione());
+		vehicle.setVehicleTax(vehicleBean.getScadBollo());
+		vehicle.setVehicleReview(vehicleBean.getScadRevisione());
+		vehicle.setVehicleService(vehicleBean.getScadTagliando());
 		
 		
-		vehicledao.saveVehicle(vehicleBean.getUsername(), vehicleBean.getTargaVehicle(), vehicleBean.getMarcaVehicle(), vehicleBean.getModelloVehicle(), vehicleBean.getCilindrataVehicle(), vehicleBean.getCavalliVehicle(), ass, bollo, rev, tagl);
-		return true;
 		
-		} catch (Exception e){
+		if (vehicledao.saveVehicle(vehicle)) {
+			
+			return true;
+		}
+		return false;
+		
+		
+		} catch (DuplicatedVehicleException dve) {
+			System.err.println(dve.getMessage());
 			return false;
+		
+		} catch (EmptyLicensePlateFieldException emptyException) {
+			//System.err.println(emptyException.getMessage());
+			throw emptyException;
+			//return false;
+		
+		} //catch (Exception e){
+			//return false;
+		
+			
 		}
 		
-	}
+	//}
 	
 	public boolean checkDeadline(GregorianCalendar deadline) {
 		boolean result=false;
@@ -54,3 +76,4 @@ public class ControllerInsertVehicleInfo {
 	}
 	
 }
+
