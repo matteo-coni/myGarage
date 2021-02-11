@@ -38,11 +38,13 @@ public class ControllerInsertVehicleInfo {
 	public boolean checkDeadline(GregorianCalendar deadline) {
 		boolean result=false;
 		GregorianCalendar dataAttuale = new GregorianCalendar();
-		int annoAttuale = dataAttuale.get(GregorianCalendar.YEAR);
-		int meseAttuale = dataAttuale.get(GregorianCalendar.MONTH)+1;
+		int anno = GregorianCalendar.YEAR;
+		int mese= GregorianCalendar.MONTH;
+		int annoAttuale = dataAttuale.get(anno);
+		int meseAttuale = dataAttuale.get(mese)+1;
 		
-		int annoDeadline = deadline.get(GregorianCalendar.YEAR);
-		int meseDeadline = deadline.get(GregorianCalendar.MONTH);
+		int annoDeadline = deadline.get(anno);
+		int meseDeadline = deadline.get(mese);
 		
 		if(annoAttuale == annoDeadline && meseAttuale == (meseDeadline-1))
 			result= true;
