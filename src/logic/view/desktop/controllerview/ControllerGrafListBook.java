@@ -110,7 +110,7 @@ public class ControllerGrafListBook {
 		ControllerViewBook controlViewBook = new ControllerViewBook();
 		controlViewBook.confirmBooking(usernamedecline, ControllerMain.getInstance().getId(),targadecline,0); // 1 per la conferma, 0 declina
 		//setta il colore come verde
-		redGreen1.setFill(Color.RED);
+		redGreen2.setFill(Color.RED);
 	}
 	@FXML
 	public void decline3() {
@@ -119,7 +119,7 @@ public class ControllerGrafListBook {
 		ControllerViewBook controlViewBook = new ControllerViewBook();
 		controlViewBook.confirmBooking(usernameDecline, ControllerMain.getInstance().getId(),targaDecline,0); // 1 per la conferma, 0 declina
 		//setta il colore come verde
-		redGreen1.setFill(Color.RED);
+		redGreen3.setFill(Color.RED);
 	}
 	
 	
