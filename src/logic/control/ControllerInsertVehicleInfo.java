@@ -14,7 +14,7 @@ public class ControllerInsertVehicleInfo {
 		//Costruttore
 	}
 	
-	public boolean saveVehicle(VehicleBean vehicleBean) throws EmptyLicensePlateFieldException{
+	public boolean saveVehicle(VehicleBean vehicleBean) throws EmptyLicensePlateFieldException, DuplicatedVehicleException{
 		
 		try {
 		VehicleDAO vehicledao = new VehicleDAO();
@@ -44,14 +44,15 @@ public class ControllerInsertVehicleInfo {
 		
 		} catch (DuplicatedVehicleException dve) {
 			System.err.println(dve.getMessage());
-			return false;
+			//return false;
+			throw dve;
 		
 		} catch (EmptyLicensePlateFieldException emptyException) {
 			//System.err.println(emptyException.getMessage());
 			throw emptyException;
 			//return false;
 		
-		} 
+		}
 		
 			
 }

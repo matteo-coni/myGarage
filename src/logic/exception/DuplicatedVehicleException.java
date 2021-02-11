@@ -7,6 +7,6 @@ public class DuplicatedVehicleException extends Exception {
 	private static final long serialVersionUID = 1L;
 	
 	public DuplicatedVehicleException (String message){
-		super("Error: " + message);
+		super(message);
 	}
 }

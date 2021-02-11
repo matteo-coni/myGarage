@@ -85,7 +85,7 @@ public class ControllerGrafInsert {
 	}
 	
 	@FXML
-	public void confirmInsert() throws DuplicatedVehicleException {
+	public void confirmInsert() {
 		
 		
 		try {
@@ -155,6 +155,12 @@ public class ControllerGrafInsert {
 			confirmText.setFill(R);	
 			System.err.println("provaerr2");
 			
+		} catch (DuplicatedVehicleException dupExc) {
+			
+			confirmText.setText(dupExc.getMessage());
+			Color R = Color.RED;
+			confirmText.setFill(R);	
+			System.err.println("provaerr2");
 		}
 		
 	}

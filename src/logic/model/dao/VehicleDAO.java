@@ -59,7 +59,7 @@ public class VehicleDAO {
 			String revisione = sdf.format(vehicle.getVehicleReview());
 			String tagliando = sdf.format(vehicle.getVehicleService());
 			
-			if(targa=="") {
+			if(targa.equals("")) {
 				throw new EmptyLicensePlateFieldException("Targa obbligatoria");
 			}
             
@@ -77,7 +77,7 @@ public class VehicleDAO {
 		   } catch (SQLException e) {
 			   
 			   throw new DuplicatedVehicleException("Veicolo già presente");
-	           //e.printStackTrace();
+	          // e.printStackTrace();
 		   } catch (ClassNotFoundException cnf) {
 			   cnf.printStackTrace();
 	            
