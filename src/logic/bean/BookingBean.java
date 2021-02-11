@@ -11,8 +11,6 @@ public class BookingBean {
 	private Boolean confermaPren;
 	private String problemi;
 	
-	//Date dataPrenotazione;// = new Date();
-	
 	//COSTRUTTORI
 	public BookingBean () {
 		

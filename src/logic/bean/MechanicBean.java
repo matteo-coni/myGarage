@@ -70,8 +70,5 @@ public class MechanicBean {
 	public void setPercSconto(int percSconto) {
 		this.percSconto = percSconto;
 	}
-	
-	
-	
 
 }

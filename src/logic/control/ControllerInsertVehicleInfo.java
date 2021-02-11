@@ -52,13 +52,9 @@ public class ControllerInsertVehicleInfo {
 			throw emptyException;
 			//return false;
 		
-		}
+		}		
+	}
 		
-			
-}
-		
-	
-	
 	public boolean checkDeadline(GregorianCalendar deadline) {
 		boolean result=false;
 		int anno = Calendar.YEAR;
@@ -73,9 +69,7 @@ public class ControllerInsertVehicleInfo {
 		if(annoAttuale == annoDeadline && meseAttuale == (meseDeadline-1))
 			result= true;
 		
-		return result;
-		
+		return result;	
 	}
 	
 }
-

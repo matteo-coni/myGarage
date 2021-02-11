@@ -35,8 +35,6 @@ public class ControllerLogin {
 			//--query DAO -- controlla nel database se username e password sono giusti
 			UserDAO userdaomech = new UserDAO();
 			validmech = userdaomech.findUserMech(loginBeanMech.getUsername(),loginBeanMech.getPassword());
-		
-			
 			
 			return validmech;
 		
@@ -48,5 +46,3 @@ public class ControllerLogin {
 	}
 	
 }
-
-
