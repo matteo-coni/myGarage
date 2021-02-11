@@ -139,16 +139,4 @@ public class Vehicle {
 		this.img = img;
 	}
 	
-	//metodo per il controllo della data???
-	/*
-	 * boolean result;
-		GregorianCalendar cal = new GregorianCalendar (29, 2, 2007);
-		cal.setLenient (false);
-
-		try {
-			cal.get (Calendar.DATE);
-			result=true;
-		} catch (IllegalArgumentException e) {
-			result=false;}
-	 */
 }
