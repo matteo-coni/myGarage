@@ -5,6 +5,7 @@ import logic.view.desktop.factory.viewfactory.FactoryView;
 import logic.view.desktop.factory.viewfactory.TypeView;
 import logic.control.ControllerBookAppointment;
 import logic.control.ControllerViewVehicle;
+import logic.exception.EmptyDatePickException;
 import logic.bean.MechanicBean;
 import logic.bean.BookingBean;
 
@@ -103,7 +104,9 @@ public class ControllerGrafBookMech {
 	@FXML
 	public void confirmBooking1() {
 		
-		BookingBean bookingBean = new BookingBean();
+		try{
+			BookingBean bookingBean = new BookingBean();
+		
 		
 		LocalDate datap1 = datePick1.getValue();
 		//System.out.println(datap.toString());
@@ -125,6 +128,11 @@ public class ControllerGrafBookMech {
 		ControllerBookAppointment controlBook = new ControllerBookAppointment();
 		controlBook.saveBooking(bookingBean);
 		
+		} catch(EmptyDatePickException emptyDatePick) {
+			System.err.println(emptyDatePick.getMessage());
+			
+		}
+		
 		
 	
 		
@@ -132,6 +140,7 @@ public class ControllerGrafBookMech {
 	@FXML
 	public void confirmBooking2() {
 		
+		try {
 		BookingBean bookingBean = new BookingBean();
 		
 		LocalDate datap2 = datePick2.getValue();
@@ -154,6 +163,11 @@ public class ControllerGrafBookMech {
 		ControllerBookAppointment controlBook = new ControllerBookAppointment();
 		controlBook.saveBooking(bookingBean);
 		
+	} catch(EmptyDatePickException emptyDatePick) {
+		System.err.println(emptyDatePick.getMessage());
+		
+	}
+		
 		
 	
 		
@@ -161,7 +175,8 @@ public class ControllerGrafBookMech {
 	@FXML
 	public void confirmBooking3() {
 		
-		BookingBean bookingBean = new BookingBean();
+		try{
+			BookingBean bookingBean = new BookingBean();
 		
 		LocalDate datap3 = datePick3.getValue();
 		//System.out.println(datap.toString());
@@ -182,7 +197,10 @@ public class ControllerGrafBookMech {
 		
 		ControllerBookAppointment controlBook = new ControllerBookAppointment();
 		controlBook.saveBooking(bookingBean);
+	} catch(EmptyDatePickException emptyDatePick) {
+		System.err.println(emptyDatePick.getMessage());
 		
+	}
 		
 	
 		

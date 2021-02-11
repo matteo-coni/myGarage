@@ -7,6 +7,7 @@ import java.util.*;
 import logic.model.Mechanic;
 import logic.bean.BookingBean;
 import logic.bean.MechanicBean;
+import logic.exception.EmptyDatePickException;
 import logic.model.dao.MechanicDAO;
 import logic.model.dao.BookingDAO;
 import logic.model.Booking;
@@ -72,11 +73,13 @@ public class ControllerBookAppointment {
 	
 
 	
-	public void saveBooking(BookingBean bookingBean) {
+	public void saveBooking(BookingBean bookingBean) throws EmptyDatePickException {
 		
 		BookingDAO bookingDao = new BookingDAO();
 		Booking booking = new Booking();
-		
+		if (bookingBean.getDataPrenotazione()==null) {
+			throw new EmptyDatePickException("Inserire la data!");
+		}
 		booking.setUsername(bookingBean.getUsername());
 		booking.setNameGarage(bookingBean.getNomeOfficina());
 		booking.setProblems(bookingBean.getProblemi());
@@ -85,6 +88,8 @@ public class ControllerBookAppointment {
 		booking.setSelVehicle(bookingBean.getVeicolo());
 		
 		bookingDao.saveBooking(booking);
+		
+		
 		
 	}
 	
