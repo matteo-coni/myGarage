@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1"%>
 <%@ page import="java.text.*" %>
 <%@ page import="java.util.Date" %>
+<%@ page import="logic.exception.EmptyLicensePlateFieldException" %>
 <!-- dichiarazione e instanziazione di una variabile -->
 <jsp:useBean id="vehiclebean" scope="request" class="logic.bean.VehicleBean"/>
 <jsp:useBean id="controlInsertVehicle" scope="request" class="logic.control.ControllerInsertVehicleInfo"/>
@@ -12,6 +13,8 @@
 
 <%
 //compilare in JAVA il corpo della pagina
+	String err="";
+
 	if(request.getParameter("Insert")!=null){
 		
 		String username = (String)session.getAttribute("username");
@@ -43,20 +46,23 @@
         		vehiclebean.setScadTagliando(dateTagl);
 			}
 		
-		//System.out.println(vehiclebean.getTargaVehicle());
-		//System.out.println(vehiclebean.getUsername());
+			
+			
 			if(controlInsertVehicle.saveVehicle(vehiclebean)){
 		
 			} else {
-			%>
-			<p  style="color: red">Dati errati</p>>	
-			<%
+			
+				err = "Dati errati";
 			}
 		
 		} catch (ParseException e){ 
-			%>
-			<p  style="color: red">Dati errati</p>>
-			<% 
+			
+		//	<!--   <p  style="color: red">Dati errati</p>> -->
+			err = "Inserire tutte le date!";
+			 
+		} catch (EmptyLicensePlateFieldException emptyLicense){
+			
+			err = "Inserire la targa!";
 		}
 	}
 %>
@@ -87,6 +93,7 @@
             rowspan="2" colspan="6">
             <h1 style="text-align: center;"><strong>Insert Vehicle Information</strong></h1>
             <h1><button name="Insert" >Inserisci veicolo</button></h1>
+            <h1><%=err %></h1>
           </td>
         </tr>
         <tr style="height: 85px;">
@@ -116,6 +123,7 @@
             <h4 style="text-align: center;"><label for="licensePlate"></label><input
 
                 name="licensePlate" id="licensePlate" type="text"></h4>
+                
           </td>
           <td style="width: 288px; height: 23px;">
             <h4 style="text-align: center;"> <label for="vehicleBrand">Inserisci Marca</label></h4>

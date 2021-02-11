@@ -3,6 +3,8 @@ package logic.view.desktop.controllerview;
 
 import logic.bean.*;
 import logic.control.*;
+import logic.exception.DuplicatedVehicleException;
+import logic.exception.EmptyLicensePlateFieldException;
 import logic.view.desktop.factory.viewfactory.FactoryView;
 import logic.view.desktop.factory.viewfactory.TypeView;
 import logic.view.desktop.view.View;
@@ -26,7 +28,7 @@ import javafx.scene.paint.*;
 
 public class ControllerGrafInsert {
 	
-	String format="dd/MM/yyyy";
+	private static String FORMAT="dd/MM/yyyy";
 
 	@FXML
 	Polygon Back;
@@ -83,7 +85,7 @@ public class ControllerGrafInsert {
 	}
 	
 	@FXML
-	public void confirmInsert() {
+	public void confirmInsert() throws DuplicatedVehicleException {
 		
 		
 		try {
@@ -99,52 +101,60 @@ public class ControllerGrafInsert {
 		String revisione = insertRevisione.getText();
 		String tagliando = insertTagliando.getText();
 		
-		if( targa.equals("")) {
+		/*if( targa.equals("")) {
 			
-			confirmText.setText("Targa obbligatoria");
-			Color R = Color.RED;
-			confirmText.setFill(R);	
-			return;
-		}
+			throw new EmptyLicensePlateFieldException("Targa obbligatoria");
+			//return;
+		}*/
 		
-		VehicleBean vehicleBean = new VehicleBean(username, targa); //***** COSTRUTTORE BEAN VEICOLO.....
+		VehicleBean vehicleBean = new VehicleBean(username, targa); // ***** COSTRUTTORE BEAN VEICOLO.....
 		vehicleBean.setMarcaVehicle(marca);
 		vehicleBean.setModelloVehicle(modello);
 		vehicleBean.setCilindrataVehicle(cilindrata);
 		vehicleBean.setCavalliVehicle(cavalli);
 		
 		
-		Date dateAss=new SimpleDateFormat(format).parse(assicurazione);
+		Date dateAss=new SimpleDateFormat(FORMAT).parse(assicurazione);
         vehicleBean.setScadAssicurazione(dateAss);
         
-        Date dateRev=new SimpleDateFormat(format).parse(revisione);
+        Date dateRev=new SimpleDateFormat(FORMAT).parse(revisione);
         vehicleBean.setScadRevisione(dateRev);
         
-        Date dateBollo=new SimpleDateFormat(format).parse(bollo);
+        Date dateBollo=new SimpleDateFormat(FORMAT).parse(bollo);
         vehicleBean.setScadBollo(dateBollo);
         
-        Date dateTagl=new SimpleDateFormat(format).parse(tagliando);
+        Date dateTagl=new SimpleDateFormat(FORMAT).parse(tagliando);
         vehicleBean.setScadTagliando(dateTagl);
 		
 		ControllerInsertVehicleInfo controllerInsert =  new ControllerInsertVehicleInfo();
+		
 		if( controllerInsert.saveVehicle(vehicleBean)) {
 			
-			confirmText.setText("Veicolo inserito correttamente!");
-			
-			Color G = Color.GREEN;
-			confirmText.setFill(G);
+			confirmText.setText("Veicolo inserito correttamente!");		
+			Color green = Color.GREEN;
+			confirmText.setFill(green);
 		
 		} else {
 			
-			confirmText.setText("Errore nell'inserimento");
-		
-			Color R = Color.RED;
-			confirmText.setFill(R);
+			confirmText.setText("Errore nell'inserimento");	
+			Color red = Color.RED;
+			confirmText.setFill(red);
+			//throw new DuplicatedVehicleException("Veicolo duplicato");
 		}
 		
 		} catch (ParseException pe) {
-			pe.printStackTrace();
+			
+			confirmText.setText("Inserire tutte le date!");
+			Color red = Color.RED;
+			confirmText.setFill(red);
 	
+		} catch (EmptyLicensePlateFieldException e) {
+			
+			confirmText.setText(e.getMessage());
+			Color R = Color.RED;
+			confirmText.setFill(R);	
+			System.err.println("provaerr2");
+			
 		}
 		
 		
