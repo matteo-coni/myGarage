@@ -1,7 +1,5 @@
 package logic.control;
 
-
-
 import java.util.*;
 
 import java.text.DateFormat;
@@ -10,17 +8,11 @@ import java.text.SimpleDateFormat;
 import logic.bean.*;
 import logic.model.dao.*;
 
-
-
 public class ControllerInsertVehicleInfo {
 	
 	public ControllerInsertVehicleInfo() {
 		//Costruttore
 	}
-	
-	
-	
-	
 	
 	public boolean saveVehicle(VehicleBean vehicleBean) {
 		
