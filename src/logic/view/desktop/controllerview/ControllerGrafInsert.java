@@ -31,7 +31,7 @@ public class ControllerGrafInsert {
 	private static String format="dd/MM/yyyy";
 
 	@FXML
-	Polygon Back;
+	Polygon back;
 	@FXML
 	Button button = new Button("prova");
 	@FXML
@@ -151,15 +151,15 @@ public class ControllerGrafInsert {
 		} catch (EmptyLicensePlateFieldException e) {
 			
 			confirmText.setText(e.getMessage());
-			Color R = Color.RED;
-			confirmText.setFill(R);	
+			Color red = Color.RED;
+			confirmText.setFill(red);
 			System.err.println("provaerr2");
 			
 		} catch (DuplicatedVehicleException dupExc) {
 			
 			confirmText.setText(dupExc.getMessage());
-			Color R = Color.RED;
-			confirmText.setFill(R);	
+			Color red = Color.RED;
+			confirmText.setFill(red);
 			System.err.println("provaerr2");
 		}
 		
