@@ -37,9 +37,9 @@ public class ControllerInsertVehicleInfo {
 	
 	public boolean checkDeadline(GregorianCalendar deadline) {
 		boolean result=false;
-		GregorianCalendar dataAttuale = new GregorianCalendar();
 		int anno = GregorianCalendar.YEAR;
 		int mese= GregorianCalendar.MONTH;
+		GregorianCalendar dataAttuale = new GregorianCalendar();
 		int annoAttuale = dataAttuale.get(anno);
 		int meseAttuale = dataAttuale.get(mese)+1;
 		
