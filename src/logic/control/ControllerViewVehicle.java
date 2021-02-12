@@ -1,6 +1,7 @@
 package logic.control;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import logic.bean.*;
@@ -47,7 +48,6 @@ public class ControllerViewVehicle {
 		vehiclebean.setScadBollo(vehicle.getVehicleTax());
 		vehiclebean.setScadRevisione(vehicle.getVehicleReview());
 		vehiclebean.setScadTagliando(vehicle.getVehicleService());
-		
 		
 		
 		return vehiclebean;

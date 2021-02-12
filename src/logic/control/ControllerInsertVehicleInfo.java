@@ -20,6 +20,7 @@ public class ControllerInsertVehicleInfo {
 		VehicleDAO vehicledao = new VehicleDAO();
 		Vehicle vehicle = new Vehicle(vehicleBean.getTargaVehicle());
 		
+		
 		vehicle.setLicensePlate(vehicleBean.getTargaVehicle());
 		vehicle.setUsername(vehicleBean.getUsername());
 		vehicle.setVehicleBrand(vehicleBean.getMarcaVehicle());
@@ -60,6 +61,7 @@ public class ControllerInsertVehicleInfo {
 		
 		int annoDeadline = deadline.get(anno);
 		int meseDeadline = deadline.get(mese);
+		
 		
 		if(annoAttuale == annoDeadline && meseAttuale == (meseDeadline-1))
 			result= true;
