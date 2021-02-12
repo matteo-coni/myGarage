@@ -135,6 +135,7 @@ public class ControllerGrafListBook {
 		if(listBookingBean.size()==1) {
 			nome1.setText(listBookingBean.get(0).getUsername());
 			targa1.setText(listBookingBean.get(0).getVeicolo());
+			problemi1.setText(listBookingBean.get(0).getProblemi());
 
 			String data = sdf.format(listBookingBean.get(0).getDataPrenotazione());
 			data1.setText(data);
@@ -143,11 +144,13 @@ public class ControllerGrafListBook {
 		if(listBookingBean.size()==2) {
 			nome1.setText(listBookingBean.get(0).getUsername());
 			targa1.setText(listBookingBean.get(0).getVeicolo());
+			problemi1.setText(listBookingBean.get(0).getProblemi());
 			String data = sdf.format(listBookingBean.get(0).getDataPrenotazione());
 			data1.setText(data);
 			
 			nome2.setText(listBookingBean.get(1).getUsername());
 			targa2.setText(listBookingBean.get(1).getVeicolo());
+			problemi2.setText(listBookingBean.get(1).getProblemi());
 			String datap2 = sdf.format(listBookingBean.get(1).getDataPrenotazione());
 			data2.setText(datap2);
 		}
@@ -155,16 +158,19 @@ public class ControllerGrafListBook {
 		if(listBookingBean.size()==3) {
 			nome1.setText(listBookingBean.get(0).getUsername());
 			targa1.setText(listBookingBean.get(0).getVeicolo());
+			problemi1.setText(listBookingBean.get(0).getProblemi());
 			String data = sdf.format(listBookingBean.get(0).getDataPrenotazione());
 			data1.setText(data);
 			
 			nome2.setText(listBookingBean.get(1).getUsername());
 			targa2.setText(listBookingBean.get(1).getVeicolo());
+			problemi2.setText(listBookingBean.get(1).getProblemi());
 			String datap2 = sdf.format(listBookingBean.get(1).getDataPrenotazione());
 			data2.setText(datap2);
 			
 			nome3.setText(listBookingBean.get(2).getUsername());
 			targa3.setText(listBookingBean.get(2).getVeicolo());
+			problemi3.setText(listBookingBean.get(2).getProblemi());
 			String datap3 = sdf.format(listBookingBean.get(2).getDataPrenotazione());
 			data3.setText(datap3);
 		}

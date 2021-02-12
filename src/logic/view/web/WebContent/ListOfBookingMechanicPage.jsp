@@ -27,6 +27,9 @@
 		String nome3="";
 		String targa3="";
 		String data3="";
+		String problemi1="";
+		String problemi2="";
+		String problemi3="";
 		
 		
 		
@@ -34,6 +37,7 @@
 			nome1 = listBookingBean.get(0).getUsername();
 			targa1 =listBookingBean.get(0).getVeicolo();
 			data1 = sdf.format(listBookingBean.get(0).getDataPrenotazione());
+			problemi1 = listBookingBean.get(0).getProblemi();
 			
 		}
 		
@@ -43,24 +47,29 @@
 			nome1 = listBookingBean.get(0).getUsername();
 			targa1 =listBookingBean.get(0).getVeicolo();
 			data1 = sdf.format(listBookingBean.get(0).getDataPrenotazione());
+			problemi1 = listBookingBean.get(0).getProblemi();
 			
 			nome2 = listBookingBean.get(1).getUsername();
 			targa2 =listBookingBean.get(1).getVeicolo();
 			data2 = sdf.format(listBookingBean.get(1).getDataPrenotazione());
+			problemi2 = listBookingBean.get(1).getProblemi();
 		}
 		
 		if(listBookingBean.size()==3) {
 			nome1 = listBookingBean.get(0).getUsername();
 			targa1 =listBookingBean.get(0).getVeicolo();
 			data1 = sdf.format(listBookingBean.get(0).getDataPrenotazione());
+			problemi1 = listBookingBean.get(0).getProblemi();
 			
 			nome2 = listBookingBean.get(1).getUsername();
 			targa2 =listBookingBean.get(1).getVeicolo();
 			data2 = sdf.format(listBookingBean.get(1).getDataPrenotazione());
+			problemi2 = listBookingBean.get(1).getProblemi();
 			
 			nome3 = listBookingBean.get(2).getUsername();
 			targa3 =listBookingBean.get(2).getVeicolo();
 			data3 = sdf.format(listBookingBean.get(2).getDataPrenotazione());
+			problemi3 = listBookingBean.get(2).getProblemi();
 		}
 		
 		if(request.getParameter("accetta1")!=null){
@@ -147,9 +156,9 @@
 
                 id="address" readonly="readonly" type="text"></h4>
           </td>
-          <td style="text-align: center;"> <textarea id="problems" name="problems"
-
-rows="4" cols="50" readonly="readonly"></textarea> </td>
+          <td style="text-align: center;"> 
+          
+          		<textarea id="problems" name="problems" rows="4" cols="50" readonly="readonly"><%=problemi1 %></textarea> </td>
           <td style="text-align: center;"> 
           
           <button name="accetta1">Accetta</button>
@@ -174,9 +183,9 @@ rows="4" cols="50" readonly="readonly"></textarea> </td>
 
                 id="address" readonly="readonly" type="text"></h4>
           </td>
-          <td style="text-align: center;"> <textarea id="problems" name="problems"
+          <td style="text-align: center;"> <textarea id="problems" name="problems" 
 
-rows="4" cols="50" readonly="readonly"></textarea> </td>
+rows="4" cols="50" readonly="readonly"><%=problemi2 %></textarea> </td>
           <td style="text-align: center;"> 
           <button name="accetta2">Accetta</button><br>
             <br>
@@ -200,9 +209,9 @@ rows="4" cols="50" readonly="readonly"></textarea> </td>
 
                 id="address" readonly="readonly" type="text"></h4>
           </td>
-          <td style="text-align: center;"> <textarea id="problems" name="problems"
-
-rows="4" cols="50" readonly="readonly"></textarea> </td>
+          <td style="text-align: center;"> 
+          
+          	<textarea id="problems" name="problems" rows="4" cols="50" readonly="readonly"><%=problemi1 %></textarea> </td>
           <td style="text-align: center;"> <button name="accetta3">Accetta</button><br>
             <br>
             <br>
