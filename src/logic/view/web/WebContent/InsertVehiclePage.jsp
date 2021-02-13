@@ -76,7 +76,7 @@
       <tbody>
         <tr style="height: 84px;">
           <td style="width: 51px; height: 43px; text-align: center; margin-left: 64px;">
-            <a href="pippo.html"><img src="images_web/settings_71x71.png"
+            <a href="Settings.jsp"><img src="images_web/settings_71x71.png"
 
                 alt="settings" title="settings"></a> </td>
           <td style="width: 31px; height: 43px; text-align: center; margin-left: 147px;">
@@ -93,7 +93,7 @@
           </td>
         </tr>
         <tr style="height: 85px;">
-          <td style="width: 71px; height: 43px; text-align: center;"> <a href="HomeScreen.jsp"><img
+          <td style="width: 71px; height: 43px; text-align: center;"> <a href="HomeScreenSelectedVehicle.jsp"><img
 
                 src="images_web/M_71x71.png"
 

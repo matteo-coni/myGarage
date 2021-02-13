@@ -125,7 +125,7 @@
           </td>
         </tr>
         <tr style="height: 85px;">
-          <td style="width: 71px; height: 43px; text-align: center;"> <a href="HomeScreen.jsp"><img
+          <td style="width: 71px; height: 43px; text-align: center;"> <a href="HomeScreenSelectedVehicle.jsp"><img
 
                 src="images_web/M_71x71.png"
 
@@ -173,7 +173,7 @@
         </tr>
         <tr style="height: 18px;">
           <td style="height: 45px; width: 194px; text-align: center;" colspan="2">
-            <a href="FindMechanicPageSearched.jsp"><img src="images_web/BookMechanic_250x250_selected.png"
+            <a href="FindMechanicPage.jsp"><img src="images_web/BookMechanic_250x250_selected.png"
 
                 alt="bookMechanic_selected" style="width: 255px; height: 256px;"
 

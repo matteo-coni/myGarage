@@ -38,7 +38,7 @@
           </td>
         </tr>
         <tr style="height: 85px;">
-          <td style="width: 71px; height: 43px; text-align: center;"> <a href="HomeScreen.jsp"><img
+          <td style="width: 71px; height: 43px; text-align: center;"> <a href="HomeScreenSelectedVehicle.jsp"><img
 
                 src="images_web/M_71x71.png" alt="M" title="M"></a> </td>
           <td style="width: 71px; height: 43px; text-align: center;"> <a href="LoginScreen.jsp"><img
