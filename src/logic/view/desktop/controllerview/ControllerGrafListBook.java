@@ -159,14 +159,14 @@ public class ControllerGrafListBook {
 			nome1.setText(listBookingBean.get(0).getUsername());
 			targa1.setText(listBookingBean.get(0).getVeicolo());
 			problemi1.setText(listBookingBean.get(0).getProblemi());
-			String data = sdf.format(listBookingBean.get(0).getDataPrenotazione());
-			data1.setText(data);
+			String datap1 = sdf.format(listBookingBean.get(0).getDataPrenotazione());
+			data1.setText(datap1);
 			
 			nome2.setText(listBookingBean.get(1).getUsername());
 			targa2.setText(listBookingBean.get(1).getVeicolo());
 			problemi2.setText(listBookingBean.get(1).getProblemi());
-			String datap2 = sdf.format(listBookingBean.get(1).getDataPrenotazione());
-			data2.setText(datap2);
+			String datapick2 = sdf.format(listBookingBean.get(1).getDataPrenotazione());
+			data2.setText(datapick2);
 			
 			nome3.setText(listBookingBean.get(2).getUsername());
 			targa3.setText(listBookingBean.get(2).getVeicolo());
