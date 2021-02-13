@@ -253,8 +253,8 @@ public class ControllerGrafBookMech {
 			indirizzo1.setText(listMechanicBean.get(0).getIndirizzo());
 			sconto1.setText(String.valueOf(listMechanicBean.get(0).getPercSconto())+'%');
 			
-			nome2.setText(listMechanicBean.get(1).getOfficina());
 			indirizzo2.setText(listMechanicBean.get(1).getIndirizzo());
+			nome2.setText(listMechanicBean.get(1).getOfficina());
 			sconto2.setText(String.valueOf(listMechanicBean.get(1).getPercSconto())+'%');
 		}
 		
