@@ -54,7 +54,7 @@ public class MechanicDAO {
             ress = stm.executeQuery(query);
             
             ress.first();
-           
+            
             do{
                 
                 String officina = ress.getString(OFFICINA);

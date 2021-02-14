@@ -258,6 +258,12 @@ public class ControllerGrafBookMech {
 			nome1.setText(listMechanicBean.get(0).getOfficina());
 			indirizzo1.setText(listMechanicBean.get(0).getIndirizzo());
 			sconto1.setText(String.valueOf(listMechanicBean.get(0).getPercSconto())+'%');
+			nome2.setText("");
+			indirizzo2.setText("");
+			sconto2.setText("");
+			nome3.setText("");
+			indirizzo3.setText("");
+			sconto3.setText("");
 		}
 		
 		if(listMechanicBean.size()==2) {
@@ -268,6 +274,11 @@ public class ControllerGrafBookMech {
 			indirizzo2.setText(listMechanicBean.get(1).getIndirizzo());
 			nome2.setText(listMechanicBean.get(1).getOfficina());
 			sconto2.setText(String.valueOf(listMechanicBean.get(1).getPercSconto())+'%');
+			
+			sconto3.setText("");
+			nome3.setText("");
+			indirizzo3.setText("");
+			
 		}
 		
 		if(listMechanicBean.size()==3) {

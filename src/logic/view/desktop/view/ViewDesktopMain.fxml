@@ -5,19 +5,30 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<TitledPane id="title" fx:id="titledPane" animated="false" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="914.0" prefWidth="1294.0" textAlignment="CENTER" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.view.desktop.controllerview.ControllerGrafLogin">
+<TitledPane id="title" fx:id="titledPane" animated="false" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="914.0" prefWidth="1294.0" textAlignment="CENTER" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.view.desktop.controllerview.ControllerGrafLogin">
    <content>
       <AnchorPane fx:id="AnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
          <children>
+            <ImageView fitHeight="905.0" fitWidth="1577.0" layoutX="-233.0" opacity="0.34" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../images/BackgroundFerrari.jpg" />
+               </image>
+            </ImageView>
             <TextField fx:id="usernameField" layoutX="572.0" layoutY="352.0" text="" />
             <PasswordField fx:id="passwordField" layoutX="572.0" layoutY="383.0" text="" />
             <Button fx:id="loginButton" layoutX="572.0" layoutY="419.0" mnemonicParsing="false" onAction="#login" prefHeight="27.0" prefWidth="69.0" text="Login" textAlignment="CENTER" />
             <Text id="text" fx:id="txtUsername" layoutX="512.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
             <Text id="text" fx:id="txtPassword" layoutX="514.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
-            <Text id="text" fx:id="txtMyGarage" layoutX="617.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="myGarage" wrappingWidth="58.099609375" />
+            <Text id="text" fx:id="txtMyGarage" layoutX="551.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="myGarage" wrappingWidth="201.099609375">
+               <font>
+                  <Font name="Comic Sans MS" size="44.0" />
+               </font></Text>
             <Button fx:id="registrButton" layoutX="658.0" layoutY="419.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="72.0" text="Registrati" />
             <Button fx:id="loginButtonMech" layoutX="572.0" layoutY="457.0" mnemonicParsing="false" onAction="#loginMech" prefHeight="27.0" prefWidth="160.0" text="Login as Mechanic" />
             <Button fx:id="loginButtonGoogle" layoutX="572.0" layoutY="494.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="160.0" text="Login with Google" />

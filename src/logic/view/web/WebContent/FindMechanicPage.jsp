@@ -61,7 +61,7 @@
 				
 			}
 			
-			if (listMechanicBean.size()==2){
+			if (listMechanicBean.size()==3){
 				String nome1 = listMechanicBean.get(0).getOfficina();
 				String indirizzo1 = listMechanicBean.get(0).getIndirizzo();
 				String sconto1 = String.valueOf(listMechanicBean.get(0).getPercSconto())+"%";
