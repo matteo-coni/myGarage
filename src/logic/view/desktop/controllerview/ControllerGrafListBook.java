@@ -1,5 +1,6 @@
 package logic.view.desktop.controllerview;
 
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -9,11 +10,15 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import logic.bean.BookingBean;
 
 import logic.control.ControllerViewBook;
+import logic.view.desktop.factory.viewfactory.FactoryView;
+import logic.view.desktop.factory.viewfactory.TypeView;
+import logic.view.desktop.view.View;
 
 public class ControllerGrafListBook {
 
@@ -63,6 +68,26 @@ public class ControllerGrafListBook {
 	Rectangle redGreen2;
 	@FXML
 	Rectangle redGreen3;
+	@FXML
+	ImageView listImage;
+	@FXML
+	ImageView insertImage;
+	@FXML
+	ImageView imageHome;
+	@FXML
+	ImageView	imageLogout;
+	
+	
+	
+	@FXML
+	public void logout() throws IOException{
+		
+		FactoryView factory = FactoryView.getInstance();
+		View viewLogout;
+		viewLogout = factory.createView(TypeView.LOGIN); 
+		
+		ControllerMain.getInstance().replace(ControllerMain.getContainer(), viewLogout);	
+	}
 	
 	@FXML
 	public void confirm1() {
