@@ -80,6 +80,8 @@ public class ControllerGrafBookMech {
 	Text errorText;
 	@FXML
 	ComboBox<String> selectVehicle;
+	@FXML
+	ImageView imageLogout;
 	
 	
 	@FXML
@@ -89,6 +91,16 @@ public class ControllerGrafBookMech {
 		view = factory.createView(TypeView.HOMEPAGE); 
 		
 		ControllerMain.getInstance().replace(ControllerMain.getContainer(), view);
+		
+	}
+	
+	@FXML
+	public void logOut() throws IOException{
+		FactoryView factory = FactoryView.getInstance();
+		View viewLogOut;
+		viewLogOut = factory.createView(TypeView.LOGIN); 
+		
+		ControllerMain.getInstance().replace(ControllerMain.getContainer(), viewLogOut);
 		
 	}
 	
@@ -285,7 +297,7 @@ public class ControllerGrafBookMech {
 		
 		for(String targa: targheVeicoli) { //Clico for per aggiungere le targhe al "combobox" (Solo targhe legate all'username)
 						
-			//String targaVehicle = "ciao"; ---TEST-----
+			
 			selectVehicle.getItems().addAll(
 					targa);
 						

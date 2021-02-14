@@ -31,8 +31,7 @@ public class ControllerGrafHome  {
 	ImageView imageVehicle;
 	
 	GridPane grid;
-	@FXML
-	Text label1;
+	
 	@FXML
 	Text textTarga;
 	@FXML
@@ -55,22 +54,23 @@ public class ControllerGrafHome  {
 	ComboBox<String> menuSelectVehicle;
 	@FXML
 	ImageView imageBookMechanic;
-	
-	
-	
-	
-	
-	
 	@FXML
-	public void exit() { //////*******PROVA******
+	ImageView imageLogout;
+	
+	
+	
+	
+	
+	@FXML 
+	public void exit() throws IOException{
+		FactoryView factory = FactoryView.getInstance();
+		View viewLogout;
+		viewLogout = factory.createView(TypeView.LOGIN); 
 		
-		button3.setText("oh");
-		label1.setText("essu");
-		textTarga.setText("ei");
-		textModello.setText("ei");
+		ControllerMain.getInstance().replace(ControllerMain.getContainer(), viewLogout);
 		
-		
-		}
+	}
+	
 	
 	@FXML
 	public void insertVehicle() {

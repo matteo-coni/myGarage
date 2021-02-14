@@ -9,7 +9,7 @@ import logic.view.desktop.factory.viewfactory.FactoryView;
 import logic.view.desktop.factory.viewfactory.TypeView;
 import logic.view.desktop.view.View;
 
-import javafx.scene.shape.*;
+
 import javafx.fxml.*;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
@@ -30,8 +30,7 @@ public class ControllerGrafInsert {
 	
 	private static String format="dd/MM/yyyy";
 
-	@FXML
-	Polygon back;
+	
 	@FXML
 	Button button = new Button("prova");
 	@FXML
@@ -63,6 +62,8 @@ public class ControllerGrafInsert {
 	Text confirmText;
 	@FXML
 	ImageView homeImage;
+	@FXML
+	ImageView imageLogout;
 	
 	@FXML
 	public void back() throws IOException{
@@ -74,13 +75,17 @@ public class ControllerGrafInsert {
 		
 	}
 	
-	
 	@FXML
-	public void setButton() {
-		//ok
+	public void logout() throws IOException{
+		FactoryView factory = FactoryView.getInstance();
+		View viewLog;
+		viewLog = factory.createView(TypeView.LOGIN); 
 		
+		ControllerMain.getInstance().replace(ControllerMain.getContainer(), viewLog);
 		
 	}
+	
+
 	
 	@FXML
 	public void confirmInsert() {
